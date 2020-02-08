@@ -28,6 +28,15 @@
 @define-color core_b shade(@theme_bg, 0.88); /* gray widgets in Clearlooks-Phenix */
 
 
+/* --- Intermediate murrine colors --- */
+/* See murrine_style_realize for how these are produced originally */
+/* Only used in the current file, as bases for other color declarations */
+
+@define-color m_spot_0 shade(@theme_selected_bg_color, 1.42);
+@define-color m_spot_1 shade(@theme_selected_bg_color, 1.00);
+@define-color m_spot_2 shade(@theme_selected_bg_color, 0.685);
+
+
 /***********
  * general *
  ***********/
@@ -244,12 +253,15 @@
  * progressbar *
  ***************/
 
-@define-color progressbar_border mix(#6a6a6a, shade(@core_a, 0.75), 0.80);
-@define-color progressbar_pattern @progressbar_border;
+/* @define-color progressbar_fill @m_spot_1; */
+/* @define-color progressbar_effect alpha(shade(@progressbar_fill, 0.685), 0.15); */
+/* @define-color progressbar_border mix(@m_spot_2, @progressbar_fill, 0.28); */
 
-@define-color progressbar_bg @core_a;
+@define-color progressbar_border #674e3a;
+@define-color progressbar_pattern alpha(shade(@core_a, 1.5), 0.8);
+@define-color progressbar_fill #915e49;
 
-@define-color progressbar_gradient_a @progressbar_bg;
+@define-color progressbar_gradient_a @progressbar_fill;
 @define-color progressbar_gradient_b @menubar_menuitem_hover_gradient_b;
 @define-color progressbar_gradient_c @menubar_menuitem_hover_gradient_c;
 @define-color progressbar_gradient_d @menubar_menuitem_hover_gradient_d;

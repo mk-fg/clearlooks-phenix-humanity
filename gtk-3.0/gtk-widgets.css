@@ -326,17 +326,17 @@ row progressbar progress,
 row:hover progressbar progress,
 row:selected progressbar progress,
 row:selected:focus progressbar progress {
-	background-color: @progressbar_bg;
+	background-color: @progressbar_fill;
 	background-image: linear-gradient(to bottom,
 	                      alpha (@progressbar_gradient_a, 0.7),
 	                      alpha (@progressbar_gradient_b, 0.7) 50%,
 	                      alpha (@progressbar_gradient_c, 0.7) 50%,
 	                      alpha (@progressbar_gradient_d, 0.7)),
-	                  repeating-linear-gradient(135deg,
+	                  repeating-linear-gradient(45deg,
 	                      alpha (@progressbar_pattern, 0.0),
 	                      alpha (@progressbar_pattern, 0.0) 12px,
-	                      alpha (@progressbar_pattern, 0.5) 12px,
-	                      alpha (@progressbar_pattern, 0.5) 24px);
+	                      @progressbar_pattern 12px,
+	                      @progressbar_pattern 24px);
 	border-radius: 3px;
 	border-width: 1px;
 	border-style: solid;
