@@ -23,7 +23,7 @@
 
 	-gtk-outline-radius: 2px;
 	-gtk-icon-style: regular; /* disable symbolic icons */
-	
+
 	-GtkWindow-resize-grip-width: 11;
 	-GtkWindow-resize-grip-height: 11;
 }
@@ -150,8 +150,8 @@ spinner:active:disabled {
 	background-image: none;
 	border-style: none;
 	border-image: none;
-	-GtkButton-image-spacing: 0;
-	-GtkButton-inner-border: 0;
+	/* -GtkButton-image-spacing: 0; */
+	/* -GtkButton-inner-border: 0; */
 }
 
 .rubberband,
@@ -575,10 +575,10 @@ toolbar.horizontal button:active {
 }
 
 button {
-	-GtkButton-image-spacing: 4px;
-	-GtkButton-interior-focus: true;
-	-GtkButton-default-border: 0;
-	-GtkButton-inner-border: 3px;
+	/* -GtkButton-image-spacing: 4px; */
+	/* -GtkButton-interior-focus: true; */
+	/* -GtkButton-default-border: 0; */
+	/* -GtkButton-inner-border: 3px; */
 	color: @theme_text_color;
 	border-style: solid;
 	border-color: transparent;
@@ -1329,12 +1329,12 @@ scrollbar {
 	border-color: @scrollbar_trough_border_color;
 	-GtkScrollbar-has-backward-stepper: true;
 	-GtkScrollbar-has-forward-stepper: true;
-	/*-GtkRange-arrow-scaling: 0.4;*/
-	-GtkRange-slider-width: 15;
-	-GtkRange-stepper-size: 15px;
-	-GtkScrollbar-min-slider-length: 30;
-	-GtkRange-stepper-spacing: 0;
-	-GtkRange-trough-under-steppers: 0;
+	/* -GtkRange-arrow-scaling: 0.4; */
+	/* -GtkRange-slider-width: 15; */
+	/* -GtkRange-stepper-size: 15px; */
+	/* -GtkScrollbar-min-slider-length: 30; */
+	/* -GtkRange-stepper-spacing: 0; */
+	/* -GtkRange-trough-under-steppers: 0; */
 	box-shadow: none;
 	border-image: none;
 }
@@ -1591,7 +1591,7 @@ treemenu menuitem {
 
 menu,
 .menu {
-	font: normal;
+	font-weight: normal;
 	background-color: @menu_bg_color;
 	color: @menu_fg_color;
 	padding: 1px;
@@ -1973,7 +1973,7 @@ placessidebar .view {
 
 assistant .sidebar highlight {
 	color: @theme_fg_color;
-	font: bold;
+	font-weight: bold;
 }
 
 assistant .sidebar {
@@ -2060,9 +2060,9 @@ treeview {
 
 view,
 view:selected,
-view:selected:focus, 
+view:selected:focus,
 .view:selected,
-.view:selected:focus, 
+.view:selected:focus,
 view text selection,
 .view text selection,
 view text selection:focus,
@@ -2523,7 +2523,7 @@ infobar:last-child,
 }
 
 .titlebar .title {
-	font: Bold;
+	font-weight: bold;
 }
 
 /*.titlebar :first-child {*/
