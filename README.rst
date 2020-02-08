@@ -1,3 +1,7 @@
+.. contents::
+  :backlinks: none
+
+
 Overview
 --------
 
@@ -126,11 +130,15 @@ Notes on adapting murrine-engine GTK2 theme to GTK3
   expressions, e.g. ``./gtk-color-translate.py 'shade(#8f5f4a, 1.5)'`` -> ``#cf9277``.
 
 
-Docs
-----
+GTK+ Theming Documentation Links
+--------------------------------
 
-- `GTK+ CSS Overview`_
-- `GTK+ CSS Properties`_
+- AWF_ (A Widget Factory) - tool to display GTK2/GTK3 themed widgets side-by-side.
+- `GTK+ CSS Overview`_ - outlines what is possible in GTK3 CSS.
+- `GTK+ CSS Properties`_ - reference for all supported CSS properties.
+- `GTK+ Inspector`_ - "CSS" tab there allows to easily paste/override/test theme parts on the fly.
 
+.. _AWF: https://github.com/valr/awf
 .. _GTK+ CSS Overview: https://developer.gnome.org/gtk3/stable/chap-css-overview.html
 .. _GTK+ CSS Properties: https://developer.gnome.org/gtk3/stable/chap-css-properties.html
+.. _GTK+ Inspector: https://wiki.gnome.org/Projects/GTK/Inspector
