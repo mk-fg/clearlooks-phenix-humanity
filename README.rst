@@ -19,6 +19,34 @@ Work in progress, not ready for general use yet.
 .. _Human Quarny theme: https://www.gnome-look.org/p/1013593/
 
 
+Common differences between Clearlooks Gtk3 vs Human Gtk2
+--------------------------------------------------------
+
+All of these apply to looks after Gtk3 translation, with rough guess at which
+original styles resulted in those looks, as per murrine_draw_rgba.c and such.
+
+- Background gradients
+
+  Clearlooks uses "glassy" glazed toolbars/menubars, with two gradients going up
+  and down vertically from the base background color in the center.
+
+  Human Quarny uses "gradient" toolbarstyle=2 menubarstyle=2 and such, which are
+  simplier top-to-shade(0.95)-darker-bottom gradients.
+
+- Borders
+
+  Gtk3 Clearlooks translation uses shades of @theme_selected_bg for borders,
+  while murrine engine's colors->shade[n] values derive shades from normal background,
+  which have different hues in Human Quarny.
+
+  Border size/presence do not seem to correspond very well either - missing
+  completely on many clearlooks widgets, while Human Quarny ones mostly have
+  lighter border on top/left and darker "shadow" bottom/right borders.
+
+- Menus in awf-gtk3 don't seem to drop shadow.
+- awf-gtk3 toolbar buttons do not have labels.
+
+
 Notes on adapting murrine-engine GTK2 theme to GTK3
 ---------------------------------------------------
 
@@ -122,14 +150,18 @@ Notes on adapting murrine-engine GTK2 theme to GTK3
   - progressbar_effect alpha(shade(@progressbar_fill, 0.685), 0.15);
   - progressbar_border mix(@m_spot_2, @progressbar_fill, 0.28);
 
-  background-image of that widget will be a bunch of gradients, as described by
-  murrine_draw_glaze() in cairo-support.c, stripes are semi-transparent sharp
-  repeating-linear-gradient on top, plus border with color from above.
+- background-image of that widget will be a bunch of gradients, as described by
+  murrine_draw_glaze() in cairo-support.c - see `murrine-notes.txt`_ for rough
+  translation.
 
-- gtk-color-translate.py script can be used to get result for various GTK3 color
-  expressions, e.g. ``./gtk-color-translate.py 'shade(#8f5f4a, 1.5)'`` -> ``#cf9277``.
+- Stripes are semi-transparent sharp repeating-linear-gradient on top.
 
-- See `murrine-notes.txt`_ for more details on how specific widget looks are composed.
+- Border is drawn with color from above translation.
+
+gtk-color-translate.py script can be used to get result for various GTK3 color
+expressions, e.g. ``./gtk-color-translate.py 'shade(#8f5f4a, 1.5)'`` -> ``#cf9277``.
+
+See `murrine-notes.txt`_ for more details on how specific widget looks are composed.
 
 .. _murrine-notes.txt: murrine-notes.txt
 
