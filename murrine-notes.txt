@@ -57,9 +57,15 @@ glaze:
 		top_alpha = mid_alpha = bottom_alpha = lower_alpha = 0.5;
 
 
-toolbar toolbarstyle=2:
+toolbar toolbarstyle=2 "gradient":
 	# only overidden for murrine-evo-new-button-workaround
+	fill = bg-normal
 	linear-gradient( x,y,0,h, fill, shade(fill, 0.95) )
+
+	# double shades[] = {1.065, 0.95, 0.896, 0.82, 0.75, 0.665, 0.5, 0.45, 0.4};
+	# 	with murrine_get_contrast(shade, 0.9) adjustment:
+	# 		[1.0585] + [round(n - (1.0 - n) * (1.0 - 0.9), 4) for n in [0.95, 0.896, 0.82, 0.75, 0.665, 0.5, 0.45, 0.4]]
+	# 		[1.0585, 0.945, 0.8856, 0.802, 0.725, 0.6315, 0.45, 0.395, 0.34]
 
 	1px line on top:
 		contrast = 0.9 (always global)
@@ -68,7 +74,22 @@ toolbar toolbarstyle=2:
 			= shade(#e6ddd5, 1.0585)
 
 	1px line at the bottom:
-		dark = colors->shade[4];
+		color = shade(bg_normal, murrine_get_contrast(shade[4], contrast))
+
+
+menubar menubarstyle=2 "gradient" (always global):
+	fill = bg-normal
+	linear-gradient( x,y,0,h, fill, shade(fill, 0.95) )
+	1px line at the bottom: color = shade[4]
+
+
+menu_frame menustyle=0 "no vertical menu stripe" (always global):
+	fill = bg_normal + MENU_OPACITY
+	border = shade[5] + MENU_OPACITY
+	# with MENU_OPACITY=0.9 (support.h), color does not match gtk2 one, not sure why
+	# mix(#fff, fill, 0.6) + alpha(border, 0.6) seem to be a better match
+
+
 
 
 

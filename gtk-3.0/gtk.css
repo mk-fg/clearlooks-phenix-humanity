@@ -31,10 +31,12 @@
 /* --- Intermediate murrine colors --- */
 /* See murrine_style_realize for how these are produced originally */
 /* Only used in the current file, as bases for other color declarations */
+/* Shades adjusted for contrast=0.9: 1.0585, 0.945, 0.8856, 0.802, 0.725, 0.6315, 0.45, 0.395, 0.34 */
 
-@define-color m_spot_0 shade(@theme_selected_bg_color, 1.42);
-@define-color m_spot_1 shade(@theme_selected_bg_color, 1.00);
-@define-color m_spot_2 shade(@theme_selected_bg_color, 0.685);
+@define-color bg_base @theme_bg;
+@define-color bg_shade0 shade(@theme_bg, 1.0585);
+@define-color bg_shade4 shade(@theme_bg, 0.725);
+@define-color bg_shade5 shade(@theme_bg, 0.6315);
 
 
 /***********
@@ -191,18 +193,22 @@
  * menu *
  ********/
 
-@define-color menu_bg @theme_base;
 @define-color menu_fg @theme_fg;
+@define-color menu_bg mix(@theme_base, @bg_base, 0.6);
+@define-color menu_border alpha(@bg_shade5, 0.6);
 
 /* Example: submenu arrow. */
 @define-color menu_controls @theme_fg;
-
-@define-color menu_border shade(@core_b, 0.72);
 @define-color menu_separator @menu_border;
 
 /***********
  * menubar *
  ***********/
+
+@define-color menubar_border_bot @bg_shade4;
+
+@define-color menubar_grad_top @bg_base;
+@define-color menubar_grad_bot shade(@menubar_grad_top, 0.95);
 
 @define-color menubar_gradient_a shade(@core_b, 0.99);
 @define-color menubar_gradient_b shade(@core_b, 0.98);
@@ -252,10 +258,6 @@
 /***************
  * progressbar *
  ***************/
-
-/* @define-color progressbar_fill @m_spot_1; */
-/* @define-color progressbar_effect alpha(shade(@progressbar_fill, 0.685), 0.15); */
-/* @define-color progressbar_border mix(@m_spot_2, @progressbar_fill, 0.28); */
 
 @define-color progressbar_border #674e3a;
 @define-color progressbar_pattern alpha(shade(@core_a, 1.5), 0.8);
@@ -401,14 +403,11 @@
  * toolbar *
  ***********/
 
-@define-color toolbar_border_top shade(@core_b, 0.82);
-@define-color toolbar_inner_border @theme_base;
-@define-color toolbar_border_bottom @toolbar_border_top;
+@define-color toolbar_border_top @bg_shade0;
+@define-color toolbar_border_bot @bg_shade4;
 
-@define-color toolbar_gradient_a shade(@core_b, 1.04);
-@define-color toolbar_gradient_b shade(@core_b, 1.01);
-@define-color toolbar_gradient_c @core_b;
-@define-color toolbar_gradient_d shade(@core_b, 0.97);
+@define-color toolbar_grad_top @bg_base;
+@define-color toolbar_grad_bot shade(@toolbar_grad_top, 0.95);
 
 /***********
  * tooltip *

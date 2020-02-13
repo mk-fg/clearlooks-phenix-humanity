@@ -1589,24 +1589,29 @@ treemenu menuitem {
 	padding: 2px;
 }
 
+/* XXX: in murrine this window drops shadow, in gtk3 it does not
+	 should not be compositor effect, check gtk3 for options on that */
+
 menu,
 .menu {
 	font-weight: normal;
 	background-color: @menu_bg;
 	color: @menu_fg;
 	padding: 1px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: @menu_border;
+	border: 0;
+}
+
+menuitem window decoration,
+.menuitem window decoration {
+	border: 1px @menu_border solid;
 }
 
 menu button,
-.menu button{
+.menu button {
 	background-image: none;
 	background-color: @menu_bg;
 	color: @internal_element;
-	border-image: none;
-	border-style: none;
+	border: 0;
 }
 
 menu button:hover,
@@ -1614,30 +1619,24 @@ menu button:hover,
 	background-image: none;
 	background-color: @theme_base;
 	color: @theme_text;
-	border-image: none;
-	border-style: none;
+	border: 0;
 }
 
 menu button:disabled,
 .menu button:disabled {
 	background-color: @theme_base;
 	color: lighter(@internal_element);
-	border-image: none;
-	border-style: none;
+	border: 0;
 }
 
 /* this controls the general appearance of the menubar */
 menubar,
 .menubar {
-	border-style: none;
-	padding: 4px;
+	border-bottom: 1px @menubar_border_bot solid;
+	padding: 0 4px;
 	-GtkWidget-window-dragging: true;
-	background-image: -gtk-gradient (linear,
-	                  left top,
-	                  left bottom,
-	                  from (@menubar_gradient_a),
-	                  color-stop (0.50, @menubar_gradient_b),
-	                  to (@menubar_gradient_c));
+	background-color: transparent;
+	background-image: linear-gradient(to bottom, @menubar_grad_top, @menubar_grad_bot);
 }
 
 menubar menuitem,
@@ -1660,12 +1659,12 @@ menuitem button.flat:active {
 	border-radius: 3px 3px 0 0;
 	color: @menubar_menuitem_hover;
 	background-image: -gtk-gradient (linear,
-	                  left top,
-	                  left bottom,
-	                  from (@menubar_menuitem_hover_gradient_a),
-	                  color-stop (0.50, @menubar_menuitem_hover_gradient_b),
-	                  color-stop (0.50, @menubar_menuitem_hover_gradient_c),
-	                  to (@menubar_menuitem_hover_gradient_d));
+		left top,
+		left bottom,
+		from (@menubar_menuitem_hover_gradient_a),
+		color-stop (0.50, @menubar_menuitem_hover_gradient_b),
+		color-stop (0.50, @menubar_menuitem_hover_gradient_c),
+		to (@menubar_menuitem_hover_gradient_d));
 }
 
 menuitem button.flat:hover {
@@ -1710,12 +1709,12 @@ menu menuitem:hover,
 	border-color: @menubar_menuitem_hover_border;
 	color: @theme_selected_fg;
 	background-image: -gtk-gradient (linear,
-	                  left top,
-	                  left bottom,
-	                  from (@menubar_menuitem_hover_gradient_a),
-	                  color-stop (0.50, @menubar_menuitem_hover_gradient_b),
-	                  color-stop (0.50, @menubar_menuitem_hover_gradient_c),
-	                  to (@menubar_menuitem_hover_gradient_d));
+		left top,
+		left bottom,
+		from (@menubar_menuitem_hover_gradient_a),
+		color-stop (0.50, @menubar_menuitem_hover_gradient_b),
+		color-stop (0.50, @menubar_menuitem_hover_gradient_c),
+		to (@menubar_menuitem_hover_gradient_d));
 }
 
 menuitem:disabled,
@@ -1746,28 +1745,28 @@ menuitem arrow {
 
 menu menuitem arrow:dir(ltr),
 .menu menuitem arrow:dir(ltr) {
-    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
 }
 
 menu menuitem arrow:dir(rtl),
 .menu menuitem arrow:dir(rtl) {
-    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
+	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
 }
 
 menu arrow.top,
 .menu arrow.top {
-    -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+	-gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
 }
 
 menu arrow.bottom,
 .menu arrow.bottom {
-    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+	-gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
 
 menu arrow:hover,
 .menu arrow:hover {
-    border-color: @theme_selected_fg;
-    color: shade (@theme_selected_bg, 1.6);
+	border-color: @theme_selected_fg;
+	color: shade (@theme_selected_bg, 1.6);
 }
 
 menu separator,
@@ -1879,12 +1878,13 @@ toolbar menubar {
 /* applications using EggEditableToolbar usually set the primary-toolbar
  * hint on the containing vbox, so we need to handle both these cases here.
  */
+
 toolbar.primary-toolbar {
 	border-width: 1px 0 1px 0;
 	border-radius: 0;
 	border-style: solid;
 	border-top-color: @toolbar_border_top;
-	border-bottom-color: @toolbar_border_bottom;
+	border-bottom-color: @toolbar_border_bot;
 	-GtkWidget-window-dragging: true;
 	-GtkToolbar-button-relief: normal;
 }
@@ -1926,17 +1926,14 @@ toolbar.inline-toolbar:last-child {
 	border-radius: 0 0 3px 3px;
 }
 
-/* Primary and inline toolbars background */
+/* XXX: there're no text labels under toolbar button images,
+	check if these can be enabled, or just missing in awf-gtk3 */
 toolbar.primary-toolbar,
 toolbar.inline-toolbar  {
 	background-color: transparent;
-	background-image: linear-gradient(to bottom,
-	                  @toolbar_inner_border 1px,
-	                  @toolbar_gradient_a 2px,
-	                  @toolbar_gradient_b 50%,
-	                  @toolbar_gradient_c 50%,
-	                  @toolbar_gradient_d);
+	background-image: linear-gradient(to bottom, @toolbar_grad_top, @toolbar_grad_bot);
 }
+
 
 /***********
  * Sidebar *
