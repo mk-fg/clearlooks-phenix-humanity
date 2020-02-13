@@ -166,15 +166,26 @@ See `murrine-notes.txt`_ for more details on how specific widget looks are compo
 .. _murrine-notes.txt: murrine-notes.txt
 
 
-GTK+ Theming Documentation Links
---------------------------------
+GTK+ Theming Documentation/Tool Links
+-------------------------------------
 
 - AWF_ (A Widget Factory) - tool to display GTK2/GTK3 themed widgets side-by-side.
+
+  `awf-gtk3-wrapper.py`_ script can be used to start it with GTK_THEME and
+  timestamped logging for output (theme syntax errors) and reload events,
+  which can be triggered either by SIGQUIT (e.g. sent via ^\ in terminal) or SIGHUP,
+  and debounced, in case they're triggered by e.g. staggered fanotify signals
+  (sent by "fatrace-run_ -p ~user/.themes/clearlooks-phenix-humanity -f 'WD<>' --
+  pkill -QUIT -F /tmp/awf-gtk3.pid" fatrace_ wrapper here).
+
 - `GTK+ CSS Overview`_ - outlines what is possible in GTK3 CSS.
 - `GTK+ CSS Properties`_ - reference for all supported CSS properties.
 - `GTK+ Inspector`_ - "CSS" tab there allows to easily paste/override/test theme parts on the fly.
 
 .. _AWF: https://github.com/valr/awf
+.. _awf-gtk3-wrapper.py: awf-gtk3-wrapper.py
+.. _fatrace-run: https://github.com/mk-fg/fgtk/blob/master/fatrace-run
+.. _fatrace: https://launchpad.net/fatrace
 .. _GTK+ CSS Overview: https://developer.gnome.org/gtk3/stable/chap-css-overview.html
 .. _GTK+ CSS Properties: https://developer.gnome.org/gtk3/stable/chap-css-properties.html
 .. _GTK+ Inspector: https://wiki.gnome.org/Projects/GTK/Inspector

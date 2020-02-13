@@ -11,6 +11,7 @@ def awf_wrapper(ctx, debounce=0):
 	os.set_blocking(sig_pipe_w, False)
 	signal.set_wakeup_fd(sig_pipe_w)
 	signal.signal(signal.SIGQUIT, lambda sig,frm: None)
+	signal.signal(signal.SIGHUP, lambda sig,frm: None)
 
 	awf_env = os.environ.copy()
 	awf_env['GTK_THEME'] = 'clearlooks-phenix-humanity'
