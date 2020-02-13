@@ -129,6 +129,10 @@ Notes on adapting murrine-engine GTK2 theme to GTK3
 - gtk-color-translate.py script can be used to get result for various GTK3 color
   expressions, e.g. ``./gtk-color-translate.py 'shade(#8f5f4a, 1.5)'`` -> ``#cf9277``.
 
+- See `murrine-notes.txt`_ for more details on how specific widget looks are composed.
+
+.. _murrine-notes.txt: murrine-notes.txt
+
 
 GTK+ Theming Documentation Links
 --------------------------------

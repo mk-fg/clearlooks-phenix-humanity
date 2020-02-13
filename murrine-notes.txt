@@ -1,0 +1,85 @@
+glossary:
+	"always global" = only set once globally in gtkrc of this style
+
+
+glaze:
+
+	signature:
+		cr, fill,
+		shade-glow, shade-highlight, shade-lightborder,
+		gradient, widget,
+		x, y, w, h,
+		radius, corners, horizontal
+
+	basic gradient:
+		# if custom colors are not used
+		color = fill
+		shade(fill, 1.1), fill 49%, fill 49%, shade(fill, 1.1)
+
+
+	highlight with glazestyle=0 "flat" (always global):
+		color = shade(fill, highlight_shade)
+			highlight_shade = 1.0 global, overidden in some places
+
+		cairo_rectangle (cr, x, y, width, height/2)
+		linear-gradient( x, y, 0, h,
+			shade1, shade2 49%, shade3 49%, shade4 )
+
+		shades:
+			# globals from gtkrc, only overidden for murrine-notebook
+			shade1 = 1.02
+			shade2 = 1.01
+			# shade3 = 0.96 - not used as only top half is covered by rect with glazestyle=0
+			# shade4 = 0.95
+			shade* = alpha(shade*, 0.8) # alpha=true + global rgba=false
+
+
+	glow-shade = 1.15 (always global), glowstyle=4 "center (horizontal)" (always global):
+		color = shade(fill, 1.15)
+
+		radial-gradient:
+			scaling-factor = 1.2 * w/h
+			p0: cx=(x+w/2) / scaling-factor, cy=y+h/2, r=0, c=alpha(glow, 0.5)
+			p1: r=h/2, c=alpha(glow, 0)
+
+
+	lightborder-shade = 0.95 (always global), lightborderstyle=1 "all sides" (always global):
+		# inset/outset border drawn via top-down gradient with shades similar to highlight,
+		#  but on top of everything with alpha=0.5 (lightborderstyle=1)
+		# should probably be replaced by average color on sides in css version
+		color = shade(fill, 1.15)
+
+		murrine_draw_lightborder (cr, fill, mrn_gradient,
+			x+0.5, y+0.5, width-1, height-1,
+			mrn_gradient.gradients,
+			widget->glazestyle, widget->lightborderstyle,
+			lightborder_shade*highlight_shade, radius, corners);
+		top_alpha = mid_alpha = bottom_alpha = lower_alpha = 0.5;
+
+
+toolbar toolbarstyle=2:
+	# only overidden for murrine-evo-new-button-workaround
+	linear-gradient( x,y,0,h, fill, shade(fill, 0.95) )
+
+	1px line on top:
+		contrast = 0.9 (always global)
+		color = shade(bg_normal, murrine_get_contrast(shade[0], contrast))
+			murrine_style_realize: 1.065 - (1.065 - 1.0) * (1.0 - 0.9) = 1.0585
+			= shade(#e6ddd5, 1.0585)
+
+	1px line at the bottom:
+		dark = colors->shade[4];
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----
