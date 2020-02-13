@@ -77,6 +77,9 @@ toolbar toolbarstyle=2 "gradient":
 		color = shade(bg_normal, murrine_get_contrast(shade[4], contrast))
 
 
+toolbar-button: # too tricky to parse, lot of mixing, used subtracted color with alpha
+
+
 menubar menubarstyle=2 "gradient" (always global):
 	fill = bg-normal
 	linear-gradient( x,y,0,h, fill, shade(fill, 0.95) )
@@ -88,6 +91,7 @@ menu_frame menustyle=0 "no vertical menu stripe" (always global):
 	border = shade[5] + MENU_OPACITY
 	# with MENU_OPACITY=0.9 (support.h), color does not match gtk2 one, not sure why
 	# mix(#fff, fill, 0.6) + alpha(border, 0.6) seem to be a better match
+
 
 
 

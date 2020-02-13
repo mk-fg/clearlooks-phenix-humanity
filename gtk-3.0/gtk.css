@@ -16,6 +16,8 @@
 @define-color theme_text #1a1a1a;
 
 
+@define-color null rgba(127,127,127,0);
+
 @define-color link @theme_fg;
 @define-color visited_link shade(@link, 0.2);
 
@@ -68,9 +70,14 @@
 
 /* hover */
 
-@define-color button_hover_gradient_a @theme_base;
-@define-color button_hover_gradient_b shade(@core_b, 1.05);
-@define-color button_hover_gradient_c @core_b;
+@define-color button_hover_glaze_top alpha(shade(@theme_bg, 1.1), 0.8);
+@define-color button_hover_glaze_mid-a alpha(shade(@theme_bg, 1.05), 0.8);
+@define-color button_hover_glaze_mid-b alpha(shade(@theme_bg, 0.985), 0.8);
+@define-color button_hover_glaze_bot alpha(shade(@theme_bg, 0.97), 0.8);
+
+@define-color button_hover_glaze_glow shade(@theme_bg, 1.15);
+@define-color button_hover_glaze_glow_center alpha(@button_hover_glaze_glow, 0.5);
+@define-color button_hover_glaze_glow_edge alpha(@button_hover_glaze_glow, 0);
 
 /* active */
 
@@ -101,14 +108,11 @@
 @define-color button_active_insensitive_gradient_e shade(@core_b, 0.99);
 @define-color button_active_insensitive_gradient_f shade(@core_b, 0.96);
 
-/* primary toolbar focus */
+/* primary toolbar focused button bg/outline + hover */
 
-@define-color pt_button_focus_gradient_a mix(#fafafa, shade(@core_a, 1.09), 0.3);
-@define-color pt_button_focus_gradient_b mix(#ededed, shade(@core_a, 1.05), 0.3);
-@define-color pt_button_focus_gradient_c mix(#e8e8e8, shade(@core_a, 1.01), 0.25);
-@define-color pt_button_focus_gradient_d mix(#e8e8e8, shade(@core_a, 0.96), 0.3);
-
-/* primary toolbar focus hover */
+@define-color pt_btn_sel #ebc0ab;
+@define-color pt_btn_sel_fill alpha(@pt_btn_sel, 0.4);
+@define-color pt_btn_sel_border alpha(shade(@pt_btn_sel, 0.8), 0.7);
 
 @define-color pt_button_focus_hover_gradient_a mix(#fcfcfc, shade(@core_a, 1.09), 0.15);
 @define-color pt_button_focus_hover_gradient_b mix(#fcfcfc, shade(@core_a, 1.05), 0.15);
