@@ -182,6 +182,12 @@ GTK+ Theming Documentation/Tool Links
 - `GTK+ CSS Properties`_ - reference for all supported CSS properties.
 - `GTK+ Inspector`_ - "CSS" tab there allows to easily paste/override/test theme parts on the fly.
 
+- `magnus (local fork with color tweaks)`_ - simple tool to zoom in on small theme elements.
+
+  Also applies color correction to source pixels, to map relatively limited
+  color range of this theme to a much large output color range, making e.g. various
+  small border/gradient details much easier to distinguish visually (esp. on cheap displays).
+
 .. _AWF: https://github.com/valr/awf
 .. _awf-gtk3-wrapper.py: awf-gtk3-wrapper.py
 .. _fatrace-run: https://github.com/mk-fg/fgtk/blob/master/fatrace-run
@@ -189,3 +195,4 @@ GTK+ Theming Documentation/Tool Links
 .. _GTK+ CSS Overview: https://developer.gnome.org/gtk3/stable/chap-css-overview.html
 .. _GTK+ CSS Properties: https://developer.gnome.org/gtk3/stable/chap-css-properties.html
 .. _GTK+ Inspector: https://wiki.gnome.org/Projects/GTK/Inspector
+.. _magnus (local fork with color tweaks): https://github.com/mk-fg/magnus
