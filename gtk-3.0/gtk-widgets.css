@@ -554,9 +554,9 @@ toolbar.primary-toolbar button.raised:disabled,
 toolbar.primary-toolbar .raised button:disabled,
 /* primary toolbar - hover button borders */
 toolbar.primary-toolbar button:hover {
-	border-image: url("img/border.png") 4 4 4 4 / 3px 3px 4px 3px repeat;
+	border-image: url("img/border.png") 4 4 3 4 / 4 4 3 4 repeat;
 	border-radius: 3px;
-	border-width: 1px 1px 2px 1px;
+	border-width: 1px;
 	border-style: solid;
 	border-color: transparent;
 }
@@ -578,13 +578,13 @@ toolbar.primary-toolbar button {
 button:focus,
 toolbar.primary-toolbar button:focus {
 	outline: none;
-	padding: 14px 12px;
-	border-image: url("img/pt-border-focus.png") 4 4 3 4 fill / 4 4 3 4 repeat;
+	border-image: url("img/pt-border-focus.png") 4 4 3 4 / 4 4 3 4 repeat;
+	background:
+		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
+		linear-gradient(to bottom, @pt_btn_sel_fill, @pt_btn_sel_fill);
 }
-
-/* Focused + prelit primary toolbar button background */
 toolbar.primary-toolbar button:focus:hover {
-	border-image: url("img/pt-border-focus-hover.png") 4 4 3 4 fill / 4 4 3 4 repeat;
+	border-image: url("img/pt-border-focus-hover.png") 4 4 3 4 / 4 4 3 4 repeat;
 }
 
 button,
@@ -758,8 +758,23 @@ toolbar combobox button.combo:hover,
 toolbar.primary-toolbar button:hover,
 toolbar.primary-toolbar combobox button.combo:hover,
 colorchooser #add-color-button:hover {
-	background-color: transparent;
-	background-image:
+	background:
+		radial-gradient(
+			circle farthest-side at center center,
+			@button_hover_glaze_glow_center,
+			@button_hover_glaze_glow_edge ),
+		linear-gradient(to bottom,
+			@button_hover_glaze_top,
+			@button_hover_glaze_mid-a 49%,
+			@button_hover_glaze_mid-b 49%,
+			@button_hover_glaze_bot );
+}
+
+/* Focused + prelit primary toolbar button background */
+toolbar.primary-toolbar button:focus:hover {
+	background:
+		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
+			linear-gradient(to bottom, @pt_btn_sel_fill, @pt_btn_sel_fill),
 		radial-gradient(
 			circle farthest-side at center center,
 			@button_hover_glaze_glow_center,

@@ -113,6 +113,10 @@
 @define-color button_active_insensitive_gradient_e shade(@core_b, 0.99);
 @define-color button_active_insensitive_gradient_f shade(@core_b, 0.96);
 
+/* primary toolbar focused button outline background */
+
+@define-color pt_btn_sel_fill alpha(#ebc0ab, 0.4);
+
 /*****************
  * color chooser *
  *****************/
