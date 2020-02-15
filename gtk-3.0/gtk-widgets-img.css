@@ -458,42 +458,14 @@ button:active,
 trough,
 trough highlight,
 switch,
-/* generic button borders */
-button,
-button.flat:active,
-button.flat:hover,
-.menu-button:active,
-.titlebar button.titlebutton:hover,
-toolbar.primary-toolbar button:checked,
-toolbar.primary-toolbar button.raised,
-toolbar.primary-toolbar .linked button.raised,
-toolbar.primary-toolbar .linked button.raised:hover,
-toolbar.primary-toolbar .linked button.raised:focus,
-toolbar.primary-toolbar .linked button.raised:focus:hover,
-toolbar.primary-toolbar .linked button.raised:focus:hover:active,
-toolbar.primary-toolbar .raised.linked button,
-toolbar.primary-toolbar .raised.linked button:hover,
-toolbar.primary-toolbar .raised.linked button:focus,
-toolbar.primary-toolbar .raised.linked button:focus:hover,
-toolbar.primary-toolbar .raised.linked button:focus:hover:active,
-toolbar.primary-toolbar .raised.raised button:disabled,
-toolbar.primary-toolbar combobox button,
-/* primary toolbar - generic element borders */
 toolbar.primary-toolbar entry,
 toolbar.primary-toolbar combobox entry,
 toolbar.primary-toolbar combobox button,
-toolbar.primary-toolbar button:active,
-toolbar.primary-toolbar button.raised:active,
-toolbar.primary-toolbar .raised button:active,
-toolbar.primary-toolbar button.raised:disabled,
-toolbar.primary-toolbar .raised button:disabled,
 toolbar.primary-toolbar switch,
 toolbar.primary-toolbar switch:disabled,
 toolbar.primary-toolbar combobox button:active,
-toolbar.primary-toolbar combobox button:disabled,
-/* primary toolbar - hover button borders */
-toolbar.primary-toolbar button:hover {
-	border-image: url("img/border.svg") 3 3 4 3 / 3px 3px 4px 3px repeat;
+toolbar.primary-toolbar combobox button:disabled {
+	border-image: url("img/border.png") 4 4 4 4 / 3px 3px 4px 3px repeat;
 	border-radius: 3px;
 	border-width: 1px 1px 2px 1px;
 	border-style: solid;

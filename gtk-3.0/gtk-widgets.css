@@ -526,6 +526,67 @@ button {
 	border-color: transparent;
 }
 
+/* generic button borders */
+button,
+button.flat:active,
+button.flat:hover,
+.menu-button:active,
+.titlebar button.titlebutton:hover,
+toolbar.primary-toolbar button:checked,
+toolbar.primary-toolbar button.raised,
+toolbar.primary-toolbar .linked button.raised,
+toolbar.primary-toolbar .linked button.raised:hover,
+toolbar.primary-toolbar .linked button.raised:focus,
+toolbar.primary-toolbar .linked button.raised:focus:hover,
+toolbar.primary-toolbar .linked button.raised:focus:hover:active,
+toolbar.primary-toolbar .raised.linked button,
+toolbar.primary-toolbar .raised.linked button:hover,
+toolbar.primary-toolbar .raised.linked button:focus,
+toolbar.primary-toolbar .raised.linked button:focus:hover,
+toolbar.primary-toolbar .raised.linked button:focus:hover:active,
+toolbar.primary-toolbar .raised.raised button:disabled,
+toolbar.primary-toolbar combobox button,
+/* primary toolbar - generic element borders */
+toolbar.primary-toolbar button:active,
+toolbar.primary-toolbar button.raised:active,
+toolbar.primary-toolbar .raised button:active,
+toolbar.primary-toolbar button.raised:disabled,
+toolbar.primary-toolbar .raised button:disabled,
+/* primary toolbar - hover button borders */
+toolbar.primary-toolbar button:hover {
+	border-image: url("img/border.png") 4 4 4 4 / 3px 3px 4px 3px repeat;
+	border-radius: 3px;
+	border-width: 1px 1px 2px 1px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+toolbar.primary-toolbar button,
+toolbar.primary-toolbar.horizontal button,
+toolbar.primary-toolbar.horizontal button:active,
+toolbar.primary-toolbar.inline-toolbar button,
+toolbar.primary-toolbar.inline-toolbar button:active {
+	padding: 14px 12px;
+}
+
+toolbar.primary-toolbar button {
+	border-color: transparent;
+	border-image: none 4 4 3 4 / 4 4 3 4 repeat;
+}
+
+/* Focused primary toolbar button background */
+button:focus,
+toolbar.primary-toolbar button:focus {
+	outline: none;
+	padding: 14px 12px;
+	border-image: url("img/pt-border-focus.png") 4 4 3 4 fill / 4 4 3 4 repeat;
+}
+
+/* Focused + prelit primary toolbar button background */
+toolbar.primary-toolbar button:focus:hover {
+	border-image: url("img/pt-border-focus-hover.png") 4 4 3 4 fill / 4 4 3 4 repeat;
+}
+
 button,
 button.menuitem.menubar,
 toolbar.inline-toolbar button,
@@ -546,8 +607,18 @@ toolbar.horizontal button:active,
 	background-color: transparent;
 }
 
-toolbar button,
+/* We may want a background for focused buttons, but in the meantime let's remove it */
+GtkMenuToolButton *,
+toolbar.horizontal button,
+toolbar.horizontal button.combo,
 toolbar.primary-toolbar button,
+toolbar.inline-toolbar button,
+toolbar.primary-toolbar button:disabled {
+	background-image: none;
+	background-color: transparent;
+}
+
+toolbar button,
 toolbar.horizontal button:hover,
 toolbar.horizontal button:active {
 	padding: 4px 6px;
@@ -580,24 +651,6 @@ toolbar.horizontal button:active {
 	border-right-width: 0px;
 }
 
-/* We may want a background for focused buttons, but in the meantime let's remove it */
-GtkMenuToolButton *,
-toolbar.horizontal button,
-toolbar.horizontal button.combo,
-toolbar.primary-toolbar button,
-toolbar.inline-toolbar button,
-toolbar.primary-toolbar button:disabled {
-	background-image: none;
-	background-color: transparent;
-}
-
-toolbar.primary-toolbar button {
-	border-image: none;
-	border-style: solid;
-	border-width: 1px 1px 2px 1px;
-	border-color: transparent;
-}
-
 toolbar.primary-toolbar button:checked,
 toolbar.inline-toolbar button:checked,
 button:active,
@@ -613,48 +666,6 @@ button:disabled,
 button:active:disabled {
 	color: @insensitive_fg;
 }
-
-/* Focused primary toolbar button background */
-button:focus,
-toolbar.primary-toolbar button:focus {
-	border-radius: 0;
-	border: 1px @pt_btn_sel_border solid;
-	background: @pt_btn_sel_fill;
-	outline: none;
-
-	/* XXX: using bg + border there will have issues with :hover
-		alternative hack - draw border + background via gradients
-		this will look janky, with weird corners and fill spilling-out on the sides */
-	/* background-image: */
-	/* 	linear-gradient( to bottom, */
-	/* 		@null 2px, */
-	/* 		@pt_btn_sel_border 2px, */
-	/* 		@pt_btn_sel_border 3px, */
-	/* 		@pt_btn_sel_fill 3px, */
-	/* 		@pt_btn_sel_fill calc(100%-3px), */
-	/* 		@pt_btn_sel_border calc(100%-3px), */
-	/* 		@pt_btn_sel_border calc(100%-2px), */
-	/* 		@null calc(100%-2px) ), */
-	/* 	linear-gradient( to right, */
-	/* 		@null 2px, */
-	/* 		@pt_btn_sel_border 2px, */
-	/* 		@pt_btn_sel_border 3px, */
-	/* 		@null 3px, */
-	/* 		@null calc(100%-3px), */
-	/* 		@pt_btn_sel_border calc(100%-3px), */
-	/* 		@pt_btn_sel_border calc(100%-2px), */
-	/* 		@null 2px ); */
-}
-
-/* Focused + prelit primary toolbar button background */
-/* XXX: this has two layers (focus + hover) in gtk2 */
-/* toolbar.primary-toolbar button:focus:hover { */
-/* 	background-image: linear-gradient(to bottom, */
-/* 		@pt_button_focus_hover_gradient_a, */
-/* 		@pt_button_focus_hover_gradient_b 50%, */
-/* 		@pt_button_focus_hover_gradient_c 50%, */
-/* 		@pt_button_focus_hover_gradient_d); */
-/* } */
 
 /* Button background */
 button,
@@ -696,14 +707,27 @@ toolbar.primary-toolbar button:focus:active,
 toolbar.primary-toolbar button:focus:hover:active,
 toolbar.inline-toolbar button:checked,
 toolbar.inline-toolbar button:hover:active {
-	background-image: linear-gradient(to bottom,
-		@button_active_gradient_a,
-		@button_active_gradient_b 3px,
-		@button_active_gradient_c 4px,
-		@button_active_gradient_d 50%,
-		@button_active_gradient_e 50%,
-		@button_active_gradient_f);
 	background-color: transparent;
+	background-image:
+		radial-gradient(
+			circle farthest-side at center center,
+			@button_active_glaze_glow_center,
+			@button_active_glaze_glow_edge ),
+		linear-gradient(to right,
+			@button_active_glaze_shadow_edge,
+			@button_active_glaze_shadow 3px,
+			alpha(@button_active_glaze_shadow, 0) 5px,
+			@null 5px, @null ),
+		linear-gradient(to bottom,
+			@button_active_glaze_shadow_edge,
+			@button_active_glaze_shadow 3px,
+			alpha(@button_active_glaze_shadow, 0) 5px,
+			@null 5px, @null ),
+		linear-gradient(to bottom,
+			@button_active_glaze_top,
+			@button_active_glaze_mid-a 49%,
+			@button_active_glaze_mid-b 49%,
+			@button_active_glaze_bot );
 }
 
 trough,
@@ -1661,17 +1685,16 @@ menuitem button.flat:active {
 	background-color: @menu_bg;
 	border-style: solid;
 	border-width: 1px;
-	border-color: @menubar_menuitem_hover_border;
+	border-color: @menuitem_hover_border;
 	border-radius: 3px 3px 0 0;
 	color: @menubar_menuitem_hover;
-	/* XXX: glaze effect here needs tweaking, lighter bg */
 	background-image: -gtk-gradient (linear,
 		left top,
 		left bottom,
-		from (@menubar_menuitem_hover_gradient_a),
-		color-stop (0.50, @menubar_menuitem_hover_gradient_b),
-		color-stop (0.50, @menubar_menuitem_hover_gradient_c),
-		to (@menubar_menuitem_hover_gradient_d));
+		from (@menuitem_hover_gradient_a),
+		color-stop (0.50, @menuitem_hover_gradient_b),
+		color-stop (0.50, @menuitem_hover_gradient_c),
+		to (@menuitem_hover_gradient_d));
 }
 
 menuitem button.flat:hover {
@@ -1704,7 +1727,7 @@ menu menuitem:hover,
 	border-radius: 0;
 	border-style: solid;
 	border-width: 1px;
-	border-color: @menubar_menuitem_hover_border;
+	border-color: @menuitem_hover_border;
 }
 
 treemenu menuitem:hover,
@@ -1713,15 +1736,15 @@ menu menuitem:hover,
 .menu menuitem:hover {
 	border-style: solid;
 	border-width: 1px;
-	border-color: @menubar_menuitem_hover_border;
+	border-color: @menuitem_hover_border;
 	color: @theme_selected_fg;
 	background-image: -gtk-gradient (linear,
 		left top,
 		left bottom,
-		from (@menubar_menuitem_hover_gradient_a),
-		color-stop (0.50, @menubar_menuitem_hover_gradient_b),
-		color-stop (0.50, @menubar_menuitem_hover_gradient_c),
-		to (@menubar_menuitem_hover_gradient_d));
+		from (@menuitem_hover_gradient_a),
+		color-stop (0.50, @menuitem_hover_gradient_b),
+		color-stop (0.50, @menuitem_hover_gradient_c),
+		to (@menuitem_hover_gradient_d));
 }
 
 menuitem:disabled,
@@ -2214,8 +2237,8 @@ row:selected:focus:hover,
 	background-image: -gtk-gradient (linear,
 	                  left top,
 	                  left bottom,
-	                  from (@menubar_menuitem_hover_gradient_a),
-	                  to (@menubar_menuitem_hover_gradient_d));
+	                  from (@menuitem_hover_gradient_a),
+	                  to (@menuitem_hover_gradient_d));
 }
 
 row:hover,
@@ -2224,8 +2247,8 @@ row:hover:focus,
 	background-image: -gtk-gradient (linear,
 	                  left top,
 	                  left bottom,
-	                  from (shade(@menubar_menuitem_hover_gradient_a, 1.2)),
-	                  to (shade(@menubar_menuitem_hover_gradient_d, 1.3)));
+	                  from (shade(@menuitem_hover_gradient_a, 1.2)),
+	                  to (shade(@menuitem_hover_gradient_d, 1.3)));
 }
 
 .cell {

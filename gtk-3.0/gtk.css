@@ -83,12 +83,17 @@
 
 @define-color button_active_text @theme_fg;
 
-@define-color button_active_gradient_a shade(@core_b, 0.85);
-@define-color button_active_gradient_b shade(@core_b, 0.90);
-@define-color button_active_gradient_c shade(@core_b, 0.91);
-@define-color button_active_gradient_d shade(@core_b, 0.86);
-@define-color button_active_gradient_e shade(@core_b, 0.84);
-@define-color button_active_gradient_f shade(@core_b, 0.80);
+@define-color button_active_glaze_shadow_edge alpha(shade(@theme_bg, 0.80), 0.8);
+@define-color button_active_glaze_shadow alpha(shade(@theme_bg, 0.84), 0.3);
+
+@define-color button_active_glaze_top alpha(shade(@theme_bg, 0.91), 0.8);
+@define-color button_active_glaze_mid-a alpha(shade(@theme_bg, 0.84), 0.8);
+@define-color button_active_glaze_mid-b alpha(shade(@theme_bg, 0.82), 0.8);
+@define-color button_active_glaze_bot alpha(shade(@theme_bg, 0.79), 0.8);
+
+@define-color button_active_glaze_glow shade(@theme_bg, 1.07);
+@define-color button_active_glaze_glow_center alpha(@button_active_glaze_glow, 0.5);
+@define-color button_active_glaze_glow_edge alpha(@button_active_glaze_glow, 0);
 
 /* insensitive */
 
@@ -108,23 +113,12 @@
 @define-color button_active_insensitive_gradient_e shade(@core_b, 0.99);
 @define-color button_active_insensitive_gradient_f shade(@core_b, 0.96);
 
-/* primary toolbar focused button bg/outline + hover */
-
-@define-color pt_btn_sel #ebc0ab;
-@define-color pt_btn_sel_fill alpha(@pt_btn_sel, 0.4);
-@define-color pt_btn_sel_border alpha(shade(@pt_btn_sel, 0.8), 0.7);
-
-@define-color pt_button_focus_hover_gradient_a mix(#fcfcfc, shade(@core_a, 1.09), 0.15);
-@define-color pt_button_focus_hover_gradient_b mix(#fcfcfc, shade(@core_a, 1.05), 0.15);
-@define-color pt_button_focus_hover_gradient_c mix(#fcfcfc, shade(@core_a, 1.01), 0.2);
-@define-color pt_button_focus_hover_gradient_d mix(#e8e8e8, shade(@core_a, 0.96), 0.2);
-
 /*****************
  * color chooser *
  *****************/
 
 @define-color color_swatch_border @border;
-@define-color color_swatch_hover_border @menubar_menuitem_hover_border;
+@define-color color_swatch_hover_border @menuitem_hover_border;
 
 @define-color color_active_badge_light_border @theme_fg;
 @define-color color_active_badge_light @color_active_badge_light_border;
@@ -221,12 +215,12 @@
 /* hover */
 
 @define-color menubar_menuitem_hover @theme_selected_fg;
-@define-color menubar_menuitem_hover_border shade(@core_a, 0.58);
+@define-color menuitem_hover_border shade(@core_a, 0.58);
 
-@define-color menubar_menuitem_hover_gradient_a @core_a;
-@define-color menubar_menuitem_hover_gradient_b shade(@core_a, 0.95);
-@define-color menubar_menuitem_hover_gradient_c shade(@core_a, 0.93);
-@define-color menubar_menuitem_hover_gradient_d shade(@core_a, 0.88);
+@define-color menuitem_hover_gradient_a @core_a;
+@define-color menuitem_hover_gradient_b shade(@core_a, 0.95);
+@define-color menuitem_hover_gradient_c shade(@core_a, 0.93);
+@define-color menuitem_hover_gradient_d shade(@core_a, 0.88);
 
 /************
  * notebook *
@@ -243,7 +237,7 @@
 
 /* active tab */
 
-@define-color notebook_active_tab_border @menubar_menuitem_hover_border;
+@define-color notebook_active_tab_border @menuitem_hover_border;
 
 @define-color notebook_active_tab_strip_gradient_a shade(@core_a, 1.05);
 @define-color notebook_active_tab_strip_gradient_b shade(@core_a, 0.94);
@@ -268,9 +262,9 @@
 @define-color progressbar_fill #915e49;
 
 @define-color progressbar_gradient_a @progressbar_fill;
-@define-color progressbar_gradient_b @menubar_menuitem_hover_gradient_b;
-@define-color progressbar_gradient_c @menubar_menuitem_hover_gradient_c;
-@define-color progressbar_gradient_d @menubar_menuitem_hover_gradient_d;
+@define-color progressbar_gradient_b @menuitem_hover_gradient_b;
+@define-color progressbar_gradient_c @menuitem_hover_gradient_c;
+@define-color progressbar_gradient_d @menuitem_hover_gradient_d;
 
 /*********
  * scale *
@@ -391,7 +385,7 @@
 
 @define-color switch_trough_active @theme_base;
 
-@define-color switch_trough_active_gradient_a @menubar_menuitem_hover_border;
+@define-color switch_trough_active_gradient_a @menuitem_hover_border;
 @define-color switch_trough_active_gradient_b shade(@core_a, 1.12);
 
 /* insensitive */
