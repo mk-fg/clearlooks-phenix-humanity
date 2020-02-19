@@ -221,6 +221,17 @@
 @define-color menubar_menuitem_hover @theme_selected_fg;
 @define-color menuitem_hover_border shade(@core_a, 0.58);
 
+@define-color menuitem_hover_glaze shade(@theme_selected_bg, 1.1);
+@define-color menuitem_hover_glaze_top alpha(shade(@menuitem_hover_glaze, 0.90), 0.8);
+@define-color menuitem_hover_glaze_mid-a alpha(shade(@menuitem_hover_glaze, 0.92), 0.8);
+@define-color menuitem_hover_glaze_mid-b alpha(shade(@menuitem_hover_glaze, 0.80), 0.8);
+@define-color menuitem_hover_glaze_bot alpha(shade(@menuitem_hover_glaze, 0.71), 0.8);
+
+@define-color menuitem_hover_glaze_glow shade(@theme_selected_bg, 1.2);
+@define-color menuitem_hover_glaze_glow_center alpha(@menuitem_hover_glaze_glow, 0.5);
+@define-color menuitem_hover_glaze_glow_edge alpha(@menuitem_hover_glaze_glow, 0);
+
+/* XXX: still used in places other from menubar on top */
 @define-color menuitem_hover_gradient_a @core_a;
 @define-color menuitem_hover_gradient_b shade(@core_a, 0.95);
 @define-color menuitem_hover_gradient_c shade(@core_a, 0.93);
