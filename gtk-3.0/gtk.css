@@ -68,14 +68,14 @@
  * button *
  **********/
 
-@define-color button_glaze_top alpha(shade(@theme_bg, 1.1), 0.8);
-@define-color button_glaze_mid-a alpha(shade(@theme_bg, 1.05), 0.8);
+@define-color button_glaze_top alpha(shade(@theme_bg, 1.05), 0.8);
+@define-color button_glaze_mid-a alpha(shade(@theme_bg, 1.03), 0.8);
 @define-color button_glaze_bot #ded2c6; /* not sure how this hue gets derived */
 @define-color button_glaze_mid-b shade(@button_glaze_bot, 1);
 
 @define-color button_glaze_glow shade(@theme_bg, 1.1);
-@define-color button_glaze_glow_center alpha(@button_hover_glaze_glow, 0.5);
-@define-color button_glaze_glow_edge alpha(@button_hover_glaze_glow, 0);
+@define-color button_glaze_glow_center alpha(@button_glaze_glow, 0.5);
+@define-color button_glaze_glow_edge alpha(@button_glaze_glow, 0);
 
 /* XXX: still used for some toolbar buttons - find/check these */
 @define-color button_gradient_a shade(@core_b, 1.07);
@@ -85,14 +85,13 @@
 
 /* hover */
 
-@define-color button_hover_glaze_top alpha(shade(@theme_bg, 1.08), 0.8);
-@define-color button_hover_glaze_mid-a alpha(shade(@theme_bg, 1.03), 0.8);
+@define-color button_hover_glaze_top alpha(shade(@theme_bg, 1.09), 0.8);
+@define-color button_hover_glaze_mid-a alpha(shade(@theme_bg, 1.05), 0.8);
 @define-color button_hover_glaze_mid-b alpha(shade(@theme_bg, 0.96), 0.8);
 @define-color button_hover_glaze_bot alpha(shade(@theme_bg, 0.93), 0.8);
 
-@define-color button_hover_glaze_glow shade(@theme_bg, 1.2);
-@define-color button_hover_glaze_glow_center alpha(@button_hover_glaze_glow, 0.6);
-@define-color button_hover_glaze_glow_edge alpha(@button_hover_glaze_glow, 0);
+@define-color button_hover_glaze_glow_center alpha(@button_glaze_glow, 0.8);
+@define-color button_hover_glaze_glow_edge alpha(@button_glaze_glow, 0);
 
 /* active */
 
@@ -110,23 +109,23 @@
 @define-color button_active_glaze_glow_center alpha(@button_active_glaze_glow, 0.5);
 @define-color button_active_glaze_glow_edge alpha(@button_active_glaze_glow, 0);
 
-/* insensitive */
+/* insensitive/disabled */
 
-@define-color button_insensitive_inner_border shade(@core_b, 1.05);
+@define-color button_disabled_glaze_top alpha(@button_glaze_top, 0.2);
+@define-color button_disabled_glaze_mid-a alpha(@button_glaze_mid-a, 0.2);
+@define-color button_disabled_glaze_mid-b alpha(@button_glaze_mid-b, 0.2);
+@define-color button_disabled_glaze_bot alpha(@button_glaze_bot, 0.2);
 
+@define-color button_disabled_glaze_glow_center alpha(@button_glaze_glow, 0.3);
+@define-color button_disabled_glaze_glow_edge alpha(@button_glaze_glow, 0);
+
+@define-color button_disabled_border alpha(shade(@theme_selected_bg, 0.9), 0.2);
+
+/* XXX: drop these */
 @define-color button_insensitive_gradient_a shade(@core_b, 1.04);
 @define-color button_insensitive_gradient_b shade(@core_b, 1.01);
 @define-color button_insensitive_gradient_c shade(@core_b, 0.99);
 @define-color button_insensitive_gradient_d shade(@core_b, 0.96);
-
-/* active insensitive */
-
-@define-color button_active_insensitive_gradient_a shade(@core_b, 0.98);
-@define-color button_active_insensitive_gradient_b shade(@core_b, 1.02);
-@define-color button_active_insensitive_gradient_c shade(@core_b, 1.03);
-@define-color button_active_insensitive_gradient_d shade(@core_b, 1.01);
-@define-color button_active_insensitive_gradient_e shade(@core_b, 0.99);
-@define-color button_active_insensitive_gradient_f shade(@core_b, 0.96);
 
 /* primary toolbar focused button outline background */
 

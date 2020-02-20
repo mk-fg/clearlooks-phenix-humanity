@@ -619,7 +619,7 @@ combobox button.combo,
 colorchooser #add-color-button {
 	background:
 		radial-gradient(
-			ellipse 110% 50%,
+			ellipse 90% 50%,
 			@button_glaze_glow_center,
 			@button_glaze_glow_edge ),
 		linear-gradient(to bottom,
@@ -645,6 +645,38 @@ colorchooser #add-color-button:hover {
 			@button_hover_glaze_mid-a 49%,
 			@button_hover_glaze_mid-b 49%,
 			@button_hover_glaze_bot );
+}
+
+/* Insensitive/disabled button */
+button:disabled,
+combobox button.combo:disabled,
+toolbar combobox button.combo:disabled {
+	border-image: none;
+	border-radius: 3px;
+	border: 1px @button_disabled_border solid;
+	background-image:
+		radial-gradient(
+			ellipse 90% 50%,
+			@button_disabled_glaze_glow_center,
+			@button_disabled_glaze_glow_edge ),
+		linear-gradient(to bottom,
+			@button_disabled_glaze_top,
+			@button_disabled_glaze_mid-a 49%,
+			@button_disabled_glaze_mid-b 49%,
+			@button_disabled_glaze_bot );
+}
+
+/* XXX: check pushed + disabled button */
+toolbar button:checked:disabled,
+toolbar combobox button.combo:checked:disabled {
+	background-image: linear-gradient(to bottom,
+		@button_active_insensitive_gradient_a,
+		@button_active_insensitive_gradient_b 3px,
+		@button_active_insensitive_gradient_c 4px,
+		@button_active_insensitive_gradient_d 50%,
+		@button_active_insensitive_gradient_e 50%,
+		@button_active_insensitive_gradient_f);
+	background-color: transparent;
 }
 
 /* We may want a background for focused buttons, but in the meantime let's remove it */
@@ -690,17 +722,6 @@ toolbar.horizontal button:active {
 .linked.raised button:first-child:hover:active {
 	border-right-width: 0px;
 }
-
-/* toolbar.primary-toolbar button:checked, */
-/* toolbar.inline-toolbar button:checked, */
-/* button:active, */
-/* button:active:focus, */
-/* button:focus, */
-/* button:hover { */
-/* 	background-color: @theme_selected_bg; */
-/* 	color: @button_active_text; */
-/* 	border-color: @theme_selected_bg; */
-/* } */
 
 button:disabled,
 button:active:disabled {
@@ -823,33 +844,6 @@ toolbar.primary-toolbar button:focus:hover {
 			@button_hover_glaze_mid-a 49%,
 			@button_hover_glaze_mid-b 49%,
 			@button_hover_glaze_bot );
-}
-
-/* Insensitive button background */
-button:disabled,
-combobox button.combo:disabled,
-toolbar combobox button.combo:disabled {
-	background-image: linear-gradient(to bottom,
-		@button_insensitive_inner_border 1px,
-		@button_insensitive_gradient_a 2px,
-		@button_insensitive_gradient_b 50%,
-		@button_insensitive_gradient_c 50%,
-		@button_insensitive_gradient_d);
-	background-color: @insensitive_bg;
-}
-
-/* Pushed + Insensitive button background */
-button:checked:disabled,
-toolbar button:checked:disabled,
-toolbar combobox button.combo:checked:disabled {
-	background-image: linear-gradient(to bottom,
-		@button_active_insensitive_gradient_a,
-		@button_active_insensitive_gradient_b 3px,
-		@button_active_insensitive_gradient_c 4px,
-		@button_active_insensitive_gradient_d 50%,
-		@button_active_insensitive_gradient_e 50%,
-		@button_active_insensitive_gradient_f);
-	background-color: transparent;
 }
 
 button separator {
