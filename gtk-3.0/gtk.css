@@ -68,6 +68,16 @@
  * button *
  **********/
 
+@define-color button_glaze_top alpha(shade(@theme_bg, 1.1), 0.8);
+@define-color button_glaze_mid-a alpha(shade(@theme_bg, 1.05), 0.8);
+@define-color button_glaze_bot #ded2c6; /* not sure how this hue gets derived */
+@define-color button_glaze_mid-b shade(@button_glaze_bot, 1);
+
+@define-color button_glaze_glow shade(@theme_bg, 1.1);
+@define-color button_glaze_glow_center alpha(@button_hover_glaze_glow, 0.5);
+@define-color button_glaze_glow_edge alpha(@button_hover_glaze_glow, 0);
+
+/* XXX: still used for some toolbar buttons - find/check these */
 @define-color button_gradient_a shade(@core_b, 1.07);
 @define-color button_gradient_b shade(@core_b, 1.06);
 @define-color button_gradient_c shade(@core_b, 1.04);
@@ -75,13 +85,13 @@
 
 /* hover */
 
-@define-color button_hover_glaze_top alpha(shade(@theme_bg, 1.1), 0.8);
-@define-color button_hover_glaze_mid-a alpha(shade(@theme_bg, 1.05), 0.8);
-@define-color button_hover_glaze_mid-b alpha(shade(@theme_bg, 0.985), 0.8);
-@define-color button_hover_glaze_bot alpha(shade(@theme_bg, 0.97), 0.8);
+@define-color button_hover_glaze_top alpha(shade(@theme_bg, 1.08), 0.8);
+@define-color button_hover_glaze_mid-a alpha(shade(@theme_bg, 1.03), 0.8);
+@define-color button_hover_glaze_mid-b alpha(shade(@theme_bg, 0.96), 0.8);
+@define-color button_hover_glaze_bot alpha(shade(@theme_bg, 0.93), 0.8);
 
-@define-color button_hover_glaze_glow shade(@theme_bg, 1.15);
-@define-color button_hover_glaze_glow_center alpha(@button_hover_glaze_glow, 0.5);
+@define-color button_hover_glaze_glow shade(@theme_bg, 1.2);
+@define-color button_hover_glaze_glow_center alpha(@button_hover_glaze_glow, 0.6);
 @define-color button_hover_glaze_glow_edge alpha(@button_hover_glaze_glow, 0);
 
 /* active */

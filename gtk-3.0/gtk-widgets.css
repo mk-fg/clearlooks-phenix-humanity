@@ -590,6 +590,7 @@ toolbar.primary-toolbar button:focus:hover {
 	border-image: url("img/pt-border-focus-hover.png") 4 4 3 4 / 4 4 3 4 repeat;
 }
 
+/* Common button stuff */
 button,
 button.menuitem.menubar,
 toolbar.inline-toolbar button,
@@ -599,15 +600,51 @@ toolbar.horizontal button,
 toolbar.horizontal button:active,
 .titlebar .linked.raised button,
 .titlebar .linked.raised button:active {
-	padding: 5px 8px 6px;
-	background-image: -gtk-gradient (linear,
-		left top,
-		left bottom,
-		from (@button_gradient_a),
-		color-stop (0.50, @button_gradient_b),
-		color-stop (0.50, @button_gradient_c),
-		to (@button_gradient_d));
+	padding: 4px 0 3px 0;
+	margin: 1px;
+}
+
+button,
+button.menuitem.menubar,
+toolbar.inline-toolbar button,
+toolbar.primary-toolbar button,
+toolbar.primary-toolbar button:active,
+toolbar.horizontal button,
+toolbar.horizontal button:active,
+spinbutton button,
+combobox button.combo,
+.titlebar .titlebutton:hover,
+.titlebar .linked.raised button,
+.titlebar .linked.raised button:active
+colorchooser #add-color-button {
+	background:
+		radial-gradient(
+			ellipse 110% 50%,
+			@button_glaze_glow_center,
+			@button_glaze_glow_edge ),
+		linear-gradient(to bottom,
+			@button_glaze_top,
+			@button_glaze_mid-a 49%,
+			@button_glaze_mid-b 49%,
+			@button_glaze_bot );
 	background-color: transparent;
+}
+
+button:active,
+button:hover,
+spinbutton button:hover,
+combobox button.combo:hover,
+colorchooser #add-color-button:hover {
+	background:
+		radial-gradient(
+			ellipse 110% 50%,
+			@button_hover_glaze_glow_center,
+			@button_hover_glaze_glow_edge ),
+		linear-gradient(to bottom,
+			@button_hover_glaze_top,
+			@button_hover_glaze_mid-a 49%,
+			@button_hover_glaze_mid-b 49%,
+			@button_hover_glaze_bot );
 }
 
 /* We may want a background for focused buttons, but in the meantime let's remove it */
@@ -654,36 +691,20 @@ toolbar.horizontal button:active {
 	border-right-width: 0px;
 }
 
-toolbar.primary-toolbar button:checked,
-toolbar.inline-toolbar button:checked,
-button:active,
-button:active:focus,
-button:focus,
-button:hover {
-	background-color: @theme_selected_bg;
-	color: @button_active_text;
-	border-color: @theme_selected_bg;
-}
+/* toolbar.primary-toolbar button:checked, */
+/* toolbar.inline-toolbar button:checked, */
+/* button:active, */
+/* button:active:focus, */
+/* button:focus, */
+/* button:hover { */
+/* 	background-color: @theme_selected_bg; */
+/* 	color: @button_active_text; */
+/* 	border-color: @theme_selected_bg; */
+/* } */
 
 button:disabled,
 button:active:disabled {
 	color: @insensitive_fg;
-}
-
-/* Button background */
-button,
-spinbutton button,
-combobox button.combo,
-.titlebar .titlebutton:hover,
-colorchooser #add-color-button {
-	background-image: -gtk-gradient (linear,
-		left top,
-		left bottom,
-		from (@button_gradient_a),
-		color-stop (0.50, @button_gradient_b),
-		color-stop (0.50, @button_gradient_c),
-		to (@button_gradient_d));
-	background-color: transparent;
 }
 
 /* Pushed button background */
@@ -769,18 +790,13 @@ trough.vertical {
 		@trough_gradient_b 4px);
 }
 
-/* Prelit button background */
-button:active,
-button:hover,
-spinbutton button:hover,
-combobox button.combo:hover,
+/* Toolbar button:hover */
 toolbar button:hover,
 toolbar button.raised:hover,
 toolbar .raised button:hover,
 toolbar combobox button.combo:hover,
 toolbar.primary-toolbar button:hover,
-toolbar.primary-toolbar combobox button.combo:hover,
-colorchooser #add-color-button:hover {
+toolbar.primary-toolbar combobox button.combo:hover {
 	background:
 		radial-gradient(
 			circle farthest-side,
