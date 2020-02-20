@@ -59,6 +59,11 @@
 @define-color focus_border mix(#acacac, shade(@core_a, 0.75), 0.54);
 @define-color insensitive_border shade(@core_b, 0.79);
 
+/* separator */
+
+@define-color separator_dark alpha(shade(@theme_bg, 0.73), 0.5);
+@define-color separator_hl alpha(shade(@theme_bg, 1.27), 0.5);
+
 /**********
  * button *
  **********/
