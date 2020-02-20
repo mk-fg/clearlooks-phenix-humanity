@@ -1,27 +1,22 @@
 * {
 	padding: 0;
-
 	background-clip: padding-box;
 
 	-GtkToolButton-icon-spacing: 4;
-
 	-GtkTextView-error-underline-color: @error;
-
 	-GtkScrolledWindow-scrollbar-spacing: 3;
-
 	-GtkToolItemGroup-expander-size: 11;
 
 	-GtkIMHtml-hyperlink-color: @link;
 	-GtkHTML-link-color: @link;
-
 	-WnckTasklist-fade-overlay-rect: 0;
 
 	outline-color: @focus_border;
 	outline-style: dashed;
 	outline-offset: -2px;
 	outline-width: 1px;
-
 	-gtk-outline-radius: 2px;
+
 	-gtk-icon-style: regular; /* disable symbolic icons */
 
 	-GtkWindow-resize-grip-width: 11;
@@ -91,9 +86,7 @@ tooltip *,
  *****************/
 
 @keyframes spin {
-	to {
-	    -gtk-icon-transform: rotate(1turn);
-	}
+	to { -gtk-icon-transform: rotate(1turn); }
 }
 spinner {
 	background-image: none;
@@ -110,10 +103,8 @@ spinner:active:disabled {
 }
 
 .floating-bar {
-	background-image: linear-gradient(
-	                  to bottom,
-	                  @theme_base 20%,
-	                  shade(@theme_base, 0.9));
+	background-image: linear-gradient( to bottom,
+		@theme_base 20%, shade(@theme_base, 0.9) );
 	background-color: @theme_base;
 	border-color: @border;
 	border-radius: 3px;
@@ -146,18 +137,16 @@ spinner:active:disabled {
 }
 
 .floating-bar .button {
-	background-color: alpha (@theme_base, 0.0);
+	background-color: transparent;
 	background-image: none;
 	border-style: none;
 	border-image: none;
-	/* -GtkButton-image-spacing: 0; */
-	/* -GtkButton-inner-border: 0; */
 }
 
 .rubberband,
 view rubberband,
 rubberband {
-	background-color: alpha (@theme_selected_bg, 0.35);
+	background-color: alpha(@theme_selected_bg, 0.35);
 	border-color: @theme_selected_bg;
 	border-style: solid;
 	border-width: 1px;
@@ -225,9 +214,8 @@ entry:focus {
 
 /* Insensitive entry background */
 entry:disabled {
-	background-image: linear-gradient(to bottom,
-	                  @entry_insensitive_inner_border 2px,
-	                  @entry_insensitive_bg 3px);
+	background-image: linear-gradient( to bottom,
+		@entry_insensitive_inner_border 2px, @entry_insensitive_bg 3px );
 }
 
 /*******************
@@ -839,16 +827,12 @@ button separator {
 	padding-right: 2px;
 }
 
-
-
-/* Toolbar separator element/line */
-
+/* Button separator element/line */
 toolbar separator {
 	border-left: solid 1px @separator_dark;
 	border-right: solid 1px @separator_hl;
 	margin: 10px 5px;
 }
-
 
 
 /*****************
@@ -1968,8 +1952,6 @@ toolbar.primary-toolbar {
 	-GtkWidget-window-dragging: true;
 	-GtkToolbar-button-relief: normal;
 }
-/* XXX: toolbar button backgrounds and hover effects */
-
 
 toolbar.primary-toolbar:disabled {
 	background-image: none;
@@ -1979,10 +1961,8 @@ toolbar.primary-toolbar:disabled {
 
 /* progressbars on primary toolbar entries are special */
 toolbar.primary-toolbar entry progress {
-	background-image: -gtk-gradient (linear,
-	                  left top, left bottom,
-	                  from (@trough_gradient_a),
-	                  to (@trough_gradient_b));
+	background-image: -gtk-gradient( linear,
+		left top, left bottom, from(@trough_gradient_a), to(@trough_gradient_b) );
 	border-width: 1px;
 	border-radius: 2px;
 	border-style: solid;
@@ -2579,9 +2559,7 @@ infobar:last-child,
  ************/
 
 .titlebar {
-	background-image: linear-gradient(to bottom,
-	                  @theme_base,
-	                  @theme_bg);
+	background-image: linear-gradient(to bottom, @theme_base, @theme_bg);
 	background-color: transparent;
 	border-radius: 0px;
 	border-bottom: 1px solid;
