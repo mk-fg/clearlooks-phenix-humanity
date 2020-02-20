@@ -466,6 +466,7 @@ scale:focus {
 scale:focus trough {
 }
 
+
 /**********
  * Frames *
  **********/
@@ -499,6 +500,20 @@ scrolledwindow viewport {
  * packed into a GtkScrolledWindow */
 scrolledwindow viewport.frame {
 	border-style: none;
+}
+
+
+/*************************
+ * Box/layout separators *
+ *************************/
+
+separator.vertical {
+	border-left: solid 1px @separator_dark;
+	border-right: solid 1px @separator_hl;
+}
+separator.horizontal {
+	border-top: solid 1px @separator_dark;
+	border-bottom: solid 1px @separator_hl;
 }
 
 
