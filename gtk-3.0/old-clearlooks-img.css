@@ -1,3 +1,9 @@
+/* Rules here are arcane and can be redundant with any updated ones,
+	but preserved in case they might apply somewhere where others do not,
+	which is possible with insane 100+-line selectors here. */
+/* Remove anything clearly obsoleted or unused here as much as possible */
+
+
 /**********
  * Assets *
  **********/
@@ -341,94 +347,6 @@ scale.vertical.scale-has-marks-below slider:disabled {
 }
 
 /*********
- * Menus *
- *********/
-
-menu menuitem check {
-	-gtk-icon-source: -gtk-scaled(url("img/menuitem-checkbox.png"),
-		url("img/menuitem-checkbox@2.png"));
-}
-
-menu menuitem check:hover {
-	-gtk-icon-source: -gtk-scaled(url("img/menuitem-checkbox-hover.png"),
-		url("img/menuitem-checkbox-hover@2.png"));
-}
-
-menu menuitem check:disabled {
-	-gtk-icon-source: -gtk-scaled(url("img/menuitem-checkbox-insensitive.png"),
-		url("img/menuitem-checkbox-insensitive@2.png"));
-}
-
-menu menuitem check:checked,
-menu menuitem check:active {
-	-gtk-icon-source: -gtk-scaled(url("img/menuitem-checkbox-checked.png"),
-		url("img/menuitem-checkbox-checked@2.png"));
-}
-
-menu menuitem check:checked:hover,
-menu menuitem check:active:hover {
-	-gtk-icon-source: -gtk-scaled(url("img/menuitem-checkbox-checked-hover.png"),
-		url("img/menuitem-checkbox-checked-hover@2.png"));
-}
-
-menu menuitem check:checked:disabled,
-menu menuitem check:active:disabled {
-	-gtk-icon-source: -gtk-scaled(url("img/menuitem-checkbox-checked-insensitive.png"),
-		url("img/menuitem-checkbox-checked-insensitive@2.png"));
-}
-
-menu menuitem check:indeterminate,
-menu menuitem radio:indeterminate {
-	-gtk-icon-source: -gtk-scaled(url("img/menuitem-checkbox-mixed.png"),
-		url("img/menuitem-checkbox-mixed@2.png"));
-}
-
-menu menuitem check:indeterminate:hover,
-menu menuitem radio:indeterminate:hover {
-	-gtk-icon-source: -gtk-scaled(url("img/menuitem-checkbox-mixed-hover.png"),
-		url("img/menuitem-checkbox-mixed-hover@2.png"));
-}
-
-menu menuitem check:indeterminate:disabled,
-menu menuitem radio:indeterminate:disabled {
-	-gtk-icon-source: -gtk-scaled(url("img/menuitem-checkbox-mixed-insensitive.png"),
-		url("img/menuitem-checkbox-mixed-insensitive@2.png"));
-}
-
-menu menuitem radio {
-	-gtk-icon-source: -gtk-scaled(url("img/menuitem-radio.png"),
-		url("img/menuitem-radio@2.png"));
-}
-
-menu menuitem radio:hover {
-	-gtk-icon-source: -gtk-scaled(url("img/menuitem-radio-hover.png"),
-		url("img/menuitem-radio-hover@2.png"));
-}
-
-menu menuitem radio:disabled {
-	-gtk-icon-source: -gtk-scaled(url("img/menuitem-radio-insensitive.png"),
-		url("img/menuitem-radio-insensitive@2.png"));
-}
-
-menu menuitem radio:checked,
-menu menuitem radio:active {
-	-gtk-icon-source: -gtk-scaled(url("img/menuitem-radio-checked.png"),
-		url("img/menuitem-radio-checked@2.png"));
-}
-
-menu menuitem radio:checked:hover,
-menu menuitem radio:active:hover {
-	-gtk-icon-source: -gtk-scaled(url("img/menuitem-radio-checked-hover.png"),
-		url("img/menuitem-radio-checked-hover@2.png"));
-}
-
-menu menuitem radio:checked:disabled,
-menu menuitem radio:active:disabled {
-	-gtk-icon-source: -gtk-scaled(url("img/menuitem-radio-checked-insensitive.png"),
-		url("img/menuitem-radio-checked-insensitive@2.png"));
-}
-
-/*********
  * Panes *
  *********/
 
@@ -453,18 +371,11 @@ paned.vertical > separator {
 /* generic element borders */
 entry,
 combobox entry,
-combobox entry button,
-button:active,
-trough,
-trough highlight,
 switch,
 toolbar.primary-toolbar entry,
 toolbar.primary-toolbar combobox entry,
-toolbar.primary-toolbar combobox button,
 toolbar.primary-toolbar switch,
-toolbar.primary-toolbar switch:disabled,
-toolbar.primary-toolbar combobox button:active,
-toolbar.primary-toolbar combobox button:disabled {
+toolbar.primary-toolbar switch:disabled {
 	border-image: url("img/border.png") 4 4 4 4 / 3px 3px 4px 3px repeat;
 	border-radius: 3px;
 	border-width: 1px 1px 2px 1px;
@@ -482,6 +393,18 @@ toolbar.primary-toolbar combobox entry:focus {
 	border-width: 1px 2px 2px;
 }
 
+/* generic insensitive element borders */
+switch:disabled,
+combobox entry:disabled,
+entry:disabled {
+	border-image: url("img/border-insensitive.svg") 3 3 4 3 / 3px 3px 4px 3px repeat;
+	border-radius: 3px;
+	border-width: 1px 1px 2px 1px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+/* XXX: no idea where/whether this madness is actually used */
 /* Linked single button */
 .linked entry:only-child,
 .linked button:only-child,
@@ -598,78 +521,6 @@ toolbar.inline-toolbar toolbutton button :only-child:focus,
 toolbar.inline-toolbar toolbutton button :only-child:focus:active,
 toolbar.inline-toolbar toolbutton button :only-child:disabled {
 	border-image: url("img/border-inline-button.svg") 3 3 4 3 / 3px 3px 4px 3px repeat;
-	border-radius: 3px;
-	border-width: 1px 1px 2px 1px;
-	border-style: solid;
-	border-color: transparent;
-}
-
-/* generic insensitive element borders */
-switch:disabled,
-combobox entry:disabled,
-combobox button:disabled,
-entry:disabled,
-button:disabled,
-trough row {
-	border-image: url("img/border-insensitive.svg") 3 3 4 3 / 3px 3px 4px 3px repeat;
-	border-radius: 3px;
-	border-width: 1px 1px 2px 1px;
-	border-style: solid;
-	border-color: transparent;
-}
-
-menuitem button.flat,
-button.flat,
-button.flat:disabled,
-list row button,
-list row button:hover {
-    border-image: none;
-    background-image: none;
-}
-
-/* focused element borders */
-entry:focus,
-combobox entry:focus,
-button.flat:focus:active,
-button:focus:active,
-button.default:active,
-/* focused button borders */
-button.flat:focus,
-button.default,
-toolbar.primary-toolbar entry:focus,
-toolbar.primary-toolbar button:active:focus,
-toolbar.primary-toolbar button:focus:hover,
-toolbar.primary-toolbar combobox entry:focus,
-toolbar.primary-toolbar combobox button:focus,
-toolbar.primary-toolbar button.raised:focus:active,
-toolbar.primary-toolbar .raised button:focus:active,
-toolbar.primary-toolbar button.raised.default:active,
-toolbar.primary-toolbar .raised button.default:active,
-toolbar.primary-toolbar combobox button:active:focus,
-toolbar.primary-toolbar button.raised:focus,
-toolbar.primary-toolbar button.raised.default,
-toolbar.primary-toolbar .raised button:focus,
-toolbar.primary-toolbar .raised button.default,
-toolbar.primary-toolbar combobox button:focus {
-	border-image: url("img/border-focused.svg") 3 3 4 3 / 3px 3px 4px 3px repeat;
-	border-radius: 3px;
-	border-width: 1px 1px 2px 1px;
-	border-style: solid;
-	border-color: transparent;
-}
-
-/* focused primary toolbar button borders */
-toolbar.primary-toolbar button:focus {
-	border-image: url("img/border-focused-ptb.svg") 3 3 4 3 / 3px 3px 4px 3px repeat;
-	border-radius: 3px;
-	border-width: 1px 1px 2px 1px;
-	border-style: solid;
-	border-color: transparent;
-}
-
-/* focused switch trough borders */
-switch:active {
-	border-image: url("img/border-focused-switch.svg") 3 3 4 3 / 3px 3px 4px 3px stretch;
 	border-radius: 3px;
 	border-width: 1px 1px 2px 1px;
 	border-style: solid;

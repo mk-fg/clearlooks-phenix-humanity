@@ -234,10 +234,10 @@
 @define-color menuitem_hover_border shade(@core_a, 0.58);
 
 @define-color menuitem_hover_glaze shade(@theme_selected_bg, 1.1);
-@define-color menuitem_hover_glaze_top alpha(shade(@menuitem_hover_glaze, 0.90), 0.8);
+@define-color menuitem_hover_glaze_top alpha(shade(@menuitem_hover_glaze, 0.88), 0.8);
 @define-color menuitem_hover_glaze_mid-a alpha(shade(@menuitem_hover_glaze, 0.92), 0.8);
 @define-color menuitem_hover_glaze_mid-b alpha(shade(@menuitem_hover_glaze, 0.80), 0.8);
-@define-color menuitem_hover_glaze_bot alpha(shade(@menuitem_hover_glaze, 0.71), 0.8);
+@define-color menuitem_hover_glaze_bot alpha(shade(@menuitem_hover_glaze, 0.73), 0.8);
 
 @define-color menuitem_hover_glaze_glow shade(@theme_selected_bg, 1.2);
 @define-color menuitem_hover_glaze_glow_center alpha(@menuitem_hover_glaze_glow, 0.5);
@@ -451,9 +451,13 @@
  * imports *
  ***********/
 
+@import url("base.css");
+
 @import url("old-clearlooks-img.css");
 @import url("old-clearlooks.css");
 
 @import url("buttons.css");
+@import url("menu.css");
+@import url("sliders.css");
 
 @import url("old-clearlooks-apps.css");

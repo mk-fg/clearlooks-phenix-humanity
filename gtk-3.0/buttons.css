@@ -1,4 +1,4 @@
-/* This css defines everything relating to buttons. */
+/* buttons.css: defines everything relating to buttons. */
 /* Anything button-like styled in other css files is a bug -
   - most likely legacy definition from clearlooks theme, which should be moved here. */
 /* Anything non-button-like styled here is likewise a bug. */
@@ -353,51 +353,33 @@ toolbar.primary-toolbar button.toggle:focus:hover {
 /* XXX: check and remove it all from here */
 
 /* XXX: check pushed + disabled button */
-toolbar button:checked:disabled {
-	background-image: linear-gradient(to bottom,
-		@button_active_insensitive_gradient_a,
-		@button_active_insensitive_gradient_b 3px,
-		@button_active_insensitive_gradient_c 4px,
-		@button_active_insensitive_gradient_d 50%,
-		@button_active_insensitive_gradient_e 50%,
-		@button_active_insensitive_gradient_f);
-	background-color: transparent;
-}
+/* toolbar button:checked:disabled { */
+/* 	background-image: linear-gradient(to bottom, */
+/* 		@button_active_insensitive_gradient_a, */
+/* 		@button_active_insensitive_gradient_b 3px, */
+/* 		@button_active_insensitive_gradient_c 4px, */
+/* 		@button_active_insensitive_gradient_d 50%, */
+/* 		@button_active_insensitive_gradient_e 50%, */
+/* 		@button_active_insensitive_gradient_f); */
+/* 	background-color: transparent; */
+/* } */
 
-/* XXX: path bar element */
-.path-bar button,
-.linked.path-bar > button,
-.path-bar button image,
-.path-bar button label {
-	padding: 2px;
-}
-.path-bar button {
-	border-width: 1px 0px 1px 1px;
-}
-.path-bar button:first-child,
-.path-bar button:first-child:hover:active {
-	border-right-width: 0px;
-}
-.path-bar button:only-child,
-.path-bar button:only-child:hover:active {
-	border-radius: 3px;
-	border-right-width: 1px;
-}
-
-/* XXX: trough? not sure what this is and why it's in buttons.css */
-
-trough,
-trough.highlight,
-trough row,
-trough row:hover {
-	background-image: linear-gradient(to bottom,
-		@trough_gradient_a,
-		@trough_gradient_b 4px);
-}
-
-/* Flipped pushed button background for vertical progressbar through and the like */
-trough.vertical {
-	background-image: linear-gradient(to right,
-		@trough_gradient_a,
-		@trough_gradient_b 4px);
-}
+/* XXX: check path bar element - should be buttons? */
+/* .path-bar button, */
+/* .linked.path-bar > button, */
+/* .path-bar button image, */
+/* .path-bar button label { */
+/* 	padding: 2px; */
+/* } */
+/* .path-bar button { */
+/* 	border-width: 1px 0px 1px 1px; */
+/* } */
+/* .path-bar button:first-child, */
+/* .path-bar button:first-child:hover:active { */
+/* 	border-right-width: 0px; */
+/* } */
+/* .path-bar button:only-child, */
+/* .path-bar button:only-child:hover:active { */
+/* 	border-radius: 3px; */
+/* 	border-right-width: 1px; */
+/* } */

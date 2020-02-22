@@ -1,0 +1,49 @@
+/* base.css: global least-specific rules affecting everything. */
+/* All rules relating to specific widgets (except window itself) should not be here. */
+
+* {
+	padding: 0;
+	background-clip: padding-box;
+
+	-GtkToolButton-icon-spacing: 4;
+	-GtkTextView-error-underline-color: @error;
+	-GtkScrolledWindow-scrollbar-spacing: 3;
+	-GtkToolItemGroup-expander-size: 11;
+
+	-GtkIMHtml-hyperlink-color: @link;
+	-GtkHTML-link-color: @link;
+	-WnckTasklist-fade-overlay-rect: 0;
+
+	outline-color: @focus_border;
+	outline-style: dashed;
+	outline-offset: -2px;
+	outline-width: 1px;
+	-gtk-outline-radius: 2px;
+
+	-gtk-icon-style: regular; /* disable symbolic icons */
+
+	-GtkWindow-resize-grip-width: 11;
+	-GtkWindow-resize-grip-height: 11;
+}
+
+window {
+	color: @theme_fg;
+	margin: 0px;
+}
+
+.background {
+	color: @theme_fg;
+	background-color: @theme_bg;
+}
+
+*:selected,
+*:selected:focus {
+	background-color: @theme_selected_bg;
+	color: @theme_selected_fg;
+}
+
+*:disabled {
+	background-color: @insensitive_bg;
+	color: @insensitive_fg;
+	text-shadow: 1px 1px @insensitive_text_shadow;
+}
