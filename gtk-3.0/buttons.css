@@ -132,8 +132,42 @@ button:checked {
 			@button_active_glaze_bot );
 }
 
+toolbar.primary-toolbar button:active,
+button:checked:focus,
+button:checked:active:focus:hover,
+button:active,
+button:active:hover {
+	/* Same as :checked + button:focus (orange fill + border) */
+	/* Used for mousedown effect on all normal buttons as well */
+	border-width: 1px;
+	border-image: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 5 4 repeat;
+	background:
+		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 7px)
+			linear-gradient(to bottom, @button_focus_fill_active, @button_focus_fill_active),
+		radial-gradient(
+			ellipse 110% 50%,
+			@button_active_glaze_glow_center,
+			@button_active_glaze_glow_edge ),
+		linear-gradient(to right,
+			@button_active_glaze_shadow_edge,
+			@button_active_glaze_shadow 2px,
+			alpha(@button_active_glaze_shadow, 0) 4px,
+			@null 4px, @null ),
+		linear-gradient(to bottom,
+			@button_active_glaze_shadow_edge,
+			@button_active_glaze_shadow 2px,
+			alpha(@button_active_glaze_shadow, 0) 4px,
+			@null 4px, @null ),
+		linear-gradient(to bottom,
+			@button_active_glaze_top,
+			@button_active_glaze_mid-a 49%,
+			@button_active_glaze_mid-b 49%,
+			@button_active_glaze_bot );
+}
+
 toolbar.primary-toolbar button.toggle:hover,
 button:checked:hover {
+	/* Regular hover + slight shadow */
 	background:
 		radial-gradient(
 			ellipse 110% 50%,
@@ -156,45 +190,12 @@ button:checked:hover {
 			@button_hover_glaze_bot );
 }
 
-toolbar.primary-toolbar button:active,
-button:checked:focus,
-button:checked:active:focus:hover,
-button:active,
-button:active:hover {
-	/* Same as :checked + button:focus (orange fill + border) */
-	/* Used for mousedown effect on all normal buttons as well */
-	border-width: 1px;
-	border-image: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 5 4 repeat;
-	background:
-		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 7px)
-			linear-gradient(to bottom, @button_focus_fill_dark, @button_focus_fill_dark),
-		radial-gradient(
-			ellipse 110% 50%,
-			@button_active_glaze_glow_center,
-			@button_active_glaze_glow_edge ),
-		linear-gradient(to right,
-			@button_active_glaze_shadow_edge,
-			@button_active_glaze_shadow 2px,
-			alpha(@button_active_glaze_shadow, 0) 4px,
-			@null 4px, @null ),
-		linear-gradient(to bottom,
-			@button_active_glaze_shadow_edge,
-			@button_active_glaze_shadow 2px,
-			alpha(@button_active_glaze_shadow, 0) 4px,
-			@null 4px, @null ),
-		linear-gradient(to bottom,
-			@button_active_glaze_top,
-			@button_active_glaze_mid-a 49%,
-			@button_active_glaze_mid-b 49%,
-			@button_active_glaze_bot );
-}
-
 button:checked:focus:hover {
 	border-width: 1px;
 	border-image: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 5 4 repeat;
 	background:
 		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 7px)
-			linear-gradient(to bottom, @button_focus_fill_dark, @button_focus_fill_dark),
+			linear-gradient(to bottom, @button_focus_fill_active, @button_focus_fill_active),
 		radial-gradient(
 			ellipse 110% 50%,
 			@button_hover_glaze_glow_center,
@@ -253,7 +254,7 @@ toolbar.primary-toolbar button:focus {
 	border-image: url("img/btn-border-focus.png") 4 4 3 4 / 4 4 3 4 repeat;
 	background:
 		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
-		linear-gradient(to bottom, @button_focus_fill, @button_focus_fill);
+			linear-gradient(to bottom, @button_focus_fill, @button_focus_fill);
 }
 
 /* Only active/hover buttons have borders here */

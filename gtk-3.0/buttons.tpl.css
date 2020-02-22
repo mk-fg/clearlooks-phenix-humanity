@@ -12,6 +12,73 @@
 		(e.g. "button:checked:focus:hover"), as each one uses custom background layers,
 		which otherwise replace each other, and do not combine automatically. */
 
+-ext {
+
+	-x-var-bg-glow:
+		radial-gradient(
+			ellipse 90% 50%,
+			@button_glaze_glow_center,
+			@button_glaze_glow_edge );
+	-x-var-bg-glow-hover:
+		radial-gradient(
+			ellipse 110% 50%,
+			@button_hover_glaze_glow_center,
+			@button_hover_glaze_glow_edge );
+	-x-var-bg-glow-hover-circle:
+		radial-gradient(
+			circle farthest-side,
+			@button_hover_glaze_glow_center,
+			@button_hover_glaze_glow_edge );
+
+	-x-var-bg-glaze:
+		linear-gradient(to bottom,
+			@button_glaze_top,
+			@button_glaze_mid-a 49%,
+			@button_glaze_mid-b 49%,
+			@button_glaze_bot );
+	-x-var-bg-glaze-hover:
+		linear-gradient(to bottom,
+			@button_hover_glaze_top,
+			@button_hover_glaze_mid-a 49%,
+			@button_hover_glaze_mid-b 49%,
+			@button_hover_glaze_bot );
+
+	-x-var-bg-focus:
+		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
+			linear-gradient(to bottom, @button_focus_fill, @button_focus_fill);
+	-x-var-bg-focus-active:
+		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 7px)
+			linear-gradient(to bottom, @button_focus_fill_active, @button_focus_fill_active);
+
+	/* Pushed-in glow + top/left shadow + dark glaze */
+	-x-var-bg-active-glow:
+		radial-gradient(
+			ellipse 110% 50%,
+			@button_active_glaze_glow_center,
+			@button_active_glaze_glow_edge );
+	-x-var-bg-active-glow-circle:
+		radial-gradient(
+			circle farthest-side,
+			@button_active_glaze_glow_center,
+			@button_active_glaze_glow_edge );
+	-x-var-bg-active:
+		linear-gradient(to right,
+			@button_active_glaze_shadow_edge,
+			@button_active_glaze_shadow 2px,
+			alpha(@button_active_glaze_shadow, 0) 4px,
+			@null 4px, @null ),
+		linear-gradient(to bottom,
+			@button_active_glaze_shadow_edge,
+			@button_active_glaze_shadow 2px,
+			alpha(@button_active_glaze_shadow, 0) 4px,
+			@null 4px, @null ),
+		linear-gradient(to bottom,
+			@button_active_glaze_top,
+			@button_active_glaze_mid-a 49%,
+			@button_active_glaze_mid-b 49%,
+			@button_active_glaze_bot );
+}
+
 button {
 	color: @theme_text;
 	min-height: 16px;
@@ -26,29 +93,15 @@ button {
 	border-width: 1px;
 
 	background:
-		radial-gradient(
-			ellipse 90% 50%,
-			@button_glaze_glow_center,
-			@button_glaze_glow_edge ),
-		linear-gradient(to bottom,
-			@button_glaze_top,
-			@button_glaze_mid-a 49%,
-			@button_glaze_mid-b 49%,
-			@button_glaze_bot );
+		-x-bg-glow,
+		-x-bg-glaze;
 	background-color: transparent;
 }
 
 button:hover {
 	background:
-		radial-gradient(
-			ellipse 110% 50%,
-			@button_hover_glaze_glow_center,
-			@button_hover_glaze_glow_edge ),
-		linear-gradient(to bottom,
-			@button_hover_glaze_top,
-			@button_hover_glaze_mid-a 49%,
-			@button_hover_glaze_mid-b 49%,
-			@button_hover_glaze_bot );
+		-x-bg-glow-hover,
+		-x-bg-glaze-hover;
 }
 
 button:focus {
@@ -56,32 +109,16 @@ button:focus {
 	border-width: 1px;
 	border-image: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 3 4 repeat;
 	background:
-		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
-			linear-gradient(to bottom, @button_focus_fill, @button_focus_fill),
-		radial-gradient(
-			ellipse 90% 50%,
-			@button_glaze_glow_center,
-			@button_glaze_glow_edge ),
-		linear-gradient(to bottom,
-			@button_glaze_top,
-			@button_glaze_mid-a 49%,
-			@button_glaze_mid-b 49%,
-			@button_glaze_bot );
+		-x-bg-focus,
+		-x-bg-glow,
+		-x-bg-glaze;
 }
 
 button:focus:hover {
 	background:
-		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
-			linear-gradient(to bottom, @button_focus_fill, @button_focus_fill),
-		radial-gradient(
-			ellipse 110% 50%,
-			@button_hover_glaze_glow_center,
-			@button_hover_glaze_glow_edge ),
-		linear-gradient(to bottom,
-			@button_hover_glaze_top,
-			@button_hover_glaze_mid-a 49%,
-			@button_hover_glaze_mid-b 49%,
-			@button_hover_glaze_bot );
+		-x-bg-focus,
+		-x-bg-glow-hover,
+		-x-bg-glaze-hover;
 }
 
 button:disabled {
@@ -106,48 +143,8 @@ button:checked {
 	padding: 5px 0 2px 0;
 	border-image-source: url("img/border-dark.png");
 	background:
-		radial-gradient(
-			ellipse 110% 50%,
-			@button_active_glaze_glow_center,
-			@button_active_glaze_glow_edge ),
-		linear-gradient(to right,
-			@button_active_glaze_shadow_edge,
-			@button_active_glaze_shadow 2px,
-			alpha(@button_active_glaze_shadow, 0) 4px,
-			@null 4px, @null ),
-		linear-gradient(to bottom,
-			@button_active_glaze_shadow_edge,
-			@button_active_glaze_shadow 2px,
-			alpha(@button_active_glaze_shadow, 0) 4px,
-			@null 4px, @null ),
-		linear-gradient(to bottom,
-			@button_active_glaze_top,
-			@button_active_glaze_mid-a 49%,
-			@button_active_glaze_mid-b 49%,
-			@button_active_glaze_bot );
-}
-
-button:checked:hover {
-	background:
-		radial-gradient(
-			ellipse 110% 50%,
-			@button_hover_glaze_glow_center,
-			@button_hover_glaze_glow_edge ),
-		linear-gradient(to right,
-			alpha(@button_active_glaze_shadow_edge, 0.3),
-			alpha(@button_active_glaze_shadow, 0.3) 3px,
-			alpha(@button_active_glaze_shadow, 0) 5px,
-			@null 5px, @null ),
-		linear-gradient(to bottom,
-			alpha(@button_active_glaze_shadow_edge, 0.3),
-			alpha(@button_active_glaze_shadow, 0.3) 3px,
-			alpha(@button_active_glaze_shadow, 0) 5px,
-			@null 5px, @null ),
-		linear-gradient(to bottom,
-			@button_hover_glaze_top,
-			@button_hover_glaze_mid-a 49%,
-			@button_hover_glaze_mid-b 49%,
-			@button_hover_glaze_bot );
+		-x-bg-active-glow,
+		-x-bg-active;
 }
 
 button:checked:focus,
@@ -159,39 +156,34 @@ button:active:hover {
 	border-width: 1px;
 	border-image: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 5 4 repeat;
 	background:
-		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 7px)
-			linear-gradient(to bottom, @button_focus_fill_dark, @button_focus_fill_dark),
-		radial-gradient(
-			ellipse 110% 50%,
-			@button_active_glaze_glow_center,
-			@button_active_glaze_glow_edge ),
+		-x-bg-focus-active,
+		-x-bg-active-glow,
+		-x-bg-active;
+}
+
+button:checked:hover {
+	/* Regular hover + slight shadow */
+	background:
+		-x-bg-glow-hover,
 		linear-gradient(to right,
-			@button_active_glaze_shadow_edge,
-			@button_active_glaze_shadow 2px,
-			alpha(@button_active_glaze_shadow, 0) 4px,
-			@null 4px, @null ),
+			alpha(@button_active_glaze_shadow_edge, 0.3),
+			alpha(@button_active_glaze_shadow, 0.3) 3px,
+			alpha(@button_active_glaze_shadow, 0) 5px,
+			@null 5px, @null ),
 		linear-gradient(to bottom,
-			@button_active_glaze_shadow_edge,
-			@button_active_glaze_shadow 2px,
-			alpha(@button_active_glaze_shadow, 0) 4px,
-			@null 4px, @null ),
-		linear-gradient(to bottom,
-			@button_active_glaze_top,
-			@button_active_glaze_mid-a 49%,
-			@button_active_glaze_mid-b 49%,
-			@button_active_glaze_bot );
+			alpha(@button_active_glaze_shadow_edge, 0.3),
+			alpha(@button_active_glaze_shadow, 0.3) 3px,
+			alpha(@button_active_glaze_shadow, 0) 5px,
+			@null 5px, @null ),
+		-x-bg-glaze-hover;
 }
 
 button:checked:focus:hover {
 	border-width: 1px;
 	border-image: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 5 4 repeat;
 	background:
-		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 7px)
-			linear-gradient(to bottom, @button_focus_fill_dark, @button_focus_fill_dark),
-		radial-gradient(
-			ellipse 110% 50%,
-			@button_hover_glaze_glow_center,
-			@button_hover_glaze_glow_edge ),
+		-x-bg-focus-active,
+		-x-bg-glow-hover,
 		linear-gradient(to right,
 			alpha(@button_active_glaze_shadow_edge, 0.3),
 			alpha(@button_active_glaze_shadow, 0.3) 3px,
@@ -202,11 +194,7 @@ button:checked:focus:hover {
 			alpha(@button_active_glaze_shadow, 0.3) 3px,
 			alpha(@button_active_glaze_shadow, 0) 5px,
 			@null 5px, @null ),
-		linear-gradient(to bottom,
-			@button_hover_glaze_top,
-			@button_hover_glaze_mid-a 49%,
-			@button_hover_glaze_mid-b 49%,
-			@button_hover_glaze_bot );
+		-x-bg-glaze-hover;
 }
 
 
@@ -219,15 +207,8 @@ toolbar button {
 
 toolbar button:hover {
 	background:
-		radial-gradient(
-			circle farthest-side,
-			@button_hover_glaze_glow_center,
-			@button_hover_glaze_glow_edge ),
-		linear-gradient(to bottom,
-			@button_hover_glaze_top,
-			@button_hover_glaze_mid-a 49%,
-			@button_hover_glaze_mid-b 49%,
-			@button_hover_glaze_bot );
+		-x-bg-glow-hover-circle,
+		-x-bg-glaze-hover;
 }
 
 
@@ -245,8 +226,7 @@ toolbar.primary-toolbar button:focus {
 	border-width: 1px;
 	border-image: url("img/btn-border-focus.png") 4 4 3 4 / 4 4 3 4 repeat;
 	background:
-		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
-		linear-gradient(to bottom, @button_focus_fill, @button_focus_fill);
+		-x-bg-focus;
 }
 
 toolbar.primary-toolbar -ext {
@@ -262,17 +242,9 @@ toolbar.primary-toolbar button:focus:hover {
 	border-width: 1px;
 	border-image: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 3 4 repeat;
 	background:
-		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
-			linear-gradient(to bottom, @button_focus_fill, @button_focus_fill),
-		radial-gradient(
-			circle farthest-side,
-			@button_hover_glaze_glow_center,
-			@button_hover_glaze_glow_edge ),
-		linear-gradient(to bottom,
-			@button_hover_glaze_top,
-			@button_hover_glaze_mid-a 49%,
-			@button_hover_glaze_mid-b 49%,
-			@button_hover_glaze_bot );
+		-x-bg-focus,
+		-x-bg-glow-hover-circle,
+		-x-bg-glaze-hover;
 }
 
 /* Pushed/toggled button (Gtk.ToggleButton) */
@@ -287,39 +259,17 @@ toolbar.primary-toolbar button.toggle:focus:active:hover {
 	/* button:checked (dark-bg + shadow) + button:focus (orange fill + border) */
 	border-image: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 3 4 repeat;
 	background:
-		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
-			linear-gradient(to bottom, @button_focus_fill, @button_focus_fill),
-		radial-gradient(
-			circle farthest-side,
-			@button_active_glaze_glow_center,
-			@button_active_glaze_glow_edge ),
-		linear-gradient(to right,
-			@button_active_glaze_shadow_edge,
-			@button_active_glaze_shadow 2px,
-			alpha(@button_active_glaze_shadow, 0) 4px,
-			@null 4px, @null ),
-		linear-gradient(to bottom,
-			@button_active_glaze_shadow_edge,
-			@button_active_glaze_shadow 2px,
-			alpha(@button_active_glaze_shadow, 0) 4px,
-			@null 4px, @null ),
-		linear-gradient(to bottom,
-			@button_active_glaze_top,
-			@button_active_glaze_mid-a 49%,
-			@button_active_glaze_mid-b 49%,
-			@button_active_glaze_bot );
+		-x-bg-focus,
+		-x-bg-active-glow-circle,
+		-x-bg-active;
 }
 
 toolbar.primary-toolbar button.toggle:focus:hover {
 	/* same as button.toggle:focus but with bg layers from button:checked:hover */
 	border-image: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 3 4 repeat;
 	background:
-		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
-			linear-gradient(to bottom, @button_focus_fill, @button_focus_fill),
-		radial-gradient(
-			circle farthest-side,
-			@button_hover_glaze_glow_center,
-			@button_hover_glaze_glow_edge ),
+		-x-bg-focus,
+		-x-bg-glow-hover-circle,
 		linear-gradient(to right,
 			alpha(@button_active_glaze_shadow_edge, 0.3),
 			alpha(@button_active_glaze_shadow, 0.3) 3px,
@@ -330,11 +280,7 @@ toolbar.primary-toolbar button.toggle:focus:hover {
 			alpha(@button_active_glaze_shadow, 0.3) 3px,
 			alpha(@button_active_glaze_shadow, 0) 5px,
 			@null 5px, @null ),
-		linear-gradient(to bottom,
-			@button_hover_glaze_top,
-			@button_hover_glaze_mid-a 49%,
-			@button_hover_glaze_mid-b 49%,
-			@button_hover_glaze_bot );
+		-x-bg-glaze-hover;
 }
 
 /* Mousedown effect is same as button:checked without :focus */

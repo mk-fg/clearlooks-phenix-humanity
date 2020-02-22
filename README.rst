@@ -31,7 +31,8 @@ for simple theme usage, only for editing it.
 Templating is intended to keep css clean and explicit wrt what is defined where.
 
 All templating rules are processed from regular css statements with ``-ext``
-selector, taking both selectors and rules there into account.
+selector, taking both selectors and rules there into account, removing these
+sections afterwards.
 
 Supported templating rules:
 
@@ -39,9 +40,8 @@ Supported templating rules:
 
     toolbar -ext { -x-same-as: button:active, button:hover; }
 
-  Removes this whole block, finds statements for "button:active" and
-  "button:hover" selectors within same css and prepends "toolbar button:active,"
-  and "toolbar button:hover," (prefixed) selectors to that.
+  Finds statements for "button:active" and "button:hover" selectors within same css
+  and prepends "toolbar button:active," and "toolbar button:hover," (prefixed) selectors to that.
 
   Needed because of css selector precedence logic, where e.g. overriding
   background in "toolbar button" will also affect "toolbar button:hover"
@@ -59,12 +59,46 @@ Supported templating rules:
   to toolbar buttons together, instead of spreading them as selector prefixes
   all over the place.
 
+- ``-x-var-*``::
+
+    -ext {
+      -x-var-bg-glow:
+        radial-gradient(
+          ellipse 90% 50%,
+          @button_glaze_glow_center,
+          @button_glaze_glow_edge );
+      -x-var-border-rules:
+        border-width: 1px\
+        border-color: red\
+        border-style: solid\;
+    }
+
+    ...
+
+    button {
+      -x-border-rules
+      background:
+        -x-bg-glow,
+        linear-gradient(to bottom,
+          @button_glaze_top,
+          @button_glaze_mid-a 49%,
+          @button_glaze_mid-b 49%,
+          @button_glaze_bot );
+    }
+
+  Simple non-nested variable substitution, which works for any strings in any context.
+
+  I.e. after ``-x-var-bg-glow``, ``(?<=[^-\w])-x-bg-glow(?=[^-\w])`` will be
+  replaced in css everywhere via re.sub(). Note the non-word/dash delimiters.
+
+  Use ``\`` to have ``;`` in the replacement string and ``\\`` to get literal backslash.
+
 Run e.g. ``diff -uw gtk-3.0/buttons{.tpl,}.css`` for a more concrete
 transformation examples.
 css-templater.py also prints diffs with -v/--verbose option.
 
-Other common CSS templating system - SASS/SCSS - doesn't handle all such cases
-well, unfortunately, hence this custom system.
+Other common CSS templating system - SASS/SCSS - doesn't handle all use-cases
+above well, unfortunately, hence this custom system.
 
 .. _css-templater.py: css-templater.py
 

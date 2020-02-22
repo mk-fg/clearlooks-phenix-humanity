@@ -3,7 +3,7 @@
  ***********************************************************************/
 
 /* Defines all colors used in other stylesheets before including them. */
-/* Any color tweaked or defined elsewhere is a bug. */
+/* Any color shaded or defined elsewhere is a bug, occasional alpha() is OK. */
 
 @define-color theme_base #fff;
 
@@ -127,7 +127,7 @@
 /* focused button outline background */
 
 @define-color button_focus_fill alpha(shade(@theme_selected_bg, 1.6), 0.15);
-@define-color button_focus_fill_dark alpha(shade(@theme_selected_bg, 1.5), 0.2);
+@define-color button_focus_fill_active alpha(shade(@theme_selected_bg, 1.5), 0.2);
 
 /*****************
  * color chooser *

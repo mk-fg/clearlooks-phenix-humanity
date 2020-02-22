@@ -39,6 +39,9 @@ def template(css_tpl, print_diffs=False):
 
 	# Build by-selector index of statements and extensions
 	ext_idx, st_idx = cs.defaultdict(list), cs.defaultdict(list)
+	# Also dict of all -x-var-* variables to find/replace later
+	ext_vars = dict()
+
 	for st in tx.model.get_children_of_type('statement', m):
 		sel_exts = list(s for s in st.sels if '-ext' in s.atoms)
 		if not sel_exts:
@@ -53,16 +56,17 @@ def template(css_tpl, print_diffs=False):
 
 		sel_prefixes = list( # remaining selectors with -ext stripped
 			filter(None, (' '.join(a for a in s.atoms if a != '-ext') for s in sel_exts)) )
-		if not sel_prefixes:
-			raise TemplateError('Bogus st with -ext selector and no prefixes: {st_str!r}')
 
 		for rule in st.rules:
 			if not rule.name: continue # comment
 			if rule.name in ['-x-same-as', '-x-same-rules']:
+				if not sel_prefixes:
+					raise TemplateError(f'Bogus statement with -ext selector and no prefixes: {st_str!r}')
 				prefix = rule.name == '-x-same-as'
 				for s in rule.val.split(','):
 					s = tuple(s.strip().split())
 					ext_idx[s].append(Ext(sel_prefixes, prefix=prefix))
+			elif rule.name.startswith('-x-var-'): ext_vars[rule.name[7:]] = rule.val
 			else: raise TemplateError(f'Unrecognized extension rule: {rule.name!r} = {rule.val!r}')
 
 	# Add Subst with extra selectors/prefixes before all matching statements
@@ -85,7 +89,12 @@ def template(css_tpl, print_diffs=False):
 		head, tail = css[:s.a], css[s.b:]
 		if s.strip_tail: tail = tail.lstrip()
 		css = head + s.s + tail
-	# Done!
+
+	# Substitute all variables set via -x-var-* to ext_vars
+	for k, v in sorted(ext_vars.items(), key=lambda kv: -len(kv[0])):
+		v = v.replace('\\\\', '\ue000').replace('\\', ';').replace('\ue000', '\\')
+		css = re.sub( r'(?<=[^-\w])' +
+			re.escape(f'-x-{k}') + r'(?=[^-\w])', lambda m: v, css )
 
 	if print_diffs:
 		if not hasattr(template, 'diff_cmd'):
