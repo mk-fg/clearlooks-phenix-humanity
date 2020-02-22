@@ -148,9 +148,8 @@ toolbar.primary-toolbar button {
 }
 
 toolbar.primary-toolbar -ext {
-	-x-same-as: button:active, button:hover, button:focus;
-}
-
+	/* Rule above will override :hover and such, hence restoring them here */
+	-x-same-as: button:active, button:hover, button:focus; }
 toolbar.primary-toolbar button.toggle -ext { -x-same-rules: button:checked; }
 toolbar.primary-toolbar button.toggle:hover -ext { -x-same-rules: button:checked:hover; }
 

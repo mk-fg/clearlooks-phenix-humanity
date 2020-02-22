@@ -456,8 +456,9 @@
  * imports *
  ***********/
 
-/* XXX: rename old clearlooks css files to indicate deprecation */
-@import url("gtk-widgets-img.css");
-@import url("gtk-widgets.css");
+@import url("old-clearlooks-img.css");
+@import url("old-clearlooks.css");
+
 @import url("buttons.css");
-@import url("applications.css");
+
+@import url("old-clearlooks-apps.css");
