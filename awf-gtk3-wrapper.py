@@ -56,7 +56,7 @@ def awf_wrapper(ctx, debounce=0, rebuild_templates=False):
 				reload_ts = ts
 				print(f'\r                              \n[{ts_str}] ----- reload -----')
 				if rebuild_templates and not run_tpl_rebuild(tpl_script, tpl_dir):
-					print('WARNING: template-rebuild script failed')
+					print(f'[{ts_str}] --- WARNING: template-rebuild script failed')
 				awf.send_signal(signal.SIGHUP)
 				continue
 			else:
