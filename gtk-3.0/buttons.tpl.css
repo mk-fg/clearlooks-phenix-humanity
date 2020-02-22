@@ -13,6 +13,8 @@
 		which otherwise replace each other, and do not combine automatically. */
 
 -ext {
+	/* Definitions for often-repeated button background layers and borders */
+	/* These are later composited in "background:" and "border-image:" rule values */
 
 	-x-var-bg-glow:
 		radial-gradient(
@@ -77,7 +79,15 @@
 			@button_active_glaze_mid-a 49%,
 			@button_active_glaze_mid-b 49%,
 			@button_active_glaze_bot );
+
+	-x-var-border-none: none 4 4 3 4 / 4 4 3 4 repeat;
+	-x-var-border: url("img/border.png") 4 4 3 4 / 4 4 3 4 repeat;
+	-x-var-border-dark: url("img/border-dark.png") 4 4 3 4 / 4 4 3 4 repeat;
+	-x-var-border-focus-only: url("img/btn-border-focus.png") 4 4 3 4 / 4 4 3 4 repeat;
+	-x-var-border-focus-outer: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 3 4 repeat;
+	-x-var-border-focus-outer-checked: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 5 4 repeat;
 }
+
 
 button {
 	color: @theme_text;
@@ -86,39 +96,40 @@ button {
 	margin: 1px;
 	padding: 4px 0 3px 0;
 
+	/* Note: setting consistent border-width everywhere prevents buttons "jumping" by 1px */
 	border-style: solid;
 	border-color: transparent;
-	border-image: url("img/border.png") 4 4 3 4 / 4 4 3 4 repeat;
 	border-radius: 3px;
 	border-width: 1px;
+	border-image: -x-var-border;
 
 	background:
-		-x-bg-glow,
-		-x-bg-glaze;
+		-x-var-bg-glow,
+		-x-var-bg-glaze;
 	background-color: transparent;
 }
 
 button:hover {
 	background:
-		-x-bg-glow-hover,
-		-x-bg-glaze-hover;
+		-x-var-bg-glow-hover,
+		-x-var-bg-glaze-hover;
 }
 
 button:focus {
 	outline: none;
 	border-width: 1px;
-	border-image: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 3 4 repeat;
+	border-image: -x-var-border-focus-outer;
 	background:
-		-x-bg-focus,
-		-x-bg-glow,
-		-x-bg-glaze;
+		-x-var-bg-focus,
+		-x-var-bg-glow,
+		-x-var-bg-glaze;
 }
 
 button:focus:hover {
 	background:
-		-x-bg-focus,
-		-x-bg-glow-hover,
-		-x-bg-glaze-hover;
+		-x-var-bg-focus,
+		-x-var-bg-glow-hover,
+		-x-var-bg-glaze-hover;
 }
 
 button:disabled {
@@ -141,10 +152,10 @@ button:disabled {
 button:checked {
 	/* Also used for mousedown effect on non-focus toolbar buttons */
 	padding: 5px 0 2px 0;
-	border-image-source: url("img/border-dark.png");
+	border-image: -x-var-border-dark;
 	background:
-		-x-bg-active-glow,
-		-x-bg-active;
+		-x-var-bg-active-glow,
+		-x-var-bg-active;
 }
 
 button:checked:focus,
@@ -154,17 +165,17 @@ button:active:hover {
 	/* Same as :checked + button:focus (orange fill + border) */
 	/* Used for mousedown effect on all normal buttons as well */
 	border-width: 1px;
-	border-image: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 5 4 repeat;
+	border-image: -x-var-border-focus-outer-checked;
 	background:
-		-x-bg-focus-active,
-		-x-bg-active-glow,
-		-x-bg-active;
+		-x-var-bg-focus-active,
+		-x-var-bg-active-glow,
+		-x-var-bg-active;
 }
 
 button:checked:hover {
 	/* Regular hover + slight shadow */
 	background:
-		-x-bg-glow-hover,
+		-x-var-bg-glow-hover,
 		linear-gradient(to right,
 			alpha(@button_active_glaze_shadow_edge, 0.3),
 			alpha(@button_active_glaze_shadow, 0.3) 3px,
@@ -175,15 +186,15 @@ button:checked:hover {
 			alpha(@button_active_glaze_shadow, 0.3) 3px,
 			alpha(@button_active_glaze_shadow, 0) 5px,
 			@null 5px, @null ),
-		-x-bg-glaze-hover;
+		-x-var-bg-glaze-hover;
 }
 
 button:checked:focus:hover {
 	border-width: 1px;
-	border-image: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 5 4 repeat;
+	border-image: -x-var-border-focus-outer-checked;
 	background:
-		-x-bg-focus-active,
-		-x-bg-glow-hover,
+		-x-var-bg-focus-active,
+		-x-var-bg-glow-hover,
 		linear-gradient(to right,
 			alpha(@button_active_glaze_shadow_edge, 0.3),
 			alpha(@button_active_glaze_shadow, 0.3) 3px,
@@ -194,7 +205,7 @@ button:checked:focus:hover {
 			alpha(@button_active_glaze_shadow, 0.3) 3px,
 			alpha(@button_active_glaze_shadow, 0) 5px,
 			@null 5px, @null ),
-		-x-bg-glaze-hover;
+		-x-var-bg-glaze-hover;
 }
 
 
@@ -207,8 +218,8 @@ toolbar button {
 
 toolbar button:hover {
 	background:
-		-x-bg-glow-hover-circle,
-		-x-bg-glaze-hover;
+		-x-var-bg-glow-hover-circle,
+		-x-var-bg-glaze-hover;
 }
 
 
@@ -217,16 +228,16 @@ toolbar button:hover {
 toolbar.primary-toolbar button {
 	padding: 14px 12px;
 	border-color: transparent;
-	border-image: none 4 4 3 4 / 4 4 3 4 repeat;
+	border-image: -x-var-border-none;
 	background-image: none;
 	background-color: transparent;
 }
 
 toolbar.primary-toolbar button:focus {
 	border-width: 1px;
-	border-image: url("img/btn-border-focus.png") 4 4 3 4 / 4 4 3 4 repeat;
+	border-image: -x-var-border-focus-only;
 	background:
-		-x-bg-focus;
+		-x-var-bg-focus;
 }
 
 toolbar.primary-toolbar -ext {
@@ -236,15 +247,15 @@ toolbar.primary-toolbar -ext {
 /* Only active/hover buttons have borders here */
 toolbar.primary-toolbar button:active,
 toolbar.primary-toolbar button:hover {
-	border-image: url("img/border.png") 4 4 3 4 / 4 4 3 4 repeat;
+	border-image: -x-var-border;
 }
 toolbar.primary-toolbar button:focus:hover {
 	border-width: 1px;
-	border-image: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 3 4 repeat;
+	border-image: -x-var-border-focus-outer;
 	background:
-		-x-bg-focus,
-		-x-bg-glow-hover-circle,
-		-x-bg-glaze-hover;
+		-x-var-bg-focus,
+		-x-var-bg-glow-hover-circle,
+		-x-var-bg-glaze-hover;
 }
 
 /* Pushed/toggled button (Gtk.ToggleButton) */
@@ -257,19 +268,19 @@ toolbar.primary-toolbar button.toggle:hover -ext { -x-same-rules: button:checked
 toolbar.primary-toolbar button.toggle:focus,
 toolbar.primary-toolbar button.toggle:focus:active:hover {
 	/* button:checked (dark-bg + shadow) + button:focus (orange fill + border) */
-	border-image: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 3 4 repeat;
+	border-image: -x-var-border-focus-outer;
 	background:
-		-x-bg-focus,
-		-x-bg-active-glow-circle,
-		-x-bg-active;
+		-x-var-bg-focus,
+		-x-var-bg-active-glow-circle,
+		-x-var-bg-active;
 }
 
 toolbar.primary-toolbar button.toggle:focus:hover {
 	/* same as button.toggle:focus but with bg layers from button:checked:hover */
-	border-image: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 3 4 repeat;
+	border-image: -x-var-border-focus-outer;
 	background:
-		-x-bg-focus,
-		-x-bg-glow-hover-circle,
+		-x-var-bg-focus,
+		-x-var-bg-glow-hover-circle,
 		linear-gradient(to right,
 			alpha(@button_active_glaze_shadow_edge, 0.3),
 			alpha(@button_active_glaze_shadow, 0.3) 3px,
@@ -280,7 +291,7 @@ toolbar.primary-toolbar button.toggle:focus:hover {
 			alpha(@button_active_glaze_shadow, 0.3) 3px,
 			alpha(@button_active_glaze_shadow, 0) 5px,
 			@null 5px, @null ),
-		-x-bg-glaze-hover;
+		-x-var-bg-glaze-hover;
 }
 
 /* Mousedown effect is same as button:checked without :focus */

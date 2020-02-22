@@ -82,7 +82,7 @@ def template(css_tpl, print_diffs=False):
 		sel_exts = sorted(set(sel_exts))
 		substs.append(Subst(pos, s='\n'.join(sel_exts) + '\n'))
 
-	# Perform all substitutions
+	# Perform all positional substitutions from "substs"
 	css = css_tpl
 	for s in sorted(substs, key=lambda s: (s.a, -s.b), reverse=True):
 		if s.b < 0: s.b = s.a
@@ -90,11 +90,11 @@ def template(css_tpl, print_diffs=False):
 		if s.strip_tail: tail = tail.lstrip()
 		css = head + s.s + tail
 
-	# Substitute all variables set via -x-var-* to ext_vars
+	# Replace all variables set via -x-var-* to "ext_vars"
 	for k, v in sorted(ext_vars.items(), key=lambda kv: -len(kv[0])):
 		v = v.replace('\\\\', '\ue000').replace('\\', ';').replace('\ue000', '\\')
 		css = re.sub( r'(?<=[^-\w])' +
-			re.escape(f'-x-{k}') + r'(?=[^-\w])', lambda m: v, css )
+			re.escape(f'-x-var-{k}') + r'(?=[^-\w])', lambda m: v, css )
 
 	if print_diffs:
 		if not hasattr(template, 'diff_cmd'):

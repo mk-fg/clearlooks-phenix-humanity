@@ -19,11 +19,12 @@ button {
 	margin: 1px;
 	padding: 4px 0 3px 0;
 
+	/* Note: setting consistent border-width everywhere prevents buttons "jumping" by 1px */
 	border-style: solid;
 	border-color: transparent;
-	border-image: url("img/border.png") 4 4 3 4 / 4 4 3 4 repeat;
 	border-radius: 3px;
 	border-width: 1px;
+	border-image: url("img/border.png") 4 4 3 4 / 4 4 3 4 repeat;
 
 	background:
 		radial-gradient(
@@ -109,7 +110,7 @@ toolbar.primary-toolbar button:active:hover,
 button:checked {
 	/* Also used for mousedown effect on non-focus toolbar buttons */
 	padding: 5px 0 2px 0;
-	border-image-source: url("img/border-dark.png");
+	border-image: url("img/border-dark.png") 4 4 3 4 / 4 4 3 4 repeat;
 	background:
 		radial-gradient(
 			ellipse 110% 50%,

@@ -76,9 +76,9 @@ Supported templating rules:
     ...
 
     button {
-      -x-border-rules
+      -x-var-border-rules
       background:
-        -x-bg-glow,
+        -x-var-bg-glow,
         linear-gradient(to bottom,
           @button_glaze_top,
           @button_glaze_mid-a 49%,
@@ -88,8 +88,8 @@ Supported templating rules:
 
   Simple non-nested variable substitution, which works for any strings in any context.
 
-  I.e. after ``-x-var-bg-glow``, ``(?<=[^-\w])-x-bg-glow(?=[^-\w])`` will be
-  replaced in css everywhere via re.sub(). Note the non-word/dash delimiters.
+  I.e. with ``-x-var-bg-glow`` definition in-place, ``(?<=[^-\w])-x-var-bg-glow(?=[^-\w])``
+  will be replaced in css everywhere via re.sub(). Note the non-word/dash delimiters.
 
   Use ``\`` to have ``;`` in the replacement string and ``\\`` to get literal backslash.
 
