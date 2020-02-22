@@ -29,20 +29,43 @@ button {
 	background-color: transparent;
 }
 
-toolbar.primary-toolbar button:focus,
-button:focus {
-	outline: none;
-	border-width: 1px;
-	border-image: url("img/btn-border-focus.png") 4 4 3 4 / 4 4 3 4 repeat;
-	background:
-		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
-		linear-gradient(to bottom, @button_focus_fill, @button_focus_fill);
-}
-
 toolbar.primary-toolbar button:active,
 toolbar.primary-toolbar button:hover,
 button:active, button:hover {
 	background:
+		radial-gradient(
+			ellipse 110% 50%,
+			@button_hover_glaze_glow_center,
+			@button_hover_glaze_glow_edge ),
+		linear-gradient(to bottom,
+			@button_hover_glaze_top,
+			@button_hover_glaze_mid-a 49%,
+			@button_hover_glaze_mid-b 49%,
+			@button_hover_glaze_bot );
+}
+
+button:focus {
+	outline: none;
+	border-width: 1px;
+	border-image: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 3 4 repeat;
+	background:
+		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
+			linear-gradient(to bottom, @button_focus_fill, @button_focus_fill),
+		radial-gradient(
+			ellipse 90% 50%,
+			@button_glaze_glow_center,
+			@button_glaze_glow_edge ),
+		linear-gradient(to bottom,
+			@button_glaze_top,
+			@button_glaze_mid-a 49%,
+			@button_glaze_mid-b 49%,
+			@button_glaze_bot );
+}
+
+button:focus:hover {
+	background:
+		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
+			linear-gradient(to bottom, @button_focus_fill, @button_focus_fill),
 		radial-gradient(
 			ellipse 110% 50%,
 			@button_hover_glaze_glow_center,
@@ -73,10 +96,11 @@ button:disabled {
 
 toolbar.primary-toolbar button.toggle,
 button:checked {
+	padding: 5px 0 2px 0;
 	border-image-source: url("img/border-dark.png");
 	background-image:
 		radial-gradient(
-			circle farthest-side,
+			ellipse 110% 50%,
 			@button_active_glaze_glow_center,
 			@button_active_glaze_glow_edge ),
 		linear-gradient(to right,
@@ -100,7 +124,7 @@ toolbar.primary-toolbar button.toggle:hover,
 button:checked:hover {
 	background:
 		radial-gradient(
-			circle farthest-side,
+			ellipse 110% 50%,
 			@button_hover_glaze_glow_center,
 			@button_hover_glaze_glow_edge ),
 		linear-gradient(to right,
@@ -119,6 +143,61 @@ button:checked:hover {
 			@button_hover_glaze_mid-b 49%,
 			@button_hover_glaze_bot );
 }
+
+button:checked:focus {
+	/* same + button:focus (orange fill + border) */
+	border-image: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 5 4 repeat;
+	background:
+		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 7px)
+			linear-gradient(to bottom, @button_focus_fill_dark, @button_focus_fill_dark),
+		radial-gradient(
+			ellipse 110% 50%,
+			@button_active_glaze_glow_center,
+			@button_active_glaze_glow_edge ),
+		linear-gradient(to right,
+			@button_active_glaze_shadow_edge,
+			@button_active_glaze_shadow 2px,
+			alpha(@button_active_glaze_shadow, 0) 4px,
+			@null 4px, @null ),
+		linear-gradient(to bottom,
+			@button_active_glaze_shadow_edge,
+			@button_active_glaze_shadow 2px,
+			alpha(@button_active_glaze_shadow, 0) 4px,
+			@null 4px, @null ),
+		linear-gradient(to bottom,
+			@button_active_glaze_top,
+			@button_active_glaze_mid-a 49%,
+			@button_active_glaze_mid-b 49%,
+			@button_active_glaze_bot );
+}
+
+button:checked:focus:hover {
+	border-image: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 5 4 repeat;
+	background:
+		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 7px)
+			linear-gradient(to bottom, @button_focus_fill_dark, @button_focus_fill_dark),
+		radial-gradient(
+			ellipse 110% 50%,
+			@button_hover_glaze_glow_center,
+			@button_hover_glaze_glow_edge ),
+		linear-gradient(to right,
+			alpha(@button_active_glaze_shadow_edge, 0.3),
+			alpha(@button_active_glaze_shadow, 0.3) 3px,
+			alpha(@button_active_glaze_shadow, 0) 5px,
+			@null 5px, @null ),
+		linear-gradient(to bottom,
+			alpha(@button_active_glaze_shadow_edge, 0.3),
+			alpha(@button_active_glaze_shadow, 0.3) 3px,
+			alpha(@button_active_glaze_shadow, 0) 5px,
+			@null 5px, @null ),
+		linear-gradient(to bottom,
+			@button_hover_glaze_top,
+			@button_hover_glaze_mid-a 49%,
+			@button_hover_glaze_mid-b 49%,
+			@button_hover_glaze_bot );
+}
+
+/* XXX: quick :active (pressed) effects */
 
 
 
@@ -152,13 +231,20 @@ toolbar.primary-toolbar button {
 	background-color: transparent;
 }
 
+toolbar.primary-toolbar button:focus {
+	border-image: url("img/btn-border-focus.png") 4 4 3 4 / 4 4 3 4 repeat;
+	background:
+		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
+		linear-gradient(to bottom, @button_focus_fill, @button_focus_fill);
+}
+
 /* Only active/hover buttons have borders here */
 toolbar.primary-toolbar button:active,
 toolbar.primary-toolbar button:hover {
 	border-image: url("img/border.png") 4 4 3 4 / 4 4 3 4 repeat;
 }
 toolbar.primary-toolbar button:focus:hover {
-	border-image: url("img/btn-border-focus-hover.png") 4 4 3 4 / 4 4 3 4 repeat;
+	border-image: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 3 4 repeat;
 	background:
 		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
 			linear-gradient(to bottom, @button_focus_fill, @button_focus_fill),
@@ -176,7 +262,7 @@ toolbar.primary-toolbar button:focus:hover {
 /* Pushed/toggled button (Gtk.ToggleButton) */
 toolbar.primary-toolbar button.toggle:focus {
 	/* button:checked (dark-bg + shadow) + button:focus (orange fill + border) */
-	border-image: url("img/btn-border-focus-hover.png") 4 4 3 4 / 4 4 3 4 repeat;
+	border-image: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 3 4 repeat;
 	background:
 		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
 			linear-gradient(to bottom, @button_focus_fill, @button_focus_fill),
@@ -203,7 +289,7 @@ toolbar.primary-toolbar button.toggle:focus {
 
 toolbar.primary-toolbar button.toggle:focus:hover {
 	/* same as button.toggle:focus but with bg layers from button:checked:hover */
-	border-image: url("img/btn-border-focus-hover.png") 4 4 3 4 / 4 4 3 4 repeat;
+	border-image: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 3 4 repeat;
 	background:
 		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
 			linear-gradient(to bottom, @button_focus_fill, @button_focus_fill),
@@ -283,11 +369,4 @@ trough.vertical {
 	background-image: linear-gradient(to right,
 		@trough_gradient_a,
 		@trough_gradient_b 4px);
-}
-
-/* XXX: in-button separator? */
-button separator {
-	border-left: solid 1px @theme_fg;
-	padding-left: 2px;
-	padding-right: 2px;
 }
