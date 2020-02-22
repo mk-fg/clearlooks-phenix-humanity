@@ -230,15 +230,17 @@ GTK+ Theming Documentation/Tool Links
   Specify -t/--rebuild-templates option for awf-gtk3-wrapper.py to also rebuild
   .css files from .tpl.css changes via `css-templater.py`_ script next to it.
 
+- `magnus (local fork with color tweaks)`_ - simple tool to zoom-in on and
+  compare small theme elements.
+
+  Allows to freeze-compare zoomed elements side-by-side and also applies
+  color tweaks to source pixels, to map relatively limited color ranges of this theme
+  to a much large output color range, making e.g. various small border/gradient details
+  much easier to distinguish visually (esp. on cheap displays).
+
 - `GTK+ CSS Overview`_ - outlines what is possible in GTK3 CSS.
 - `GTK+ CSS Properties`_ - reference for all supported CSS properties.
 - `GTK+ Inspector`_ - "CSS" tab there allows to easily paste/override/test theme parts on the fly.
-
-- `magnus (local fork with color tweaks)`_ - simple tool to zoom in on small theme elements.
-
-  Also applies color correction to source pixels, to map relatively limited
-  color range of this theme to a much large output color range, making e.g. various
-  small border/gradient details much easier to distinguish visually (esp. on cheap displays).
 
 - `Clearlooks-Phénix theme`_ - GTK3 theme which this rework is based on,
   as it looks quite like Human-Murrine GTK2 (which itself was based on

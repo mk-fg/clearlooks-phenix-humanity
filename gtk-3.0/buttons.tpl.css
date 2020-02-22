@@ -3,6 +3,15 @@
   - most likely legacy definition from clearlooks theme, which should be moved here. */
 /* Anything non-button-like styled here is likewise a bug. */
 
+/* Quick ref on button states:
+		- hover - mouse over button
+		- focus - outlined/highlighted for space/enter on keyboard (via tab, arrow keys or click)
+		- checked - pushed-in Gtk.ToggleButton, toggled on click or space/enter
+		- active - pushed-in via mouse click, toggled on click/release
+	Most combinations of these have to be described explicitly
+		(e.g. "button:checked:focus:hover"), as each one uses custom background layers,
+		which otherwise replace each other, and do not combine automatically. */
+
 button {
 	color: @theme_text;
 	min-height: 16px;
@@ -29,7 +38,7 @@ button {
 	background-color: transparent;
 }
 
-button:active, button:hover {
+button:hover {
 	background:
 		radial-gradient(
 			ellipse 110% 50%,
@@ -80,7 +89,7 @@ button:disabled {
 	border-image: none;
 	border-radius: 3px;
 	border: 1px @button_disabled_border solid;
-	background-image:
+	background:
 		radial-gradient(
 			ellipse 90% 50%,
 			@button_disabled_glaze_glow_center,
@@ -93,9 +102,10 @@ button:disabled {
 }
 
 button:checked {
+	/* Also used for mousedown effect on non-focus toolbar buttons */
 	padding: 5px 0 2px 0;
 	border-image-source: url("img/border-dark.png");
-	background-image:
+	background:
 		radial-gradient(
 			ellipse 110% 50%,
 			@button_active_glaze_glow_center,
@@ -140,8 +150,13 @@ button:checked:hover {
 			@button_hover_glaze_bot );
 }
 
-button:checked:focus {
-	/* same + button:focus (orange fill + border) */
+button:checked:focus,
+button:checked:active:focus:hover,
+button:active,
+button:active:hover {
+	/* Same as :checked + button:focus (orange fill + border) */
+	/* Used for mousedown effect on all normal buttons as well */
+	border-width: 1px;
 	border-image: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 5 4 repeat;
 	background:
 		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 7px)
@@ -168,6 +183,7 @@ button:checked:focus {
 }
 
 button:checked:focus:hover {
+	border-width: 1px;
 	border-image: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 5 4 repeat;
 	background:
 		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 7px)
@@ -192,8 +208,6 @@ button:checked:focus:hover {
 			@button_hover_glaze_mid-b 49%,
 			@button_hover_glaze_bot );
 }
-
-/* XXX: quick :active (pressed) effects */
 
 
 
@@ -228,6 +242,7 @@ toolbar.primary-toolbar button {
 }
 
 toolbar.primary-toolbar button:focus {
+	border-width: 1px;
 	border-image: url("img/btn-border-focus.png") 4 4 3 4 / 4 4 3 4 repeat;
 	background:
 		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
@@ -244,6 +259,7 @@ toolbar.primary-toolbar button:hover {
 	border-image: url("img/border.png") 4 4 3 4 / 4 4 3 4 repeat;
 }
 toolbar.primary-toolbar button:focus:hover {
+	border-width: 1px;
 	border-image: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 3 4 repeat;
 	background:
 		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
@@ -260,10 +276,14 @@ toolbar.primary-toolbar button:focus:hover {
 }
 
 /* Pushed/toggled button (Gtk.ToggleButton) */
-toolbar.primary-toolbar button.toggle -ext { -x-same-rules: button:checked; }
+/* :active (mousedown) makes it look pushed-down (dark) even with :hover */
+
+toolbar.primary-toolbar button.toggle -ext,
+toolbar.primary-toolbar button.toggle:active:hover -ext { -x-same-rules: button:checked; }
 toolbar.primary-toolbar button.toggle:hover -ext { -x-same-rules: button:checked:hover; }
 
-toolbar.primary-toolbar button.toggle:focus {
+toolbar.primary-toolbar button.toggle:focus,
+toolbar.primary-toolbar button.toggle:focus:active:hover {
 	/* button:checked (dark-bg + shadow) + button:focus (orange fill + border) */
 	border-image: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 3 4 repeat;
 	background:
@@ -316,6 +336,18 @@ toolbar.primary-toolbar button.toggle:focus:hover {
 			@button_hover_glaze_mid-b 49%,
 			@button_hover_glaze_bot );
 }
+
+/* Mousedown effect is same as button:checked without :focus */
+/* Toolbar buttons don't seem to auto-grab :focus on click like normal ones do, hence +1 templated state here */
+
+toolbar.primary-toolbar button:active -ext,
+toolbar.primary-toolbar button:active:hover -ext { -x-same-rules: button:checked; }
+
+toolbar.primary-toolbar button:focus:active -ext,
+toolbar.primary-toolbar button:focus:active:hover -ext {
+	-x-same-rules: toolbar.primary-toolbar button.toggle:focus; }
+
+/* --- end of buttons --- */
 
 
 

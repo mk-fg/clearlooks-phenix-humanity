@@ -70,13 +70,10 @@ def template(css_tpl, print_diffs=False):
 	for sx, ext_list in ext_idx.items():
 		for ext in ext_list:
 			for st in st_idx[sx]:
-				sel_exts = st_exts[st._tx_position]
-				for s in st.sels:
-					for s_ext in ext.sels:
-						if ext.prefix:
-							s_str = ' '.join(s.atoms)
-							s_ext = f'{s_ext} {s_str}'
-						sel_exts.append(f'{s_ext},')
+				sel_exts, sx_str = st_exts[st._tx_position], ' '.join(sx)
+				for s_ext in ext.sels:
+					if ext.prefix: s_ext = f'{s_ext} {sx_str}'
+					sel_exts.append(f'{s_ext},')
 	for pos, sel_exts in st_exts.items():
 		sel_exts = sorted(set(sel_exts))
 		substs.append(Subst(pos, s='\n'.join(sel_exts) + '\n'))
