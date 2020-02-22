@@ -1,4 +1,11 @@
-/* Trough - should be used in scales and ranges */
+/* text-inputs.css: Range, Scale and such trough + caret mouse-slider elements */
+
+/* Anything slider-like styled in other css files is a bug -
+  - most likely legacy definition from clearlooks theme, which should be moved here. */
+/* Anything non-slider-like styled here is likewise a bug. */
+
+
+/* --- Trough - should be used in scales and ranges --- */
 
 trough,
 trough highlight {
@@ -31,4 +38,106 @@ trough.vertical {
 	background-image: linear-gradient(to right,
 		@trough_gradient_a,
 		@trough_gradient_b 4px);
+}
+
+
+/* --- Scale slider - trough + single caret --- */
+
+scale progressbar {
+	color: @switch_trough_active;
+}
+
+scale slider,
+scale.horizontal slider {
+	background-image: -gtk-scaled(url("img/scale-slider-horz.png"),
+		url("img/scale-slider-horz@2.png"));
+}
+
+scale slider:hover,
+scale.horizontal slider:hover {
+	background-image: -gtk-scaled(url("img/scale-slider-horz-hover.png"),
+		url("img/scale-slider-horz-hover@2.png"));
+}
+
+scale:disabled slider,
+scale slider:disabled,
+scale.horizontal slider:disabled {
+	background-image: -gtk-scaled(url("img/scale-slider-horz-insensitive.png"),
+		url("img/scale-slider-horz-insensitive@2.png"));
+}
+
+scale.vertical slider {
+	background-image: -gtk-scaled(url("img/scale-slider-vert.png"),
+		url("img/scale-slider-vert@2.png"));
+}
+
+scale.vertical slider:hover {
+	background-image: -gtk-scaled(url("img/scale-slider-vert-hover.png"),
+		url("img/scale-slider-vert-hover@2.png"));
+}
+
+scale.vertical:disabled slider,
+scale.vertical slider:disabled {
+	background-image: -gtk-scaled(url("img/scale-slider-vert-insensitive.png"),
+		url("img/scale-slider-vert-insensitive@2.png"));
+}
+
+scale.horizontal.scale-has-marks-above slider {
+	background-image: -gtk-scaled(url("img/scale-slider-horz.png"),
+		url("img/scale-slider-horz@2.png"));
+}
+
+scale.horizontal.scale-has-marks-above slider:hover {
+	background-image: -gtk-scaled(url("img/scale-slider-horz-hover.png"),
+		url("img/scale-slider-horz-hover@2.png"));
+}
+
+scale.horizontal.scale-has-marks-above slider:disabled {
+	background-image: -gtk-scaled(url("img/scale-slider-horz-insensitive.png"),
+		url("img/scale-slider-horz-insensitive@2.png"));
+}
+
+scale.vertical.scale-has-marks-above slider {
+	background-image: -gtk-scaled(url("img/scale-slider-vert.png"),
+		url("img/scale-slider-vert@2.png"));
+}
+
+scale.vertical.scale-has-marks-above slider:hover {
+	background-image: -gtk-scaled(url("img/scale-slider-vert-hover.png"),
+		url("img/scale-slider-vert-hover@2.png"));
+}
+
+scale.vertical.scale-has-marks-above slider:disabled {
+	background-image: -gtk-scaled(url("img/scale-slider-vert-insensitive.png"),
+		url("img/scale-slider-vert-insensitive@2.png"));
+}
+
+scale.horizontal.scale-has-marks-below slider {
+	background-image: -gtk-scaled(url("img/scale-slider-horz.png"),
+		url("img/scale-slider-horz@2.png"));
+}
+
+scale.horizontal.scale-has-marks-below slider:hover {
+	background-image: -gtk-scaled(url("img/scale-slider-horz-hover.png"),
+		url("img/scale-slider-horz-hover@2.png"));
+}
+
+scale.horizontal.scale-has-marks-below slider:disabled {
+	background-image: -gtk-scaled(url("img/scale-slider-horz-insensitive.png"),
+		url("img/scale-slider-horz-insensitive@2.png"));
+}
+
+scale.vertical.scale-has-marks-below slider {
+	background-image: -gtk-scaled(url("img/scale-slider-vert.png"),
+		url("img/scale-slider-vert@2.png"));
+}
+
+scale.vertical.scale-has-marks-below slider:hover {
+	background-image: -gtk-scaled(url("img/scale-slider-vert-hover.png"),
+		url("img/scale-slider-vert-hover@2.png"));
+}
+
+scale.vertical.scale-has-marks-below slider:disabled {
+	background-image: -gtk-scaled(url("img/scale-slider-vert-insensitive.png"),
+		url("img/scale-slider-vert-insensitive@2.png"));
 }

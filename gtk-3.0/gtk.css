@@ -447,17 +447,25 @@
 @define-color trough_gradient_a shade(@core_b, 0.81);
 @define-color trough_gradient_b shade(@core_b, 0.90);
 
-/***********
- * imports *
- ***********/
+
+
+/***********************
+ * ===== imports ===== *
+ ***********************/
 
 @import url("base.css");
 
+/* These two files should be emptied-out and removed */
+/* Kept in case they have any applicable but yet-unchecked rules */
 @import url("old-clearlooks-img.css");
 @import url("old-clearlooks.css");
 
-@import url("buttons.css");
-@import url("menu.css");
+@import url("text-inputs.css");
+@import url("switches.css");
 @import url("sliders.css");
 
+@import url("menu.css");
+@import url("buttons.css");
+
+/* Haven't got around to even look at that one yet */
 @import url("old-clearlooks-apps.css");

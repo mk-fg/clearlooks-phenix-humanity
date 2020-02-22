@@ -14,6 +14,7 @@ GtkGrid:disabled {
 /************
  * Tooltips *
  ************/
+
 tooltip,
 tooltip.background,
 .tooltip,
@@ -31,6 +32,7 @@ tooltip *,
 .tooltip * {
 	text-shadow: none;
 }
+
 
 /*****************
  * Miscellaneous *
@@ -125,49 +127,6 @@ statusbar frame {
 	border-radius: 0;
 }
 
-/****************
- * Text Entries *
- ****************/
-
-entry {
-	border-style: solid;
-	padding: 4px;
-	color: @entry_text;
-	background-color: @theme_base;
-}
-
-entry progressbar {
-	background-color: @theme_selected_bg;
-	color: @theme_selected_fg;
-}
-
-entry selection {
-	color: @theme_selected_fg;
-	background-color: @theme_selected_bg;
-}
-
-entry:disabled {
-	color: @insensitive_fg;
-}
-
-/* Entry background */
-entry {
-	background-color: @entry_bg;
-	background-image: linear-gradient(to bottom,
-	                  @entry_inner_border 1px,
-	                  @entry_bg 2px);
-}
-
-/* Focused entry background */
-entry:focus {
-	background-image: none;
-}
-
-/* Insensitive entry background */
-entry:disabled {
-	background-image: linear-gradient( to bottom,
-		@entry_insensitive_inner_border 2px, @entry_insensitive_bg 3px );
-}
 
 /*******************
  * Symbolic images *
@@ -837,184 +796,6 @@ notebook header tabs arrow:backdrop:disabled {
     color: #c7c7c7;
 }
 
-/**************
- * ComboBoxes *
- **************/
-
-combobox {
-	padding: 0;
-	/*-GtkComboBox-arrow-scaling: 0.5;*/
-	/*-GtkComboBox-shadow-type: none;*/
-}
-combobox arrow {
-	-gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
-	color: @theme_fg;
-	min-height: 16px;
-	min-width: 16px;
-}
-combobox entry.combo,
-combobox button.combo {
-	padding: 5px 5px 5px 5px;
- 	border-image-width: 3px 0 4px 3px;
-	border-radius: 3px 0 0 3px;
-	border-right-width: 0;
-}
-
-combobox entry.combo:disabled,
-combobox button.combo:disabled {
-	color: @insensitive_fg;
-}
-
-combobox separator {
-	/*-GtkWidget-wide-separators: true;*/
-	-GtkWidget-horizontal-separator: 1;
-	-GtkWidget-vertical-separator: 1;
-}
-
-combobox > .linked > entry.combo,
-combobox > .linked > button.combo,
-combobox > .linked > button.combo:focus,
-combobox > .linked > button.combo:hover,
-combobox > .linked > button.combo:checked,
-combobox > .linked > button.combo:focus:hover,
-combobox > .linked > button.combo:disabled {
-	border-image-width: 3px 3px 4px 3px;
-	border-radius: 0px;
-	border-width: 1px 0px 1px 0px;
-}
-
-combobox > .linked > entry.combo:first-child,
-combobox > .linked > button.combo:first-child,
-combobox > .linked > button.combo:focus:first-child,
-combobox > .linked > button.combo:hover:first-child,
-combobox > .linked > button.combo:checked:first-child,
-combobox > .linked > button.combo:focus:hover:first-child,
-combobox > .linked > button.combo:disabled:first-child {
-	border-image-width: 3px 0 4px 3px;
-	border-radius: 3px 0 0 3px;
-	border-right-width: 0;
-}
-
-combobox > .linked > entry.combo:last-child,
-combobox > .linked > button.combo:last-child,
-combobox > .linked > button.combo:focus:last-child,
-combobox > .linked > button.combo:hover:last-child,
-combobox > .linked > button.combo:checked:last-child,
-combobox > .linked > button.combo:focus:hover:last-child,
-combobox > .linked > button.combo:disabled:last-child {
-	border-image-width: 3px 3px 4px 0;
-	border-radius: 0 3px 3px 0;
-	border-width: 0;
-}
-combobox > .linked > entry.combo:only-child,
-combobox > .linked > button.combo:only-child,
-combobox > .linked > button.combo:focus:only-child,
-combobox > .linked > button.combo:hover:only-child,
-combobox > .linked > button.combo:checked:only-child,
-combobox > .linked > button.combo:focus:hover:only-child,
-combobox > .linked > button.combo:disabled:only-child {
-	border-image-width: 3px 3px 4px 3px;
-	border-radius: 3px;
-	border-width: 1px;
-}
-/*
-toolbar.primary-toolbar combobox > .linked > entry.combo,
-toolbar.primary-toolbar combobox > .linked > button.combo {
-	border-image-width: 4px 4px 4px 0;
-	border-radius: 0 3px 3px 0;
-	border-left-width: 0;
-}
-
-toolbar.primary-toolbar combobox > .linked > entry.combo:first-child,
-toolbar.primary-toolbar combobox > .linked > button.combo:first-child {
-	border-image-width: 4px 0 4px 4px;
-	border-radius: 3px 0 0 3px;
-	border-right-width: 0;
-}
-
-toolbar.primary-toolbar combobox > .linked > entry.combo:last-child,
-toolbar.primary-toolbar combobox > .linked > button.combo:last-child {
-	border-image-width: 4px 4px 4px 0;
-	border-radius: 0 3px 3px 0;
-	border-left-width: 0;
-}
-*/
-/* linked combobox */
-
-/* Middle button */
-.linked > combobox > .linked > button.combo,
-.linked > combobox > .linked > button.combo:hover,
-.linked > combobox > .linked > button.combo:focus,
-.linked > combobox > .linked > button.combo:focus:hover,
-.linked > combobox > .linked > button.combo:checked,
-.linked > combobox > .linked > button.combo:disabled {
-    border-image: none;
-    border-radius: 0;
-    border-color: @border;
-    border-width: 1px;
-    border-width: 1px;
-    padding: 4px 2px;
-}
-
-/* Leftmost button */
-.linked > combobox:first-child > .linked > button.combo:first-child,
-.linked > combobox:first-child > .linked > button.combo:hover:first-child,
-.linked > combobox:first-child > .linked > button.combo:focus:first-child,
-.linked > combobox:first-child > .linked > button.combo:focus:hover:first-child,
-.linked > combobox:first-child > .linked > button.combo:checked:first-child,
-.linked > combobox:first-child > .linked > button.combo:disabled:first-child {
-    border-radius: 3px 0 0 3px;
-    border-width: 1px 0px 1px 1px;
-}
-
-/* Rightmost button */
-.linked > combobox:last-child > .linked > button.combo:last-child,
-.linked > combobox:last-child > .linked > button.combo:hover:last-child,
-.linked > combobox:last-child > .linked > button.combo:focus:last-child,
-.linked > combobox:last-child > .linked > button.combo:focus:hover:last-child,
-.linked > combobox:last-child > .linked > button.combo:checked:last-child,
-.linked > combobox:last-child > .linked > button.combo:disabled:last-child {
-    border-radius: 0 3px 3px 0;
-    border-width: 1px 1px 1px 0px;
-}
-
-/* vertical */
-
-/* Middle button */
-.linked.vertical > combobox > .linked > button.combo,
-.linked.vertical > combobox > .linked > button.combo:hover,
-.linked.vertical > combobox > .linked > button.combo:focus,
-.linked.vertical > combobox > .linked > button.combo:focus:hover,
-.linked.vertical > combobox > .linked > button.combo:checked,
-.linked.vertical > combobox > .linked > button.combo:disabled {
-    border-image: none;
-    border-radius: 0;
-    border-color: @border;
-    border-width: 0px 1px 0px 1px;
-    padding: 5px 5px;
-}
-
-/* top button */
-.linked.vertical > combobox:first-child > .linked > button.combo:first-child,
-.linked.vertical > combobox:first-child > .linked > button.combo:hover:first-child,
-.linked.vertical > combobox:first-child > .linked > button.combo:focus:first-child,
-.linked.vertical > combobox:first-child > .linked > button.combo:focus:hover:first-child,
-.linked.vertical > combobox:first-child > .linked > button.combo:checked:first-child,
-.linked.vertical > combobox:first-child > .linked > button.combo:disabled:first-child {
-    border-radius: 3px 3px 0px 0px;
-    border-width: 1px 1px 1px 1px;
-}
-
-/* bottom button */
-.linked.vertical > combobox:last-child > .linked > button.combo:last-child,
-.linked.vertical > combobox:last-child > .linked > button.combo:hover:last-child,
-.linked.vertical > combobox:last-child > .linked > button.combo:focus:last-child,
-.linked.vertical > combobox:last-child > .linked > button.combo:focus:hover:last-child,
-.linked.vertical > combobox:last-child > .linked > button.combo:checked:last-child,
-.linked.vertical > combobox:last-child > .linked > button.combo:disabled:last-child {
-    border-radius: 0px 0px 3px 3px;
-    border-width: 0px 1px 1px 1px;
-}
 
 /**************
  * Scrollbars *
@@ -1080,7 +861,7 @@ scrollbar.vertical trough {
 	                  color-stop (0.5, @scrollbar_trough_gradient_b));
 }
 
-/* Buttons */
+/* Scrollbar buttons */
 scrollbar button,
 scrollbar .button {
 	border-width: 1px;
@@ -1274,51 +1055,7 @@ scrollbar .slider:hover {
 	background-color: @scrollbar_slider_hover_bg;
 }
 
-/*********
- * Menus *
- *********/
 
-/* combobox menus */
-treemenu menu {
-	background-color: @menu_bg;
-}
-
-treemenu menuitem {
-	padding: 2px;
-}
-
-/* XXX: same as menu menuitem:hover */
-/* treemenu menuitem:hover, */
-/* combobox menuitem:hover, */
-
-
-/****************
- * Radiobuttons *
- ****************/
-
-check,
-.check,
-radio,
-.radio,
-check:disabled,
-.check:disabled,
-radio:disabled,
-.radio:disabled {
-	background-color: transparent;
-	border-style: none;
-}
-
-check row:selected:disabled,
-check row:selected:focus:disabled {
-	background-color: transparent;
-}
-
-checkbutton:hover,
-checkbutton:active:hover,
-checkbutton:selected,
-checkbutton:selected:focus {
-	background-color: transparent;
-}
 
 /************
  * Toolbars *
@@ -1460,46 +1197,6 @@ assistant .sidebar {
 	/* shall we make it like sidebars in general? */
 }
 
-/*************
- * GtkSwitch *
- *************/
-
-switch {
-	color: @switch;
-}
-
-scale progressbar,
-switch:checked {
-	color: @switch_trough_active;
-}
-
-switch:checked,
-switch:backdrop:checked {
-	background-image: -gtk-gradient (linear,
-	                  left top, left bottom,
-	                  from (@switch_trough_active_gradient_a),
-	                  to (@switch_trough_active_gradient_b));
-}
-
-switch:disabled,
-switch:backdrop:disabled {
-	background-image: none;
-	background-color: @insensitive_bg;
-	color: mix(@insensitive_bg, @insensitive_fg, 0.5);
-}
-
-switch slider {
-	background-color: @switch_slider_bg;
-	border-width: 1px;
-	border-radius: 2px;
-	border-style: solid;
-	border-color: @switch_slider_border;
-	padding: 0px;
-}
-
-switch:disabled slider {
-	border-color: @insensitive_border;
-}
 
 /**************************
  * GtkIconview GtkViewport*

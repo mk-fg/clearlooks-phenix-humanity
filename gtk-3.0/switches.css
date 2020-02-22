@@ -1,0 +1,265 @@
+/* switches.css: checkbox and radio switch elements */
+/* Range, Scale and such elements are in separate sliders.css file. */
+/* Text input fields and comboboxes are in text-inputs.css file. */
+
+/* Anything switch-like styled in other css files is a bug -
+  - most likely legacy definition from clearlooks theme, which should be moved here. */
+/* Anything non-switch-like styled here is likewise a bug. */
+
+
+/* --- Switch - caret with short trought and fixed toggle-able positions --- */
+
+switch {
+	color: @switch;
+}
+
+switch:checked {
+	color: @switch_trough_active;
+}
+
+switch:checked,
+switch:backdrop:checked {
+	background-image:
+		-gtk-gradient( linear,
+			left top, left bottom,
+			from (@switch_trough_active_gradient_a),
+			to (@switch_trough_active_gradient_b));
+}
+
+switch slider {
+	background-image:
+		linear-gradient( to bottom,
+			alpha(@switch_slider_gradient_a, 0.5),
+			alpha(@switch_slider_gradient_b, 0.5) 50%,
+			alpha(@switch_slider_gradient_c, 0.5) 50%,
+			alpha(@switch_slider_gradient_d, 0.5) ),
+		-gtk-scaled(
+			url("img/slider-horz-grip.png"),
+			url("img/slider-horz-grip@2.png") );
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+switch slider {
+	background-color: @switch_slider_bg;
+	border-width: 1px;
+	border-radius: 2px;
+	border-style: solid;
+	border-color: @switch_slider_border;
+	padding: 0px;
+}
+
+switch:disabled slider {
+	background-image:
+		linear-gradient( to bottom,
+			alpha(@switch_slider_insensitive_gradient_a, 0.8),
+			alpha(@switch_slider_insensitive_gradient_b, 0.8) 50%,
+			alpha(@switch_slider_insensitive_gradient_c, 0.8) 50%,
+			alpha(@switch_slider_insensitive_gradient_d, 0.8)),
+		-gtk-scaled(
+			url("img/slider-horz-grip.png"),
+			url("img/slider-horz-grip@2.png") );
+}
+
+switch:disabled slider {
+	border-color: @insensitive_border;
+}
+
+switch,
+toolbar.primary-toolbar switch,
+toolbar.primary-toolbar switch:disabled {
+	border-image: url("img/border.png") 4 4 4 4 / 3px 3px 4px 3px repeat;
+	border-radius: 3px;
+	border-width: 1px 1px 2px 1px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+switch:disabled {
+	border-image: url("img/border-insensitive.svg") 3 3 4 3 / 3px 3px 4px 3px repeat;
+	border-radius: 3px;
+	border-width: 1px 1px 2px 1px;
+	border-style: solid;
+	border-color: transparent;
+}
+
+switch:disabled,
+switch:backdrop:disabled {
+	background-image: none;
+	background-color: @insensitive_bg;
+	color: mix(@insensitive_bg, @insensitive_fg, 0.5);
+}
+
+
+/* --- Check - checkboxes --- */
+
+check,
+check:disabled {
+	background-color: transparent;
+	border-style: none;
+}
+
+check row:selected:disabled,
+check row:selected:focus:disabled {
+	background-color: transparent;
+}
+
+checkbutton:hover,
+checkbutton:active:hover,
+checkbutton:selected,
+checkbutton:selected:focus {
+	background-color: transparent;
+}
+
+check,
+check row:selected,
+check row:selected:focus {
+	-gtk-icon-source: -gtk-scaled(url("img/checkbox-unchecked.png"),
+		url("img/checkbox-unchecked@2.png"));
+}
+
+check:hover,
+check row:selected:hover,
+check row:selected:focus:hover {
+	-gtk-icon-source: -gtk-scaled(url("img/checkbox-unchecked-hover.png"),
+		url("img/checkbox-unchecked-hover@2.png"));
+}
+
+check:disabled,
+check row:selected:disabled,
+check row:selected:focus:disabled {
+	-gtk-icon-source: -gtk-scaled(url("img/checkbox-unchecked-insensitive.png"),
+		url("img/checkbox-unchecked-insensitive@2.png"));
+}
+
+check:checked,
+check row:selected:checked,
+check row:selected:focus:checked,
+check:active,
+check row:selected:active,
+check row:selected:focus:active {
+	-gtk-icon-source: -gtk-scaled(url("img/checkbox-checked.png"),
+		url("img/checkbox-checked@2.png"));
+}
+
+check:checked:hover,
+check row:selected:checked:hover,
+check row:selected:focus:checked:hover,
+check:active:hover,
+check row:selected:active:hover,
+check row:selected:focus:active:hover {
+	-gtk-icon-source: -gtk-scaled(url("img/checkbox-checked-hover.png"),
+		url("img/checkbox-checked-hover@2.png"));
+}
+
+check:checked:disabled,
+check row:selected:checked:disabled,
+check row:selected:focus:checked:disabled,
+check:active:disabled,
+check row:selected:active:disabled,
+check row:selected:focus:active:disabled {
+	-gtk-icon-source: -gtk-scaled(url("img/checkbox-checked-insensitive.png"),
+		url("img/checkbox-checked-insensitive@2.png"));
+}
+
+check:indeterminate,
+check row:selected:indeterminate,
+check row:selected:focus:indeterminate {
+	-gtk-icon-source: -gtk-scaled(url("img/checkbox-mixed.png"),
+		url("img/checkbox-mixed@2.png"));
+}
+
+check:indeterminate:hover,
+check row:selected:indeterminate:hover,
+check row:selected:focus:indeterminate:hover {
+	-gtk-icon-source: -gtk-scaled(url("img/checkbox-mixed-hover.png"),
+		url("img/checkbox-mixed-hover@2.png"));
+}
+
+check:indeterminate:disabled,
+check row:selected:indeterminate:disabled,
+check row:selected:focus:indeterminate:disabled {
+	-gtk-icon-source: -gtk-scaled(url("img/checkbox-mixed-insensitive.png"),
+		url("img/checkbox-mixed-insensitive@2.png"));
+}
+
+
+/* --- Round either-or radio buttons  --- */
+
+radio,
+radio:disabled {
+	background-color: transparent;
+	border-style: none;
+}
+
+radio,
+radio row:selected,
+radio row:selected:focus {
+	-gtk-icon-source: -gtk-scaled(url("img/radio-unchecked.png"),
+		url("img/radio-unchecked@2.png"));
+}
+
+radio:hover,
+radio row:selected:hover,
+radio row:selected:focus:hover {
+	-gtk-icon-source: -gtk-scaled(url("img/radio-unchecked-hover.png"),
+		url("img/radio-unchecked-hover@2.png"));
+}
+
+radio:disabled,
+radio row:selected:disabled,
+radio row:selected:focus:disabled {
+	-gtk-icon-source: -gtk-scaled(url("img/radio-unchecked-insensitive.png"),
+		url("img/radio-unchecked-insensitive@2.png"));
+}
+
+radio:checked,
+radio row:selected:checked,
+radio row:selected:focus:checked,
+radio:active,
+radio row:selected:active,
+radio row:selected:focus:active {
+	-gtk-icon-source: -gtk-scaled(url("img/radio-checked.png"),
+		url("img/radio-checked@2.png"));
+}
+
+radio:checked:hover,
+radio row:selected:checked:hover,
+radio row:selected:focus:checked:hover,
+radio:active:hover,
+radio row:selected:active:hover,
+radio row:selected:focus:active:hover {
+	-gtk-icon-source: -gtk-scaled(url("img/radio-checked-hover.png"),
+		url("img/radio-checked-hover@2.png"));
+}
+
+radio:checked:disabled,
+radio row:selected:checked:disabled,
+radio row:selected:focus:checked:disabled,
+radio:active:disabled,
+radio row:selected:active:disabled,
+radio row:selected:focus:active:disabled {
+	-gtk-icon-source: -gtk-scaled(url("img/radio-checked-insensitive.png"),
+		url("img/radio-checked-insensitive@2.png"));
+}
+
+radio:indeterminate,
+radio row:selected:indeterminate,
+radio row:selected:focus:indeterminate {
+	-gtk-icon-source: -gtk-scaled(url("img/radio-mixed.png"),
+		url("img/radio-mixed@2.png"));
+}
+
+radio:indeterminate:hover,
+radio row:selected:indeterminate:hover,
+radio row:selected:focus:indeterminate:hover {
+	-gtk-icon-source: -gtk-scaled(url("img/radio-mixed-hover.png"),
+		url("img/radio-mixed-hover@2.png"));
+}
+
+radio:indeterminate:disabled,
+radio row:selected:indeterminate:disabled,
+radio row:selected:focus:indeterminate:disabled {
+	-gtk-icon-source: -gtk-scaled(url("img/radio-mixed-insensitive.png"),
+		url("img/radio-mixed-insensitive@2.png"));
+}
