@@ -8,8 +8,8 @@ Overview
 Original `Clearlooks-Phénix project`_ by `Jean-Philippe Fleury`_ is a GTK3 port
 of old GTK2/GNOME2 `Clearlooks style`_.
 
-This project is an adaptation of that to look like old Ubuntu "Human Clearlooks"
-style, and GTK2 variant of `Human Quarny theme`_ in particular.
+This project is an adaptation of that to look like old Ubuntu Human-Murrine
+GTK2 theme, which can be found here too (gtk-2.0 dir) or in e.g. `Human Quarny theme`_.
 
 Work in progress, not ready for general use yet.
 
@@ -98,10 +98,9 @@ Notes on adapting murrine-engine GTK2 theme to GTK3
 - Get the source code for Murrine and GTK2 theme in question:
 
   - `Murrine-0.98.2 GTK2 Theming Engine source at ftp.gnome.org`_ (https, not actual ftp)
-  - `Human Quarny theme at gnome-look.org`_
+  - gtk-2.0/gtkrc file in this repo
 
   .. _Murrine-0.98.2 GTK2 Theming Engine source at ftp.gnome.org: https://ftp.gnome.org/pub/GNOME/sources/murrine/0.98/murrine-0.98.2.tar.xz
-  .. _Human Quarny theme at gnome-look.org: https://www.gnome-look.org/p/1013593/
 
 - gtkrc in GTK2 style has main color definitions, e.g.::
 
@@ -182,8 +181,8 @@ Notes on adapting murrine-engine GTK2 theme to GTK3
     murrine_shade (&spot_color, spots[1], &murrine_style->colors.spot[1]);
     murrine_shade (&spot_color, spots[2], &murrine_style->colors.spot[2]);
 
-  Given "contrast = 0.9" in Human Quarny gtkrc, intermediate "spot" colors can
-  be translated to GTK3 definitions as:
+  Given "contrast = 0.9" in gtkrc, intermediate "spot" colors can be translated
+  to GTK3 definitions as:
 
   - m_spot_0 shade(@selected_bg_color, 1.42);
   - m_spot_1 shade(@selected_bg_color, 1.00);
@@ -223,6 +222,9 @@ GTK+ Theming Documentation/Tool Links
   (sent by "fatrace-run_ -p ~user/.themes/clearlooks-phenix-humanity -f 'WD<>' --
   pkill -QUIT -F /tmp/awf-gtk3.pid" fatrace_ wrapper here).
 
+  Specify -t/--rebuild-templates option for awf-gtk3-wrapper.py to also rebuild
+  .css files from .tpl.css changes via `css-templater.py`_ script next to it.
+
 - `GTK+ CSS Overview`_ - outlines what is possible in GTK3 CSS.
 - `GTK+ CSS Properties`_ - reference for all supported CSS properties.
 - `GTK+ Inspector`_ - "CSS" tab there allows to easily paste/override/test theme parts on the fly.
@@ -233,11 +235,22 @@ GTK+ Theming Documentation/Tool Links
   color range of this theme to a much large output color range, making e.g. various
   small border/gradient details much easier to distinguish visually (esp. on cheap displays).
 
+- `Clearlooks-Phénix theme`_ - GTK3 theme which this rework is based on,
+  as it looks quite like Human-Murrine GTK2 (which itself was based on
+  Clearlooks), but with Clearlooks-y colors/effects.
+
+- `Murrine GTK2 Theming Engine`_ - GTK2 engine that draws all widgets in
+  Ubuntu Human-Murrine GTK2 theme (via `cairo graphics library`_).
+
 .. _AWF: https://github.com/valr/awf
 .. _awf-gtk3-wrapper.py: awf-gtk3-wrapper.py
 .. _fatrace-run: https://github.com/mk-fg/fgtk/blob/master/fatrace-run
 .. _fatrace: https://launchpad.net/fatrace
+.. _css-templater.py: css-templater.py
 .. _GTK+ CSS Overview: https://developer.gnome.org/gtk3/stable/chap-css-overview.html
 .. _GTK+ CSS Properties: https://developer.gnome.org/gtk3/stable/chap-css-properties.html
 .. _GTK+ Inspector: https://wiki.gnome.org/Projects/GTK/Inspector
 .. _magnus (local fork with color tweaks): https://github.com/mk-fg/magnus
+.. _Clearlooks-Phénix theme: https://github.com/jpfleury/clearlooks-phenix
+.. _Murrine GTK2 Theming Engine: https://ftp.gnome.org/pub/GNOME/sources/murrine/0.98/murrine-0.98.2.tar.xz
+.. _cairo graphics library: https://www.cairographics.org/
