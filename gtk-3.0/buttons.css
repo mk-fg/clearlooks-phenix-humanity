@@ -1,0 +1,237 @@
+/* This css defines everything relating to buttons. */
+/* Anything button-like styled in other css files is a bug -
+  - most likely legacy definition from clearlooks theme, which should be moved here. */
+/* Anything non-button-like styled here is likewise a bug. */
+
+button {
+	color: @theme_text;
+	min-height: 16px;
+
+	margin: 1px;
+	padding: 4px 0 3px 0;
+
+	border-style: solid;
+	border-color: transparent;
+	border-image: url("img/border.png") 4 4 3 4 / 4 4 3 4 repeat;
+	border-radius: 3px;
+	border-width: 1px;
+
+	background:
+		radial-gradient(
+			ellipse 90% 50%,
+			@button_glaze_glow_center,
+			@button_glaze_glow_edge ),
+		linear-gradient(to bottom,
+			@button_glaze_top,
+			@button_glaze_mid-a 49%,
+			@button_glaze_mid-b 49%,
+			@button_glaze_bot );
+	background-color: transparent;
+}
+
+toolbar.primary-toolbar button:focus,
+button:focus {
+	outline: none;
+	/* XXX: remove pt- in filename here - used for all buttons */
+	border-image: url("img/pt-border-focus.png") 4 4 3 4 / 4 4 3 4 repeat;
+	background:
+		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
+		linear-gradient(to bottom, @pt_btn_sel_fill, @pt_btn_sel_fill);
+}
+
+toolbar.primary-toolbar button:active,
+toolbar.primary-toolbar button:hover,
+button:active, button:hover {
+	background:
+		radial-gradient(
+			ellipse 110% 50%,
+			@button_hover_glaze_glow_center,
+			@button_hover_glaze_glow_edge ),
+		linear-gradient(to bottom,
+			@button_hover_glaze_top,
+			@button_hover_glaze_mid-a 49%,
+			@button_hover_glaze_mid-b 49%,
+			@button_hover_glaze_bot );
+}
+
+button:disabled {
+	color: @insensitive_fg;
+	border-image: none;
+	border-radius: 3px;
+	border: 1px @button_disabled_border solid;
+	background-image:
+		radial-gradient(
+			ellipse 90% 50%,
+			@button_disabled_glaze_glow_center,
+			@button_disabled_glaze_glow_edge ),
+		linear-gradient(to bottom,
+			@button_disabled_glaze_top,
+			@button_disabled_glaze_mid-a 49%,
+			@button_disabled_glaze_mid-b 49%,
+			@button_disabled_glaze_bot );
+}
+
+toolbar.primary-toolbar button.toggle,
+button:checked {
+	border-image-source: url("img/border-dark.png");
+	background-image:
+		radial-gradient(
+			circle farthest-side,
+			@button_active_glaze_glow_center,
+			@button_active_glaze_glow_edge ),
+		linear-gradient(to right,
+			@button_active_glaze_shadow_edge,
+			@button_active_glaze_shadow 3px,
+			alpha(@button_active_glaze_shadow, 0) 5px,
+			@null 5px, @null ),
+		linear-gradient(to bottom,
+			@button_active_glaze_shadow_edge,
+			@button_active_glaze_shadow 3px,
+			alpha(@button_active_glaze_shadow, 0) 5px,
+			@null 5px, @null ),
+		linear-gradient(to bottom,
+			@button_active_glaze_top,
+			@button_active_glaze_mid-a 49%,
+			@button_active_glaze_mid-b 49%,
+			@button_active_glaze_bot );
+}
+
+toolbar.primary-toolbar button.toggle:hover,
+button:checked:hover {
+	background:
+		radial-gradient(
+			circle farthest-side,
+			@button_hover_glaze_glow_center,
+			@button_hover_glaze_glow_edge ),
+		linear-gradient(to right,
+			alpha(@button_active_glaze_shadow_edge, 0.3),
+			alpha(@button_active_glaze_shadow, 0.3) 3px,
+			alpha(@button_active_glaze_shadow, 0) 5px,
+			@null 5px, @null ),
+		linear-gradient(to bottom,
+			alpha(@button_active_glaze_shadow_edge, 0.3),
+			alpha(@button_active_glaze_shadow, 0.3) 3px,
+			alpha(@button_active_glaze_shadow, 0) 5px,
+			@null 5px, @null ),
+		linear-gradient(to bottom,
+			@button_hover_glaze_top,
+			@button_hover_glaze_mid-a 49%,
+			@button_hover_glaze_mid-b 49%,
+			@button_hover_glaze_bot );
+}
+
+
+
+/* --- Toolbars --- */
+
+toolbar button {
+	padding: 4px 6px;
+}
+
+toolbar button:hover {
+	background:
+		radial-gradient(
+			circle farthest-side,
+			@button_hover_glaze_glow_center,
+			@button_hover_glaze_glow_edge ),
+		linear-gradient(to bottom,
+			@button_hover_glaze_top,
+			@button_hover_glaze_mid-a 49%,
+			@button_hover_glaze_mid-b 49%,
+			@button_hover_glaze_bot );
+}
+
+
+/* --- Primary toolbar - big button bar at the top --- */
+
+toolbar.primary-toolbar button {
+	padding: 14px 12px;
+	border-color: transparent;
+	border-image: none 4 4 3 4 / 4 4 3 4 repeat;
+	background-image: none;
+	background-color: transparent;
+}
+
+/* Only active/hover buttons have borders here */
+toolbar.primary-toolbar button:active,
+toolbar.primary-toolbar button:hover {
+	border-image: url("img/border.png") 4 4 3 4 / 4 4 3 4 repeat;
+}
+toolbar.primary-toolbar button:focus:hover {
+	border-image: url("img/pt-border-focus-hover.png") 4 4 3 4 / 4 4 3 4 repeat;
+	background:
+		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
+			linear-gradient(to bottom, @pt_btn_sel_fill, @pt_btn_sel_fill),
+		radial-gradient(
+			circle farthest-side,
+			@button_hover_glaze_glow_center,
+			@button_hover_glaze_glow_edge ),
+		linear-gradient(to bottom,
+			@button_hover_glaze_top,
+			@button_hover_glaze_mid-a 49%,
+			@button_hover_glaze_mid-b 49%,
+			@button_hover_glaze_bot );
+}
+
+
+/* -------------------------------------------------- */
+
+/* --- Misc legacy stuff from clearlooks --- */
+/* XXX: check and remove it all from here */
+
+/* XXX: check pushed + disabled button */
+toolbar button:checked:disabled {
+	background-image: linear-gradient(to bottom,
+		@button_active_insensitive_gradient_a,
+		@button_active_insensitive_gradient_b 3px,
+		@button_active_insensitive_gradient_c 4px,
+		@button_active_insensitive_gradient_d 50%,
+		@button_active_insensitive_gradient_e 50%,
+		@button_active_insensitive_gradient_f);
+	background-color: transparent;
+}
+
+/* XXX: path bar element */
+.path-bar button,
+.linked.path-bar > button,
+.path-bar button image,
+.path-bar button label {
+	padding: 2px;
+}
+.path-bar button {
+	border-width: 1px 0px 1px 1px;
+}
+.path-bar button:first-child,
+.path-bar button:first-child:hover:active {
+	border-right-width: 0px;
+}
+.path-bar button:only-child,
+.path-bar button:only-child:hover:active {
+	border-radius: 3px;
+	border-right-width: 1px;
+}
+
+/* XXX: trough? not sure what this is and why it's in buttons.css */
+
+trough,
+trough.highlight,
+trough row,
+trough row:hover {
+	background-image: linear-gradient(to bottom,
+		@trough_gradient_a,
+		@trough_gradient_b 4px);
+}
+
+/* Flipped pushed button background for vertical progressbar through and the like */
+trough.vertical {
+	background-image: linear-gradient(to right,
+		@trough_gradient_a,
+		@trough_gradient_b 4px);
+}
+
+/* XXX: in-button separator? */
+button separator {
+	border-left: solid 1px @theme_fg;
+	padding-left: 2px;
+	padding-right: 2px;
+}

@@ -1,10 +1,21 @@
 #!/usr/bin/python
 
 import pathlib as pl, subprocess as sp, contextlib as cl
-import os, sys, signal, select, time
+import os, sys, signal, select, time, errno
 
 
-def awf_wrapper(ctx, debounce=0):
+def run_tpl_rebuild(tpl_script, tpl_dir):
+	for n in range(10):
+		try: proc = sp.run([tpl_script, tpl_dir])
+		except OSError as err:
+			if err.errno != errno.EBUSY: raise
+			time.sleep(0.1) # exec while file is being updated - retry a few times
+			continue
+		else: return proc.returncode == 0
+		break
+	return False
+
+def awf_wrapper(ctx, debounce=0, rebuild_templates=False):
 	sig_pipe, sig_pipe_w = os.pipe()
 	ctx.callback(os.close, sig_pipe)
 	ctx.callback(os.close, sig_pipe_w)
@@ -23,6 +34,11 @@ def awf_wrapper(ctx, debounce=0):
 	os.set_blocking(awf.stdout.fileno(), False)
 	awf_out = open(awf.stdout.fileno(), 'rb', 0)
 
+	if rebuild_templates:
+		tpl_dir = pl.Path(__file__).parent
+		tpl_script = str(tpl_dir / 'css-templater.py')
+		if '/' not in tpl_script: tpl_script = './' + tpl_script
+
 	line, s = '', select.epoll()
 	ctx.callback(s.close)
 	s.register(sig_pipe, select.EPOLLIN)
@@ -38,8 +54,10 @@ def awf_wrapper(ctx, debounce=0):
 				sig = os.read(fd, 1)
 				if reload_ts and ts - debounce < reload_ts: continue
 				reload_ts = ts
-				awf.send_signal(signal.SIGHUP)
 				print(f'\r                              \n[{ts_str}] ----- reload -----')
+				if rebuild_templates and not run_tpl_rebuild(tpl_script, tpl_dir):
+					print('WARNING: template-rebuild script failed')
+				awf.send_signal(signal.SIGHUP)
 				continue
 			else:
 				out = awf_out.readline().decode()
@@ -63,6 +81,8 @@ def main(args=None):
 	parser.add_argument('-d', '--reload-debounce',
 		type=float, metavar='sec', default=2,
 		help='Debounce timeout for reload signal(s), in seconds. Default: %(default)ss')
+	parser.add_argument('-t', '--rebuild-templates', action='store_true',
+		help='Rebuild .css files from .tpl.css via css-templater.py script on reload signal.')
 	opts = parser.parse_args(sys.argv[1:] if args is None else args)
 
 	with cl.ExitStack() as ctx:
@@ -72,7 +92,7 @@ def main(args=None):
 			ctx.callback(pid_file.unlink, missing_ok=True)
 
 		sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 1) # line-buffering
-		return awf_wrapper(ctx, opts.reload_debounce)
+		return awf_wrapper(ctx, opts.reload_debounce, opts.rebuild_templates)
 
 if __name__ == '__main__':
 	signal.signal(signal.SIGINT, lambda sig,frm: sys.exit(0))

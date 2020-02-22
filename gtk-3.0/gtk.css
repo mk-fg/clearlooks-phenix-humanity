@@ -2,6 +2,9 @@
  * This section can be modified to create color variants of the theme. *
  ***********************************************************************/
 
+/* Defines all colors used in other stylesheets before including them. */
+/* Any color tweaked or defined elsewhere is a bug. */
+
 @define-color theme_base #fff;
 
 @define-color theme_bg #e6ddd5;
@@ -453,6 +456,8 @@
  * imports *
  ***********/
 
+/* XXX: rename old clearlooks css files to indicate deprecation */
 @import url("gtk-widgets-img.css");
 @import url("gtk-widgets.css");
+@import url("buttons.css");
 @import url("applications.css");

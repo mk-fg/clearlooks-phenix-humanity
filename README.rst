@@ -19,6 +19,51 @@ Work in progress, not ready for general use yet.
 .. _Human Quarny theme: https://www.gnome-look.org/p/1013593/
 
 
+Templating (.tpl.css files)
+---------------------------
+
+To avoid going insane from 100+ line selectors, simple custom templating is used
+to transform \*.tpl.css into \*.css files via css-templater.py script.
+
+Both source and destination files are in the repo, so it should be irrelevant
+for simple theme usage, only for editing it.
+
+Templating is intended to keep css clean and explicit wrt what is defined where.
+
+Supported templating rules:
+
+- ``-x-same-as``::
+
+    toolbar -ext {
+      -x-same-as: button:active, button:hover;
+    }
+
+  Removes this whole block, finds statements for "button:active" and
+  "button:hover" selectors within same css and prepends "toolbar button:active,"
+  and "toolbar button:hover," (prefixed) selectors to that.
+
+  Needed because of css selector precedence logic, where e.g. overriding
+  background in "toolbar button" will also affect "toolbar button:hover"
+  background, and restoring those requires a lot of many-to-many prefixes.
+
+- ``-x-same-rules``::
+
+    toolbar button:toggle -ext {
+      -x-same-rules: button:checked;
+    }
+
+  Same as ``-x-same-as``, but does not append selector(s) from rule value,
+  i.e. will prepend "toolbar button:toggle," to "button:checked" block in this
+  example.
+
+  For logical grouping of elements sharing same rules, like all rules relating
+  to toolbar buttons together, instead of spreading them as prefixes all over
+  the place.
+
+Other common CSS templating system - SASS/SCSS - doesn't handle all such cases
+well, unfortunately, hence custom system.
+
+
 Common differences between Clearlooks Gtk3 vs Human Gtk2
 --------------------------------------------------------
 
