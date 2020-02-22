@@ -8,7 +8,7 @@ def run_tpl_rebuild(tpl_script, tpl_dir):
 	for n in range(10):
 		try: proc = sp.run([tpl_script, tpl_dir])
 		except OSError as err:
-			if err.errno != errno.EBUSY: raise
+			if err.errno != errno.ETXTBSY: raise
 			time.sleep(0.1) # exec while file is being updated - retry a few times
 			continue
 		else: return proc.returncode == 0

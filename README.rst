@@ -23,20 +23,21 @@ Templating (.tpl.css files)
 ---------------------------
 
 To avoid going insane from 100+ line selectors, simple custom templating is used
-to transform \*.tpl.css into \*.css files via css-templater.py script.
+to transform \*.tpl.css into \*.css files via `css-templater.py`_ script.
 
 Both source and destination files are in the repo, so it should be irrelevant
 for simple theme usage, only for editing it.
 
 Templating is intended to keep css clean and explicit wrt what is defined where.
 
+All templating rules are processed from regular css statements with ``-ext``
+selector, taking both selectors and rules there into account.
+
 Supported templating rules:
 
 - ``-x-same-as``::
 
-    toolbar -ext {
-      -x-same-as: button:active, button:hover;
-    }
+    toolbar -ext { -x-same-as: button:active, button:hover; }
 
   Removes this whole block, finds statements for "button:active" and
   "button:hover" selectors within same css and prepends "toolbar button:active,"
@@ -48,23 +49,27 @@ Supported templating rules:
 
 - ``-x-same-rules``::
 
-    toolbar button:toggle -ext {
-      -x-same-rules: button:checked;
-    }
+    toolbar button:toggle -ext { -x-same-rules: button:checked; }
 
-  Same as ``-x-same-as``, but does not append selector(s) from rule value,
+  Similar to ``-x-same-as``, but does not append selector(s) from rule value,
   i.e. will prepend "toolbar button:toggle," to "button:checked" block in this
   example.
 
   For logical grouping of elements sharing same rules, like all rules relating
-  to toolbar buttons together, instead of spreading them as prefixes all over
-  the place.
+  to toolbar buttons together, instead of spreading them as selector prefixes
+  all over the place.
+
+Run e.g. ``diff -uw gtk-3.0/buttons{.tpl,}.css`` for a more concrete
+transformation examples.
+css-templater.py also prints diffs with -v/--verbose option.
 
 Other common CSS templating system - SASS/SCSS - doesn't handle all such cases
-well, unfortunately, hence custom system.
+well, unfortunately, hence this custom system.
+
+.. _css-templater.py: css-templater.py
 
 
-Common differences between Clearlooks Gtk3 vs Human Gtk2
+Common differences between Clearlooks GTK3 vs Human GTK2
 --------------------------------------------------------
 
 All of these apply to looks after Gtk3 translation, with rough guess at which
@@ -246,7 +251,6 @@ GTK+ Theming Documentation/Tool Links
 .. _awf-gtk3-wrapper.py: awf-gtk3-wrapper.py
 .. _fatrace-run: https://github.com/mk-fg/fgtk/blob/master/fatrace-run
 .. _fatrace: https://launchpad.net/fatrace
-.. _css-templater.py: css-templater.py
 .. _GTK+ CSS Overview: https://developer.gnome.org/gtk3/stable/chap-css-overview.html
 .. _GTK+ CSS Properties: https://developer.gnome.org/gtk3/stable/chap-css-properties.html
 .. _GTK+ Inspector: https://wiki.gnome.org/Projects/GTK/Inspector

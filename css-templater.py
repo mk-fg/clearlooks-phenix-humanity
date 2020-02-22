@@ -3,7 +3,7 @@
 import pathlib as pl, collections as cs, dataclasses as dc
 import os, sys, re, tempfile, subprocess as sp
 
-import textx as tx # pip install --user textx
+import textx as tx # pip3 install --user textx
 
 
 tx_css = tx.metamodel_from_str('''
