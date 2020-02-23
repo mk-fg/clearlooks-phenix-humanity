@@ -132,6 +132,7 @@ button:focus:hover {
 		-x-var-bg-glaze-hover;
 }
 
+button:disabled:focus,
 button:disabled {
 	color: @insensitive_fg;
 	border-image: none;
@@ -303,6 +304,26 @@ toolbar.primary-toolbar button:active:hover -ext { -x-same-rules: button:checked
 toolbar.primary-toolbar button:focus:active -ext,
 toolbar.primary-toolbar button:focus:active:hover -ext {
 	-x-same-rules: toolbar.primary-toolbar button.toggle:focus; }
+
+
+/* --- Spinbutton buttons --- */
+
+spinbutton button,
+spinbutton button:disabled,
+spinbutton button:disabled:focus {
+	margin: 0;
+	border-radius: 0;
+	border: 0;
+}
+
+/* XXX: all buttons get :focus when spinbutton itself does */
+spinbutton button:focus {
+	background:
+		-x-var-bg-glow,
+		-x-var-bg-glaze;
+}
+spinbutton button:focus:hover -ext { -x-same-rules: button:hover; }
+
 
 /* --- end of buttons --- */
 

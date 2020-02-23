@@ -47,3 +47,5 @@ window {
 	color: @insensitive_fg;
 	text-shadow: 0.5px 1px @insensitive_text_shadow;
 }
+
+/* XXX: add box-shadow for most elements to emulate reliefstyle=2 shadow/highlight */
