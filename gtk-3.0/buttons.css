@@ -243,7 +243,7 @@ toolbar button:hover {
 /* --- Primary toolbar - big button bar at the top --- */
 
 toolbar.primary-toolbar button {
-	padding: 14px 12px;
+	padding: 4px;
 	border-color: transparent;
 	border-image: none 4 4 3 4 / 4 4 3 4 repeat;
 	background-image: none;
