@@ -1708,7 +1708,7 @@ decoration {
 }
 
 window decoration {
-	border: solid 2px @insensitive_border;
+	border: solid 1px @insensitive_border;
 }
 
 tooltip.csd decoration {
