@@ -49,8 +49,8 @@
  ***********/
 
 @define-color insensitive_bg @theme_bg;
-@define-color insensitive_fg shade(@core_b, 0.70);
-@define-color insensitive_text_shadow @theme_base;
+@define-color insensitive_fg shade(@theme_bg, 0.62);
+@define-color insensitive_text_shadow alpha(@theme_base, 0.5);
 
 @define-color internal_element @theme_text;
 @define-color internal_element_hover @theme_text;
