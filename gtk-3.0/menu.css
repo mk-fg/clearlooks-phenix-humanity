@@ -9,7 +9,7 @@
 menubar {
 	border-bottom: 1px @menubar_border_bot solid;
 	margin-top: 1px;
-	padding: 0 4px;
+	padding: 0 1px;
 	-GtkWidget-window-dragging: true;
 	background-color: transparent;
 	background-image: linear-gradient(to bottom, @menubar_grad_top, @menubar_grad_bot);
@@ -17,7 +17,7 @@ menubar {
 
 menubar menuitem {
 	border: 1px transparent solid;
-	padding: 2px 6px;
+	padding: 2px 7px;
 	background-color: transparent;
 }
 
