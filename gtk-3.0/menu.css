@@ -204,92 +204,106 @@ menu menuitem .check:disabled,
 menu menuitem .radio:disabled {
 	background-image: none;
 	background-color: transparent;
-	min-height: 12px;
-	min-width: 12px;
+	min-height: 16px;
+	min-width: 16px;
 	padding-left: 2px;
 	padding-right: 2px;
 }
 
+/* unchecked */
 menu menuitem check {
-	-gtk-icon-source: -gtk-scaled(url("img/menuitem-checkbox.png"),
-		url("img/menuitem-checkbox@2.png"));
-}
-
-menu menuitem check:hover {
-	-gtk-icon-source: -gtk-scaled(url("img/menuitem-checkbox-hover.png"),
-		url("img/menuitem-checkbox-hover@2.png"));
+	-gtk-icon-source: url("img/checkbox-unchecked.svg");
 }
 
 menu menuitem check:disabled {
-	-gtk-icon-source: -gtk-scaled(url("img/menuitem-checkbox-insensitive.png"),
-		url("img/menuitem-checkbox-insensitive@2.png"));
+	-gtk-icon-source: url("img/checkbox-unchecked-insensitive.svg");
 }
 
-menu menuitem check:checked,
-menu menuitem check:active {
-	-gtk-icon-source: -gtk-scaled(url("img/menuitem-checkbox-checked.png"),
-		url("img/menuitem-checkbox-checked@2.png"));
+/* menu menuitem check:hover {
+	-gtk-icon-source: url("img/checkbox-unchecked.svg");
+} */
+
+/* checked */
+menu menuitem check:checked {
+	-gtk-icon-source: url("img/checkbox-checked.svg");
 }
 
-menu menuitem check:checked:hover,
-menu menuitem check:active:hover {
-	-gtk-icon-source: -gtk-scaled(url("img/menuitem-checkbox-checked-hover.png"),
-		url("img/menuitem-checkbox-checked-hover@2.png"));
+menu menuitem check:checked:active {
+	-gtk-icon-source: url("img/checkbox-checked-active.svg");
 }
 
 menu menuitem check:checked:disabled,
 menu menuitem check:active:disabled {
-	-gtk-icon-source: -gtk-scaled(url("img/menuitem-checkbox-checked-insensitive.png"),
-		url("img/menuitem-checkbox-checked-insensitive@2.png"));
+	-gtk-icon-source: url("img/checkbox-checked-insensitive.svg");
 }
 
-menu menuitem check:indeterminate,
-menu menuitem radio:indeterminate {
-	-gtk-icon-source: -gtk-scaled(url("img/menuitem-checkbox-mixed.png"),
-		url("img/menuitem-checkbox-mixed@2.png"));
+/* menu menuitem check:checked:hover,
+menu menuitem check:active:hover {
+	-gtk-icon-source: url("img/checkbox-checked.svg");
+} */
+
+/* mixed */
+menu menuitem check:indeterminate {
+	-gtk-icon-source: url("img/checkbox-mixed.svg");
 }
 
-menu menuitem check:indeterminate:hover,
-menu menuitem radio:indeterminate:hover {
-	-gtk-icon-source: -gtk-scaled(url("img/menuitem-checkbox-mixed-hover.png"),
-		url("img/menuitem-checkbox-mixed-hover@2.png"));
+menu menuitem check:indeterminate:active {
+	-gtk-icon-source: url("img/checkbox-mixed-active.svg");
 }
 
-menu menuitem check:indeterminate:disabled,
-menu menuitem radio:indeterminate:disabled {
-	-gtk-icon-source: -gtk-scaled(url("img/menuitem-checkbox-mixed-insensitive.png"),
-		url("img/menuitem-checkbox-mixed-insensitive@2.png"));
+menu menuitem check:indeterminate:disabled {
+	-gtk-icon-source: url("img/checkbox-mixed-insensitive.svg");
 }
 
+/* menu menuitem check:indeterminate:hover {
+	-gtk-icon-source: url("img/checkbox-mixed.svg");
+} */
+
+/* unchecked */
 menu menuitem radio {
-	-gtk-icon-source: -gtk-scaled(url("img/menuitem-radio.png"),
-		url("img/menuitem-radio@2.png"));
-}
-
-menu menuitem radio:hover {
-	-gtk-icon-source: -gtk-scaled(url("img/menuitem-radio-hover.png"),
-		url("img/menuitem-radio-hover@2.png"));
+	-gtk-icon-source: url("img/radio-unchecked.svg");
 }
 
 menu menuitem radio:disabled {
-	-gtk-icon-source: -gtk-scaled(url("img/menuitem-radio-insensitive.png"),
-		url("img/menuitem-radio-insensitive@2.png"));
+	-gtk-icon-source: url("img/radio-unchecked-insensitive.svg");
 }
 
-menu menuitem radio:checked,
-menu menuitem radio:active {
-	-gtk-icon-source: -gtk-scaled(url("img/menuitem-radio-checked.png"),
-		url("img/menuitem-radio-checked@2.png"));
+/* menu menuitem radio:hover {
+	-gtk-icon-source: url("img/radio-unchecked.svg");
+} */
+
+/* checked */
+menu menuitem radio:checked {
+	-gtk-icon-source: url("img/radio-checked.svg");
 }
 
-menu menuitem radio:checked:hover,
-menu menuitem radio:active:hover {
-	-gtk-icon-source: -gtk-scaled(url("img/menuitem-radio-checked-hover.png"),
-		url("img/menuitem-radio-checked-hover@2.png"));
+menu menuitem radio:checked:active {
+	-gtk-icon-source: url("img/radio-checked-active.svg");
 }
 
 menu menuitem radio:checked:disabled,
 menu menuitem radio:active:disabled {
-	-gtk-icon-source: -gtk-scaled(url("img/menuitem-radio-checked-insensitive.png"),
-		url("img/menuitem-radio-checked-insensitive@2.png"));
+	-gtk-icon-source: url("img/radio-checked-insensitive.svg");
 }
+
+/* menu menuitem radio:checked:hover,
+menu menuitem radio:active:hover {
+	-gtk-icon-source: url("img/radio-checked.svg");
+} */
+
+/* mixed */
+menu menuitem radio:indeterminate {
+	-gtk-icon-source: url("img/radio-mixed.svg");
+}
+
+menu menuitem radio:indeterminate:active {
+	-gtk-icon-source: url("img/radio-mixed-active.svg");
+}
+
+menu menuitem radio:indeterminate:disabled {
+	-gtk-icon-source: url("img/radio-mixed-insensitive.svg");
+}
+
+/* menu menuitem radio:indeterminate:hover {
+	-gtk-icon-source: url("img/radio-mixed.svg");
+} */
