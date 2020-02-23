@@ -45,5 +45,6 @@ window {
 *:disabled {
 	background-color: @insensitive_bg;
 	color: @insensitive_fg;
+	/* XXX: way too bright compared to GTK2, tone it down */
 	text-shadow: 1px 1px @insensitive_text_shadow;
 }

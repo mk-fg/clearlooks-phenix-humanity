@@ -162,6 +162,13 @@
 
 @define-color entry_text @theme_text;
 
+@define-color entry_border shade(@bg_shade5, 0.92);
+@define-color entry_border_focus alpha(shade(@theme_selected_bg, 1.42), 0.5);
+@define-color entry_border_disabled alpha(shade(@bg_shade4, 0.92), 0.65);
+
+@define-color entry_shadow alpha(shade(@theme_bg, 0.85), 0.6);
+@define-color entry_shadow_disabled alpha(shade(@theme_bg, 0.85), 0.3);
+
 @define-color entry_inner_border shade(@core_b, 0.96);
 @define-color entry_bg @theme_base;
 

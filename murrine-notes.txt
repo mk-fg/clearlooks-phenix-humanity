@@ -104,6 +104,19 @@ separator - default two-flat-line style:
 		alpha(shade(bg_normal, 1.3 + (1.3-1.0)*(0.9-1.0) = 1.27), 0.5)
 
 
+entry reliefstyle=2 "shadow" (always global):
+	border:
+		border = colors->shade[widget->disabled ? 4 : 5];
+			murrine_shade (&border, 0.92, &border);
+		murrine_draw_inset (cr, &widget->parentbg, 0, 0, width-1, height-1, radius+1, widget->corners);
+	shadow:
+		normal:
+			base = &colors->base[widget->state_type] = shade(theme_bg, 0.65)
+			murrine_shade (base, 1.15, &highlight);
+			murrine_set_color_rgba (cr, &highlight, widget->disabled ? 0.3 : 0.6);
+		focus:
+			murrine_shade (&border, 1.54, &focus_shadow);
+			murrine_set_color_rgba (cr, &focus_shadow, 0.5);
 
 
 
