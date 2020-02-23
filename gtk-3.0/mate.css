@@ -1,0 +1,43 @@
+/* mate.css */
+
+.mate-panel-menu-bar,
+.mate-panel-menu-bar menubar,
+#PanelPlug,
+PanelApplet,
+PanelApplet button,
+PanelToplevel.background {
+	border-bottom: 0;
+	background: #e6ddd5;
+}
+
+.mate-panel-menu-bar,
+.mate-panel-menu-bar menubar {
+	margin-top: 0;
+	padding: 0;
+}
+
+.mate-panel-menu-bar menubar {
+	margin-right: 8px;
+}
+
+.mate-panel-menu-bar menubar > menuitem {
+	margin: 0;
+	padding: 2px 5px 4px 9px;
+}
+
+/* system-monitor-applet */
+.multiload-applet > box.horizontal > box.vertical > frame {
+	margin: 1px 0;
+	padding: 0;
+	border: 1px solid #bcab9b;
+}
+
+.multiload-applet > box.horizontal > box.vertical > frame > border {
+	border-color: #dfd5cb;
+}
+
+/* clock-applet */
+#clock-applet-button {
+	margin: 0;
+	border: 0;
+}
