@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import pathlib as pl, collections as cs, dataclasses as dc
-import os, sys, re, tempfile, subprocess as sp
+import os, sys, re, tempfile, subprocess as sp, itertools as it
 
 import textx as tx # pip3 install --user textx
 
@@ -26,21 +26,49 @@ class Subst:
 	a: int
 	b: int = -1
 	s: str = ''
-	strip_tail: bool = False
+	strip_tail: bool = False # strip all spaces after this subst
 
 @dc.dataclass
-class Ext:
+class ExtSameRules:
 	sels: list
 	prefix: bool = False # whether these are prefixes
+
+
+def template_dup_selectors(css, ext_copy):
+	s_res, substs, m = dict(), list(), tx_css.model_from_str(css)
+
+	# Dedup ext_copy selectors, compile s_res regexps
+	for s, s_subs in ext_copy.items():
+		ext_copy[s] = sorted(set(s_subs))
+		s_res[s] = re.compile('^' + re.escape(s) + r'(?![-\w_])')
+
+	# Build a list of places to insert new selectors to
+	for st in tx.model.get_children_of_type('statement', m):
+		for (s, s_subs), sel in it.product(ext_copy.items(), st.sels):
+			s_re, sel_str = s_res[s], ' '.join(sel.atoms)
+			if not (m := s_re.search(sel_str)): continue
+			s_subs = list((s + sel_str[m.end(0):]) for s in s_subs)
+			s_ext_str = ''.join(f'{s},\n' for s in s_subs)
+			substs.append(Subst(sel._tx_position, s=s_ext_str))
+
+	# Insert new selectors
+	for s in sorted(substs, key=lambda s: (s.a, -s.b), reverse=True):
+		if s.b < 0: s.b = s.a
+		css = css[:s.a] + s.s + css[s.b:]
+
+	return css
 
 def template(css_tpl, print_diffs=False):
 	m = tx_css.model_from_str(css_tpl)
 	substs = list() # all text-replacement Subst's
 
 	# Build by-selector index of statements and extensions
-	ext_idx, st_idx = cs.defaultdict(list), cs.defaultdict(list)
+	ext_idx = cs.defaultdict(list) # {selector_id_tuple: [Ext]}
+	st_idx = cs.defaultdict(list) # {selector_id_tuple: [statement_model]}
 	# Also dict of all -x-var-* variables to find/replace later
-	ext_vars = dict()
+	ext_vars = dict() # {var_name_str: var_value_str}
+	# And search-copy-replace selector mappings to apply last
+	ext_copy = cs.defaultdict(list) # {selector_src_str: [selector_prefix_str]}
 
 	for st in tx.model.get_children_of_type('statement', m):
 		sel_exts = list(s for s in st.sels if '-ext' in s.atoms)
@@ -59,13 +87,14 @@ def template(css_tpl, print_diffs=False):
 
 		for rule in st.rules:
 			if not rule.name: continue # comment
-			if rule.name in ['-x-same-as', '-x-same-rules']:
+			if rule.name == '-x-same-rules':
 				if not sel_prefixes:
 					raise TemplateError(f'Bogus statement with -ext selector and no prefixes: {st_str!r}')
-				prefix = rule.name == '-x-same-as'
 				for s in rule.val.split(','):
-					s = tuple(s.strip().split())
-					ext_idx[s].append(Ext(sel_prefixes, prefix=prefix))
+					s_key = tuple(s.strip().split())
+					ext_idx[s_key].append(ExtSameRules(sel_prefixes))
+			elif rule.name == '-x-same-rules-all':
+				for s in rule.val.split(','): ext_copy[' '.join(s.strip().split())].extend(sel_prefixes)
 			elif rule.name.startswith('-x-var-'): ext_vars[rule.name[7:]] = rule.val
 			else: raise TemplateError(f'Unrecognized extension rule: {rule.name!r} = {rule.val!r}')
 
@@ -96,6 +125,10 @@ def template(css_tpl, print_diffs=False):
 		css = re.sub( r'(?<=[^-\w])' +
 			re.escape(f'-x-var-{k}') + r'(?=[^-\w])', lambda m: v, css )
 
+	# Perform many-to-many duplication of selectors from ext_copy
+	# Re-parses current css (after all other modifications applied) to do that
+	css = template_dup_selectors(css, ext_copy)
+
 	if print_diffs:
 		if not hasattr(template, 'diff_cmd'):
 			template.diff_cmd = 'colordiff'
@@ -119,22 +152,24 @@ def template_file(p_tpl, p_dst, verbose=False):
 
 def iter_tpl_file_pairs(p_dirs, fn_re, ignore_mtimes=False):
 	if isinstance(fn_re, str): fn_re = re.compile(fn_re)
-	for p_dir in p_dirs:
-		for root, dirs, files in os.walk(p_dir):
-			root = pl.Path(root)
-			for fn in files:
-				if not (m := fn_re.search(fn)): continue
-				p_tpl = root / fn
-				a, b = m.span(1)
-				p_dst = root / (fn[:a] + fn[b:])
-				if ( not ignore_mtimes and p_dst.exists()
-					and p_dst.stat().st_mtime > p_tpl.stat().st_mtime ): continue
-				yield (p_tpl, p_dst)
+	proc = sp.run(
+		['find', *p_dirs, *'-xdev -type f -print0'.split()],
+		check=True, stdout=sp.PIPE )
+	for fn in proc.stdout.decode().strip().split('\0'):
+		p_tpl = pl.Path(fn)
+		fn = p_tpl.name
+		if not (m := fn_re.search(fn)): continue
+		a, b = m.span(1)
+		p_dst = p_tpl.parent / (fn[:a] + fn[b:])
+		if ( not ignore_mtimes and p_dst.exists()
+			and p_dst.stat().st_mtime > p_tpl.stat().st_mtime ): continue
+		yield (p_tpl, p_dst)
 
 def main(args=None):
 	import argparse
 	parser = argparse.ArgumentParser(
-		description='Parse/convert all .css.tpl files into .css in a dir tree.')
+		description='Parse/convert all .css.tpl files into .css in a dir tree.'
+			' Does not walk through symlinks or into mountpoints (uses "find -xdev").')
 	parser.add_argument('dir', nargs='*', help='Directory(-ies) to process. Default: current one.')
 	parser.add_argument('-e', '--tpl-ext-re',
 		metavar='regexp', default=r'(\.tpl).css$',

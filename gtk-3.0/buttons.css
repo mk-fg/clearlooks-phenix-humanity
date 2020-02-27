@@ -40,7 +40,6 @@ button {
 }
 
 spinbutton button:focus:hover,
-toolbar.primary-toolbar button:hover,
 button:hover {
 	background:
 		radial-gradient(
@@ -105,9 +104,13 @@ button:disabled {
 			@button_disabled_glaze_bot );
 }
 
+button.flat.toggle,
 toolbar.primary-toolbar button.toggle,
+button.flat.toggle:active:hover,
 toolbar.primary-toolbar button.toggle:active:hover,
+button.flat:active,
 toolbar.primary-toolbar button:active,
+button.flat:active:hover,
 toolbar.primary-toolbar button:active:hover,
 button:checked {
 	/* Also used for mousedown effect on non-focus toolbar buttons */
@@ -135,7 +138,6 @@ button:checked {
 			@button_active_glaze_bot );
 }
 
-toolbar.primary-toolbar button:active,
 button:checked:focus,
 button:checked:active:focus:hover,
 button:active,
@@ -168,6 +170,7 @@ button:active:hover {
 			@button_active_glaze_bot );
 }
 
+button.flat.toggle:hover,
 toolbar.primary-toolbar button.toggle:hover,
 button:checked:hover {
 	/* Regular hover + slight shadow */
@@ -242,8 +245,10 @@ toolbar button:hover {
 }
 
 
-/* --- Primary toolbar - big button bar at the top --- */
+/* --- Primary toolbar (big button bar at the top) and .flat buttons --- */
+/* Don't have button-like background unless you hover over them */
 
+button.flat,
 toolbar.primary-toolbar button {
 	padding: 4px;
 	border-color: transparent;
@@ -252,6 +257,7 @@ toolbar.primary-toolbar button {
 	background-color: transparent;
 }
 
+button.flat:focus,
 toolbar.primary-toolbar button:focus {
 	border-width: 1px;
 	border-image: url("img/btn-border-focus.png") 4 4 3 4 / 4 4 3 4 repeat;
@@ -260,11 +266,20 @@ toolbar.primary-toolbar button:focus {
 			linear-gradient(to bottom, @button_focus_fill, @button_focus_fill);
 }
 
+/* Rule above will override :hover and such, hence restoring them here */
+button.flat:active,
+toolbar.primary-toolbar button:active { -x-same-rules: button:active; }
+button.flat:hover,
+toolbar.primary-toolbar button:hover { -x-same-rules: button:hover; }
+
 /* Only active/hover buttons have borders here */
+button.flat:active,
 toolbar.primary-toolbar button:active,
+button.flat:hover,
 toolbar.primary-toolbar button:hover {
 	border-image: url("img/border.png") 4 4 3 4 / 4 4 3 4 repeat;
 }
+button.flat:focus:hover,
 toolbar.primary-toolbar button:focus:hover {
 	border-width: 1px;
 	border-image: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 3 4 repeat;
@@ -285,9 +300,13 @@ toolbar.primary-toolbar button:focus:hover {
 /* Pushed/toggled button (Gtk.ToggleButton) */
 /* :active (mousedown) makes it look pushed-down (dark) even with :hover */
 
+button.flat:focus:active,
 toolbar.primary-toolbar button:focus:active,
+button.flat:focus:active:hover,
 toolbar.primary-toolbar button:focus:active:hover,
+button.flat.toggle:focus,
 toolbar.primary-toolbar button.toggle:focus,
+button.flat.toggle:focus:active:hover,
 toolbar.primary-toolbar button.toggle:focus:active:hover {
 	/* button:checked (dark-bg + shadow) + button:focus (orange fill + border) */
 	border-image: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 3 4 repeat;
@@ -315,6 +334,7 @@ toolbar.primary-toolbar button.toggle:focus:active:hover {
 			@button_active_glaze_bot );
 }
 
+button.flat.toggle:focus:hover,
 toolbar.primary-toolbar button.toggle:focus:hover {
 	/* same as button.toggle:focus but with bg layers from button:checked:hover */
 	border-image: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 3 4 repeat;
@@ -345,6 +365,7 @@ toolbar.primary-toolbar button.toggle:focus:hover {
 /* Mousedown effect is same as button:checked without :focus */
 /* Toolbar buttons don't seem to auto-grab :focus on click like normal ones do, hence +1 templated state here */
 
+/* "button.flat" will be styled exactly like "toolbar.primary-toolbar button", incl. all of its states */
 /* --- Spinbutton buttons --- */
 
 spinbutton button,

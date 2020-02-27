@@ -36,28 +36,29 @@ sections afterwards.
 
 Supported templating rules:
 
-- ``-x-same-as``::
-
-    toolbar -ext { -x-same-as: button:active, button:hover; }
-
-  Finds statements for "button:active" and "button:hover" selectors within same css
-  and prepends "toolbar button:active," and "toolbar button:hover," (prefixed) selectors to that.
-
-  Needed because of css selector precedence logic, where e.g. overriding
-  background in "toolbar button" will also affect "toolbar button:hover"
-  background, and restoring those requires a lot of many-to-many prefixes.
-
 - ``-x-same-rules``::
 
     toolbar button:toggle -ext { -x-same-rules: button:checked; }
 
-  Similar to ``-x-same-as``, but does not append selector(s) from rule value,
-  i.e. will prepend "toolbar button:toggle," to "button:checked" block in this
-  example.
+  Apply all rules specified for one selector ("button:checked" above) to another.
 
-  For logical grouping of elements sharing same rules, like all rules relating
-  to toolbar buttons together, instead of spreading them as selector prefixes
-  all over the place.
+  For logical grouping of elements sharing same rules, for example to have all
+  rules relating to "toolbar" buttons together, instead of spreading them as
+  selector prefixes all over the place.
+
+- ``-x-same-rules-all``::
+
+    button.flat -ext { -x-same-rules-all: toolbar button; }
+
+  Applies all the same rules as for "toolbar button" to "button.flat", including
+  e.g. "toolbar button:toggle" rule above (will be used for "button.flat:toggle"),
+  as well as any rules for child/descendant elements.
+
+  Kinda like search-copy-replace for all selectors where "toolbar button" is used.
+  Can be used for many-to-many replacements, with any number of selectors on either side, not just one.
+
+  Some elements are styled in the same way, and this allows to do it with just
+  one line, instead of duplicating a list of these in every selector forever.
 
 - ``-x-var-*``::
 
