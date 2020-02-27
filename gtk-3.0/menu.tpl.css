@@ -3,6 +3,19 @@
   - most likely legacy definition from clearlooks theme, which should be moved here. */
 /* Anything non-menu-like styled here is likewise a bug. */
 
+-ext {
+	-x-var-bg-hover:
+		radial-gradient( ellipse 110% 50%,
+			@menuitem_hover_glaze_glow_center,
+			@menuitem_hover_glaze_glow_edge ),
+		linear-gradient( to bottom,
+			@menuitem_hover_glaze_top,
+			@menuitem_hover_glaze_mid-a 50%,
+			@menuitem_hover_glaze_mid-b 50%,
+			@menuitem_hover_glaze_bot );
+}
+
+
 /* --- menubar on top of the window --- */
 
 menubar {
@@ -27,14 +40,7 @@ menubar menuitem:hover {
 	color: @menubar_menuitem_hover;
 	background-color: @menu_bg;
 	background-image:
-		radial-gradient( ellipse 110% 50%,
-			@menuitem_hover_glaze_glow_center,
-			@menuitem_hover_glaze_glow_edge ),
-		linear-gradient( to bottom,
-			@menuitem_hover_glaze_top,
-			@menuitem_hover_glaze_mid-a 50%,
-			@menuitem_hover_glaze_mid-b 50%,
-			@menuitem_hover_glaze_bot );
+		-x-var-bg-hover;
 }
 
 
@@ -68,14 +74,7 @@ menu menuitem:hover {
 	border: 1px @menuitem_hover_border solid;
 	color: @theme_selected_fg;
 	background-image:
-		radial-gradient( ellipse 110% 50%,
-			@menuitem_hover_glaze_glow_center,
-			@menuitem_hover_glaze_glow_edge ),
-		linear-gradient( to bottom,
-			@menuitem_hover_glaze_top,
-			@menuitem_hover_glaze_mid-a 50%,
-			@menuitem_hover_glaze_mid-b 50%,
-			@menuitem_hover_glaze_bot );
+		-x-var-bg-hover;
 }
 
 menu menuitem:hover cellview {
@@ -431,28 +430,14 @@ row:selected:hover,
 row:selected:focus:hover,
 .cell:selected:hover {
 	background-image:
-		radial-gradient( ellipse 110% 50%,
-			@menuitem_hover_glaze_glow_center,
-			@menuitem_hover_glaze_glow_edge ),
-		linear-gradient( to bottom,
-			@menuitem_hover_glaze_top,
-			@menuitem_hover_glaze_mid-a 50%,
-			@menuitem_hover_glaze_mid-b 50%,
-			@menuitem_hover_glaze_bot );
+		-x-var-bg-hover;
 }
 
 row:hover,
 row:hover:focus,
 .cell:hover {
 	background-image:
-		radial-gradient( ellipse 110% 50%,
-			@menuitem_hover_glaze_glow_center,
-			@menuitem_hover_glaze_glow_edge ),
-		linear-gradient( to bottom,
-			@menuitem_hover_glaze_top,
-			@menuitem_hover_glaze_mid-a 50%,
-			@menuitem_hover_glaze_mid-b 50%,
-			@menuitem_hover_glaze_bot );
+		-x-var-bg-hover;
 }
 
 .cell {

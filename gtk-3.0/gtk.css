@@ -250,12 +250,6 @@
 @define-color menuitem_hover_glaze_glow_center alpha(@menuitem_hover_glaze_glow, 0.5);
 @define-color menuitem_hover_glaze_glow_edge alpha(@menuitem_hover_glaze_glow, 0);
 
-/* XXX: still used in places other from menubar on top */
-@define-color menuitem_hover_gradient_a @core_a;
-@define-color menuitem_hover_gradient_b shade(@core_a, 0.95);
-@define-color menuitem_hover_gradient_c shade(@core_a, 0.93);
-@define-color menuitem_hover_gradient_d shade(@core_a, 0.88);
-
 /************
  * notebook *
  ************/
@@ -296,9 +290,9 @@
 @define-color progressbar_fill #915e49;
 
 @define-color progressbar_gradient_a @progressbar_fill;
-@define-color progressbar_gradient_b @menuitem_hover_gradient_b;
-@define-color progressbar_gradient_c @menuitem_hover_gradient_c;
-@define-color progressbar_gradient_d @menuitem_hover_gradient_d;
+@define-color progressbar_gradient_b shade(@core_a, 0.95);
+@define-color progressbar_gradient_c shade(@core_a, 0.93);
+@define-color progressbar_gradient_d shade(@core_a, 0.88);
 
 /*********
  * scale *

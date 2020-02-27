@@ -127,30 +127,3 @@ TerminalScreen {
 	background-color: @theme_base;
 	color: @theme_fg;
 }
-
-/*********
- * Unity *
- *********/
-
-UnityPanelWidget,
-.unity-panel {
-	background-image: none;
-	background-color: @theme_bg;
-	color: @theme_fg;
-	border-width: 0;
-}
-
-.unity-panel menubar menuitem:hover {
-	background-color: @menu_bg;
-	border-style: solid;
-	border-width: 1px 1px 0px;
-	border-color: @menubar_menuitem_hover_border;
-	border-radius: 3px 3px 0 0;
-	background-image: -gtk-gradient (linear,
-	                  left top,
-	                  left bottom,
-	                  from (@menubar_menuitem_hover_gradient_a),
-	                  color-stop (0.50, @menubar_menuitem_hover_gradient_b),
-	                  color-stop (0.50, @menubar_menuitem_hover_gradient_c),
-	                  to (@menubar_menuitem_hover_gradient_d));
-}
