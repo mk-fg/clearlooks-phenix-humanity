@@ -274,7 +274,24 @@ GTK+ Theming Documentation/Tool Links
 
 - `GTK+ CSS Overview`_ - outlines what is possible in GTK3 CSS.
 - `GTK+ CSS Properties`_ - reference for all supported CSS properties.
-- `GTK+ Inspector`_ - "CSS" tab there allows to easily paste/override/test theme parts on the fly.
+
+- `GTK+ Inspector`_ - "CSS" tab there allows to easily paste/override/test theme
+  parts on the fly.
+
+  .. container:: gtk-inspector-on-ubuntu-mate
+    :name: gtk-inspector-on-ubuntu-mate
+
+    To enable hotkeys for this inspector in all apps on e.g. Ubuntu MATE (so that
+    you can press Ctrl+Shift+I and show info on any element on mate-panel, same as
+    with inspector hotkeys in browsers), follow `this guide on ubuntu-mate.community`_,
+    gist of which is:
+
+    - Install libgtk-3-dev: ``sudo apt install libgtk-3-dev``
+    - Enable inspector keys: ``gsettings set org.gtk.Settings.Debug enable-inspector-keybinding true``
+    - Reboot
+    - Hover over any GTK3 app/panel element and press Ctrl+Shift+I or Ctrl+Shift+D
+
+    .. _this guide on ubuntu-mate.community: https://ubuntu-mate.community/t/mate-18-04-indicator-applet-complete-1-20-0-icons-resize-issue/16807/10
 
 - `Clearlooks-Phénix theme`_ - GTK3 theme which this rework is based on,
   as it looks quite like Human-Murrine GTK2 (which itself was based on
