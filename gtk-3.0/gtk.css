@@ -133,7 +133,7 @@
  * color chooser *
  *****************/
 
-@define-color color_swatch_border @border;
+@define-color color_swatch_border shade(@theme_bg, 0.83);
 @define-color color_swatch_hover_border @menuitem_hover_border;
 
 @define-color color_active_badge_light_border @theme_fg;

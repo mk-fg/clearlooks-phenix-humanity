@@ -144,52 +144,6 @@ image:selected {
 	color: @theme_selected_fg;
 }
 
-/*****************
- * Color Chooser *
- *****************/
-
-colorswatch,
-colorswatch:selected {
-	border-width: 1px;
-	border-style: solid;
-	border-radius: 3px;
-	border-color: @color_swatch_border;
-	background-color: transparent;
-	background-clip: border-box;
-}
-
-colorswatch:hover,
-colorswatch:selected:hover {
-	border-color: @color_swatch_hover_border;
-}
-
-colorchooser #add-color-button:hover,
-colorchooser #add-color-button:selected:hover {
-}
-
-.color-active-badge,
-.color-active-badge:selected {
-	border-style: solid;
-	border-width: 2px;
-	background-color: transparent;
-}
-
-.color-active-badge.color-light,
-.color-active-badge.color-light:hover {
-	border-color: @color_active_badge_light_border;
-	color: @color_active_badge_light;
-}
-
-.color-active-badge.color-dark,
-.color-active-badge.color-dark:hover {
-	border-color: @color_active_badge_dark_border;
-	color: @color_active_badge_dark;
-}
-
-GtkColorEditor colorswatch.color-light:hover,
-GtkColorEditor colorswatch.color-dark:hover {
-	background-image: none;
-}
 
 /****************
  * Progress bar *
@@ -410,27 +364,6 @@ scrolledwindow viewport {
  * packed into a GtkScrolledWindow */
 scrolledwindow viewport.frame {
 	border-style: none;
-}
-
-
-/*************************
- * Box/layout separators *
- *************************/
-
-separator.vertical {
-	border-left: 1px @separator_dark solid;
-	border-right: 1px @separator_hl solid;
-}
-separator.horizontal {
-	border-top: 1px @separator_dark solid;
-	border-bottom: 1px @separator_hl solid;
-}
-
-/* Separator line between buttons */
-toolbar separator {
-	border-left: 1px @separator_dark solid;
-	border-right: 1px @separator_hl solid;
-	margin: 10px 5px;
 }
 
 

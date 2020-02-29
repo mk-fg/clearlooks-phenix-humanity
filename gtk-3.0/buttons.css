@@ -224,7 +224,6 @@ button:checked:focus:hover {
 }
 
 
-
 /* --- Toolbars --- */
 
 toolbar button {
@@ -389,6 +388,25 @@ spinbutton button:focus {
 			@button_glaze_mid-b 49%,
 			@button_glaze_bot );
 }
+/* --- File chooser --- */
+
+filechooserbutton button {
+	padding-left: 3px;
+	padding-right: 5px;
+}
+
+
+/* --- Color chooser rectangle inside regular button --- */
+
+colorswatch,
+colorswatch:selected {
+	border: 1px @color_swatch_border solid;
+	margin: 0 10px;
+	min-width: 20px;
+}
+
+
+
 /* --- end of buttons --- */
 
 
