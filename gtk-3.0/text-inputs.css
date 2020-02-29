@@ -63,7 +63,8 @@ entry progressbar {
 	combobox -> box.horizontal.linked [ entry.combo, label.combo ] */
 
 combobox arrow {
-	-gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+	-gtk-icon-source: none;
+	background: url("img/dropdown-arrows.svg") no-repeat center;
 	color: @theme_fg;
 	min-height: 16px;
 	min-width: 16px;
@@ -74,7 +75,10 @@ combobox cellview:disabled {
 	color: alpha(@insensitive_fg, 0.8);
 	background-color: transparent;
 }
-combobox arrow:disabled { background-color: transparent; }
+combobox arrow:disabled {
+	opacity: 0.3;
+	background-color: transparent;
+}
 
 combobox window decoration {
 	border: 1px alpha(@insensitive_border, 0.9) solid;
