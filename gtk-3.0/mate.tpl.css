@@ -1,5 +1,19 @@
 /* mate.css: rules specific to MATE desktop environment */
 
+-ext {
+	/* Background is same as with menuitem:hover, but applied to buttons */
+	-x-var-bg-hover:
+		radial-gradient( ellipse 110% 50%,
+			@menuitem_hover_glaze_glow_center,
+			@menuitem_hover_glaze_glow_edge ),
+		linear-gradient( to bottom,
+			@menuitem_hover_glaze_top,
+			@menuitem_hover_glaze_mid-a 50%,
+			@menuitem_hover_glaze_mid-b 50%,
+			@menuitem_hover_glaze_bot );
+}
+
+
 /* --- top mate-panel and its components (main menu, icon bar, applets on the right) --- */
 /* All mate-panel components have .mate-panel-menu-bar */
 
@@ -35,14 +49,7 @@
 	border-radius: 3px 3px 0 0;
 	color: @menubar_menuitem_hover;
 	background:
-		radial-gradient( ellipse 110% 50%,
-			@menuitem_hover_glaze_glow_center,
-			@menuitem_hover_glaze_glow_edge ),
-		linear-gradient( to bottom,
-			@menuitem_hover_glaze_top,
-			@menuitem_hover_glaze_mid-a 50%,
-			@menuitem_hover_glaze_mid-b 50%,
-			@menuitem_hover_glaze_bot );
+		-x-var-bg-hover;
 }
 
 .brisk-menu button {
@@ -57,14 +64,7 @@
 	border: 1px @menuitem_hover_border solid;
 	color: @theme_selected_fg;
 	background:
-		radial-gradient( ellipse 110% 50%,
-			@menuitem_hover_glaze_glow_center,
-			@menuitem_hover_glaze_glow_edge ),
-		linear-gradient( to bottom,
-			@menuitem_hover_glaze_top,
-			@menuitem_hover_glaze_mid-a 50%,
-			@menuitem_hover_glaze_mid-b 50%,
-			@menuitem_hover_glaze_bot );
+		-x-var-bg-hover;
 }
 
 /* Search bar entry on top */

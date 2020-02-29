@@ -15,7 +15,7 @@ comment: '/*' body=/(?s).*?(?=\*\/)/ '*/';
 
 rule: name=/[-\w]+/ ':' val=/[^;]+/ ';' | comment;
 sel: atoms+=sel_atom ','?;
-sel_atom: /[-\w.:>()]+/ | '*';
+sel_atom: /[-\w.:>()#]+/ | '*';
 ''')
 
 

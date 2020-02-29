@@ -312,7 +312,6 @@ menu menuitem radio:indeterminate:disabled {
 
 /* --- treeview --- */
 
-
 treeview, list {
 	background-color: @theme_base;
 	color: @theme_text;
@@ -357,13 +356,15 @@ treeview header button:disabled,
 treeview header button:hover,
 treeview header button:focus:hover {
 	background-color: @theme_base;
-	background-image: -gtk-gradient (linear,
-	                  left top,
-	                  left bottom,
-	                  from (@column_header_button_gradient_a),
-	                  color-stop (0.50, @column_header_button_gradient_b),
-	                  color-stop (0.50, @column_header_button_gradient_c),
-	                  to (@column_header_button_gradient_d));
+	background-image:
+		-gtk-gradient(
+			linear,
+			left top,
+			left bottom,
+			from(@column_header_button_gradient_a),
+			color-stop(0.50, @column_header_button_gradient_b),
+			color-stop(0.50, @column_header_button_gradient_c),
+			to(@column_header_button_gradient_d) );
 	padding: 0 4px;
 	font-weight: normal;
 }
@@ -398,8 +399,9 @@ treeview header button:focus:hover:active {
 	border-width: 1px;
 	border-radius: 0;
 	border-style: solid;
-	border-color: @column_header_border_top @column_header_border_right
-	              @column_header_border_bottom @column_header_border_left;
+	border-color:
+		@column_header_border_top @column_header_border_right
+		@column_header_border_bottom @column_header_border_left;
 }
 
 treeview header button:last-child,

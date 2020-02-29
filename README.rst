@@ -282,8 +282,8 @@ GTK+ Theming Documentation/Tool Links
   .. container:: gtk-inspector-on-ubuntu-mate
     :name: gtk-inspector-on-ubuntu-mate
 
-    To enable hotkeys for this inspector in all apps on e.g. Ubuntu MATE (so that
-    you can press Ctrl+Shift+I and show info on any element on mate-panel, same as
+    To enable hotkeys for inspector in all apps on e.g. Ubuntu MATE (so that you
+    can press Ctrl+Shift+I and show info on any element on mate-panel, same as
     with inspector hotkeys in browsers), follow `this guide on ubuntu-mate.community`_,
     gist of which is:
 
@@ -291,6 +291,13 @@ GTK+ Theming Documentation/Tool Links
     - Enable inspector keys: ``gsettings set org.gtk.Settings.Debug enable-inspector-keybinding true``
     - Reboot
     - Hover over any GTK3 app/panel element and press Ctrl+Shift+I or Ctrl+Shift+D
+
+    Alternative is setting GTK_DEBUG=interactive env var for specific apps, or
+    to /etc/environment to have inspector window open automatically for every window.
+
+    Latter trick (``echo GTK_DEBUG=interactive >> /etc/environment``) can be
+    useful to debug some panel widgets where Ctrl+Shift+I doesn't work and which
+    are created in a complicated way.
 
     .. _this guide on ubuntu-mate.community: https://ubuntu-mate.community/t/mate-18-04-indicator-applet-complete-1-20-0-icons-resize-issue/16807/10
 

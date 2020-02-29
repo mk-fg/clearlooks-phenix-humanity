@@ -418,18 +418,18 @@ scrolledwindow viewport.frame {
  *************************/
 
 separator.vertical {
-	border-left: solid 1px @separator_dark;
-	border-right: solid 1px @separator_hl;
+	border-left: 1px @separator_dark solid;
+	border-right: 1px @separator_hl solid;
 }
 separator.horizontal {
-	border-top: solid 1px @separator_dark;
-	border-bottom: solid 1px @separator_hl;
+	border-top: 1px @separator_dark solid;
+	border-bottom: 1px @separator_hl solid;
 }
 
 /* Separator line between buttons */
 toolbar separator {
-	border-left: solid 1px @separator_dark;
-	border-right: solid 1px @separator_hl;
+	border-left: 1px @separator_dark solid;
+	border-right: 1px @separator_hl solid;
 	margin: 10px 5px;
 }
 
