@@ -9,38 +9,38 @@
 
 /* XXX: MUST NOT be unprefixed, as it affects scrollbars and other stuff this way */
 
-/* trough, */
-/* trough highlight { */
-/* 	border-image: url("img/border.png") 4 4 4 4 / 3px 3px 4px 3px repeat; */
-/* 	border-radius: 3px; */
-/* 	border-width: 1px 1px 2px 1px; */
-/* 	border-style: solid; */
-/* 	border-color: transparent; */
-/* } */
+trough,
+trough highlight {
+	border-image: url("img/border.png") 4 4 4 4 / 3px 3px 4px 3px repeat;
+	border-radius: 3px;
+	border-width: 1px 1px 2px 1px;
+	border-style: solid;
+	border-color: transparent;
+}
 
-/* trough row { */
-/* 	border-image: url("img/border-insensitive.svg") 3 3 4 3 / 3px 3px 4px 3px repeat; */
-/* 	border-radius: 3px; */
-/* 	border-width: 1px 1px 2px 1px; */
-/* 	border-style: solid; */
-/* 	border-color: transparent; */
-/* } */
+trough row {
+	border-image: url("img/border-insensitive.svg") 3 3 4 3 / 3px 3px 4px 3px repeat;
+	border-radius: 3px;
+	border-width: 1px 1px 2px 1px;
+	border-style: solid;
+	border-color: transparent;
+}
 
-/* trough, */
-/* trough.highlight, */
-/* trough row, */
-/* trough row:hover { */
-/* 	background-image: linear-gradient(to bottom, */
-/* 		@trough_gradient_a, */
-/* 		@trough_gradient_b 4px); */
-/* } */
+trough,
+trough.highlight,
+trough row,
+trough row:hover {
+	background-image: linear-gradient(to bottom,
+		@trough_gradient_a,
+		@trough_gradient_b 4px);
+}
 
-/* /\* Flipped pushed button background for vertical progressbar through and the like *\/ */
-/* trough.vertical { */
-/* 	background-image: linear-gradient(to right, */
-/* 		@trough_gradient_a, */
-/* 		@trough_gradient_b 4px); */
-/* } */
+/* Flipped pushed button background for vertical progressbar through and the like */
+trough.vertical {
+	background-image: linear-gradient(to right,
+		@trough_gradient_a,
+		@trough_gradient_b 4px);
+}
 
 
 /* --- Scale slider - trough + single caret --- */
