@@ -338,70 +338,8 @@
 @define-color scroll_hover_glaze_mid-b shade(@theme_bg, 0.86);
 @define-color scroll_hover_glaze_bot shade(@theme_bg, 0.80);
 
-/* XXX: not used here, only in sliders */
+/* XXX: for use in sliders later */
 /* @define-color scroll_trough_bg shade(@theme_bg, 0.90); */
-
-
-
-/* XXX: old scrollbar color definitions below - cleanup */
-
-/* junction */
-
-@define-color scrollbars_junction_bg @theme_bg;
-
-/* trough */
-
-@define-color scrollbar_trough_border shade(@core_b, 0.67);
-
-@define-color scrollbar_trough_gradient_a shade(@core_b, 0.86);
-@define-color scrollbar_trough_gradient_b shade(@core_b, 0.90);
-
-/* slider */
-
-@define-color scrollbar_slider_bg shade(@core_a, 0.99);
-
-@define-color scrollbar_slider_gradient_a @scrollbar_slider_bg;
-@define-color scrollbar_slider_gradient_b shade(@core_a, 0.96);
-@define-color scrollbar_slider_gradient_c shade(@core_a, 0.92);
-@define-color scrollbar_slider_gradient_d shade(@core_a, 0.88);
-
-@define-color scrollbar_slider_border mix(#000000, shade(@core_a, 0.72), 0.95);
-
-@define-color scrollbar_slider_inner_border shade(@core_a, 1.04);
-
-/* slider hover */
-
-@define-color scrollbar_slider_hover_bg shade(@core_a, 1.03);
-
-@define-color scrollbar_slider_hover_gradient_a @scrollbar_slider_hover_bg;
-@define-color scrollbar_slider_hover_gradient_b shade(@core_a, 0.99);
-@define-color scrollbar_slider_hover_gradient_c shade(@core_a, 0.96);
-@define-color scrollbar_slider_hover_gradient_d shade(@core_a, 0.91);
-
-/* button */
-
-@define-color scrollbar_button @theme_fg;
-@define-color scrollbar_button_insensitive @internal_element_insensitive;
-@define-color scrollbar_button_border shade(@core_b, 0.56);
-
-@define-color scrollbar_button_gradient_a shade(@core_b, 1.07);
-@define-color scrollbar_button_gradient_b shade(@core_b, 1.02);
-@define-color scrollbar_button_gradient_c shade(@core_b, 0.99);
-@define-color scrollbar_button_gradient_d shade(@core_b, 0.95);
-
-/* button hover */
-
-@define-color scrollbar_button_hover_gradient_a shade(@core_b, 1.07);
-@define-color scrollbar_button_hover_gradient_b shade(@core_b, 1.05);
-@define-color scrollbar_button_hover_gradient_c shade(@core_b, 1.02);
-@define-color scrollbar_button_hover_gradient_d shade(@core_b, 0.97);
-
-/* button active */
-
-@define-color scrollbar_button_active_gradient_a shade(@core_b, 0.95);
-@define-color scrollbar_button_active_gradient_b shade(@core_b, 0.92);
-@define-color scrollbar_button_active_gradient_c shade(@core_b, 0.89);
-@define-color scrollbar_button_active_gradient_d shade(@core_b, 0.85);
 
 /***********
  * sidebar *
@@ -421,8 +359,14 @@
 /* switch */
 /* XXX: fix colors here, except for scrollbar ones maybe */
 
+@define-color scrollbar_slider_bg shade(@core_a, 0.99);
+@define-color scrollbar_slider_gradient_b shade(@core_a, 0.96);
+@define-color scrollbar_slider_gradient_c shade(@core_a, 0.92);
+@define-color scrollbar_slider_gradient_d shade(@core_a, 0.88);
+
 @define-color switch shade(@core_b, 0.45);
 @define-color switch_slider_border @progressbar_border;
+
 @define-color switch_slider_bg @scrollbar_slider_bg;
 @define-color switch_slider_gradient_a @switch_slider_bg;
 @define-color switch_slider_gradient_b @scrollbar_slider_gradient_b;
@@ -473,12 +417,13 @@
 /* If you see rules from it used in gtk-inspector - move them to appropriate sub-css instead */
 @import url("old-clearlooks.css");
 
+@import url("buttons.css");
 @import url("text-inputs.css");
 @import url("switches.css");
 @import url("sliders.css");
 @import url("scrollbar.css");
 @import url("menu.css");
-@import url("buttons.css");
+@import url("tables.css");
 
 @import url("mate.css");
 

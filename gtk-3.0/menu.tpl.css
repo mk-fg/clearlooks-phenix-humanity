@@ -219,10 +219,6 @@ menu menuitem check:disabled {
 	-gtk-icon-source: url("img/checkbox-unchecked-insensitive.svg");
 }
 
-/* menu menuitem check:hover {
-	-gtk-icon-source: url("img/checkbox-unchecked.svg");
-} */
-
 /* checked */
 menu menuitem check:checked {
 	-gtk-icon-source: url("img/checkbox-checked.svg");
@@ -237,11 +233,6 @@ menu menuitem check:active:disabled {
 	-gtk-icon-source: url("img/checkbox-checked-insensitive.svg");
 }
 
-/* menu menuitem check:checked:hover,
-menu menuitem check:active:hover {
-	-gtk-icon-source: url("img/checkbox-checked.svg");
-} */
-
 /* mixed */
 menu menuitem check:indeterminate {
 	-gtk-icon-source: url("img/checkbox-mixed.svg");
@@ -255,10 +246,6 @@ menu menuitem check:indeterminate:disabled {
 	-gtk-icon-source: url("img/checkbox-mixed-insensitive.svg");
 }
 
-/* menu menuitem check:indeterminate:hover {
-	-gtk-icon-source: url("img/checkbox-mixed.svg");
-} */
-
 /* unchecked */
 menu menuitem radio {
 	-gtk-icon-source: url("img/radio-unchecked.svg");
@@ -267,10 +254,6 @@ menu menuitem radio {
 menu menuitem radio:disabled {
 	-gtk-icon-source: url("img/radio-unchecked-insensitive.svg");
 }
-
-/* menu menuitem radio:hover {
-	-gtk-icon-source: url("img/radio-unchecked.svg");
-} */
 
 /* checked */
 menu menuitem radio:checked {
@@ -286,11 +269,6 @@ menu menuitem radio:active:disabled {
 	-gtk-icon-source: url("img/radio-checked-insensitive.svg");
 }
 
-/* menu menuitem radio:checked:hover,
-menu menuitem radio:active:hover {
-	-gtk-icon-source: url("img/radio-checked.svg");
-} */
-
 /* mixed */
 menu menuitem radio:indeterminate {
 	-gtk-icon-source: url("img/radio-mixed.svg");
@@ -302,152 +280,4 @@ menu menuitem radio:indeterminate:active {
 
 menu menuitem radio:indeterminate:disabled {
 	-gtk-icon-source: url("img/radio-mixed-insensitive.svg");
-}
-
-/* menu menuitem radio:indeterminate:hover {
-	-gtk-icon-source: url("img/radio-mixed.svg");
-} */
-
-
-
-/* --- treeview --- */
-
-treeview, list {
-	background-color: @theme_base;
-	color: @theme_text;
-}
-
-treeview {
-	background-color: @theme_base;
-	color: @theme_text;
-	-GtkTreeView-vertical-separator: 0;
-	-GtkTreeView-expander-size: 13;
-	-GtkTreeView-grid-line-width: 0;
-	-GtkTreeView-grid-line-pattern: '';
-	-GtkTreeView-tree-line-width: 0;
-	-GtkTreeView-tree-line-pattern: '';
-}
-
-treeview:selected {
-	background-color: @theme_selected_bg;
-	color: @theme_selected_fg
-}
-
-treeview:disabled {
-	background-color: @insensitive_bg;
-	color: @insensitive_fg;
-}
-
-treeview.dnd {
-	border-color: @internal_element;
-	border-radius: 2px;
-	border-width: 1px;
-	border-style: solid;
-}
-
-/* column-headers */
-treeview header button {
-	min-height: 22px;
-	color: @internal_element;
-}
-
-treeview header button,
-treeview header button:disabled,
-treeview header button:hover,
-treeview header button:focus:hover {
-	background-color: @theme_base;
-	background-image:
-		-gtk-gradient(
-			linear,
-			left top,
-			left bottom,
-			from(@column_header_button_gradient_a),
-			color-stop(0.50, @column_header_button_gradient_b),
-			color-stop(0.50, @column_header_button_gradient_c),
-			to(@column_header_button_gradient_d) );
-	padding: 0 4px;
-	font-weight: normal;
-}
-
-treeview header button:disabled {
-	background-color: @insensitive_bg;
-}
-
-treeview header button:hover,
-treeview header button:focus:hover,
-treeview header button:focus:hover:active,
-treeview header button:hover:active,
-treeview header button:checked,
-treeview header button:checked:hover {
-	color: @internal_element_hover;
-}
-
-treeview header button:checked,
-treeview header button:checked:hover,
-treeview header button:checked:hover:focus {
-	background-color: @entry_bg;
-	background-image: none;
-}
-
-treeview header button,
-treeview header button:focus,
-treeview header button:checked,
-treeview header button:checked:hover,
-treeview header button:focus:checked,
-treeview header button:focus:hover:active {
-	border-image: none;
-	border-width: 1px;
-	border-radius: 0;
-	border-style: solid;
-	border-color:
-		@column_header_border_top @column_header_border_right
-		@column_header_border_bottom @column_header_border_left;
-}
-
-treeview header button:last-child,
-treeview header button:last-child:focus,
-treeview header button:last-child:checked,
-treeview header button:last-child:hover:active,
-treeview header button:last-child:active:focus {
-	border-right: none;
-}
-
-
-row,
-row:focus {
-	min-height: 22px;
-}
-
-row:hover,
-row:disabled,
-row:selected,
-row:selected:focus {
-	border-width: 0;
-}
-
-row:selected,
-row:selected:focus,
-.cell:selected,
-row:selected:hover,
-row:selected:focus:hover,
-.cell:selected:hover {
-	background-image:
-		-x-var-bg-hover;
-}
-
-row:hover,
-row:hover:focus,
-.cell:hover {
-	background-image:
-		-x-var-bg-hover;
-}
-
-.cell {
-	color: @theme_text;
-	padding: 2px;
-	border-width: 0;
-}
-
-.cell:selected {
-	color: @theme_selected_fg;
 }
