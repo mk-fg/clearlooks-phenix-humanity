@@ -315,29 +315,25 @@
 /* switch */
 /* XXX: fix colors here, except for scrollbar ones maybe */
 
-@define-color scrollbar_slider_bg shade(@core_a, 0.99);
-@define-color scrollbar_slider_gradient_b shade(@core_a, 0.96);
-@define-color scrollbar_slider_gradient_c shade(@core_a, 0.92);
-@define-color scrollbar_slider_gradient_d shade(@core_a, 0.88);
-
 @define-color switch shade(@core_b, 0.45);
-@define-color switch_slider_border @progressbar_border;
 
-@define-color switch_slider_bg @scrollbar_slider_bg;
-@define-color switch_slider_gradient_a @switch_slider_bg;
-@define-color switch_slider_gradient_b @scrollbar_slider_gradient_b;
-@define-color switch_slider_gradient_c @scrollbar_slider_gradient_c;
-@define-color switch_slider_gradient_d @scrollbar_slider_gradient_d;
+@define-color switch_slider_gradient_a shade(@theme_bg, 0.95);
+@define-color switch_slider_gradient_b shade(@theme_bg, 0.90);
+@define-color switch_slider_gradient_c shade(@theme_bg, 0.85);
+@define-color switch_slider_gradient_d shade(@theme_bg, 0.80);
+@define-color switch_slider_bg @switch_slider_gradient_a;
+@define-color switch_slider_border alpha(@bg_shade5, 0.6);
 
 @define-color switch_trough_active @theme_base;
-@define-color switch_trough_active_gradient_a @menuitem_hover_border;
-@define-color switch_trough_active_gradient_b shade(@core_a, 1.12);
+@define-color switch_trough_active_gradient_a shade(@theme_bg, 0.93);
+@define-color switch_trough_active_gradient_b shade(@theme_bg, 0.96);
 
-@define-color switch_slider_insensitive_bg shade(@core_b, 1.04);
-@define-color switch_slider_insensitive_gradient_a @switch_slider_insensitive_bg;
-@define-color switch_slider_insensitive_gradient_b shade(@core_b, 1.01);
-@define-color switch_slider_insensitive_gradient_c shade(@core_b, 0.99);
-@define-color switch_slider_insensitive_gradient_d shade(@core_b, 0.96);
+@define-color switch_slider_insensitive_gradient_a shade(@theme_bg, 1.04);
+@define-color switch_slider_insensitive_gradient_b shade(@theme_bg, 1.02);
+@define-color switch_slider_insensitive_gradient_c shade(@theme_bg, 1.00);
+@define-color switch_slider_insensitive_gradient_d shade(@theme_bg, 0.98);
+@define-color switch_slider_insensitive_bg @switch_slider_insensitive_gradient_a;
+@define-color switch_slider_insensitive_border alpha(@bg_shade5, 0.3);
 
 /***********
  * toolbar *

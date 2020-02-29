@@ -59,6 +59,7 @@ treeview header button {
 row,
 row:focus {
 	min-height: 22px;
+	padding: 0 5px;
 }
 
 cell {
