@@ -115,21 +115,29 @@ original styles resulted in those looks, as per murrine_draw_rgba.c and such.
   Clearlooks uses "glassy" glazed toolbars/menubars, with two gradients going up
   and down vertically from the base background color in the center.
 
-  Human Quarny uses "gradient" toolbarstyle=2 menubarstyle=2 and such, which are
+  Human theme uses "gradient" toolbarstyle=2 menubarstyle=2 and such, which are
   simplier top-to-shade(0.95)-darker-bottom gradients.
 
 - Borders
 
-  Gtk3 Clearlooks translation uses shades of @theme_selected_bg for borders,
+  GTK3 Clearlooks translation uses shades of @theme_selected_bg for borders,
   while murrine engine's colors->shade[n] values derive shades from normal background,
   which have different hues in Human Quarny.
 
-  Border size/presence do not seem to correspond very well either - missing
-  completely on many clearlooks widgets, while Human Quarny ones mostly have
-  lighter border on top/left and darker "shadow" bottom/right borders.
+  Border size/presence do not seem to correspond very well either - e.g. all
+  separators in Human have borders, but not in this GTK3 Clearlooks theme.
 
-- Menus in awf-gtk3 don't seem to drop shadow.
-- awf-gtk3 toolbar buttons do not have labels.
+- Borders on :disabled (insensitive) elements have highlight "shadow" in GTK2
+  Human via reliefstyle=2, which can probably be replicated in some/most places
+  via GTK3 box-shadow.
+
+- Menus and similar pop-windows drop shadows on surrounding elements (external
+  to them, so e.g. "box-shadow" doesn't work) in GTK2, which I haven't figured
+  out how to replicate in GTK3 yet.
+
+- All scrollbars are not pop-up overlays in GTK2, and are always present,
+  instead of only when hovering over scrolled element(s), which can be replicated in GTK3
+  via GTK_OVERLAY_SCROLLING=0 env var (set in e.g. /etc/environment or session manager).
 
 
 Notes on adapting murrine-engine GTK2 theme to GTK3
@@ -264,6 +272,12 @@ GTK+ Theming Documentation/Tool Links
 
   Specify -t/--rebuild-templates option for awf-gtk3-wrapper.py to also rebuild
   .css files from .tpl.css changes via `css-templater.py`_ script next to it.
+
+  Similar tool included in GTK3 (might be in gtk-3-examples or somesuch
+  package) - gtk3-widget-factory - has even more gtk3-specific widgets on display.
+
+  Local gtk-widget-demo.py script can also be used to test some widgets or
+  elements that are hard to find in other demo apps, e.g. horizontal scrollbars.
 
 - `magnus (local fork with color tweaks)`_ - simple tool to zoom-in on and
   compare small theme elements.
