@@ -44,76 +44,31 @@ treeview.dnd {
 
 treeview header button {
 	min-height: 22px;
-	color: @internal_element;
-}
-
-treeview header button,
-treeview header button:disabled,
-treeview header button:hover,
-treeview header button:focus:hover {
-	background-color: @theme_base;
-	background-image:
-		-gtk-gradient(
-			linear,
-			left top,
-			left bottom,
-			from(@column_header_button_gradient_a),
-			color-stop(0.50, @column_header_button_gradient_b),
-			color-stop(0.50, @column_header_button_gradient_c),
-			to(@column_header_button_gradient_d) );
-	padding: 0 4px;
-	font-weight: normal;
-}
-
-treeview header button:disabled {
-	background-color: @insensitive_bg;
-}
-
-treeview header button:hover,
-treeview header button:focus:hover,
-treeview header button:focus:hover:active,
-treeview header button:hover:active,
-treeview header button:checked,
-treeview header button:checked:hover {
-	color: @internal_element_hover;
-}
-
-treeview header button:checked,
-treeview header button:checked:hover,
-treeview header button:checked:hover:focus {
-	background-color: @entry_bg;
-	background-image: none;
-}
-
-treeview header button,
-treeview header button:focus,
-treeview header button:checked,
-treeview header button:checked:hover,
-treeview header button:focus:checked,
-treeview header button:focus:hover:active {
-	border-image: none;
-	border-width: 1px;
+	margin: 0;
+	padding: 0 5px 0 4px;
+	background-clip: border-box;
+	margin: 0 -1px;
+	border: 1px transparent solid;
 	border-radius: 0;
-	border-style: solid;
-	border-color:
-		@column_header_border_top @column_header_border_right
-		@column_header_border_bottom @column_header_border_left;
-}
-
-treeview header button:last-child,
-treeview header button:last-child:focus,
-treeview header button:last-child:checked,
-treeview header button:last-child:hover:active,
-treeview header button:last-child:active:focus {
-	border-right: none;
+	border-image: url("img/table-header-sep-both.png") 4 4 3 4 / 4 4 3 4 repeat;
 }
 
 
-/* regular rows/cells */
+/* rows/cells */
 
 row,
 row:focus {
 	min-height: 22px;
+}
+
+cell {
+	color: @theme_text;
+	padding: 2px;
+	border-width: 0;
+}
+
+cell:selected {
+	color: @theme_selected_fg;
 }
 
 row:hover,
@@ -125,14 +80,10 @@ row:selected:focus {
 
 row:hover,
 row:hover:focus,
-.cell:hover,
 row:selected,
 row:selected:focus,
-.cell:selected,
 row:selected:hover,
-row:selected:focus:hover,
-.cell:selected:hover {
-	/* XXX: out of place here */
+row:selected:focus:hover {
 	background-image:
 		radial-gradient( ellipse 110% 50%,
 			@menuitem_hover_glaze_glow_center,
@@ -142,14 +93,4 @@ row:selected:focus:hover,
 			@menuitem_hover_glaze_mid-a 50%,
 			@menuitem_hover_glaze_mid-b 50%,
 			@menuitem_hover_glaze_bot );
-}
-
-.cell {
-	color: @theme_text;
-	padding: 2px;
-	border-width: 0;
-}
-
-.cell:selected {
-	color: @theme_selected_fg;
 }

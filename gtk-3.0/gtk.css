@@ -131,26 +131,6 @@
 @define-color color_swatch_border shade(@theme_bg, 0.83);
 @define-color color_swatch_hover_border @menuitem_hover_border;
 
-@define-color color_active_badge_light_border @theme_fg;
-@define-color color_active_badge_light @color_active_badge_light_border;
-
-@define-color color_active_badge_dark_border @theme_base;
-@define-color color_active_badge_dark @color_active_badge_light_border;
-
-/*****************
- * column-header *
- *****************/
-
-@define-color column_header_border_top @theme_base;
-@define-color column_header_border_right shade(@core_b, 0.82);
-@define-color column_header_border_bottom shade(@core_b, 0.70);
-@define-color column_header_border_left @column_header_border_top;
-
-@define-color column_header_button_gradient_a shade(@core_b, 1.05);
-@define-color column_header_button_gradient_b shade(@core_b, 1.02);
-@define-color column_header_button_gradient_c @core_b;
-@define-color column_header_button_gradient_d shade(@core_b, 0.96);
-
 /*********
  * entry *
  *********/
@@ -164,31 +144,11 @@
 @define-color entry_shadow alpha(shade(@theme_bg, 0.85), 0.6);
 @define-color entry_shadow_disabled alpha(shade(@theme_bg, 0.85), 0.3);
 
-@define-color entry_inner_border shade(@core_b, 0.96);
-@define-color entry_bg @theme_base;
-
-/* insensitive */
-
-@define-color entry_insensitive_inner_border shade(@core_b, 0.97);
-@define-color entry_insensitive_bg @insensitive_bg;
-
 /************
  * expander *
  ************/
 
 @define-color expander_row_selected_border mix(#acacac, shade(@core_a, 0.75), 0.54);
-
-/*****************
- * fallback mode *
- *****************/
-
-@define-color os_chrome_bg @theme_bg;
-@define-color os_chrome_fg @theme_fg;
-
-/* gnome-panel */
-
-@define-color applet_frame_bg shade(@core_b, 0.89);
-@define-color pager_bg shade(@core_b, 0.97);
 
 /*******************************
  * info/question/error/warning *
@@ -225,10 +185,6 @@
 
 @define-color menubar_grad_top @bg_base;
 @define-color menubar_grad_bot shade(@menubar_grad_top, 0.95);
-
-@define-color menubar_gradient_a shade(@core_b, 0.99);
-@define-color menubar_gradient_b shade(@core_b, 0.98);
-@define-color menubar_gradient_c shade(@core_b, 0.96);
 
 /* hover */
 
