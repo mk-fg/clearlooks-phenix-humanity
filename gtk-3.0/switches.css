@@ -207,3 +207,12 @@ radio row:selected:indeterminate:disabled,
 radio row:selected:focus:indeterminate:disabled {
 	-gtk-icon-source: url("img/radio-mixed-insensitive.svg");
 }
+
+
+/* --- checkbutton and radiobutton box effects --- */
+/* E.g. checkbutton is a box with check + label */
+
+checkbutton, radiobutton { padding: 0 3px 0 1px; }
+checkbutton:hover, radiobutton:hover {
+	background: alpha(@checkbutton_hover, 0.2);
+}

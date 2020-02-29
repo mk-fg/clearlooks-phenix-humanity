@@ -388,38 +388,29 @@
 @define-color sidebar_bg @theme_base;
 @define-color gtkassistant_sidebar_border @border;
 
-/**************
- * spinbutton *
- **************/
+/************
+ * switches *
+ ************/
 
 @define-color spinbutton_border @border;
 
-/**********
- * switch *
- **********/
+@define-color checkbutton_hover shade(@theme_bg, 1.5);
+
+/* switch */
 
 @define-color switch shade(@core_b, 0.45);
-
 @define-color switch_slider_border @progressbar_border;
-
 @define-color switch_slider_bg @scrollbar_slider_bg;
-
 @define-color switch_slider_gradient_a @switch_slider_bg;
 @define-color switch_slider_gradient_b @scrollbar_slider_gradient_b;
 @define-color switch_slider_gradient_c @scrollbar_slider_gradient_c;
 @define-color switch_slider_gradient_d @scrollbar_slider_gradient_d;
 
-/* active */
-
 @define-color switch_trough_active @theme_base;
-
 @define-color switch_trough_active_gradient_a @menuitem_hover_border;
 @define-color switch_trough_active_gradient_b shade(@core_a, 1.12);
 
-/* insensitive */
-
 @define-color switch_slider_insensitive_bg shade(@core_b, 1.04);
-
 @define-color switch_slider_insensitive_gradient_a @switch_slider_insensitive_bg;
 @define-color switch_slider_insensitive_gradient_b shade(@core_b, 1.01);
 @define-color switch_slider_insensitive_gradient_c shade(@core_b, 0.99);
