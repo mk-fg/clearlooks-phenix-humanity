@@ -119,6 +119,16 @@ entry reliefstyle=2 "shadow" (always global):
 			murrine_set_color_rgba (cr, &focus_shadow, 0.5);
 
 
+scrollbar:
+
+	slider:
+		fill = colors->bg[widget->state_type]
+		border:
+			murrine_shade (&colors->shade[7], 0.95, &border);
+			murrine_mix_color (&border, &fill, 0.5, &border);
+		# uses same murrine_draw_glaze
+
+
 
 
 

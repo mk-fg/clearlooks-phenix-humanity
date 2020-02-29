@@ -89,6 +89,7 @@
 
 
 /* -- mate-indicator-applet-complete window - applets on the top-right */
+/* Note: despite "menubar" element here, this is NOT the actual main button/menu, which is .brisk-menu above */
 
 .mate-panel-menu-bar #fast-user-switch-menubar {
 	background: transparent;

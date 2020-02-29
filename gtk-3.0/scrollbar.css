@@ -1,0 +1,327 @@
+/* scrollbar.css: defines everything relating to scrollbars. */
+/* Anything not from scrollbar styled here is a bug, same for
+  scrollbars styled in other non-de/app-specific theme parts. */
+
+
+scrollbar slider {
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+scrollbar.vertical slider {
+	background-image:
+		linear-gradient(to right,
+			alpha (@scrollbar_slider_inner_border, 0.5),
+			alpha (@scrollbar_slider_gradient_a, 0.5) 1px,
+			alpha (@scrollbar_slider_gradient_b, 0.5) 50%,
+			alpha (@scrollbar_slider_gradient_c, 0.5) 50%,
+			alpha (@scrollbar_slider_gradient_d, 0.5) 95%,
+			alpha (@scrollbar_slider_inner_border, 0.5)),
+		-gtk-scaled(
+			url("img/slider-vert-grip.png"),
+			url("img/slider-vert-grip@2.png"));
+}
+
+scrollbar.horizontal slider {
+	background-image:
+		linear-gradient(to bottom,
+			alpha (@scrollbar_slider_inner_border, 0.5),
+			alpha (@scrollbar_slider_gradient_a, 0.5) 1px,
+			alpha (@scrollbar_slider_gradient_b, 0.5) 50%,
+			alpha (@scrollbar_slider_gradient_c, 0.5) 50%,
+			alpha (@scrollbar_slider_gradient_d, 0.5) 95%,
+			alpha (@scrollbar_slider_inner_border, 0.5)),
+		-gtk-scaled(
+			url("img/slider-horz-grip.png"),
+			url("img/slider-horz-grip@2.png"));
+}
+
+scrollbar.vertical slider:hover {
+	background-image:
+		linear-gradient(to right,
+			alpha (@scrollbar_slider_inner_border, 0.5),
+			alpha (@scrollbar_slider_hover_gradient_a, 0.5) 1px,
+			alpha (@scrollbar_slider_hover_gradient_b, 0.5) 50%,
+			alpha (@scrollbar_slider_hover_gradient_c, 0.5) 50%,
+			alpha (@scrollbar_slider_hover_gradient_d, 0.5) 95%,
+			alpha (@scrollbar_slider_inner_border, 0.5)),
+		-gtk-scaled(
+			url("img/slider-vert-grip.png"),
+			url("img/slider-vert-grip@2.png"));
+}
+
+scrollbar.horizontal slider:hover {
+	background-image:
+		linear-gradient(to bottom,
+			alpha (@scrollbar_slider_inner_border, 0.5),
+			alpha (@scrollbar_slider_hover_gradient_a, 0.5) 1px,
+			alpha (@scrollbar_slider_hover_gradient_b, 0.5) 50%,
+			alpha (@scrollbar_slider_hover_gradient_c, 0.5) 50%,
+			alpha (@scrollbar_slider_hover_gradient_d, 0.5) 95%,
+			alpha (@scrollbar_slider_inner_border, 0.5)),
+		-gtk-scaled(
+			url("img/slider-horz-grip.png"),
+			url("img/slider-horz-grip@2.png"));
+}
+
+
+scrollbar {
+	background-image: none;
+	border-style: solid;
+	/*-GtkRange-trough-border: 0;*/
+	border-color: @scrollbar_trough_border;
+	-GtkScrollbar-has-backward-stepper: true;
+	-GtkScrollbar-has-forward-stepper: true;
+	/* -GtkRange-arrow-scaling: 0.4; */
+	/* -GtkRange-slider-width: 15; */
+	/* -GtkRange-stepper-size: 15px; */
+	/* -GtkScrollbar-min-slider-length: 30; */
+	/* -GtkRange-stepper-spacing: 0; */
+	/* -GtkRange-trough-under-steppers: 0; */
+	box-shadow: none;
+	border-image: none;
+}
+
+scrollbar.vertical {
+	border-width: 0px 0px 0px 0px;
+	min-width: 14px;
+}
+
+scrollbar.horizontal {
+	border-width: 1px 0px 0px 0px;
+	min-height: 14px;
+}
+
+scrolledwindow junction {
+	background-image: none;
+	background-color: @scrollbars_junction_bg;
+}
+
+scrollbar trough {
+	border-color: @scrollbar_trough_border;
+	border-radius: 0;
+	border-image: none;
+}
+
+scrollbar.horizontal trough {
+	min-height: 14px;
+	border-width: 0px 1px 0px 1px;
+	border-image: none;
+	background-image:
+		-gtk-gradient (linear,
+			left top,
+			left bottom,
+			color-stop (0, @scrollbar_trough_gradient_a),
+			color-stop (0.5, @scrollbar_trough_gradient_b));
+}
+
+scrollbar.vertical trough {
+	min-width: 14px;
+	border-width: 0px 1px;
+	border-image: none;
+	background-image: -gtk-gradient (linear,
+					  left top,
+					  right top,
+					  color-stop (0, @scrollbar_trough_gradient_a),
+					  color-stop (0.5, @scrollbar_trough_gradient_b));
+}
+
+/* Scrollbar buttons */
+scrollbar button,
+scrollbar .button {
+	border-width: 1px;
+	border-image: none;
+	border-color: @scrollbar_button_border;
+	background-image: none;
+	background-color: transparent;
+	color: @scrollbar_button;
+}
+
+scrollbar.vertical button,
+scrollbar.vertical .button {
+	min-width: 14px;
+	min-height: 13px;
+	padding: 0;
+}
+
+scrollbar.horizontal button,
+scrollbar.horizontal .button {
+	min-width: 13px;
+	min-height: 14px;
+	padding: 0;
+}
+
+scrollbar.vertical button.up,
+scrollbar.vertical .button.up {
+	border-radius: 3px 3px 0px 0px;
+	-gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+}
+
+scrollbar.vertical button.down,
+scrollbar.vertical .button.down {
+	border-radius: 0px 0px 3px 3px;
+	-gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+scrollbar.horizontal button.up,
+scrollbar.horizontal .button.up {
+	border-radius: 3px 0px 0px 3px;
+	-gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+}
+
+scrollbar.horizontal button.down,
+scrollbar.horizontal .button.down {
+	border-radius: 0px 3px 3px 0px;
+	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
+scrollbar button,
+scrollbar .button {
+	border-width: 1px;
+	border-image: none;
+	border-color: @scrollbar_button_border;
+	background-image: none;
+	background-color: transparent;
+	color: @scrollbar_button;
+}
+
+scrollbar button:hover,
+scrollbar .button:hover {
+	border-image: none;
+	border-width: 1px;
+	border-radius: 0px;
+}
+
+scrollbar button:disabled,
+scrollbar .button:disabled {
+	color: @scrollbar_button_insensitive;
+	border-image: none;
+	border-width: 1px;
+	border-color: @scrollbar_button_insensitive;
+	border-radius: 0px;
+}
+
+scrollbar.top button,
+scrollbar.top .button {
+	border-radius: 3px 3px 0px 0px;
+}
+
+scrollbar.bottom button,
+scrollbar.bottom .button {
+	border-radius: 0px 0px 3px 3px;
+}
+
+scrollbar.left button,
+scrollbar.left .button {
+	border-radius: 3px 0px 0px 3px;
+}
+
+scrollbar.right button,
+scrollbar.right .button {
+	border-radius: 0px 3px 3px 0px;
+}
+
+scrollbar.horizontal button,
+scrollbar.horizontal .button {
+	background-image:
+		-gtk-gradient (linear,
+			left top,
+			left bottom,
+			from (@scrollbar_button_gradient_a),
+			color-stop (0.50, @scrollbar_button_gradient_b),
+			color-stop (0.50, @scrollbar_button_gradient_c),
+			to (@scrollbar_button_gradient_d));
+}
+
+scrollbar.vertical button,
+scrollbar.vertical .button {
+	background-image:
+		-gtk-gradient (linear,
+			left top,
+			right top,
+			from (@scrollbar_button_gradient_a),
+			color-stop (0.50, @scrollbar_button_gradient_b),
+			color-stop (0.50, @scrollbar_button_gradient_c),
+			to (@scrollbar_button_gradient_d));
+}
+
+scrollbar.horizontal button:hover,
+scrollbar.horizontal .button:hover {
+	background-image:
+		-gtk-gradient (linear,
+			left top,
+			left bottom,
+			from (@scrollbar_button_hover_gradient_a),
+			color-stop (0.50, @scrollbar_button_hover_gradient_b),
+			color-stop (0.50, @scrollbar_button_hover_gradient_c),
+			to (@scrollbar_button_hover_gradient_d));
+}
+
+scrollbar.vertical button:hover,
+scrollbar.vertical .button:hover {
+	background-image:
+		-gtk-gradient (linear,
+			left top,
+			right top,
+			from (@scrollbar_button_hover_gradient_a),
+			color-stop (0.50, @scrollbar_button_hover_gradient_b),
+			color-stop (0.50, @scrollbar_button_hover_gradient_c),
+			to (@scrollbar_button_hover_gradient_d));
+}
+
+scrollbar.horizontal button:active,
+scrollbar.horizontal .button:active {
+	background-image:
+		-gtk-gradient (linear,
+			left top,
+			left bottom,
+			from (@scrollbar_button_active_gradient_a),
+			color-stop (0.50, @scrollbar_button_active_gradient_b),
+			color-stop (0.50, @scrollbar_button_active_gradient_c),
+			to (@scrollbar_button_active_gradient_d));
+}
+
+scrollbar.vertical button:active,
+scrollbar.vertical .button:active {
+	background-image:
+		-gtk-gradient (linear,
+			left top,
+			right top,
+			from (@scrollbar_button_active_gradient_a),
+			color-stop (0.50, @scrollbar_button_active_gradient_b),
+			color-stop (0.50, @scrollbar_button_active_gradient_c),
+			to (@scrollbar_button_active_gradient_d));
+}
+
+scrollbar button:disabled,
+scrollbar .button:disabled {
+	color: @scrollbar_button_insensitive;
+}
+
+scrollbar.vertical slider,
+scrollbar.vertical .slider {
+	min-width: 14px;
+	min-height: 42px;
+	margin: 0px -1px 0px -1px;
+}
+
+scrollbar.horizontal slider,
+scrollbar.horizontal .slider {
+	min-width: 42px;
+	min-height: 14px;
+	margin: -1px 0px -1px 0px;
+}
+
+scrollbar slider,
+scrollbar .slider {
+	background-color: @scrollbar_slider_bg;
+	border-radius: 0;
+	border-style: solid;
+	border-color: @scrollbar_slider_border;
+	border-width: 1px;
+}
+
+scrollbar slider:hover,
+scrollbar .slider:hover {
+	background-color: @scrollbar_slider_hover_bg;
+}

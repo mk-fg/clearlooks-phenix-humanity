@@ -397,6 +397,7 @@
 @define-color checkbutton_hover shade(@theme_bg, 1.5);
 
 /* switch */
+/* XXX: fix colors here, except for scrollbar ones maybe */
 
 @define-color switch shade(@core_b, 0.45);
 @define-color switch_slider_border @progressbar_border;
@@ -445,15 +446,15 @@
 
 @import url("base.css");
 
-/* These two files should be emptied-out and removed */
-/* Kept in case they have any applicable but yet-unchecked rules */
-@import url("old-clearlooks-img.css");
+/* This file should be emptied-out and removed */
+/* Kept in case it has any applicable but yet-unchecked rules */
+/* If you see rules from it used in gtk-inspector - move them to appropriate sub-css instead */
 @import url("old-clearlooks.css");
 
 @import url("text-inputs.css");
 @import url("switches.css");
 @import url("sliders.css");
-
+@import url("scrollbar.css");
 @import url("menu.css");
 @import url("buttons.css");
 
