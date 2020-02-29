@@ -68,3 +68,23 @@ toolbar separator {
 	border-right: 1px @separator_hl solid;
 	margin: 10px 5px;
 }
+
+
+/* Spinner animation */
+
+@keyframes spinner {
+	to { -gtk-icon-transform: rotate(1turn); }
+}
+
+spinner {
+	color: @theme_fg;
+	opacity: 0;
+}
+
+spinner:checked {
+	animation: spinner 1s infinite steps(10);
+	opacity: 1;
+}
+
+spinner:checked:backdrop { color: @backdrop_fg_color; }
+spinner:checked:disabled { opacity: 0.5; }

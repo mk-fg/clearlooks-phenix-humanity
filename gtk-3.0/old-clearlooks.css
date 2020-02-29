@@ -38,23 +38,6 @@ tooltip *,
  * Miscellaneous *
  *****************/
 
-@keyframes spin {
-	to { -gtk-icon-transform: rotate(1turn); }
-}
-spinner {
-	background-image: none;
-	background-color: blue;
-	opacity: 0;
-	-gtk-icon-source: -gtk-icontheme("process-working-symbolic");
-}
-spinner:active {
-	opacity: 1;
-	animation: spin 1s linear infinite;
-}
-spinner:active:disabled {
-	opacity: 0.5;
-}
-
 .floating-bar {
 	background-image: linear-gradient( to bottom,
 		@theme_base 20%, shade(@theme_base, 0.9) );
