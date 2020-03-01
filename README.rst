@@ -23,7 +23,8 @@ Templating (.tpl.css files)
 ---------------------------
 
 To avoid going insane from 100+ line selectors, simple custom templating is used
-to transform \*.tpl.css into \*.css files via `css-templater.py`_ script.
+to transform \*.tpl.css into \*.css files via `css-templater.py`_ script
+(requires python3 and `textX module`_ to run).
 
 Both source and destination files are in the repo, so it should be irrelevant
 for simple theme usage, only for editing it.
@@ -102,6 +103,7 @@ Other common CSS templating system - SASS/SCSS - doesn't handle all use-cases
 above well, unfortunately, hence this custom system.
 
 .. _css-templater.py: css-templater.py
+.. _textX module: https://pypi.org/project/textX/
 
 
 Common differences between Clearlooks GTK3 vs Human GTK2
@@ -131,9 +133,9 @@ original styles resulted in those looks, as per murrine_draw_rgba.c and such.
   Human via reliefstyle=2, which can probably be replicated in some/most places
   via GTK3 box-shadow.
 
-- Menus and similar pop-windows drop shadows on surrounding elements in GTK2,
+- Menus and similar popup-windows drop shadows on surrounding elements in GTK2,
   which can probably be emulated via box-shadow behind menu with transparent
-  "decoration" padding to make space for it.
+  "decoration" padding or other margins to make space for it.
 
 - All scrollbars are not pop-up overlays in GTK2, and are always present,
   instead of only when hovering over scrolled element(s), which can be replicated in GTK3
@@ -250,11 +252,12 @@ Notes on adapting murrine-engine GTK2 theme to GTK3
 
 - Border is drawn with color from above translation.
 
-gtk-color-translate.py script can be used to get result for various GTK3 color
+`gtk-color-translate.py`_ script can be used to get result for various GTK3 color
 expressions, e.g. ``./gtk-color-translate.py 'shade(#8f5f4a, 1.5)'`` -> ``#cf9277``.
 
 See `murrine-notes.txt`_ for more details on how specific widget looks are composed.
 
+.. _gtk-color-translate.py: gtk-color-translate.py
 .. _murrine-notes.txt: murrine-notes.txt
 
 
@@ -276,8 +279,10 @@ GTK+ Theming Documentation/Tool Links
   Similar tool included in GTK3 (might be in gtk-3-examples or somesuch
   package) - gtk3-widget-factory - has even more gtk3-specific widgets on display.
 
-  Local gtk-widget-demo.py script can also be used to test some widgets or
+  Local `gtk-widget-demo.py`_ script can also be used to test some widgets or
   elements that are hard to find in other demo apps, e.g. horizontal scrollbars.
+
+  .. _gtk-widget-demo.py: gtk-widget-demo.py
 
 - `magnus (local fork with color tweaks)`_ - simple tool to zoom-in on and
   compare small theme elements.
