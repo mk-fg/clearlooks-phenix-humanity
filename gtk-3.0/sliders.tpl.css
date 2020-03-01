@@ -7,9 +7,7 @@
 
 /* --- Trough - should be used in scales and ranges --- */
 
-progressbar trough,
 scale trough,
-progressbar trough highlight,
 scale trough highlight {
 	border-image: url("img/border.png") 4 4 4 4 / 3px 3px 4px 3px repeat;
 	border-radius: 3px;
@@ -18,7 +16,6 @@ scale trough highlight {
 	border-color: transparent;
 }
 
-progressbar trough row,
 scale trough row {
 	border-image: url("img/border-insensitive.svg") 3 3 4 3 / 3px 3px 4px 3px repeat;
 	border-radius: 3px;
@@ -27,13 +24,9 @@ scale trough row {
 	border-color: transparent;
 }
 
-progressbar trough,
 scale trough,
-progressbar trough.highlight,
 scale trough.highlight,
-progressbar trough row,
 scale trough row,
-progressbar trough row:hover,
 scale trough row:hover {
 	background-image: linear-gradient(to bottom,
 		@trough_gradient_a,
@@ -41,12 +34,14 @@ scale trough row:hover {
 }
 
 /* Flipped pushed button background for vertical progressbar through and the like */
-progressbar trough.vertical,
 scale trough.vertical {
 	background-image: linear-gradient(to right,
 		@trough_gradient_a,
 		@trough_gradient_b 4px);
 }
+
+progressbar trough -ext { -x-same-rules-all: scale trough; }
+
 
 /* --- Scale slider - trough + single caret --- */
 
