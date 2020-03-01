@@ -26,11 +26,6 @@
 	-GtkWindow-resize-grip-height: 11;
 }
 
-window {
-	color: @theme_fg;
-	margin: 0px;
-}
-
 .background {
 	color: @theme_fg;
 	background-color: @theme_bg;
@@ -49,25 +44,6 @@ window {
 }
 
 /* XXX: add box-shadow for most elements to emulate reliefstyle=2 shadow/highlight */
-
-
-/* Box/layout separators */
-
-separator.vertical {
-	border-left: 1px @separator_dark solid;
-	border-right: 1px @separator_hl solid;
-}
-separator.horizontal {
-	border-top: 1px @separator_dark solid;
-	border-bottom: 1px @separator_hl solid;
-}
-
-/* Separator line between buttons */
-toolbar separator {
-	border-left: 1px @separator_dark solid;
-	border-right: 1px @separator_hl solid;
-	margin: 10px 5px;
-}
 
 
 /* Spinner animation */

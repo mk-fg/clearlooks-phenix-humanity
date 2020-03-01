@@ -314,9 +314,8 @@
 @define-color checkbutton_hover shade(@theme_bg, 1.5);
 
 /* switch */
-/* XXX: fix colors here, except for scrollbar ones maybe */
 
-@define-color switch shade(@core_b, 0.45);
+@define-color switch_fg shade(@theme_bg, 0.398);
 
 @define-color switch_slider_gradient_a shade(@theme_bg, 0.95);
 @define-color switch_slider_gradient_b shade(@theme_bg, 0.90);
@@ -359,6 +358,15 @@
 @define-color trough_gradient_a shade(@core_b, 0.81);
 @define-color trough_gradient_b shade(@core_b, 0.90);
 
+/**********
+ * frame  *
+ **********/
+
+@define-color frame_border alpha(shade(@bg_shade4, 0.92), 0.65);
+@define-color frame_shadow_dark alpha(shade(@theme_bg, 0.9), 0.5);
+@define-color frame_shadow_hl alpha(shade(@theme_bg, 1.1), 0.5);
+
+
 /***********************
  * ===== imports ===== *
  ***********************/
@@ -370,6 +378,7 @@
 /* If you see rules from it used in gtk-inspector - move them to appropriate sub-css instead */
 @import url("old-clearlooks.css");
 
+@import url("containers.css");
 @import url("buttons.css");
 @import url("text-inputs.css");
 @import url("switches.css");

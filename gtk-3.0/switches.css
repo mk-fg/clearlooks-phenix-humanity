@@ -10,7 +10,7 @@
 /* --- Switch - caret with short trought and fixed toggle-able positions --- */
 
 switch {
-	color: @switch;
+	color: @switch_fg;
 	border-radius: 3px;
 	border-width: 1px 1px 2px 1px;
 	border-style: solid;

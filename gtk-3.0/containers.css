@@ -1,0 +1,311 @@
+/* frames.css: styles for window, box, separator, paned, frame, notebook and similar container widgets. */
+/* Anything not related to widget containers styled here is a bug. */
+
+
+/* --- window --- */
+
+window {
+	color: @theme_fg;
+	margin: 0px;
+}
+
+window decoration {
+	border: solid 1px @insensitive_border;
+}
+
+
+/* --- Box/layout separators --- */
+
+separator.vertical {
+	border-left: 1px @separator_dark solid;
+	border-right: 1px @separator_hl solid;
+}
+separator.horizontal {
+	border-top: 1px @separator_dark solid;
+	border-bottom: 1px @separator_hl solid;
+}
+
+/* Separator line between buttons */
+toolbar separator {
+	border-left: 1px @separator_dark solid;
+	border-right: 1px @separator_hl solid;
+	margin: 10px 5px;
+}
+
+
+/* --- frame --- */
+
+frame {
+	padding: 10px;
+}
+
+frame > border {
+	/* All frames look exactly same in gtk-3.24, regardless of shadow-type.
+		So shadow-in type of frame is used here as a compromise. */
+	margin-left: -3px;
+	box-shadow:
+		inset 1px 1px @frame_shadow_dark,
+		inset -1px -1px @frame_shadow_hl;
+	border: 1px @frame_border solid;
+	border-radius: 2px;
+}
+frame > label { padding: 0 1px; }
+
+/* Avoid double borders when a viewport is packed into a GtkScrolledWindow */
+scrolledwindow viewport { background-color: @theme_bg; }
+scrolledwindow viewport.frame { border-style: none; }
+
+
+/* --- paned layout separators --- */
+
+paned.horizontal > separator {
+	background: url("img/pane-separator-grip-horz.png") no-repeat center;
+	min-width: 5px;
+	min-height: 7px;
+}
+
+paned.vertical > separator {
+	background: url("img/pane-separator-grip-vert.png") no-repeat center;
+	min-width: 7px;
+	min-height: 5px;
+}
+
+
+
+/* --- notebook and its tabs --- */
+
+notebook {
+	padding: 0;
+	background-clip: border-box;
+	background-color: @notebook_bg;
+	border-radius: 3px 3px 0px 0px;
+}
+
+notebook viewport {
+	background-color: @theme_base;
+}
+
+notebook tab {
+	padding: 3px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: @menu_border;
+}
+
+notebook header.top {
+	box-shadow: inset  0px -1px 0 0 @border;
+}
+
+notebook header.bottom {
+	box-shadow: inset  0px  1px 0 0 @border;
+}
+
+notebook header.left {
+	box-shadow: inset -1px  0px 0 0 @border;
+}
+
+notebook header.right {
+	box-shadow: inset  1px  0px 0 0 @border;
+}
+
+notebook header.top tab {
+	padding: 4px 6px 3px 6px;
+	border-width: 1px;
+	border-radius: 3px 3px 0px 0px;
+	margin-top: 3px;
+	margin-left: -1px;
+	background-image: linear-gradient(to bottom,
+		@notebook_tab_inner_border 1px,
+		@notebook_tab_gradient_a 2px,
+		@notebook_tab_gradient_b 50%,
+		@notebook_tab_gradient_c 50%,
+		@notebook_tab_gradient_d);
+}
+
+notebook header.right tab {
+	padding: 6px 6px 6px 6px;
+	border-width: 1px;
+	border-radius: 0px 3px 3px 0px;
+	margin-right: 3px;
+	margin-top: -1px;
+	background-image: linear-gradient(to left,
+		@notebook_tab_inner_border 1px,
+		@notebook_tab_gradient_a 2px,
+		@notebook_tab_gradient_b 50%,
+		@notebook_tab_gradient_c 50%,
+		@notebook_tab_gradient_d);
+}
+
+notebook header.bottom tab {
+	padding: 3px 6px 4px 6px;
+	border-width: 1px;
+	border-radius: 0px 0px 3px 3px;
+	margin-bottom: 3px;
+	margin-left: -1px;
+	background-image: linear-gradient(to top,
+		@notebook_tab_inner_border 1px,
+		@notebook_tab_gradient_a 2px,
+		@notebook_tab_gradient_b 50%,
+		@notebook_tab_gradient_c 50%,
+		@notebook_tab_gradient_d);
+}
+
+notebook header.left tab {
+	padding: 6px 6px 6px 6px;
+	border-width: 1px;
+	border-radius: 3px 0px 0px 3px;
+	margin-left: 3px;
+	margin-top: -1px;
+	background-image: linear-gradient(to right,
+		@notebook_tab_inner_border 1px,
+		@notebook_tab_gradient_a 2px,
+		@notebook_tab_gradient_b 50%,
+		@notebook_tab_gradient_c 50%,
+		@notebook_tab_gradient_d);
+}
+
+notebook header.top tab:checked {
+	padding-top: 7px;
+	margin-top: 0px;
+	border-bottom: 0px;
+	border-top-color: @notebook_active_tab_border;
+	background-image: linear-gradient(to bottom,
+		@notebook_active_tab_strip_gradient_a,
+		@notebook_active_tab_strip_gradient_b 3px,
+		@notebook_active_tab_strip_border_bottom 4px,
+		@notebook_active_tab_gradient_a 4px,
+		@notebook_active_tab_gradient_b);
+}
+
+notebook header.right tab:checked {
+	padding-right: 7px;
+	margin-right: 0px;
+	border-left: 0px;
+	border-right-color: @notebook_active_tab_border;
+	background-image: linear-gradient(to left,
+		@notebook_active_tab_strip_gradient_a,
+		@notebook_active_tab_strip_gradient_b 3px,
+		@notebook_active_tab_strip_border_bottom 4px,
+		@notebook_active_tab_gradient_a 4px,
+		@notebook_active_tab_gradient_b);
+}
+
+notebook header.bottom tab:checked {
+	padding-bottom: 6px;
+	margin-bottom: 0px;
+	border-top: 0px;
+	border-bottom-color: @notebook_active_tab_border;
+	background-image: linear-gradient(to top,
+		@notebook_active_tab_strip_gradient_a,
+		@notebook_active_tab_strip_gradient_b 3px,
+		@notebook_active_tab_strip_border_bottom 4px,
+		@notebook_active_tab_gradient_a 4px,
+		@notebook_active_tab_gradient_b);
+}
+
+notebook header.left tab:checked {
+	padding-left: 8px;
+	margin-left: 0px;
+	border-right: 0px;
+	border-left-color: @notebook_active_tab_border;
+	background-image: linear-gradient(to right,
+		@notebook_active_tab_strip_gradient_a,
+		@notebook_active_tab_strip_gradient_b 3px,
+		@notebook_active_tab_strip_border_bottom 4px,
+		@notebook_active_tab_gradient_a 4px,
+		@notebook_active_tab_gradient_b);
+}
+
+notebook header tab:focus {
+	padding: 2px;
+}
+
+/* close button styling */
+notebook button.flat.small-button {
+    border-image: none;
+    border-radius: 3px;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 1px;
+    background-image: none;
+    background-color: transparent;
+    padding: 0;
+}
+
+notebook header.* tab button,
+notebook header.* tab button:active,
+notebook header.* tab button:hover {
+	border-image: none;
+	background-image: none;
+	background-color: transparent;
+	border-color: alpha(black, 0.1);
+}
+
+notebook button image {
+	border-radius: 3px;
+	color: mix(@theme_fg, @theme_base, 0.6);
+	border-style: solid;
+	border-color: transparent;
+	border-width: 1px;
+	padding: 0;
+}
+
+notebook button image:hover {
+	color: @theme_fg;
+	border-color: alpha(black, 0.1);
+}
+
+notebook button image:active,
+notebook button image:active:hover {
+	background-color: alpha(black, 0.08);
+	color:  @theme_base;
+	border-color: alpha(black, 0.27)
+		alpha(black, 0.13)
+		alpha(black, 0.13)
+		alpha(black, 0.13);
+}
+
+notebook header.top tabs arrow.up,
+notebook header.bottom tabs arrow.up {
+	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+	color: @theme_fg;
+}
+
+notebook header.top tabs arrow.down,
+notebook header.bottom tabs arrow.down {
+	-gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+	color: @theme_fg;
+}
+
+notebook header.left tabs arrow.up,
+notebook header.right tabs arrow.up {
+	-gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+	color: @theme_fg;
+}
+
+notebook header.left tabs arrow.down,
+notebook header.right tabs arrow.down {
+	-gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+	color: @theme_fg;
+}
+
+notebook header tabs arrow {
+	color: @theme_fg;
+}
+
+notebook header tabs arrow:hover,
+notebook header tabs arrow:active {
+	color: @theme_selected_bg;
+}
+
+notebook header tabs arrow:disabled {
+	color: rgba(141, 144, 145, 0.3);
+}
+
+notebook header tabs arrow:backdrop {
+	color: rgba(84, 89, 90, 0.4);
+}
+
+notebook header tabs arrow:backdrop:disabled {
+	color: #c7c7c7;
+}

@@ -131,9 +131,9 @@ original styles resulted in those looks, as per murrine_draw_rgba.c and such.
   Human via reliefstyle=2, which can probably be replicated in some/most places
   via GTK3 box-shadow.
 
-- Menus and similar pop-windows drop shadows on surrounding elements (external
-  to them, so e.g. "box-shadow" doesn't work) in GTK2, which I haven't figured
-  out how to replicate in GTK3 yet.
+- Menus and similar pop-windows drop shadows on surrounding elements in GTK2,
+  which can probably be emulated via box-shadow behind menu with transparent
+  "decoration" padding to make space for it.
 
 - All scrollbars are not pop-up overlays in GTK2, and are always present,
   instead of only when hovering over scrolled element(s), which can be replicated in GTK3
