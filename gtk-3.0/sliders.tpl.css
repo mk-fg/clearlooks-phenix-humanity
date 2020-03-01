@@ -7,214 +7,101 @@
 
 /* --- Scale slider - trough + single caret --- */
 
-/* scale trough, */
-/* scale trough highlight { */
-/* 	border-image: url("img/border.png") 4 4 4 4 / 3px 3px 4px 3px repeat; */
-/* 	border-radius: 3px; */
-/* 	border-width: 1px 1px 2px 1px; */
-/* 	border-style: solid; */
-/* 	border-color: transparent; */
-/* } */
-
-/* scale trough row { */
-/* 	border-image: url("img/border-insensitive.svg") 3 3 4 3 / 3px 3px 4px 3px repeat; */
-/* 	border-radius: 3px; */
-/* 	border-width: 1px 1px 2px 1px; */
-/* 	border-style: solid; */
-/* 	border-color: transparent; */
-/* } */
-
-/* scale trough, */
-/* scale trough.highlight, */
-/* scale trough row, */
-/* scale trough row:hover { */
-/* 	background-image: linear-gradient(to bottom, */
-/* 		@trough_gradient_a, */
-/* 		@trough_gradient_b 4px); */
-/* } */
-
-/* /\* Flipped pushed button background for vertical progressbar through and the like *\/ */
-/* scale trough.vertical { */
-/* 	background-image: linear-gradient(to right, */
-/* 		@trough_gradient_a, */
-/* 		@trough_gradient_b 4px); */
-/* } */
-
-scale slider,
-scale.horizontal slider {
-	background-image: -gtk-scaled(url("img/scale-slider-horz.png"),
-		url("img/scale-slider-horz@2.png"));
-}
-
-scale slider:hover,
-scale.horizontal slider:hover {
-	background-image: -gtk-scaled(url("img/scale-slider-horz-hover.png"),
-		url("img/scale-slider-horz-hover@2.png"));
-}
-
-scale:disabled slider,
-scale slider:disabled,
-scale.horizontal slider:disabled {
-	background-image: -gtk-scaled(url("img/scale-slider-horz-insensitive.png"),
-		url("img/scale-slider-horz-insensitive@2.png"));
-}
-
-scale.vertical slider {
-	background-image: -gtk-scaled(url("img/scale-slider-vert.png"),
-		url("img/scale-slider-vert@2.png"));
-}
-
-scale.vertical slider:hover {
-	background-image: -gtk-scaled(url("img/scale-slider-vert-hover.png"),
-		url("img/scale-slider-vert-hover@2.png"));
-}
-
-scale.vertical:disabled slider,
-scale.vertical slider:disabled {
-	background-image: -gtk-scaled(url("img/scale-slider-vert-insensitive.png"),
-		url("img/scale-slider-vert-insensitive@2.png"));
-}
-
-scale.horizontal.scale-has-marks-above slider {
-	background-image: -gtk-scaled(url("img/scale-slider-horz.png"),
-		url("img/scale-slider-horz@2.png"));
-}
-
-scale.horizontal.scale-has-marks-above slider:hover {
-	background-image: -gtk-scaled(url("img/scale-slider-horz-hover.png"),
-		url("img/scale-slider-horz-hover@2.png"));
-}
-
-scale.horizontal.scale-has-marks-above slider:disabled {
-	background-image: -gtk-scaled(url("img/scale-slider-horz-insensitive.png"),
-		url("img/scale-slider-horz-insensitive@2.png"));
-}
-
-scale.vertical.scale-has-marks-above slider {
-	background-image: -gtk-scaled(url("img/scale-slider-vert.png"),
-		url("img/scale-slider-vert@2.png"));
-}
-
-scale.vertical.scale-has-marks-above slider:hover {
-	background-image: -gtk-scaled(url("img/scale-slider-vert-hover.png"),
-		url("img/scale-slider-vert-hover@2.png"));
-}
-
-scale.vertical.scale-has-marks-above slider:disabled {
-	background-image: -gtk-scaled(url("img/scale-slider-vert-insensitive.png"),
-		url("img/scale-slider-vert-insensitive@2.png"));
-}
-
-scale.horizontal.scale-has-marks-below slider {
-	background-image: -gtk-scaled(url("img/scale-slider-horz.png"),
-		url("img/scale-slider-horz@2.png"));
-}
-
-scale.horizontal.scale-has-marks-below slider:hover {
-	background-image: -gtk-scaled(url("img/scale-slider-horz-hover.png"),
-		url("img/scale-slider-horz-hover@2.png"));
-}
-
-scale.horizontal.scale-has-marks-below slider:disabled {
-	background-image: -gtk-scaled(url("img/scale-slider-horz-insensitive.png"),
-		url("img/scale-slider-horz-insensitive@2.png"));
-}
-
-scale.vertical.scale-has-marks-below slider {
-	background-image: -gtk-scaled(url("img/scale-slider-vert.png"),
-		url("img/scale-slider-vert@2.png"));
-}
-
-scale.vertical.scale-has-marks-below slider:hover {
-	background-image: -gtk-scaled(url("img/scale-slider-vert-hover.png"),
-		url("img/scale-slider-vert-hover@2.png"));
-}
-
-scale.vertical.scale-has-marks-below slider:disabled {
-	background-image: -gtk-scaled(url("img/scale-slider-vert-insensitive.png"),
-		url("img/scale-slider-vert-insensitive@2.png"));
-}
-
-scale.vertical {
-    min-width: 10px;
-    padding: 3px 5px;
-}
-
-scale.horizontal {
-    min-height: 10px;
-    padding: 5px 2px;
-}
-
-scale.horizontal slider,
-scale.horizontal slider:hover,
-scale.horizontal slider:disabled {
-	border-radius: 0;
-	border-style: none;
-	background-color: transparent;
-	min-width: 21px;
-	min-height: 13px;
-	margin: -5px 0 -5px 0;
-}
-
-scale.vertical slider,
-scale.vertical slider:hover,
-scale.vertical slider:disabled {
-	border-radius: 0;
-	border-style: none;
-	background-color: transparent;
-	min-width: 13px;
-	min-height: 21px;
-	margin: 0 -5px 0 -5px;
-}
-
-scale.horizontal trough,
-scale.vertical trough,
-scale trough highlight,
-scale trough:disabled {
-	min-width: 3px;
-	min-height: 3px;
-	border-image: none;
-	border-style: solid;
-	border-width: 1px;
-	border-radius: 1px;
-}
-
-scale.horizontal trough {
-	margin: 5px 0 5px 0;
-}
-
 scale trough {
-	margin: 8px 0;
-	border-color: @scale_trough_border;
-	background-color: @scale_trough_bg;
-	background-image: none;
+	border: 1px @slider_trough_border solid;
+	border-radius: 3px;
+	background:
+		linear-gradient(to right,
+			alpha(@slider_trough_shadow_edge, 0.3),
+			alpha(@slider_trough_shadow, 0.3) 3px,
+			alpha(@slider_trough_shadow, 0) 5px,
+			@null 5px, @null ),
+		linear-gradient(to bottom,
+			alpha(@slider_trough_shadow_edge, 0.3),
+			alpha(@slider_trough_shadow, 0.3) 3px,
+			alpha(@slider_trough_shadow, 0) 5px,
+			@null 5px, @null )
+		@slider_trough_bg;
 }
-
-scale.vertical trough {
-	margin: 0 8px;
-	background-image: none;
-}
+scale.horizontal trough { min-height: 1px; }
+scale.vertical trough { min-width: 1px; }
 
 scale trough highlight {
-	border-color: @scale_trough_highlight_border;
-	background-color: @scale_trough_highlight_bg;
+	border-radius: 3px;
+	border: 1px @slider_border solid;
 	margin: -1px;
 }
 
-scale trough:disabled {
-	border-color: @scale_trough_insensitive_border;
-	background-color: @scale_trough_insensitive_highlight_bg;
+scale.horizontal trough highlight { min-height: 3px; }
+scale.vertical trough highlight { min-width: 3px; }
+
+
+scale.vertical {
+	min-width: 10px;
+	padding: 3px 5px;
 }
 
-scale trough highlight:disabled {
-	border-color: @scale_trough_highlight_insensitive_border;
-	background-color: @scale_trough_highlight_insensitive_bg;
+scale.horizontal {
+	min-height: 10px;
+	padding: 5px 2px;
 }
 
-scale marks indicator {
-	color: @scale_mark;
+scale.horizontal slider {
+	min-width: 18px;
+	min-height: 11px;
+	margin: -6px 0;
+	border: 1px @slider_trough_border solid;
+	border-radius: 3px;
+	background:
+		radial-gradient( circle,
+			@scale_glaze_glow_center,
+			@scale_glaze_glow_edge ),
+		linear-gradient( to bottom,
+			@scale_glaze_top,
+			@scale_glaze_mid-a 49%,
+			@scale_glaze_mid-b 49%,
+			@scale_glaze_bot );
 }
 
+scale.vertical slider {
+	min-width: 11px;
+	min-height: 18px;
+	margin: 0 -6px;
+	border: 1px @slider_trough_border solid;
+	border-radius: 3px;
+	background:
+		radial-gradient( circle,
+			@scale_glaze_glow_center,
+			@scale_glaze_glow_edge ),
+		linear-gradient( to right,
+			@scale_glaze_top,
+			@scale_glaze_mid-a 49%,
+			@scale_glaze_mid-b 49%,
+			@scale_glaze_bot );
+}
+
+scale.horizontal slider:hover {
+	background:
+		radial-gradient( circle,
+			@scale_glaze_glow_center,
+			@scale_glaze_glow_edge ),
+		linear-gradient( to bottom,
+			@scale_hover_glaze_top,
+			@scale_hover_glaze_mid-a 49%,
+			@scale_hover_glaze_mid-b 49%,
+			@scale_hover_glaze_bot );
+}
+scale.vertical slider:hover {
+	background:
+		radial-gradient( circle,
+			@scale_glaze_glow_center,
+			@scale_glaze_glow_edge ),
+		linear-gradient( to right,
+			@scale_hover_glaze_top,
+			@scale_hover_glaze_mid-a 49%,
+			@scale_hover_glaze_mid-b 49%,
+			@scale_hover_glaze_bot );
+}
 
 
 /* --- Progressbar --- */
@@ -224,20 +111,20 @@ scale marks indicator {
 }
 
 progressbar trough {
-	border: 1px @pbar_trough_border solid;
+	border: 1px @slider_trough_border solid;
 	border-radius: 3px;
 	background:
 		linear-gradient(to right,
-			alpha(@pbar_trough_shadow_edge, 0.3),
-			alpha(@pbar_trough_shadow, 0.3) 3px,
-			alpha(@pbar_trough_shadow, 0) 5px,
+			alpha(@slider_trough_shadow_edge, 0.3),
+			alpha(@slider_trough_shadow, 0.3) 3px,
+			alpha(@slider_trough_shadow, 0) 5px,
 			@null 5px, @null ),
 		linear-gradient(to bottom,
-			alpha(@pbar_trough_shadow_edge, 0.3),
-			alpha(@pbar_trough_shadow, 0.3) 3px,
-			alpha(@pbar_trough_shadow, 0) 5px,
+			alpha(@slider_trough_shadow_edge, 0.3),
+			alpha(@slider_trough_shadow, 0.3) 3px,
+			alpha(@slider_trough_shadow, 0) 5px,
 			@null 5px, @null )
-		@pbar_trough_bg;
+		@slider_trough_bg;
 }
 progressbar.horizontal trough { min-height: -x-var-pbar-sz; }
 progressbar.vertical trough { min-width: -x-var-pbar-sz; }
@@ -247,52 +134,52 @@ row progressbar progress,
 row:hover progressbar progress,
 row:selected progressbar progress,
 row:selected:focus progressbar progress {
-	background-color: @pbar_fill;
+	background-color: @slider_fill;
 	background-image:
 		radial-gradient(
 			ellipse 90% 50%,
-			@pbar_glaze_glow_center,
-			@pbar_glaze_glow_edge ),
+			@slider_glaze_glow_center,
+			@slider_glaze_glow_edge ),
 		linear-gradient( to bottom,
-			@pbar_glaze_top,
-			@pbar_glaze_mid-a 49%,
-			@pbar_glaze_mid-b 49%,
-			@pbar_glaze_bot ),
+			@slider_glaze_top,
+			@slider_glaze_mid-a 49%,
+			@slider_glaze_mid-b 49%,
+			@slider_glaze_bot ),
 		repeating-linear-gradient(45deg,
-			alpha(@pbar_pattern, 0.0),
-			alpha(@pbar_pattern, 0.0) 12px,
-			@pbar_pattern 12px,
-			@pbar_pattern 24px);
+			alpha(@slider_pattern, 0.0),
+			alpha(@slider_pattern, 0.0) 12px,
+			@slider_pattern 12px,
+			@slider_pattern 24px);
 	border-radius: 3px;
-	border: 1px @pbar_border solid;
+	border: 1px @slider_border solid;
 	min-height: -x-var-pbar-sz;
 	margin: 0 -1px;
 }
 
 row:selected progressbar progress,
 row:selected:focus progressbar progress {
-	border-color: shade(@pbar_border, 0.85);
+	border-color: shade(@slider_border, 0.85);
 }
 
 progressbar.vertical progress {
-	background-color: @pbar_fill;
+	background-color: @slider_fill;
 	background-image:
 		radial-gradient(
 			ellipse 50% 90%,
-			@pbar_glaze_glow_center,
-			@pbar_glaze_glow_edge ),
+			@slider_glaze_glow_center,
+			@slider_glaze_glow_edge ),
 		linear-gradient( to right,
-			@pbar_glaze_top,
-			@pbar_glaze_mid-a 49%,
-			@pbar_glaze_mid-b 49%,
-			@pbar_glaze_bot ),
+			@slider_glaze_top,
+			@slider_glaze_mid-a 49%,
+			@slider_glaze_mid-b 49%,
+			@slider_glaze_bot ),
 		repeating-linear-gradient(45deg,
-			alpha(@pbar_pattern, 0.0),
-			alpha(@pbar_pattern, 0.0) 12px,
-			@pbar_pattern 12px,
-			@pbar_pattern 24px);
+			alpha(@slider_pattern, 0.0),
+			alpha(@slider_pattern, 0.0) 12px,
+			@slider_pattern 12px,
+			@slider_pattern 24px);
 	border-radius: 3px;
-	border: 1px @pbar_border solid;
+	border: 1px @slider_border solid;
 	min-width: -x-var-pbar-sz;
 	margin: -1px 0;
 }

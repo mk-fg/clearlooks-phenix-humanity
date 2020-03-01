@@ -35,9 +35,7 @@ toolbar separator {
 
 /* --- frame --- */
 
-frame {
-	padding: 10px;
-}
+frame { padding-left: 4px; }
 
 frame > border {
 	/* All frames look exactly same in gtk-3.24, regardless of shadow-type.

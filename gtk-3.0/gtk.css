@@ -233,53 +233,42 @@
 @define-color osd_fg @theme_tooltip_fg;
 @define-color osd_border @theme_tooltip_border;
 
-/***************
- * progressbar *
- ***************/
+/***********************
+ * progressbar / scale *
+ ***********************/
 
-@define-color pbar_trough_bg shade(@theme_bg, 0.89);
-@define-color pbar_trough_border alpha(@bg_shade4, 0.9);
-@define-color pbar_trough_shadow alpha(shade(@theme_bg, 0.85), 0.3);
-@define-color pbar_trough_shadow_edge alpha(shade(@theme_bg, 0.82), 0.8);
+@define-color slider_trough_bg shade(@theme_bg, 0.89);
+@define-color slider_trough_border alpha(@bg_shade4, 0.9);
+@define-color slider_trough_shadow alpha(shade(@theme_bg, 0.85), 0.3);
+@define-color slider_trough_shadow_edge alpha(shade(@theme_bg, 0.82), 0.8);
 
-@define-color pbar_border shade(@bg_shade5, 0.8);
-@define-color pbar_base shade(@theme_selected_bg, 1.04);
-@define-color pbar_fill @pbar_base;
-@define-color pbar_pattern alpha(shade(@pbar_base, 1.5), 0.8);
+@define-color slider_base shade(@theme_selected_bg, 1.04);
+@define-color slider_border shade(@slider_base, 0.78);
+@define-color slider_fill @slider_base;
+@define-color slider_pattern alpha(shade(@slider_base, 1.5), 0.8);
 
-@define-color pbar_glaze_top alpha(@pbar_fill, 0.8);
-@define-color pbar_glaze_mid-a alpha(shade(@pbar_base, 0.95), 0.8);
-@define-color pbar_glaze_mid-b alpha(shade(@pbar_base, 0.85), 0.8);
-@define-color pbar_glaze_bot alpha(shade(@pbar_base, 0.80), 0.8);
+@define-color slider_glaze_top alpha(@slider_fill, 0.8);
+@define-color slider_glaze_mid-a alpha(shade(@slider_base, 0.95), 0.8);
+@define-color slider_glaze_mid-b alpha(shade(@slider_base, 0.85), 0.8);
+@define-color slider_glaze_bot alpha(shade(@slider_base, 0.80), 0.8);
 
-@define-color pbar_glaze_glow shade(@theme_bg, 1.1);
-@define-color pbar_glaze_glow_center alpha(@button_glaze_glow, 0.2);
-@define-color pbar_glaze_glow_edge alpha(@button_glaze_glow, 0);
+@define-color slider_glaze_glow shade(@theme_bg, 1.1);
+@define-color slider_glaze_glow_center alpha(@button_glaze_glow, 0.2);
+@define-color slider_glaze_glow_edge alpha(@button_glaze_glow, 0);
 
-/*********
- * scale *
- *********/
+@define-color scale_glaze_top shade(@theme_bg, 1.05);
+@define-color scale_glaze_mid-a shade(@theme_bg, 1.03);
+@define-color scale_glaze_mid-b shade(@theme_bg, 0.95);
+@define-color scale_glaze_bot shade(@theme_bg, 0.92);
 
-@define-color scale_mark @border;
-@define-color scale_progressbar_bg @scale_trough_highlight_gradient_b;
+@define-color scale_hover_glaze_top shade(@theme_bg, 1.07);
+@define-color scale_hover_glaze_mid-a shade(@theme_bg, 1.05);
+@define-color scale_hover_glaze_mid-b shade(@theme_bg, 0.97);
+@define-color scale_hover_glaze_bot shade(@theme_bg, 0.94);
 
-@define-color scale_trough_border shade(@core_b, 0.56);
-@define-color scale_trough_bg shade(@core_b, 0.90);
-
-/* trough highlight */
-
-@define-color scale_trough_highlight_border mix(#2b2b2b, shade(@core_a, 0.75), 0.80);
-@define-color scale_trough_highlight_bg shade(@core_a, 0.92);
-
-/* trough insensitive */
-
-@define-color scale_trough_insensitive_border @insensitive_border;
-@define-color scale_trough_insensitive_bg shade(@core_b, 0.97);
-
-/* trough highlight insensitive */
-
-@define-color scale_trough_highlight_insensitive_border mix(#6a6a6a, shade(@core_a, 0.88), 0.90);
-@define-color scale_trough_highlight_insensitive_bg shade(@core_a, 1.20);
+@define-color scale_glaze_glow shade(@theme_bg, 1.15);
+@define-color scale_glaze_glow_center alpha(@scale_glaze_glow, 0.5);
+@define-color scale_glaze_glow_edge alpha(@scale_glaze_glow, 0);
 
 /*************
  * scrollbar *
