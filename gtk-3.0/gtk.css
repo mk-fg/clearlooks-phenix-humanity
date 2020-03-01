@@ -206,24 +206,24 @@
  * notebook *
  ************/
 
-@define-color notebook_bg shade(@core_b, 1.02);
+@define-color nb_bg shade(@theme_bg, 1.06);
 
-@define-color notebook_tab_inner_border shade(@core_b, 1.04);
+@define-color nb_stack_border alpha(@insensitive_border, 0.9);
+@define-color nb_stack_shadow_hl alpha(shade(@theme_bg, 1.15), 0.4);
+@define-color nb_stack_shadow_dark alpha(shade(@theme_bg, 0.95), 0.4);
 
-@define-color notebook_tab_gradient_a shade(@core_b, 0.97);
-@define-color notebook_tab_gradient_b shade(@core_b, 0.92);
-@define-color notebook_tab_gradient_c shade(@core_b, 0.90);
-@define-color notebook_tab_gradient_d shade(@core_b, 0.86);
+@define-color nb_tab_border alpha(shade(@theme_bg, 0.73), 0.5);
+@define-color nb_tab_checked_border shade(@theme_bg, 0.73);
 
-/* active tab */
+@define-color nb_tab_glaze_top alpha(shade(@theme_bg, 1.02), 0.8);
+@define-color nb_tab_glaze_mid-a alpha(shade(@theme_bg, 0.98), 0.8);
+@define-color nb_tab_glaze_mid-b alpha(shade(@theme_bg, 0.94), 1);
+@define-color nb_tab_glaze_bot alpha(shade(@theme_bg, 0.92), 1);
 
-@define-color notebook_active_tab_border @menuitem_hover_border;
-
-@define-color notebook_active_tab_strip_gradient_a shade(@core_a, 1.05);
-@define-color notebook_active_tab_strip_gradient_b shade(@core_a, 0.94);
-@define-color notebook_active_tab_strip_border_bottom mix(#727272, shade(@core_a, 0.84), 0.65);
-@define-color notebook_active_tab_gradient_a shade(@core_b, 1.07);
-@define-color notebook_active_tab_gradient_b @notebook_bg;
+@define-color nb_tab_checked_glaze_top alpha(shade(@theme_bg, 1.10), 0.8);
+@define-color nb_tab_checked_glaze_mid-a alpha(shade(@theme_bg, 1.07), 0.8);
+@define-color nb_tab_checked_glaze_bot @nb_bg;
+@define-color nb_tab_checked_glaze_mid-b shade(@nb_tab_checked_glaze_bot, 0.97);
 
 /*******
  * osd *
