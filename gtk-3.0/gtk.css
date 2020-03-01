@@ -144,10 +144,11 @@
 @define-color entry_shadow alpha(shade(@theme_bg, 0.85), 0.6);
 @define-color entry_shadow_disabled alpha(shade(@theme_bg, 0.85), 0.3);
 
-/************
- * expander *
- ************/
+/*****************************
+ * treeview and sub-elements *
+ *****************************/
 
+@define-color treeview_cell_border alpha(#fefefe, 0.5);
 @define-color expander_row_selected_border mix(#acacac, shade(@core_a, 0.75), 0.54);
 
 /*******************************

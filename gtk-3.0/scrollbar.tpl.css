@@ -28,8 +28,6 @@ scrollbar {
 	-GtkScrollbar-has-backward-stepper: true;
 	-GtkScrollbar-has-forward-stepper: true;
 }
-scrollbar.horizontal { margin-bottom: 2px; }
-scrollbar.vertical { margin-right: 2px; }
 
 scrollbar contents {
 	border: 1px @scroll_border solid;
