@@ -28,7 +28,7 @@
 @define-color error #cc0000;
 @define-color warning_bg #faad3d;
 
-/* XXX: non-murrine afaiu, so customize these per-widget instead */
+/* XXX: non-murrine intermediate colors - find/remove later */
 @define-color core_a @theme_selected_bg; /* blue widgets in Clearlooks-Phenix */
 @define-color core_b shade(@theme_bg, 0.88); /* gray widgets in Clearlooks-Phenix */
 
@@ -237,14 +237,24 @@
  * progressbar *
  ***************/
 
-@define-color progressbar_border #674e3a;
-@define-color progressbar_pattern alpha(shade(@core_a, 1.5), 0.8);
-@define-color progressbar_fill #915e49;
+@define-color pbar_trough_bg shade(@theme_bg, 0.89);
+@define-color pbar_trough_border alpha(@bg_shade4, 0.9);
+@define-color pbar_trough_shadow alpha(shade(@theme_bg, 0.85), 0.3);
+@define-color pbar_trough_shadow_edge alpha(shade(@theme_bg, 0.82), 0.8);
 
-@define-color progressbar_gradient_a @progressbar_fill;
-@define-color progressbar_gradient_b shade(@core_a, 0.95);
-@define-color progressbar_gradient_c shade(@core_a, 0.93);
-@define-color progressbar_gradient_d shade(@core_a, 0.88);
+@define-color pbar_border shade(@bg_shade5, 0.8);
+@define-color pbar_base shade(@theme_selected_bg, 1.04);
+@define-color pbar_fill @pbar_base;
+@define-color pbar_pattern alpha(shade(@pbar_base, 1.5), 0.8);
+
+@define-color pbar_glaze_top alpha(@pbar_fill, 0.8);
+@define-color pbar_glaze_mid-a alpha(shade(@pbar_base, 0.95), 0.8);
+@define-color pbar_glaze_mid-b alpha(shade(@pbar_base, 0.85), 0.8);
+@define-color pbar_glaze_bot alpha(shade(@pbar_base, 0.80), 0.8);
+
+@define-color pbar_glaze_glow shade(@theme_bg, 1.1);
+@define-color pbar_glaze_glow_center alpha(@button_glaze_glow, 0.2);
+@define-color pbar_glaze_glow_edge alpha(@button_glaze_glow, 0);
 
 /*********
  * scale *
