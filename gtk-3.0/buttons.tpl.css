@@ -88,7 +88,6 @@
 	-x-var-border-focus-outer-checked: url("img/btn-border-focus-outer.png") 4 4 3 4 / 4 4 5 4 repeat;
 }
 
-
 button {
 	color: @theme_text;
 	min-height: 16px;
@@ -209,11 +208,21 @@ button:checked:focus:hover {
 		-x-var-bg-glaze-hover;
 }
 
-
 /* --- Toolbars --- */
+toolbar {
+	padding: 1px 2px;
+}
+
+toolbar:disabled {
+	color: alpha (@theme_fg, 0.6);
+}
 
 toolbar button {
 	padding: 4px 6px;
+}
+
+toolbar button:disabled {
+	opacity: 0.3;
 }
 
 toolbar button:hover {
@@ -221,7 +230,6 @@ toolbar button:hover {
 		-x-var-bg-glow-hover-circle,
 		-x-var-bg-glaze-hover;
 }
-
 
 /* --- Primary toolbar (big button bar at the top) and .flat buttons --- */
 /* Don't have button-like background unless you hover over them */
@@ -308,7 +316,6 @@ toolbar.primary-toolbar button:focus:active:hover -ext {
 /* "button.flat" will be styled exactly like "toolbar.primary-toolbar button", incl. all of its states */
 button.flat -ext { -x-same-rules-all: toolbar.primary-toolbar button; }
 
-
 /* --- Spinbutton buttons --- */
 
 spinbutton button,
@@ -329,14 +336,12 @@ spinbutton button:focus {
 }
 spinbutton button:focus:hover -ext { -x-same-rules: button:hover; }
 
-
 /* --- File chooser --- */
 
 filechooserbutton button {
 	padding-left: 3px;
 	padding-right: 5px;
 }
-
 
 /* --- Color chooser rectangle inside regular button --- */
 
@@ -346,46 +351,3 @@ colorswatch:selected {
 	margin: 0 10px;
 	min-width: 20px;
 }
-
-
-
-/* --- end of buttons --- */
-
-
-
-/* -------------------------------------------------- */
-
-/* --- Misc legacy stuff from clearlooks --- */
-/* XXX: check and remove it all from here */
-
-/* XXX: check pushed + disabled button */
-/* toolbar button:checked:disabled { */
-/* 	background-image: linear-gradient(to bottom, */
-/* 		@button_active_insensitive_gradient_a, */
-/* 		@button_active_insensitive_gradient_b 3px, */
-/* 		@button_active_insensitive_gradient_c 4px, */
-/* 		@button_active_insensitive_gradient_d 50%, */
-/* 		@button_active_insensitive_gradient_e 50%, */
-/* 		@button_active_insensitive_gradient_f); */
-/* 	background-color: transparent; */
-/* } */
-
-/* XXX: check path bar element - should be buttons? */
-/* .path-bar button, */
-/* .linked.path-bar > button, */
-/* .path-bar button image, */
-/* .path-bar button label { */
-/* 	padding: 2px; */
-/* } */
-/* .path-bar button { */
-/* 	border-width: 1px 0px 1px 1px; */
-/* } */
-/* .path-bar button:first-child, */
-/* .path-bar button:first-child:hover:active { */
-/* 	border-right-width: 0px; */
-/* } */
-/* .path-bar button:only-child, */
-/* .path-bar button:only-child:hover:active { */
-/* 	border-radius: 3px; */
-/* 	border-right-width: 1px; */
-/* } */

@@ -6,25 +6,16 @@
 /* Any color shaded or defined elsewhere is a bug, occasional alpha() is OK. */
 
 @define-color theme_base #fff;
-
 @define-color theme_bg #e6ddd5;
 @define-color theme_fg #101010;
-
 @define-color theme_selected_bg #8f5f4a;
 @define-color theme_selected_fg #fff;
-
 @define-color theme_tooltip_bg #f5f5b5;
 @define-color theme_tooltip_fg #000;
-
 @define-color theme_text #1a1a1a;
-
-
 @define-color null rgba(127,127,127,0);
-
 @define-color link @theme_fg;
 @define-color visited_link shade(@link, 0.2);
-
-/* XXX: original clearlooks */
 @define-color error #cc0000;
 @define-color warning_bg #faad3d;
 
@@ -32,18 +23,15 @@
 @define-color core_a @theme_selected_bg; /* blue widgets in Clearlooks-Phenix */
 @define-color core_b shade(@theme_bg, 0.88); /* gray widgets in Clearlooks-Phenix */
 
-
 /* --- Intermediate murrine colors --- */
 /* See murrine_style_realize for how these are produced originally */
 /* Only used in the current file, as bases for other color declarations */
-/* Shades adjusted for contrast=0.9: 1.0585, 0.945, 0.8856, 0.802, 0.725, 0.6315, 0.45, 0.395, 0.34 */
 
 @define-color bg_base @theme_bg;
 @define-color bg_shade0 shade(@theme_bg, 1.0585);
-@define-color bg_shade4 shade(@theme_bg, 0.725);
+@define-color bg_shade4 shade(@theme_bg, 0.839); /* #C9B9AB */
 @define-color bg_shade5 shade(@theme_bg, 0.6315);
 @define-color bg_shade6 shade(@theme_bg, 0.45);
-
 
 /***********
  * general *
@@ -365,18 +353,12 @@
 @define-color frame_shadow_dark alpha(shade(@theme_bg, 0.9), 0.5);
 @define-color frame_shadow_hl alpha(shade(@theme_bg, 1.1), 0.5);
 
-
 /***********************
  * ===== imports ===== *
  ***********************/
 
 @import url("base.css");
-
-/* This file should be emptied-out and removed */
-/* Kept in case it has any applicable but yet-unchecked rules */
-/* If you see rules from it used in gtk-inspector - move them to appropriate sub-css instead */
 @import url("old-clearlooks.css");
-
 @import url("containers.css");
 @import url("buttons.css");
 @import url("text-inputs.css");
@@ -385,8 +367,4 @@
 @import url("scrollbar.css");
 @import url("menu.css");
 @import url("tables.css");
-
 @import url("mate.css");
-
-/* Haven't got around to even look at that one yet */
-@import url("old-clearlooks-apps.css");

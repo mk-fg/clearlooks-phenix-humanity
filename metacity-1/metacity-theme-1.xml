@@ -570,21 +570,23 @@
 
 <!-- menu icon -->
 <draw_ops name="menu_button_icon">
-	<!--<icon  x="0" y="0" width="width" height="height"/>-->
-	<icon  x="(width-mini_icon_width)/2" y="(height-mini_icon_height)/2" width="mini_icon_width" height="mini_icon_height"/>
+	<!--<icon x="0" y="0" width="width" height="height"/>-->
+	<icon x="(width-mini_icon_width)/2" y="(height-mini_icon_height)/2" width="mini_icon_width" height="mini_icon_height"/>
 </draw_ops>
 
 <draw_ops name="menu_button_icon_unfocused">
-	<!--<icon  x="0" y="0" width="width" height="height" alpha="0.5"/>-->
-	<icon  x="(width-mini_icon_width)/2" y="(height-mini_icon_height)/2" width="mini_icon_width" height="mini_icon_height"/>
+	<!--<icon x="0" y="0" width="width" height="height" alpha="0.5"/>-->
+	<icon x="(width-mini_icon_width)/2" y="(height-mini_icon_height)/2" width="mini_icon_width" height="mini_icon_height"/>
 </draw_ops>
 
 <draw_ops name="menu_button_normal">
 	<include name="menu_button_icon"/>
 </draw_ops>
+
 <draw_ops name="menu_button_pressed">
 	<include name="menu_button_icon"/>
 </draw_ops>
+
 <draw_ops name="menu_button_unfocused">
 	<include name="menu_button_icon_unfocused"/>
 </draw_ops>
@@ -593,7 +595,7 @@
 <draw_ops name="close_button_icon">
 	<!-- outside border -->
 
-	<!-- main cross  -->
+	<!-- main cross -->
 	<line color="shade/gtk:bg[SELECTED]/0.7" width="4"
 		x1="((width-(Bmin`max`height-Bpad*2))/2)" y1="((height-(Bmin`max`height-Bpad*2))/2)"
 		x2="width - ((width-(Bmin`max`height-Bpad*2))/2) - 1" y2="height - ((height-(Bmin`max`height-Bpad*2))/2) - 1"/>
@@ -663,22 +665,27 @@
 	<include name="button_bg"/>
 	<include name="close_button_icon"/>
 </draw_ops>
+
 <draw_ops name="close_button_prelight">
 	<include name="button_bg_prelight"/>
 	<include name="close_button_icon"/>
 </draw_ops>
+
 <draw_ops name="close_button_pressed">
 	<include name="button_bg_pressed"/>
 	<include name="close_button_icon"/>
 </draw_ops>
+
 <draw_ops name="close_button_unfocused">
 	<include name="button_bg_unfocused"/>
 	<include name="close_button_icon_unfocused"/>
 </draw_ops>
+
 <draw_ops name="close_button_unfocused_prelight">
 	<include name="button_bg_unfocused_prelight"/>
 	<include name="close_button_icon_unfocused"/>
 </draw_ops>
+
 <draw_ops name="close_button_unfocused_pressed">
 	<include name="button_bg_unfocused_pressed"/>
 	<include name="close_button_icon_unfocused"/>
@@ -716,22 +723,27 @@
 	<include name="button_bg"/>
 	<include name="maximize_button_icon"/>
 </draw_ops>
+
 <draw_ops name="maximize_button_prelight">
 	<include name="button_bg_prelight"/>
 	<include name="maximize_button_icon"/>
 </draw_ops>
+
 <draw_ops name="maximize_button_pressed">
 	<include name="button_bg_pressed"/>
 	<include name="maximize_button_icon"/>
 </draw_ops>
+
 <draw_ops name="maximize_button_unfocused">
 	<include name="button_bg_unfocused"/>
 	<include name="maximize_button_icon_unfocused"/>
 </draw_ops>
+
 <draw_ops name="maximize_button_unfocused_prelight">
 	<include name="button_bg_unfocused_prelight"/>
 	<include name="maximize_button_icon_unfocused"/>
 </draw_ops>
+
 <draw_ops name="maximize_button_unfocused_pressed">
 	<include name="button_bg_unfocused_pressed"/>
 	<include name="maximize_button_icon_unfocused"/>
@@ -769,22 +781,27 @@
 	<include name="button_bg"/>
 	<include name="restore_button_icon"/>
 </draw_ops>
+
 <draw_ops name="restore_button_prelight">
 	<include name="button_bg_prelight"/>
 	<include name="restore_button_icon"/>
 </draw_ops>
+
 <draw_ops name="restore_button_pressed">
 	<include name="button_bg_pressed"/>
 	<include name="restore_button_icon"/>
 </draw_ops>
+
 <draw_ops name="restore_button_unfocused">
 	<include name="button_bg_unfocused"/>
 	<include name="restore_button_icon_unfocused"/>
 </draw_ops>
+
 <draw_ops name="restore_button_unfocused_prelight">
 	<include name="button_bg_unfocused_prelight"/>
 	<include name="restore_button_icon_unfocused"/>
 </draw_ops>
+
 <draw_ops name="restore_button_unfocused_pressed">
 	<include name="button_bg_unfocused_pressed"/>
 	<include name="restore_button_icon_unfocused"/>
@@ -812,22 +829,27 @@
 	<include name="button_bg"/>
 	<include name="minimize_button_icon"/>
 </draw_ops>
+
 <draw_ops name="minimize_button_prelight">
 	<include name="button_bg_prelight"/>
 	<include name="minimize_button_icon"/>
 </draw_ops>
+
 <draw_ops name="minimize_button_pressed">
 	<include name="button_bg_pressed"/>
 	<include name="minimize_button_icon"/>
 </draw_ops>
+
 <draw_ops name="minimize_button_unfocused">
 	<include name="button_bg_unfocused"/>
 	<include name="minimize_button_icon_unfocused"/>
 </draw_ops>
+
 <draw_ops name="minimize_button_unfocused_prelight">
 	<include name="button_bg_unfocused_prelight"/>
 	<include name="minimize_button_icon_unfocused"/>
 </draw_ops>
+
 <draw_ops name="minimize_button_unfocused_pressed">
 	<include name="button_bg_unfocused_pressed"/>
 	<include name="minimize_button_icon_unfocused"/>
@@ -898,9 +920,11 @@
 <frame_style name="utility_normal" geometry="utility" parent="normal">
 	<piece position="entire_background" draw_ops="bevel_unfocused"/>
 </frame_style>
+
 <frame_style name="utility_focused" geometry="utility" parent="focused">
 	<piece position="entire_background" draw_ops="bevel"/>
 </frame_style>
+
 <frame_style name="utility_focused_shaded" geometry="utility" parent="focused_shaded">
 	<piece position="entire_background" draw_ops="bevel_shaded"/>
 </frame_style>

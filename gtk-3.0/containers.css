@@ -1,18 +1,16 @@
 /* frames.css: styles for window, box, separator, paned, frame, notebook and similar container widgets. */
 /* Anything not related to widget containers styled here is a bug. */
 
-
 /* --- window --- */
 
 window {
 	color: @theme_fg;
-	margin: 0px;
+	margin: 0;
 }
 
 window decoration {
 	border: solid 1px @insensitive_border;
 }
-
 
 /* --- Box/layout separators --- */
 
@@ -31,7 +29,6 @@ toolbar separator {
 	border-right: 1px @separator_hl solid;
 	margin: 10px 5px;
 }
-
 
 /* --- frame --- */
 
@@ -53,7 +50,6 @@ frame > label { padding: 0 1px; }
 scrolledwindow viewport { background-color: @theme_bg; }
 scrolledwindow viewport.frame { border-style: none; }
 
-
 /* --- paned layout separators --- */
 
 paned.horizontal > separator {
@@ -67,8 +63,6 @@ paned.vertical > separator {
 	min-width: 7px;
 	min-height: 5px;
 }
-
-
 
 /* --- notebook and its tabs --- */
 
@@ -92,7 +86,6 @@ notebook header tab {
 notebook header tab:checked {
 	border: 1px @nb_tab_checked_border solid;
 }
-
 
 notebook header.top {
 	margin-bottom: -1px;
@@ -186,99 +179,19 @@ notebook header.right tab:checked {
 		@nb_tab_checked_glaze_bot);
 }
 
+/* --- status bar --- */
 
-/* XXX: check tab buttons in something */
+statusbar {
+	margin: -7px -10px -6px -10px;
+	border-top: 1px @menu_separator solid;
+}
 
-/* notebook header tab:focus { */
-/* 	padding: 2px; */
-/* } */
+statusbar label,
+statusbar frame {
+	color: @theme_fg;
+	border: 0;
+}
 
-/* /\* close button styling *\/ */
-/* notebook button.flat.small-button { */
-/*     border-image: none; */
-/*     border-radius: 3px; */
-/*     border-style: solid; */
-/*     border-color: transparent; */
-/*     border-width: 1px; */
-/*     background-image: none; */
-/*     background-color: transparent; */
-/*     padding: 0; */
-/* } */
-
-/* notebook header.* tab button, */
-/* notebook header.* tab button:active, */
-/* notebook header.* tab button:hover { */
-/* 	border-image: none; */
-/* 	background-image: none; */
-/* 	background-color: transparent; */
-/* 	border-color: alpha(black, 0.1); */
-/* } */
-
-/* notebook button image { */
-/* 	border-radius: 3px; */
-/* 	color: mix(@theme_fg, @theme_base, 0.6); */
-/* 	border-style: solid; */
-/* 	border-color: transparent; */
-/* 	border-width: 1px; */
-/* 	padding: 0; */
-/* } */
-
-/* notebook button image:hover { */
-/* 	color: @theme_fg; */
-/* 	border-color: alpha(black, 0.1); */
-/* } */
-
-/* notebook button image:active, */
-/* notebook button image:active:hover { */
-/* 	background-color: alpha(black, 0.08); */
-/* 	color:  @theme_base; */
-/* 	border-color: alpha(black, 0.27) */
-/* 		alpha(black, 0.13) */
-/* 		alpha(black, 0.13) */
-/* 		alpha(black, 0.13); */
-/* } */
-
-/* notebook header.top tabs arrow.up, */
-/* notebook header.bottom tabs arrow.up { */
-/* 	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic"); */
-/* 	color: @theme_fg; */
-/* } */
-
-/* notebook header.top tabs arrow.down, */
-/* notebook header.bottom tabs arrow.down { */
-/* 	-gtk-icon-source: -gtk-icontheme("pan-start-symbolic"); */
-/* 	color: @theme_fg; */
-/* } */
-
-/* notebook header.left tabs arrow.up, */
-/* notebook header.right tabs arrow.up { */
-/* 	-gtk-icon-source: -gtk-icontheme("pan-up-symbolic"); */
-/* 	color: @theme_fg; */
-/* } */
-
-/* notebook header.left tabs arrow.down, */
-/* notebook header.right tabs arrow.down { */
-/* 	-gtk-icon-source: -gtk-icontheme("pan-down-symbolic"); */
-/* 	color: @theme_fg; */
-/* } */
-
-/* notebook header tabs arrow { */
-/* 	color: @theme_fg; */
-/* } */
-
-/* notebook header tabs arrow:hover, */
-/* notebook header tabs arrow:active { */
-/* 	color: @theme_selected_bg; */
-/* } */
-
-/* notebook header tabs arrow:disabled { */
-/* 	color: rgba(141, 144, 145, 0.3); */
-/* } */
-
-/* notebook header tabs arrow:backdrop { */
-/* 	color: rgba(84, 89, 90, 0.4); */
-/* } */
-
-/* notebook header tabs arrow:backdrop:disabled { */
-/* 	color: #c7c7c7; */
-/* } */
+statusbar frame {
+	border: 0;
+}

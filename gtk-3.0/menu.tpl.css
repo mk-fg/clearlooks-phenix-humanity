@@ -15,7 +15,6 @@
 			@menuitem_hover_glaze_bot );
 }
 
-
 /* --- menubar on top of the window --- */
 
 menubar {
@@ -42,7 +41,6 @@ menubar menuitem:hover {
 	background-image:
 		-x-var-bg-hover;
 }
-
 
 /* --- Menu popup-window, e.g. dropping down from menubar --- */
 
@@ -91,7 +89,6 @@ menuitem:disabled * {
 	background-color: transparent;
 }
 
-
 /* XXX: menuitem accelerator - not sure where they're used, need to check */
 
 menuitem accelerator:disabled {
@@ -107,16 +104,14 @@ menuitem accelerator:active {
 	color: alpha(@menu_fg, 0.3);
 }
 
-
 /* XXX: menu separators - not sure where they're used, need to check */
 
 menu separator,
 menuitem separator {
 	color: @menu_separator;
 	margin: 3px 1px 3px 1px;
-	border-bottom: solid 1px @menu_separator;
+	border-bottom: 1px @menu_separator solid;
 }
-
 
 /* XXX: menu/menuitem arrows - not sure where they're used, need to check */
 
@@ -136,7 +131,6 @@ menu arrow:hover {
 	border-color: @theme_selected_fg;
 	color: shade (@theme_selected_bg, 1.6);
 }
-
 
 /* XXX: menu buttons - not sure where they're used, need to check */
 
@@ -167,7 +161,7 @@ menu button:disabled {
 
 menuitem button.flat:hover {
 	border-width: 1px;
-	border-radius: 0px;
+	border-radius: 0;
 }
 
 menuitem button.flat:focus {
@@ -184,7 +178,6 @@ menuitem button.flat:active {
 	border-color: shade(@border, 1.30);
 	border-style: solid;
 }
-
 
 /* --- menuitem-embedded elements --- */
 
