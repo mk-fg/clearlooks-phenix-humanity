@@ -1,6 +1,6 @@
 /* menu.css: defines everything related to menubars and menuitems and similar list-like things. */
 /* Anything menu-like styled in other css files is a bug -
-  - most likely legacy definition from clearlooks theme, which should be moved here. */
+ - most likely legacy definition from clearlooks theme, which should be moved here. */
 /* Anything non-menu-like styled here is likewise a bug. */
 
 /* --- menubar on top of the window --- */
@@ -9,7 +9,6 @@ menubar {
 	border-bottom: 1px @menubar_border_bot solid;
 	margin-top: 1px;
 	padding: 0 1px;
-	-GtkWidget-window-dragging: true;
 	background-color: transparent;
 	background-image: linear-gradient(to bottom, @menubar_grad_top, @menubar_grad_bot);
 }
@@ -23,7 +22,8 @@ menubar menuitem {
 /* This only applies to items in menubar itself, not popup windows from there */
 menubar menuitem:hover {
 	border: 1px @menuitem_hover_border solid;
-	border-radius: 3px 3px 0 0;
+	border-bottom: 0;
+	border-radius: 2px 2px 0 0;
 	color: @menubar_menuitem_hover;
 	background-color: @menu_bg;
 	background-image:
@@ -52,8 +52,8 @@ menu {
 	font-weight: normal;
 	background-color: @menu_bg;
 	color: @menu_fg;
-	padding: 1px 2px;
-	border: 0;
+	padding: 3px;
+	border: 1px solid @menu_border;
 }
 
 menu menuitem {
@@ -63,7 +63,7 @@ menu menuitem {
 }
 
 menu menuitem:hover {
-	border-radius: 3px;
+	border-radius: 2px;
 	border: 1px @menuitem_hover_border solid;
 	color: @theme_selected_fg;
 	background-image:
@@ -91,28 +91,19 @@ menuitem:disabled * {
 	background-color: transparent;
 }
 
-/* XXX: menuitem accelerator - not sure where they're used, need to check */
-
-menuitem accelerator:disabled {
-	color: mix(@menu_fg, @menu_bg, 0.7);
-}
-
 menuitem accelerator {
-	color: alpha(@menu_fg, 0.5);
+	color: alpha(@menu_fg, 0.601); /* #696764 instead of #696664 */
 }
 
-menuitem accelerator:hover,
-menuitem accelerator:active {
-	color: alpha(@menu_fg, 0.3);
-}
-
-/* XXX: menu separators - not sure where they're used, need to check */
+/* menuitem:hover accelerator {
+	color: @theme_selected_fg;
+} */
 
 menu separator,
 menuitem separator {
-	color: @menu_separator;
-	margin: 3px 1px 3px 1px;
-	border-bottom: 1px @menu_separator solid;
+	margin: 4px 5px 6px;
+	border-top: 1px @menu_separator_dark solid;
+	border-bottom: 1px @menu_separator_hl solid;
 }
 
 /* XXX: menu/menuitem arrows - not sure where they're used, need to check */
@@ -135,11 +126,6 @@ menu arrow:hover {
 }
 
 /* XXX: menu buttons - not sure where they're used, need to check */
-
-/* menuitem button.flat:hover -ext, */
-/* menuitem button.flat:active -ext { */
-/* 	-x-same-rules: menubar menuitem:hover; */
-/* } */
 
 menu button {
 	background-image: none;
@@ -206,74 +192,55 @@ menu menuitem .radio:disabled {
 }
 
 /* unchecked */
-menu menuitem check {
-	-gtk-icon-source: url("img/checkbox-unchecked.svg");
-}
-
+menu menuitem check,
 menu menuitem check:disabled {
-	-gtk-icon-source: url("img/checkbox-unchecked-insensitive.svg");
+	-gtk-icon-source: none;
 }
 
 /* checked */
-menu menuitem check:checked {
-	-gtk-icon-source: url("img/checkbox-checked.svg");
-}
-
+menu menuitem check:checked,
 menu menuitem check:checked:active {
-	-gtk-icon-source: url("img/checkbox-checked-active.svg");
+	-gtk-icon-source: url("img/menu-checkbox-checked.svg");
 }
 
 menu menuitem check:checked:disabled,
 menu menuitem check:active:disabled {
-	-gtk-icon-source: url("img/checkbox-checked-insensitive.svg");
+	-gtk-icon-source: url("img/menu-checkbox-checked-insensitive.svg");
 }
 
 /* mixed */
-menu menuitem check:indeterminate {
-	-gtk-icon-source: url("img/checkbox-mixed.svg");
-}
-
+menu menuitem check:indeterminate,
 menu menuitem check:indeterminate:active {
-	-gtk-icon-source: url("img/checkbox-mixed-active.svg");
+	-gtk-icon-source: url("img/menu-checkbox-mixed.svg");
 }
 
 menu menuitem check:indeterminate:disabled {
-	-gtk-icon-source: url("img/checkbox-mixed-insensitive.svg");
+	-gtk-icon-source: url("img/menu-checkbox-mixed-insensitive.svg");
 }
 
 /* unchecked */
-menu menuitem radio {
-	-gtk-icon-source: url("img/radio-unchecked.svg");
-}
-
+menu menuitem radio,
 menu menuitem radio:disabled {
-	-gtk-icon-source: url("img/radio-unchecked-insensitive.svg");
+	-gtk-icon-source: none;
 }
 
 /* checked */
-menu menuitem radio:checked {
-	-gtk-icon-source: url("img/radio-checked.svg");
-}
-
+menu menuitem radio:checked,
 menu menuitem radio:checked:active {
-	-gtk-icon-source: url("img/radio-checked-active.svg");
+	-gtk-icon-source: url("img/menu-radio-checked.svg");
 }
 
 menu menuitem radio:checked:disabled,
 menu menuitem radio:active:disabled {
-	-gtk-icon-source: url("img/radio-checked-insensitive.svg");
+	-gtk-icon-source: url("img/menu-radio-checked-insensitive.svg");
 }
 
 /* mixed */
-menu menuitem radio:indeterminate {
-	-gtk-icon-source: url("img/radio-mixed.svg");
-}
-
+menu menuitem radio:indeterminate,
 menu menuitem radio:indeterminate:active {
-	-gtk-icon-source: url("img/radio-mixed-active.svg");
+	-gtk-icon-source: url("img/menu-radio-mixed.svg");
 }
 
 menu menuitem radio:indeterminate:disabled {
-	-gtk-icon-source: url("img/radio-mixed-insensitive.svg");
+	-gtk-icon-source: url("img/menu-radio-mixed-insensitive.svg");
 }
-

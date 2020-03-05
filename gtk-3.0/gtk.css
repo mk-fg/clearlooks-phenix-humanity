@@ -158,13 +158,13 @@
  * menu *
  ********/
 
-@define-color menu_fg @theme_fg;
-@define-color menu_bg mix(@theme_base, @bg_base, 0.6);
-@define-color menu_border alpha(@bg_shade5, 0.6);
+@define-color menu_fg @theme_fg; /* #101010 okay! */
+@define-color menu_bg mix(@theme_base, @bg_base, 0.67); /* #EFE9E3 okay! */
+@define-color menu_border shade(@bg_shade5, 1.161);     /* #B4A291 okay! */
 
-/* Example: submenu arrow. */
-@define-color menu_controls @theme_fg;
-@define-color menu_separator @menu_border;
+@define-color menu_controls @theme_fg; /* arrows #101010 ? */
+@define-color menu_separator_dark shade(@menu_border, 1.243); /* €D6C9BE instead of #D5C9BE */
+@define-color menu_separator_hl shade(@menu_border, 1.502);   /* #F7F4F1 okay! */
 
 /***********
  * menubar *
@@ -178,13 +178,13 @@
 /* hover */
 
 @define-color menubar_menuitem_hover @theme_selected_fg;
-@define-color menuitem_hover_border shade(@core_a, 0.58);
+@define-color menuitem_hover_border shade(@core_a, 0.7585); /* #664B3E instead of #684B3E */
 
-@define-color menuitem_hover_glaze shade(@theme_selected_bg, 1.1);
-@define-color menuitem_hover_glaze_top alpha(shade(@menuitem_hover_glaze, 0.88), 0.8);
-@define-color menuitem_hover_glaze_mid-a alpha(shade(@menuitem_hover_glaze, 0.92), 0.8);
-@define-color menuitem_hover_glaze_mid-b alpha(shade(@menuitem_hover_glaze, 0.80), 0.8);
-@define-color menuitem_hover_glaze_bot alpha(shade(@menuitem_hover_glaze, 0.73), 0.8);
+@define-color menuitem_hover_glaze @theme_selected_bg;
+@define-color menuitem_hover_glaze_top shade(@menuitem_hover_glaze, 1.044229); /* #96634B instead of #97624B */
+@define-color menuitem_hover_glaze_mid-a shade(@menuitem_hover_glaze, 0.96);
+@define-color menuitem_hover_glaze_mid-b shade(@menuitem_hover_glaze, 0.96);
+@define-color menuitem_hover_glaze_bot shade(@menuitem_hover_glaze, 0.96210); /* #895C48 instead of #885C48 */
 
 @define-color menuitem_hover_glaze_glow shade(@theme_selected_bg, 1.2);
 @define-color menuitem_hover_glaze_glow_center alpha(@menuitem_hover_glaze_glow, 0.5);
@@ -346,7 +346,7 @@
 @define-color trough_gradient_b shade(@core_b, 0.90);
 
 /**********
- * frame  *
+ * frame *
  **********/
 
 @define-color frame_border alpha(shade(@bg_shade4, 0.92), 0.65);
@@ -358,7 +358,6 @@
  ***********************/
 
 @import url("base.css");
-@import url("old-clearlooks.css");
 @import url("containers.css");
 @import url("buttons.css");
 @import url("text-inputs.css");

@@ -3,9 +3,8 @@
 /* Likewise, checkbox switch and raido elements are in switches.css file. */
 
 /* Anything text-input-like styled in other css files is a bug -
-  - most likely legacy definition from clearlooks theme, which should be moved here. */
+ - most likely legacy definition from clearlooks theme, which should be moved here. */
 /* Anything non-text-input-like styled here is likewise a bug. */
-
 
 /* --- Gtk.Entry - text input fields --- */
 
@@ -56,7 +55,6 @@ entry progressbar {
 	color: @theme_selected_fg;
 }
 
-
 /* --- Gtk.Combobox --- */
 
 /* Simple entry+button:
@@ -85,7 +83,6 @@ combobox window decoration {
 	padding: 1px;
 	background-color: @theme_bg;
 }
-
 
 /* --- Gtk.SpinButton - combobox-like number entry with +/- buttons --- */
 

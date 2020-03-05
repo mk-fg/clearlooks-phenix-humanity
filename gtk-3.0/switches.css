@@ -3,9 +3,8 @@
 /* Text input fields and comboboxes are in text-inputs.css file. */
 
 /* Anything switch-like styled in other css files is a bug -
-  - most likely legacy definition from clearlooks theme, which should be moved here. */
+ - most likely legacy definition from clearlooks theme, which should be moved here. */
 /* Anything non-switch-like styled here is likewise a bug. */
-
 
 /* --- Switch - caret with short trought and fixed toggle-able positions --- */
 
@@ -61,7 +60,6 @@ switch:disabled slider {
 			url("img/slider-horz-grip@2.png") );
 	border-color: @switch_slider_insensitive_border;
 }
-
 
 /* --- checkbox --- */
 
@@ -121,7 +119,6 @@ check row:selected:focus:indeterminate:disabled {
 	-gtk-icon-source: url("img/checkbox-mixed-insensitive.svg");
 }
 
-
 /* --- radio --- */
 
 /* unchecked */
@@ -179,7 +176,6 @@ radio row:selected:indeterminate:disabled,
 radio row:selected:focus:indeterminate:disabled {
 	-gtk-icon-source: url("img/radio-mixed-insensitive.svg");
 }
-
 
 /* --- checkbutton and radiobutton box effects --- */
 /* E.g. checkbutton is a box with check + label */

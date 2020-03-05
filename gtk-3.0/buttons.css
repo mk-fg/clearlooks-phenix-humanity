@@ -1,6 +1,6 @@
 /* buttons.css: defines everything relating to buttons. */
 /* Anything button-like styled in other css files is a bug -
-  - most likely legacy definition from clearlooks theme, which should be moved here. */
+ - most likely legacy definition from clearlooks theme, which should be moved here. */
 /* Anything non-button-like styled here is likewise a bug. */
 
 /* Quick ref on button states:
@@ -257,6 +257,35 @@ toolbar button:hover {
 /* --- Primary toolbar (big button bar at the top) and .flat buttons --- */
 /* Don't have button-like background unless you hover over them */
 
+toolbar.primary-toolbar {
+	border-width: 1px 0 1px 0;
+	border-radius: 0;
+	border-style: solid;
+	border-top-color: @toolbar_border_top;
+	border-bottom-color: @toolbar_border_bot;
+	-GtkToolbar-button-relief: normal;
+	background-color: transparent;
+	background-image: linear-gradient(to bottom, @toolbar_grad_top, @toolbar_grad_bot);
+}
+
+toolbar.primary-toolbar:disabled {
+	background-image: none;
+	background-color: transparent;
+	border-color: shade (@theme_bg, 0.91);
+}
+
+/* progressbars on primary toolbar entries are special */
+toolbar.primary-toolbar entry progress {
+	background-image: -gtk-gradient( linear,
+		left top, left bottom, from(@trough_gradient_a), to(@trough_gradient_b) );
+	border-width: 1px;
+	border-radius: 2px;
+	border-style: solid;
+	border-color: shade(@internal_element, 1.10);
+	border-image: none;
+	color: @theme_text;
+}
+
 button.flat,
 toolbar.primary-toolbar button {
 	padding: 4px;
@@ -417,4 +446,3 @@ colorswatch:selected {
 	margin: 0 10px;
 	min-width: 20px;
 }
-

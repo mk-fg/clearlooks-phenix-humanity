@@ -26,6 +26,16 @@
 	-GtkWindow-resize-grip-height: 11;
 }
 
+view,
+.view,
+view text,
+.view text,
+iconview text,
+textview text {
+	background-color: @theme_base;
+	color: @theme_text;
+}
+
 .background {
 	color: @theme_fg;
 	background-color: @theme_bg;
@@ -44,7 +54,6 @@
 }
 
 /* XXX: add box-shadow for most elements to emulate reliefstyle=2 shadow/highlight */
-
 
 /* Spinner animation */
 
