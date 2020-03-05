@@ -288,6 +288,7 @@ button.flat:hover,
 toolbar.primary-toolbar button:hover {
 	border-image: url("img/border.png") 4 4 3 4 / 4 4 3 4 repeat;
 }
+
 button.flat:focus:hover,
 toolbar.primary-toolbar button:focus:hover {
 	border-width: 1px;
@@ -400,6 +401,7 @@ spinbutton button:focus {
 			@button_glaze_mid-b 49%,
 			@button_glaze_bot );
 }
+
 /* --- File chooser --- */
 
 filechooserbutton button {
@@ -415,3 +417,4 @@ colorswatch:selected {
 	margin: 0 10px;
 	min-width: 20px;
 }
+

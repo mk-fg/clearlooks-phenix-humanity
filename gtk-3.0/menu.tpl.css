@@ -57,7 +57,7 @@ menu {
 	font-weight: normal;
 	background-color: @menu_bg;
 	color: @menu_fg;
-	padding: 1px;
+	padding: 1px 2px;
 	border: 0;
 }
 
@@ -96,7 +96,7 @@ menuitem accelerator:disabled {
 }
 
 menuitem accelerator {
-	color: alpha(@menu_fg, 0.4);
+	color: alpha(@menu_fg, 0.5);
 }
 
 menuitem accelerator:hover,
@@ -274,3 +274,4 @@ menu menuitem radio:indeterminate:active {
 menu menuitem radio:indeterminate:disabled {
 	-gtk-icon-source: url("img/radio-mixed-insensitive.svg");
 }
+

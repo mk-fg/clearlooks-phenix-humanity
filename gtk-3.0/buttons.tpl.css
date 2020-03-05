@@ -258,6 +258,7 @@ toolbar.primary-toolbar button:active,
 toolbar.primary-toolbar button:hover {
 	border-image: -x-var-border;
 }
+
 toolbar.primary-toolbar button:focus:hover {
 	border-width: 1px;
 	border-image: -x-var-border-focus-outer;
@@ -334,6 +335,7 @@ spinbutton button:focus {
 		-x-var-bg-glow,
 		-x-var-bg-glaze;
 }
+
 spinbutton button:focus:hover -ext { -x-same-rules: button:hover; }
 
 /* --- File chooser --- */
@@ -351,3 +353,4 @@ colorswatch:selected {
 	margin: 0 10px;
 	min-width: 20px;
 }
+
