@@ -29,20 +29,34 @@ PanelToplevel.background {
 }
 
 /* system-monitor-applet */
-.multiload-applet > box.horizontal > box.vertical > frame {
-	margin: 1px 0;
-	padding: 0;
-	border: 1px solid #bcab9b;
+.multiload-applet box.horizontal {
+	padding: 1px 0 2px;
 }
 
-.multiload-applet > box.horizontal > box.vertical > frame > border {
-	border-color: #dfd5cb;
+.multiload-applet box.vertical {
+	border: 0;
+}
+
+.multiload-applet box.vertical frame {
+	border: 1px solid @menu_separator_dark;
+	margin: 0;
+	padding: 0;
+}
+
+.multiload-applet box.vertical border {
+	border: 1px solid @menu_separator_hl;
+	margin: 0;
+	padding: 0;
 }
 
 /* clock-applet */
 #clock-applet-button {
 	margin: 0;
 	border: 0;
+}
+
+#clock-applet-button:not(:hover) {
+	background: none;
 }
 
 /* -- window.brisk-menu */
@@ -104,13 +118,13 @@ PanelToplevel.background {
 			@menuitem_hover_glaze_bot );
 }
 
-/* Search bar entry on top *
+* Search bar entry on top *
 .brisk-menu entry { padding: 5px 3px; }
 .brisk-menu entry image.left { margin-right: 5px; }
 
-/* Buttons on the right panel (... -> list -> row -> button) *
+* Buttons on the right panel (... -> list -> row -> button) *
 
-/* This should look same as "separator" by using pane borders *
+* This should look same as "separator" by using pane borders *
 .brisk-menu scrolledwindow.frame {
 	border-width: 0 0 0 2px;
 	border-image:
@@ -119,15 +133,15 @@ PanelToplevel.background {
 			@separator_hl 1px, @separator_hl ) 2 / 2px;
 }
 
-/* Have to be prefixed by "row" to avoid affecting scrollbars and such *
+* Have to be prefixed by "row" to avoid affecting scrollbars and such *
 .brisk-menu scrolledwindow.frame row { background: none; }
-/* margin-right needed to have rounded border-right visible from under scrollbar, if any *
+* margin-right needed to have rounded border-right visible from under scrollbar, if any *
 .brisk-menu scrolledwindow.frame row button { margin-right: 25px; }
 
-/* -- mate-indicator-applet-complete window - applets on the top-right *
-/* Note: despite "menubar" element here, this is NOT the actual main button/menu, which is .brisk-menu above *
+* -- mate-indicator-applet-complete window - applets on the top-right *
+* Note: despite "menubar" element here, this is NOT the actual main button/menu, which is .brisk-menu above *
 
 .mate-panel-menu-bar #fast-user-switch-menubar {
 	background: transparent;
 	border: none;
-}
+} */

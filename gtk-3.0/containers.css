@@ -12,7 +12,7 @@ window decoration {
 	border: solid 1px @insensitive_border;
 }
 
-/* --- box/layout separators --- */
+/* --- separators --- */
 
 separator.vertical {
 	border-left: 1px @separator_dark solid;
@@ -24,7 +24,6 @@ separator.horizontal {
 	border-bottom: 1px @separator_hl solid;
 }
 
-/* Separator line between buttons */
 toolbar separator {
 	border-left: 1px @separator_dark solid;
 	border-right: 1px @separator_hl solid;
@@ -205,4 +204,15 @@ statusbar frame {
 
 statusbar frame {
 	border: 0;
+}
+
+/* --- calendars --- */
+
+calendar.header {
+	background: @theme_bg;
+	border: 1px solid @menu_border;
+}
+
+calendar.view {
+	border: 1px solid @menu_border;
 }

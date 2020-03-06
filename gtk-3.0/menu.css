@@ -95,9 +95,9 @@ menuitem accelerator {
 	color: alpha(@menu_fg, 0.601); /* #696764 instead of #696664 */
 }
 
-/* menuitem:hover accelerator {
+menuitem:hover > label > accelerator {
 	color: @theme_selected_fg;
-} */
+}
 
 menu separator,
 menuitem separator {

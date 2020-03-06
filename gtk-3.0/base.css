@@ -48,7 +48,6 @@ textview text {
 }
 
 *:disabled {
-	background-color: @insensitive_bg;
 	color: @insensitive_fg;
 	text-shadow: 0.5px 1px @insensitive_text_shadow;
 }
