@@ -1,0 +1,44 @@
+
+/* --- fields --- */
+
+entry {
+	margin: 1px 0;
+	padding: 3px 3px 2px 3px;
+	color: @entry_text;
+	border: 1px @entry_border solid;
+	border-radius: 3px;
+	background:
+		@theme_base
+		linear-gradient(to right,
+			@entry_shadow,
+			alpha(@entry_shadow, 0) 1px,
+			@null 1px, @null ),
+		linear-gradient(to bottom,
+			@entry_shadow,
+			alpha(@entry_shadow, 0) 1px,
+			@null 1px, @null );
+}
+
+entry:disabled {
+	text-shadow: none;
+	border-color: @entry_border_disabled;
+	background: @entry_background_disabled
+		linear-gradient(to right,
+			@entry_shadow_disabled,
+			alpha(@entry_shadow_disabled, 0) 1px,
+			@null 1px, @null ),
+		linear-gradient(to bottom,
+			@entry_shadow_disabled,
+			alpha(@entry_shadow_disabled, 0) 1px,
+			@null 1px, @null );
+}
+
+entry:focus {
+	border-color: @entry_border_focus;
+	background-image: none;
+}
+
+entry selection {
+	color: @theme_selected_fg;
+	background-color: @theme_selected_bg;
+}

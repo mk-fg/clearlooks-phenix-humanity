@@ -46,7 +46,7 @@ PanelToplevel.background {
 .multiload-applet box.vertical border {
 	margin: 0;
 	padding: 0;
-	border: 1px solid @menu_separator_hl;
+	border: 1px solid @menu_separator_lite;
 }
 
 /* --- clock-applet --- */

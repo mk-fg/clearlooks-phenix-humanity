@@ -2,13 +2,12 @@
 /* --- buttons --- */
 
 button {
-	color: @theme_text;
 	min-height: 16px;
 
 	margin: 1px;
 	padding: 4px 5px;
 
-	outline: 0;
+	color: @theme_text;
 	border-style: solid;
 	border-color: transparent;
 	border-radius: 3px;
@@ -41,19 +40,25 @@ toolbar {
 	padding: 1px 2px;
 }
 
-toolbar:disabled {
-	color: alpha(@theme_fg, 0.6);
-}
-
-toolbar button {
-	padding: 4px;
-	background: transparebt;
-}
-
 toolbar.primary-toolbar {
 	border-width: 1px 0 1px 0;
 	border-style: solid;
 	border-top-color: @toolbar_border_top;
 	border-bottom-color: @toolbar_border_bot;
 	background: transparent linear-gradient(to bottom, @toolbar_grad_top, @toolbar_grad_bot);
+}
+
+toolbar:disabled {
+	color: alpha(@theme_fg, 0.6);
+}
+
+toolbar button {
+	padding: 4px;
+	background: transparent;
+}
+
+toolbar separator {
+	margin: 7px 5px 8px;
+	border-left: 1px @toolbar_separator_dark solid;
+	border-right: 1px @toolbar_separator_lite solid;
 }

@@ -1,6 +1,7 @@
 
 * {
 	padding: 0;
+	outline: 0;
 	background-clip: padding-box;
 
 	-GtkToolButton-icon-spacing: 4;
@@ -11,12 +12,6 @@
 	-GtkIMHtml-hyperlink-color: @link;
 	-GtkHTML-link-color: @link;
 	-WnckTasklist-fade-overlay-rect: 0;
-
-	outline-color: @focus_border;
-	outline-style: dashed;
-	outline-offset: -2px;
-	outline-width: 1px;
-	-gtk-outline-radius: 2px;
 
 	-gtk-icon-style: regular; /* disable symbolic icons */
 

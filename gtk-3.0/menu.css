@@ -94,7 +94,7 @@ menu separator,
 menuitem separator {
 	margin: 4px 5px 6px;
 	border-top: 1px @menu_separator_dark solid;
-	border-bottom: 1px @menu_separator_hl solid;
+	border-bottom: 1px @menu_separator_lite solid;
 }
 
 menuitem arrow {

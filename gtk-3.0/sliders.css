@@ -14,7 +14,6 @@ scale.vertical {
 }
 
 scale trough {
-	outline: 0;
 	border: 1px solid @slider_trough_border;
 	border-radius: 3px;
 	background:
@@ -158,7 +157,6 @@ progressbar trough {
 }
 
 progressbar progress {
-	margin: -1px;
 	border: 1px solid @slider_border;
 	border-radius: 3px;
 }
@@ -171,6 +169,7 @@ row progressbar progress,
 row:hover progressbar progress,
 row:selected progressbar progress,
 row:selected:focus progressbar progress */ {
+	margin: -1px 0 -1px -1px;
 	min-height: 18px;
 	background-image:
 		radial-gradient(
@@ -189,12 +188,12 @@ row:selected:focus progressbar progress */ {
 			@slider_pattern 24px);
 }
 
-/* row:selected progressbar progress,
-row:selected:focus progressbar progress {
-	border-color: shade(@slider_border, 0.85);
-} */
+progressbar.horizontal progress.right {
+	margin: -1px -1px -1px 0;
+}
 
 progressbar.vertical progress {
+	margin: -1px -1px 0 -1px;
 	min-width: 20px;
 	background-image:
 		radial-gradient(
@@ -211,4 +210,7 @@ progressbar.vertical progress {
 			alpha(@slider_pattern, 0.0) 12px,
 			@slider_pattern 12px,
 			@slider_pattern 24px);
+}
+progressbar.vertical progress.bottom {
+	margin: 0 -1px -1px -1px;
 }

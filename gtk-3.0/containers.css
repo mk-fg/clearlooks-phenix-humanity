@@ -1,11 +1,40 @@
 
 /* --- separators --- */
 
-toolbar separator {
-	margin: 7px 5px 8px;
-	border-left: 1px @separator_dark solid;
-	border-right: 1px @separator_hl solid;
+separator.vertical {
+	border-left: 1px @content_separator_dark solid;
+	border-right: 1px @content_separator_lite solid;
 }
+
+separator.horizontal {
+	border-top: 1px @content_separator_dark solid;
+	border-bottom: 1px @content_separator_lite solid;
+}
+
+/* separator.vertical {
+	min-width: 2px;
+	background:
+		linear-gradient(90deg,
+			@content_separator_dark 0,
+			@content_separator_dark 1px,
+			@content_separator_lite 1px,
+			@content_separator_lite 2px);
+	background-size: 2px 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+separator.horizontal {
+	min-height: 2px;
+	background:
+		linear-gradient(180deg,
+			@content_separator_dark 0,
+			@content_separator_dark 1px,
+			@content_separator_lite 1px,
+			@content_separator_lite 2px);
+	background-size: 100% 2px;
+	background-repeat: no-repeat;
+	background-position: center;
+} */
 
 /* -- frame -- */
 

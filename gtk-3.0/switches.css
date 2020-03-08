@@ -120,7 +120,6 @@ radio row:selected:focus:indeterminate:disabled {
 checkbutton, radiobutton {
 	margin-right: 2px;
 	padding: 2px 0 1px 1px;
-	outline: 0;
 }
 
 checkbutton label, radiobutton label {
