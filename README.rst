@@ -5,7 +5,7 @@
 px to px
 --------
 
-!(gtk2-3.gif)
+.. image:: gtk2-3.gif?raw=true
 
 
 Overview
