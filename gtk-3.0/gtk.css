@@ -352,9 +352,9 @@
  * frame *
  **********/
 
-@define-color frame_border alpha(shade(@bg_shade4, 0.92), 0.65);
-@define-color frame_shadow_dark alpha(shade(@theme_bg, 0.9), 0.5);
-@define-color frame_shadow_hl alpha(shade(@theme_bg, 1.1), 0.5);
+@define-color frame_border shade(@bg_shade4, 0.925); /* #BCAB9C instead of #BCAB9B */
+@define-color frame_shadow_dark #DFD4CA; /* shade(@theme_bg, 0.948) */
+@define-color frame_shadow_hl #EDE6E0;   /* shade(@theme_bg, 1.05) */
 
 /***********************
  * ===== imports ===== *

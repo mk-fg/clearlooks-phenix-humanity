@@ -7,6 +7,20 @@ toolbar separator {
 	border-right: 1px @separator_hl solid;
 }
 
+/* -- frame -- */
+
+frame { padding-left: 4px; }
+frame > label { padding: 0 1px; }
+
+frame > border {
+	margin-left: -3px;
+	box-shadow:
+		inset 1px 1px @frame_shadow_dark,
+		inset -1px -1px @frame_shadow_hl;
+	border: 1px solid @frame_border;
+	border-radius: 2px;
+}
+
 /* --- status bar --- */
 
 statusbar {
@@ -14,8 +28,11 @@ statusbar {
 	border-top: 1px solid @toolbar_border_bot;
 }
 
-statusbar border {
+statusbar frame border {
+	box-shadow: none;
+	border: 0;
 	border-top: 1px solid @toolbar_border_top;
+	border-radius: 0;
 }
 
 statusbar label,
