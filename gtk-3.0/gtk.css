@@ -263,7 +263,7 @@
  *************/
 
 @define-color scroll_bg shade(@theme_bg, 1.023); /* #EAE3DC okay! */
-@define-color scroll_disabled_fg shade(@theme_bg, 0.85);
+@define-color scroll_disabled_fg shade(@theme_bg, 0.76);
 
 @define-color scroll_border shade(@bg_shade5, 1.298);        /* #C5B4A6 instead of #C5B5A6 */
 @define-color scroll_slider_border shade(@bg_shade6, 1.382); /* #9C8877 instead of #9C8B7D */

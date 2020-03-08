@@ -1,6 +1,18 @@
 
 /* --- scale slider --- */
 
+scale.horizontal {
+	margin: 1px 12px 0;
+	padding: 5px 2px;
+	min-height: 10px;
+}
+
+scale.vertical {
+	margin: 12px 0;
+	padding: 8px 5px;
+	min-width: 10px;
+}
+
 scale trough {
 	outline: 0;
 	border: 1px solid @slider_trough_border;
@@ -46,6 +58,7 @@ scale.horizontal trough highlight {
 			@slider_pattern 12px,
 			@slider_pattern 24px);
 }
+
 scale.vertical trough highlight {
 	min-width: 3px;
 	background-image:
@@ -63,16 +76,6 @@ scale.vertical trough highlight {
 			alpha(@slider_pattern, 0.0) 12px,
 			@slider_pattern 12px,
 			@slider_pattern 24px);
-}
-
-scale.vertical {
-	padding: 3px 5px;
-	min-width: 10px;
-}
-
-scale.horizontal {
-	padding: 5px 2px;
-	min-height: 10px;
 }
 
 scale.horizontal slider {
@@ -134,6 +137,8 @@ scale.vertical slider:hover {
 }
 
 /* --- progressbar --- */
+
+progressbar.vertical { margin: 5px 0; }
 
 progressbar trough {
 	border: 1px solid @slider_trough_border;
