@@ -1,14 +1,9 @@
-/* text-inputs.css: Range, Scale and such trough + caret mouse-slider elements */
 
-/* Anything slider-like styled in other css files is a bug -
-  - most likely legacy definition from clearlooks theme, which should be moved here. */
-/* Anything non-slider-like styled here is likewise a bug. */
-
-
-/* --- Scale slider - trough + single caret --- */
+/* --- scale slider --- */
 
 scale trough {
-	border: 1px @slider_trough_border solid;
+	outline: 0;
+	border: 1px solid @slider_trough_border;
 	border-radius: 3px;
 	background:
 		linear-gradient(to right,
@@ -23,33 +18,67 @@ scale trough {
 			@null 5px, @null )
 		@slider_trough_bg;
 }
+
 scale.horizontal trough { min-height: 1px; }
 scale.vertical trough { min-width: 1px; }
 
 scale trough highlight {
-	border-radius: 3px;
-	border: 1px @slider_border solid;
 	margin: -1px;
+	border: 1px @slider_border solid;
+	border-radius: 3px;
 }
 
-scale.horizontal trough highlight { min-height: 3px; }
-scale.vertical trough highlight { min-width: 3px; }
-
+scale.horizontal trough highlight {
+	min-height: 3px;
+	background-image:
+		radial-gradient(
+			ellipse 90% 50%,
+			@slider_glaze_glow_center,
+			@slider_glaze_glow_edge ),
+		linear-gradient( to bottom,
+			@slider_glaze_top,
+			@slider_glaze_mid-a 49%,
+			@slider_glaze_mid-b 49%,
+			@slider_glaze_bot ),
+		repeating-linear-gradient(135deg,
+			alpha(@slider_pattern, 0.0),
+			alpha(@slider_pattern, 0.0) 12px,
+			@slider_pattern 12px,
+			@slider_pattern 24px);
+}
+scale.vertical trough highlight {
+	min-width: 3px;
+	background-image:
+		radial-gradient(
+			ellipse 50% 90%,
+			@slider_glaze_glow_center,
+			@slider_glaze_glow_edge ),
+		linear-gradient( to right,
+			@slider_glaze_top,
+			@slider_glaze_mid-a 49%,
+			@slider_glaze_mid-b 49%,
+			@slider_glaze_bot ),
+		repeating-linear-gradient(135deg,
+			alpha(@slider_pattern, 0.0),
+			alpha(@slider_pattern, 0.0) 12px,
+			@slider_pattern 12px,
+			@slider_pattern 24px);
+}
 
 scale.vertical {
-	min-width: 10px;
 	padding: 3px 5px;
+	min-width: 10px;
 }
 
 scale.horizontal {
-	min-height: 10px;
 	padding: 5px 2px;
+	min-height: 10px;
 }
 
 scale.horizontal slider {
+	margin: -6px 0;
 	min-width: 18px;
 	min-height: 11px;
-	margin: -6px 0;
 	border: 1px @slider_trough_border solid;
 	border-radius: 3px;
 	background:
@@ -64,9 +93,9 @@ scale.horizontal slider {
 }
 
 scale.vertical slider {
+	margin: 0 -6px;
 	min-width: 11px;
 	min-height: 18px;
-	margin: 0 -6px;
 	border: 1px @slider_trough_border solid;
 	border-radius: 3px;
 	background:
@@ -91,6 +120,7 @@ scale.horizontal slider:hover {
 			@scale_hover_glaze_mid-b 49%,
 			@scale_hover_glaze_bot );
 }
+
 scale.vertical slider:hover {
 	background:
 		radial-gradient( circle,
@@ -103,11 +133,10 @@ scale.vertical slider:hover {
 			@scale_hover_glaze_bot );
 }
 
-
-/* --- Progressbar --- */
+/* --- progressbar --- */
 
 progressbar trough {
-	border: 1px @slider_trough_border solid;
+	border: 1px solid @slider_trough_border;
 	border-radius: 3px;
 	background:
 		linear-gradient(to right,
@@ -122,15 +151,22 @@ progressbar trough {
 			@null 5px, @null )
 		@slider_trough_bg;
 }
-progressbar.horizontal trough { min-height: 16px; }
-progressbar.vertical trough { min-width: 16px; }
 
-progressbar.horizontal progress,
+progressbar progress {
+	margin: -1px;
+	border: 1px solid @slider_border;
+	border-radius: 3px;
+}
+
+progressbar.horizontal trough { min-height: 18px; }
+progressbar.vertical trough { min-width: 20px; }
+
+progressbar.horizontal progress /*,
 row progressbar progress,
 row:hover progressbar progress,
 row:selected progressbar progress,
-row:selected:focus progressbar progress {
-	background-color: @slider_fill;
+row:selected:focus progressbar progress */ {
+	min-height: 18px;
 	background-image:
 		radial-gradient(
 			ellipse 90% 50%,
@@ -141,24 +177,20 @@ row:selected:focus progressbar progress {
 			@slider_glaze_mid-a 49%,
 			@slider_glaze_mid-b 49%,
 			@slider_glaze_bot ),
-		repeating-linear-gradient(45deg,
+		repeating-linear-gradient(135deg,
 			alpha(@slider_pattern, 0.0),
 			alpha(@slider_pattern, 0.0) 12px,
 			@slider_pattern 12px,
 			@slider_pattern 24px);
-	border-radius: 3px;
-	border: 1px @slider_border solid;
-	min-height: 16px;
-	margin: 0 -1px;
 }
 
-row:selected progressbar progress,
+/* row:selected progressbar progress,
 row:selected:focus progressbar progress {
 	border-color: shade(@slider_border, 0.85);
-}
+} */
 
 progressbar.vertical progress {
-	background-color: @slider_fill;
+	min-width: 20px;
 	background-image:
 		radial-gradient(
 			ellipse 50% 90%,
@@ -169,13 +201,9 @@ progressbar.vertical progress {
 			@slider_glaze_mid-a 49%,
 			@slider_glaze_mid-b 49%,
 			@slider_glaze_bot ),
-		repeating-linear-gradient(45deg,
+		repeating-linear-gradient(135deg,
 			alpha(@slider_pattern, 0.0),
 			alpha(@slider_pattern, 0.0) 12px,
 			@slider_pattern 12px,
 			@slider_pattern 24px);
-	border-radius: 3px;
-	border: 1px @slider_border solid;
-	min-width: 16px;
-	margin: -1px 0;
 }

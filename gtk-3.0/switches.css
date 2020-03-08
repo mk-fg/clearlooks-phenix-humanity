@@ -1,65 +1,3 @@
-/* switches.css: checkbox and radio switch elements */
-/* Range, Scale and such elements are in separate sliders.css file. */
-/* Text input fields and comboboxes are in text-inputs.css file. */
-
-/* Anything switch-like styled in other css files is a bug -
- - most likely legacy definition from clearlooks theme, which should be moved here. */
-/* Anything non-switch-like styled here is likewise a bug. */
-
-/* --- Switch - caret with short trought and fixed toggle-able positions --- */
-
-switch {
-	color: @switch_fg;
-	border-radius: 3px;
-	border-width: 1px 1px 2px 1px;
-	border-style: solid;
-	border-color: alpha(@switch_slider_border, 0.5);
-	margin: 2px 0;
-}
-
-switch:checked {
-	color: @switch_trough_active;
-}
-
-switch:checked,
-switch:backdrop:checked {
-	background-image:
-		-gtk-gradient( linear,
-			left top, left bottom,
-			from (@switch_trough_active_gradient_a),
-			to (@switch_trough_active_gradient_b));
-}
-
-switch slider {
-	padding: 0;
-	border: 1px @switch_slider_border solid;
-	border-radius: 2px;
-	background-image:
-		linear-gradient( to bottom,
-			alpha(@switch_slider_gradient_a, 0.5),
-			alpha(@switch_slider_gradient_b, 0.5) 50%,
-			alpha(@switch_slider_gradient_c, 0.5) 50%,
-			alpha(@switch_slider_gradient_d, 0.5) ),
-		-gtk-scaled(
-			url("img/slider-horz-grip.png"),
-			url("img/slider-horz-grip@2.png") );
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-color: @switch_slider_bg;
-}
-
-switch:disabled slider {
-	background-image:
-		linear-gradient( to bottom,
-			alpha(@switch_slider_insensitive_gradient_a, 0.8),
-			alpha(@switch_slider_insensitive_gradient_b, 0.8) 50%,
-			alpha(@switch_slider_insensitive_gradient_c, 0.8) 50%,
-			alpha(@switch_slider_insensitive_gradient_d, 0.8)),
-		-gtk-scaled(
-			url("img/slider-horz-grip.png"),
-			url("img/slider-horz-grip@2.png") );
-	border-color: @switch_slider_insensitive_border;
-}
 
 /* --- checkbox --- */
 
@@ -68,8 +6,8 @@ check,
 check row:selected,
 check row:selected:focus {
 	-gtk-icon-source: url("img/checkbox-unchecked.svg");
-	margin-right: 5px;
 	margin-top: 1px;
+	margin-right: 5px;
 }
 
 check:disabled,
@@ -126,8 +64,8 @@ radio,
 radio row:selected,
 radio row:selected:focus {
 	-gtk-icon-source: url("img/radio-unchecked.svg");
-	margin-right: 5px;
 	margin-top: 1px;
+	margin-right: 5px;
 }
 
 radio:disabled,
@@ -177,10 +115,92 @@ radio row:selected:focus:indeterminate:disabled {
 	-gtk-icon-source: url("img/radio-mixed-insensitive.svg");
 }
 
-/* --- checkbutton and radiobutton box effects --- */
-/* E.g. checkbutton is a box with check + label */
+/* --- checkbutton and radiobutton (a box with check and label) --- */
 
-checkbutton, radiobutton { padding: 0 3px 0 1px; }
-checkbutton:hover, radiobutton:hover {
-	background: alpha(@checkbutton_hover, 0.2);
+checkbutton, radiobutton {
+	margin-right: 2px;
+	padding: 2px 0 1px 1px;
+	outline: 0;
 }
+
+checkbutton label, radiobutton label {
+	margin-top: -1px;
+	margin-left: -3px; /* +1px than gtk2 */
+	margin-right: -1px;
+	margin-bottom: -1px;
+	padding-top: 1px;
+	padding-left: 2px;
+	padding-bottom: 1px;
+	border: 1px solid transparent;
+	border-radius: 3px;
+}
+
+checkbutton:hover, radiobutton:hover {
+	background: @checkbutton_hover;
+}
+
+checkbutton:focus label, radiobutton:focus label {
+	border: 1px solid @checkbutton_focus_border;
+	background: @checkbutton_focus_bg;
+}
+
+checkbutton:hover:focus label, radiobutton:hover:focus label {
+	border: 1px solid @checkbutton_focus_hover_border;
+	background: @checkbutton_focus_hover_bg;
+
+}
+
+/* --- switch (yes/no) --- *
+
+switch {
+	color: @switch_fg;
+	border-radius: 3px;
+	border-width: 1px 1px 2px 1px;
+	border-style: solid;
+	border-color: alpha(@switch_slider_border, 0.5);
+	margin: 2px 0;
+}
+
+switch:checked {
+	color: @switch_trough_active;
+}
+
+switch:checked,
+switch:backdrop:checked {
+	background-image:
+		-gtk-gradient( linear,
+			left top, left bottom,
+			from (@switch_trough_active_gradient_a),
+			to (@switch_trough_active_gradient_b));
+}
+
+switch slider {
+	padding: 0;
+	border: 1px @switch_slider_border solid;
+	border-radius: 2px;
+	background-image:
+		linear-gradient( to bottom,
+			alpha(@switch_slider_gradient_a, 0.5),
+			alpha(@switch_slider_gradient_b, 0.5) 50%,
+			alpha(@switch_slider_gradient_c, 0.5) 50%,
+			alpha(@switch_slider_gradient_d, 0.5) ),
+		-gtk-scaled(
+			url("img/slider-horz-grip.png"),
+			url("img/slider-horz-grip@2.png") );
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: @switch_slider_bg;
+}
+
+switch:disabled slider {
+	background-image:
+		linear-gradient( to bottom,
+			alpha(@switch_slider_insensitive_gradient_a, 0.8),
+			alpha(@switch_slider_insensitive_gradient_b, 0.8) 50%,
+			alpha(@switch_slider_insensitive_gradient_c, 0.8) 50%,
+			alpha(@switch_slider_insensitive_gradient_d, 0.8)),
+		-gtk-scaled(
+			url("img/slider-horz-grip.png"),
+			url("img/slider-horz-grip@2.png") );
+	border-color: @switch_slider_insensitive_border;
+} */

@@ -1,32 +1,26 @@
-/* menu.css: defines everything related to menubars and menuitems and similar list-like things. */
-/* Anything menu-like styled in other css files is a bug -
- - most likely legacy definition from clearlooks theme, which should be moved here. */
-/* Anything non-menu-like styled here is likewise a bug. */
 
-/* --- menubar on top of the window --- */
+/* --- menubar --- */
 
 menubar {
-	border-bottom: 1px @menubar_border_bot solid;
-	margin-top: 1px;
+	margin: 1px 0 0;
 	padding: 0 1px;
-	background-color: transparent;
-	background-image: linear-gradient(to bottom, @menubar_grad_top, @menubar_grad_bot);
+	border-bottom: 1px @menubar_border_bot solid;
+	background: linear-gradient(to bottom, @menubar_grad_top, @menubar_grad_bot);
 }
 
 menubar menuitem {
-	border: 1px transparent solid;
 	padding: 2px 7px;
-	background-color: transparent;
+	text-shadow: none; /* libreoffice 6.4.1 (and?) */
+	color: @menu_fg;   /* libreoffice 6.4.1 (and?) */
+	border: 1px transparent solid;
 }
 
-/* This only applies to items in menubar itself, not popup windows from there */
 menubar menuitem:hover {
+	color: @menubar_menuitem_hover;
 	border: 1px @menuitem_hover_border solid;
 	border-bottom: 0;
 	border-radius: 2px 2px 0 0;
-	color: @menubar_menuitem_hover;
-	background-color: @menu_bg;
-	background-image:
+	background:
 		radial-gradient( ellipse 110% 50%,
 			@menuitem_hover_glaze_glow_center,
 			@menuitem_hover_glaze_glow_edge ),
@@ -37,35 +31,25 @@ menubar menuitem:hover {
 			@menuitem_hover_glaze_bot );
 }
 
-/* --- Menu popup-window, e.g. dropping down from menubar --- */
-
-/* General structure of popup window from menubar:
-	menubar -> menuitem -> window -> [
-		decoration,
-		menu -> [ arrow.top, menuitem, ..., arrow.bottom ],
-		arrow.right ] */
-
-/* XXX: in murrine "menu"-containing window drops shadow, in gtk3 it does not.
-	Should not be compositor effect, check gtk3 for options on that. */
+/* --- menu popup window --- */
 
 menu {
-	font-weight: normal;
-	background-color: @menu_bg;
-	color: @menu_fg;
 	padding: 3px;
+	color: @menu_fg;
 	border: 1px solid @menu_border;
+	background-color: @menu_bg;
 }
 
 menu menuitem {
-	border: 1px transparent solid;
 	padding: 2px 4px;
+	border: 1px transparent solid;
 	background-color: @menu_bg;
 }
 
 menu menuitem:hover {
-	border-radius: 2px;
-	border: 1px @menuitem_hover_border solid;
 	color: @theme_selected_fg;
+	border: 1px @menuitem_hover_border solid;
+	border-radius: 2px;
 	background-image:
 		radial-gradient( ellipse 110% 50%,
 			@menuitem_hover_glaze_glow_center,
@@ -77,21 +61,28 @@ menu menuitem:hover {
 			@menuitem_hover_glaze_bot );
 }
 
-menu menuitem:hover cellview {
-	color: @theme_selected_fg;
+menu arrow:hover {
+	color: shade(@theme_selected_bg, 1.6);
+	border-color: @theme_selected_fg;
 }
 
-menuitem window decoration {
-	border: 1px @menu_border solid;
-}
+menu arrow.top    { -gtk-icon-source: -gtk-icontheme("pan-up-symbolic"); }
+menu arrow.bottom { -gtk-icon-source: -gtk-icontheme("pan-down-symbolic"); }
+
+/* --- menuitem elements --- */
 
 menuitem:disabled,
 menuitem:disabled * {
-	color: mix (@menu_fg, @menu_bg, 0.6);
+	color: mix(@menu_fg, @menu_bg, 0.6);
 	background-color: transparent;
 }
 
+menuitem image {
+	margin: 0 -1px 0 2px;
+}
+
 menuitem accelerator {
+	/* margin-left:11px; @todo */
 	color: alpha(@menu_fg, 0.601); /* #696764 instead of #696664 */
 }
 
@@ -106,68 +97,17 @@ menuitem separator {
 	border-bottom: 1px @menu_separator_hl solid;
 }
 
-/* XXX: menu/menuitem arrows - not sure where they're used, need to check */
-
 menuitem arrow {
+	margin-left: 10px;
 	min-height: 16px;
 	min-width: 16px;
-	margin-left: 10px;
 	color: @menu_controls;
 }
 
 menu menuitem arrow:dir(ltr) { -gtk-icon-source: -gtk-icontheme("pan-end-symbolic"); }
 menu menuitem arrow:dir(rtl) { -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl"); }
-menu arrow.top { -gtk-icon-source: -gtk-icontheme("pan-up-symbolic"); }
-menu arrow.bottom { -gtk-icon-source: -gtk-icontheme("pan-down-symbolic"); }
 
-menu arrow:hover {
-	border-color: @theme_selected_fg;
-	color: shade (@theme_selected_bg, 1.6);
-}
-
-/* XXX: menu buttons - not sure where they're used, need to check */
-
-menu button {
-	background-image: none;
-	background-color: @menu_bg;
-	color: @internal_element;
-	border: 0;
-}
-
-menu button:hover {
-	background-image: none;
-	background-color: @theme_base;
-	color: @theme_text;
-	border: 0;
-}
-
-menu button:disabled {
-	background-color: @theme_base;
-	color: lighter(@internal_element);
-	border: 0;
-}
-
-menuitem button.flat:hover {
-	border-width: 1px;
-	border-radius: 0;
-}
-
-menuitem button.flat:focus {
-	color: @theme_text;
-}
-
-menuitem button.flat:active {
-	color: @theme_text;
-	background-image: none;
-	background-color: @menu_bg;
-	border-radius: 5px 5px 0 0;
-	border-image: none;
-	border-width: 1px 1px 0 1px;
-	border-color: shade(@border, 1.30);
-	border-style: solid;
-}
-
-/* --- menuitem-embedded elements --- */
+/* --- menuitem checkbox and radio elements --- */
 
 menuitem check,
 menuitem radio,
@@ -183,8 +123,6 @@ menu menuitem .check:checked,
 menu menuitem .radio:checked,
 menu menuitem .check:disabled,
 menu menuitem .radio:disabled {
-	background-image: none;
-	background-color: transparent;
 	min-height: 16px;
 	min-width: 16px;
 	padding-left: 2px;
