@@ -2,6 +2,12 @@
   :backlinks: none
 
 
+px to px
+--------
+
+!(gtk2-3.gif)
+
+
 Overview
 --------
 
@@ -17,93 +23,6 @@ Work in progress, not ready for general use yet.
 .. _Jean-Philippe Fleury: http://www.jpfleury.net/en/contact.php
 .. _Clearlooks style: https://en.wikipedia.org/wiki/Clearlooks
 .. _Human Quarny theme: https://www.gnome-look.org/p/1013593/
-
-
-Templating (.tpl.css files)
----------------------------
-
-To avoid going insane from 100+ line selectors, simple custom templating is used
-to transform \*.tpl.css into \*.css files via `css-templater.py`_ script
-(requires python3 and `textX module`_ to run).
-
-Both source and destination files are in the repo, so it should be irrelevant
-for simple theme usage, only for editing it.
-
-Templating is intended to keep css clean and explicit wrt what is defined where.
-
-All templating rules are processed from regular css statements with ``-ext``
-selector, taking both selectors and rules there into account, removing these
-sections afterwards.
-
-Supported templating rules:
-
-- ``-x-same-rules``::
-
-    toolbar button:toggle -ext { -x-same-rules: button:checked; }
-
-  Apply all rules specified for one selector ("button:checked" above) to another.
-
-  For logical grouping of elements sharing same rules, for example to have all
-  rules relating to "toolbar" buttons together, instead of spreading them as
-  selector prefixes all over the place.
-
-- ``-x-same-rules-all``::
-
-    button.flat -ext { -x-same-rules-all: toolbar button; }
-
-  Applies all the same rules as for "toolbar button" to "button.flat", including
-  e.g. "toolbar button:toggle" rule above (will be used for "button.flat:toggle"),
-  as well as any rules for child/descendant elements.
-
-  Kinda like search-copy-replace for all selectors where "toolbar button" is used.
-  Can be used for many-to-many replacements, with any number of selectors on either side, not just one.
-
-  Some elements are styled in the same way, and this allows to do it with just
-  one line, instead of duplicating a list of these in every selector forever.
-
-- ``-x-var-*``::
-
-    -ext {
-      -x-var-bg-glow:
-        radial-gradient(
-          ellipse 90% 50%,
-          @button_glaze_glow_center,
-          @button_glaze_glow_edge );
-      -x-var-border-rules:
-        border-width: 1px\
-        border-color: red\
-        border-style: solid\;
-    }
-
-    ...
-
-    button {
-      -x-var-border-rules
-      background:
-        -x-var-bg-glow,
-        linear-gradient(to bottom,
-          @button_glaze_top,
-          @button_glaze_mid-a 49%,
-          @button_glaze_mid-b 49%,
-          @button_glaze_bot );
-    }
-
-  Simple non-nested variable substitution, which works for any strings in any context.
-
-  I.e. with ``-x-var-bg-glow`` definition in-place, ``(?<=[^-\w])-x-var-bg-glow(?=[^-\w])``
-  will be replaced in css everywhere via re.sub(). Note the non-word/dash delimiters.
-
-  Use ``\`` to have ``;`` in the replacement string and ``\\`` to get literal backslash.
-
-Run e.g. ``diff -uw gtk-3.0/buttons{.tpl,}.css`` for a more concrete
-transformation examples.
-css-templater.py also prints diffs with -v/--verbose option.
-
-Other common CSS templating system - SASS/SCSS - doesn't handle all use-cases
-above well, unfortunately, hence this custom system.
-
-.. _css-templater.py: css-templater.py
-.. _textX module: https://pypi.org/project/textX/
 
 
 Common differences between Clearlooks GTK3 vs Human GTK2
