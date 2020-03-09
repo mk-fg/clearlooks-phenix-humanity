@@ -20,13 +20,11 @@ scale trough {
 		linear-gradient(to right,
 			alpha(@slider_trough_shadow_edge, 0.3),
 			alpha(@slider_trough_shadow, 0.3) 3px,
-			alpha(@slider_trough_shadow, 0) 5px,
-			@null 5px, @null ),
+			alpha(@slider_trough_shadow, 0) 5px ),
 		linear-gradient(to bottom,
 			alpha(@slider_trough_shadow_edge, 0.3),
 			alpha(@slider_trough_shadow, 0.3) 3px,
-			alpha(@slider_trough_shadow, 0) 5px,
-			@null 5px, @null )
+			alpha(@slider_trough_shadow, 0) 5px )
 		@slider_trough_bg;
 }
 
@@ -137,6 +135,7 @@ scale.vertical slider:hover {
 
 /* --- progressbar --- */
 
+progressbar.horizontal { margin: 0 -2px 0 0; /* @todo c'est faux, mais ça permet d'avoir la même largeur entre awf2 et awf3*/ }
 progressbar.vertical { margin: 5px 0; }
 
 progressbar trough {
@@ -146,13 +145,11 @@ progressbar trough {
 		linear-gradient(to right,
 			alpha(@slider_trough_shadow_edge, 0.3),
 			alpha(@slider_trough_shadow, 0.3) 3px,
-			alpha(@slider_trough_shadow, 0) 5px,
-			@null 5px, @null ),
+			alpha(@slider_trough_shadow, 0) 5px ),
 		linear-gradient(to bottom,
 			alpha(@slider_trough_shadow_edge, 0.3),
 			alpha(@slider_trough_shadow, 0.3) 3px,
-			alpha(@slider_trough_shadow, 0) 5px,
-			@null 5px, @null )
+			alpha(@slider_trough_shadow, 0) 5px )
 		@slider_trough_bg;
 }
 

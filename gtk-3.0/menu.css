@@ -35,7 +35,6 @@ menubar menuitem:hover {
 
 menu {
 	padding: 3px;
-	color: @menu_fg;
 	border: 1px solid @menu_border;
 	background-color: @menu_bg;
 }
@@ -90,7 +89,6 @@ menuitem:hover > label > accelerator {
 	color: @theme_selected_fg;
 }
 
-menu separator,
 menuitem separator {
 	margin: 4px 5px 6px;
 	border-top: 1px @menu_separator_dark solid;
@@ -104,25 +102,16 @@ menuitem arrow {
 	color: @menu_controls;
 }
 
-menu menuitem arrow:dir(ltr) { -gtk-icon-source: -gtk-icontheme("pan-end-symbolic"); }
-menu menuitem arrow:dir(rtl) { -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl"); }
+menuitem arrow:dir(ltr) { -gtk-icon-source: -gtk-icontheme("pan-end-symbolic"); }
+menuitem arrow:dir(rtl) { -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl"); }
 
 /* --- menuitem checkbox and radio elements --- */
+/* .check .radio for ? */
 
 menuitem check,
 menuitem radio,
-menuitem check:hover,
-menuitem radio:hover,
-menuitem check:disabled,
-menuitem radio:disabled
-menu menuitem .check,
-menu menuitem .radio,
-menu menuitem .check:hover,
-menu menuitem .radio:hover,
-menu menuitem .check:checked,
-menu menuitem .radio:checked,
-menu menuitem .check:disabled,
-menu menuitem .radio:disabled {
+menuitem .check,
+menuitem .radio {
 	min-height: 16px;
 	min-width: 16px;
 	padding-left: 2px;
@@ -130,55 +119,73 @@ menu menuitem .radio:disabled {
 }
 
 /* unchecked */
-menu menuitem check,
-menu menuitem check:disabled {
+menuitem check,
+menuitem check:disabled,
+menuitem .check,
+menuitem .check:disabled {
 	-gtk-icon-source: none;
 }
 
 /* checked */
-menu menuitem check:checked,
-menu menuitem check:checked:active {
+menuitem check:checked,
+menuitem check:checked:active,
+menuitem .check:checked,
+menuitem .check:checked:active {
 	-gtk-icon-source: url("img/menu-checkbox-checked.svg");
 }
 
-menu menuitem check:checked:disabled,
-menu menuitem check:active:disabled {
+menuitem check:checked:disabled,
+menuitem check:active:disabled,
+menuitem .check:checked:disabled,
+menuitem .check:active:disabled {
 	-gtk-icon-source: url("img/menu-checkbox-checked-insensitive.svg");
 }
 
 /* mixed */
-menu menuitem check:indeterminate,
-menu menuitem check:indeterminate:active {
+menuitem check:indeterminate,
+menuitem check:indeterminate:active,
+menuitem .check:indeterminate,
+menuitem .check:indeterminate:active {
 	-gtk-icon-source: url("img/menu-checkbox-mixed.svg");
 }
 
-menu menuitem check:indeterminate:disabled {
+menuitem check:indeterminate:disabled,
+menuitem .check:indeterminate:disabled {
 	-gtk-icon-source: url("img/menu-checkbox-mixed-insensitive.svg");
 }
 
 /* unchecked */
-menu menuitem radio,
-menu menuitem radio:disabled {
+menuitem radio,
+menuitem radio:disabled,
+menuitem .radio,
+menuitem .radio:disabled {
 	-gtk-icon-source: none;
 }
 
 /* checked */
-menu menuitem radio:checked,
-menu menuitem radio:checked:active {
+menuitem radio:checked,
+menuitem radio:checked:active,
+menuitem .radio:checked,
+menuitem .radio:checked:active {
 	-gtk-icon-source: url("img/menu-radio-checked.svg");
 }
 
-menu menuitem radio:checked:disabled,
-menu menuitem radio:active:disabled {
+menuitem radio:checked:disabled,
+menuitem radio:active:disabled,
+menuitem .radio:checked:disabled,
+menuitem .radio:active:disabled {
 	-gtk-icon-source: url("img/menu-radio-checked-insensitive.svg");
 }
 
 /* mixed */
-menu menuitem radio:indeterminate,
-menu menuitem radio:indeterminate:active {
+menuitem radio:indeterminate,
+menuitem radio:indeterminate:active,
+menuitem .radio:indeterminate,
+menuitem .radio:indeterminate:active {
 	-gtk-icon-source: url("img/menu-radio-mixed.svg");
 }
 
-menu menuitem radio:indeterminate:disabled {
+menuitem radio:indeterminate:disabled,
+menuitem .radio:indeterminate:disabled {
 	-gtk-icon-source: url("img/menu-radio-mixed-insensitive.svg");
 }

@@ -5,11 +5,11 @@ button {
 	min-height: 16px;
 
 	margin: 1px;
-	padding: 4px 5px;
+	padding: 4px 13px 4px 14px;
 
 	color: @theme_text;
 	border-style: solid;
-	border-color: transparent;
+	border-color: @border;
 	border-radius: 3px;
 	border-width: 1px;
 
@@ -27,6 +27,7 @@ button {
 }
 
 button.flat {
+	border-color: transparent;
 	background: none;
 }
 

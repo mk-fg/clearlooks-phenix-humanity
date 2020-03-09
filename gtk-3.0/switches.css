@@ -3,57 +3,48 @@
 
 /* unchecked */
 check,
-check row:selected,
-check row:selected:focus {
-	-gtk-icon-source: url("img/checkbox-unchecked.svg");
+check row:selected {
 	margin-top: 1px;
 	margin-right: 5px;
+	-gtk-icon-source: url("img/checkbox-unchecked.svg");
 }
 
 check:disabled,
-check row:selected:disabled,
-check row:selected:focus:disabled {
+check row:selected:disabled {
 	-gtk-icon-source: url("img/checkbox-unchecked-insensitive.svg");
 }
 
 /* checked */
 check:checked,
-check row:selected:checked,
-check row:selected:focus:checked {
+check row:selected:checked {
 	-gtk-icon-source: url("img/checkbox-checked.svg");
 }
 
 check:checked:active,
-check row:selected:checked:active,
-check row:selected:checked:focus:active {
+check row:selected:checked:active {
 	-gtk-icon-source: url("img/checkbox-checked-active.svg");
 }
 
 check:checked:disabled,
 check row:selected:checked:disabled,
-check row:selected:focus:checked:disabled,
 check:active:disabled,
-check row:selected:active:disabled,
-check row:selected:focus:active:disabled {
+check row:selected:active:disabled {
 	-gtk-icon-source: url("img/checkbox-checked-insensitive.svg");
 }
 
 /* mixed */
 check:indeterminate,
-check row:selected:indeterminate,
-check row:selected:focus:indeterminate {
+check row:selected:indeterminate {
 	-gtk-icon-source: url("img/checkbox-mixed.svg");
 }
 
 check:indeterminate:active,
-check row:selected:indeterminate:active,
-check row:selected:indeterminate:focus:active {
+check row:selected:indeterminate:active {
 	-gtk-icon-source: url("img/checkbox-mixed-active.svg");
 }
 
 check:indeterminate:disabled,
-check row:selected:indeterminate:disabled,
-check row:selected:focus:indeterminate:disabled {
+check row:selected:indeterminate:disabled {
 	-gtk-icon-source: url("img/checkbox-mixed-insensitive.svg");
 }
 
@@ -61,57 +52,48 @@ check row:selected:focus:indeterminate:disabled {
 
 /* unchecked */
 radio,
-radio row:selected,
-radio row:selected:focus {
-	-gtk-icon-source: url("img/radio-unchecked.svg");
+radio row:selected {
 	margin-top: 1px;
 	margin-right: 5px;
+	-gtk-icon-source: url("img/radio-unchecked.svg");
 }
 
 radio:disabled,
-radio row:selected:disabled,
-radio row:selected:focus:disabled {
+radio row:selected:disabled {
 	-gtk-icon-source: url("img/radio-unchecked-insensitive.svg");
 }
 
 /* checked */
 radio:checked,
-radio row:selected:checked,
-radio row:selected:focus:checked {
+radio row:selected:checked {
 	-gtk-icon-source: url("img/radio-checked.svg");
 }
 
 radio:checked:active,
-radio row:selected:checked:active,
-radio row:selected:checked:focus:active {
+radio row:selected:checked:active {
 	-gtk-icon-source: url("img/radio-checked-active.svg");
 }
 
 radio:checked:disabled,
 radio row:selected:checked:disabled,
-radio row:selected:focus:checked:disabled,
 radio:active:disabled,
-radio row:selected:active:disabled,
-radio row:selected:focus:active:disabled {
+radio row:selected:active:disabled {
 	-gtk-icon-source: url("img/radio-checked-insensitive.svg");
 }
 
 /* mixed */
 radio:indeterminate,
-radio row:selected:indeterminate,
-radio row:selected:focus:indeterminate {
+radio row:selected:indeterminate {
 	-gtk-icon-source: url("img/radio-mixed.svg");
 }
 
 radio:indeterminate:active,
-radio row:selected:indeterminate:active,
-radio row:selected:indeterminate:focus:active {
+radio row:selected:indeterminate:active {
 	-gtk-icon-source: url("img/radio-mixed-active.svg");
 }
 
 radio:indeterminate:disabled,
-radio row:selected:indeterminate:disabled,
-radio row:selected:focus:indeterminate:disabled {
+radio row:selected:indeterminate:disabled {
 	-gtk-icon-source: url("img/radio-mixed-insensitive.svg");
 }
 

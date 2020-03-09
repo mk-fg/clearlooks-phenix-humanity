@@ -8,7 +8,7 @@ PanelApplet,
 PanelApplet button,
 PanelToplevel.background {
 	border: 0;
-	background: #e6ddd5;
+	background: @theme_bg;
 }
 
 .mate-panel-menu-bar,
@@ -40,13 +40,13 @@ PanelToplevel.background {
 .multiload-applet box.vertical frame {
 	margin: 0;
 	padding: 0;
-	border: 1px solid @menu_separator_dark;
+	border: 1px solid @frame_border;
 }
 
 .multiload-applet box.vertical border {
 	margin: 0;
 	padding: 0;
-	border: 1px solid @menu_separator_lite;
+	border: 1px solid @frame_shadow_dark;
 }
 
 /* --- clock-applet --- */
