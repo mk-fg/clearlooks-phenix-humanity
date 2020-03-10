@@ -5,7 +5,7 @@ button {
 	min-height: 16px;
 
 	margin: 1px;
-	padding: 4px 13px 4px 14px;
+	padding: 4px;
 
 	color: @theme_text;
 	border-style: solid;
@@ -28,7 +28,7 @@ button {
 
 button.flat {
 	border-color: transparent;
-	background: none;
+	background: transparent;
 }
 
 button:disabled {
@@ -51,11 +51,6 @@ toolbar.primary-toolbar {
 
 toolbar:disabled {
 	color: alpha(@theme_fg, 0.6);
-}
-
-toolbar button {
-	padding: 4px;
-	background: transparent;
 }
 
 toolbar separator {

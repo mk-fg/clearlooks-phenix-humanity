@@ -10,8 +10,8 @@ menubar {
 
 menubar menuitem {
 	padding: 2px 7px;
-	text-shadow: none; /* libreoffice 6.4.1 (and?) */
-	color: @menu_fg;   /* libreoffice 6.4.1 (and?) */
+	text-shadow: none; /* libreoffice 6.4.1 */
+	color: @menu_fg;   /* libreoffice 6.4.1 */
 	border: 1px transparent solid;
 }
 

@@ -131,18 +131,15 @@ checkbutton:hover:focus label, radiobutton:hover:focus label {
 
 }
 
-/* --- switch (yes/no) --- *
+/* --- switch (yes/no) --- */
 
 switch {
 	color: @switch_fg;
+	border: 1px solid alpha(@switch_slider_border, 0.5);
 	border-radius: 3px;
-	border-width: 1px 1px 2px 1px;
-	border-style: solid;
-	border-color: alpha(@switch_slider_border, 0.5);
-	margin: 2px 0;
 }
 
-switch:checked {
+/* switch:checked {
 	color: @switch_trough_active;
 }
 

@@ -61,6 +61,6 @@ combobox arrow:disabled {
 
 /* --- spinbutton (number entry with +/-) --- */
 
-spinbutton button {
-	padding: 4px;
+spinbutton {
+
 }
