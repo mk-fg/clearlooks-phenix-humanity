@@ -57,5 +57,5 @@ PanelToplevel.background {
 }
 
 #clock-applet-button:not(:hover) {
-	background: none;
+	background: transparent;
 }

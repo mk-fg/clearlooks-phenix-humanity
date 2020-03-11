@@ -43,6 +43,8 @@ menu menuitem {
 	padding: 2px 4px;
 	border: 1px transparent solid;
 	background-color: @menu_bg;
+	/* toggle-spacing: 4; @todo
+	width-chars: 70; */
 }
 
 menu menuitem:hover {
@@ -66,18 +68,12 @@ menu arrow:hover {
 }
 
 menu arrow.top    { -gtk-icon-source: -gtk-icontheme("pan-up-symbolic"); }
-menu arrow.bottom { -gtk-icon-source: -gtk-icontheme("pan-down-symbolic"); }
+menu arrow.bottom { -gtk-icon-source: -gtk-icontheme("pan-down-symbolic"); margin: 5px 0 -6px; }
 
 /* --- menuitem elements --- */
 
-menuitem:disabled,
-menuitem:disabled * {
-	color: mix(@menu_fg, @menu_bg, 0.6);
-	background-color: transparent;
-}
-
 menuitem image {
-	margin: 0 -1px 0 2px;
+	margin: 0 -1px 0 2px; /* -1 @todo */
 }
 
 menuitem accelerator {
@@ -89,6 +85,7 @@ menuitem:hover > label > accelerator {
 	color: @theme_selected_fg;
 }
 
+box.horizontal menu > separator,
 menuitem separator {
 	margin: 4px 5px 6px;
 	border-top: 1px @menu_separator_dark solid;
@@ -96,7 +93,6 @@ menuitem separator {
 }
 
 menuitem arrow {
-	margin-left: 10px;
 	min-height: 16px;
 	min-width: 16px;
 	color: @menu_controls;
@@ -104,6 +100,16 @@ menuitem arrow {
 
 menuitem arrow:dir(ltr) { -gtk-icon-source: -gtk-icontheme("pan-end-symbolic"); }
 menuitem arrow:dir(rtl) { -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl"); }
+
+menuitem:disabled,
+menuitem:disabled * {
+	color: mix(@menu_fg, @menu_bg, 0.6);
+	background-color: transparent;
+}
+
+menuitem:disabled image {
+	opacity: 0.3;
+}
 
 /* --- menuitem checkbox and radio elements --- */
 /* .check .radio for ? */

@@ -64,12 +64,13 @@ statusbar frame border {
 	border-radius: 0;
 }
 
-statusbar label,
 statusbar frame {
 	color: @theme_fg;
 	border: 0;
 }
 
-statusbar frame {
+statusbar frame label {
+	margin: -4px 0 4px -2px;
+	color: @theme_fg;
 	border: 0;
 }

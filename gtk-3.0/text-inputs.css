@@ -22,7 +22,6 @@ entry:disabled {
 
 entry:focus {
 	border-color: @entry_border_focus;
-	background-image: none;
 }
 
 entry selection {
