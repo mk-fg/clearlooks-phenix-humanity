@@ -33,23 +33,32 @@ menubar menuitem:hover {
 
 /* --- menu popup window --- */
 
-menu {
+popover > box {
+	margin: -13px;
+	border: 2px solid @menu_bg;
+	background: @menu_bg;
+}
+
+menu,
+popover {
 	padding: 3px;
 	border: 1px solid @menu_border;
-	background-color: @menu_bg;
+	background: @menu_bg;
 }
 
-menu menuitem {
+menu menuitem,
+popover modelbutton {
 	padding: 2px 4px;
 	border: 1px transparent solid;
-	background-color: @menu_bg;
+	background: @menu_bg;
 }
 
-menu menuitem:hover {
+menu menuitem:hover,
+popover modelbutton:hover {
 	color: @theme_selected_fg;
 	border: 1px @menuitem_hover_border solid;
 	border-radius: 2px;
-	background-image:
+	background:
 		radial-gradient( ellipse 110% 50%,
 			@menuitem_hover_glaze_glow_center,
 			@menuitem_hover_glaze_glow_edge ),
@@ -92,6 +101,10 @@ menuitem separator {
 	border-bottom: 1px @menu_separator_lite solid;
 }
 
+popover separator {
+	margin: -2px -6px 0;
+}
+
 menuitem arrow {
 	min-height: 16px;
 	min-width: 16px;
@@ -111,7 +124,7 @@ menuitem:hover > arrow {
 menuitem:disabled,
 menuitem:disabled * {
 	color: mix(@menu_fg, @menu_bg, 0.6);
-	background-color: transparent;
+	background: transparent;
 }
 
 menuitem:disabled image {
@@ -119,6 +132,11 @@ menuitem:disabled image {
 }
 
 /* --- menuitem checkbox and radio elements --- */
+
+popover check,
+popover radio {
+	margin: 1px 0 0;
+}
 
 menuitem check,
 menuitem radio,
@@ -129,6 +147,8 @@ menuitem .radio {
 }
 
 /* unchecked */
+popover check,
+popover check:disabled,
 menuitem check,
 menuitem check:disabled,
 menuitem .check,
@@ -137,6 +157,8 @@ menuitem .check:disabled {
 }
 
 /* checked */
+popover check:checked,
+popover check:checked:active,
 menuitem check:checked,
 menuitem check:checked:active,
 menuitem .check:checked,
@@ -144,6 +166,8 @@ menuitem .check:checked:active {
 	-gtk-icon-source: url("img/menu-checkbox-checked.svg");
 }
 
+popover check:checked:disabled,
+popover check:active:disabled,
 menuitem check:checked:disabled,
 menuitem check:active:disabled,
 menuitem .check:checked:disabled,
@@ -152,6 +176,8 @@ menuitem .check:active:disabled {
 }
 
 /* mixed */
+popover check:indeterminate,
+popover check:indeterminate:active,
 menuitem check:indeterminate,
 menuitem check:indeterminate:active,
 menuitem .check:indeterminate,
@@ -159,12 +185,15 @@ menuitem .check:indeterminate:active {
 	-gtk-icon-source: url("img/menu-checkbox-mixed.svg");
 }
 
+popover check:indeterminate:disabled,
 menuitem check:indeterminate:disabled,
 menuitem .check:indeterminate:disabled {
 	-gtk-icon-source: url("img/menu-checkbox-mixed-insensitive.svg");
 }
 
 /* unchecked */
+popover radio,
+popover radio:disabled,
 menuitem radio,
 menuitem radio:disabled,
 menuitem .radio,
@@ -173,6 +202,8 @@ menuitem .radio:disabled {
 }
 
 /* checked */
+popover radio:checked,
+popover radio:checked:active,
 menuitem radio:checked,
 menuitem radio:checked:active,
 menuitem .radio:checked,
@@ -180,6 +211,8 @@ menuitem .radio:checked:active {
 	-gtk-icon-source: url("img/menu-radio-checked.svg");
 }
 
+popover radio:checked:disabled,
+popover radio:active:disabled,
 menuitem radio:checked:disabled,
 menuitem radio:active:disabled,
 menuitem .radio:checked:disabled,
@@ -188,6 +221,8 @@ menuitem .radio:active:disabled {
 }
 
 /* mixed */
+popover radio:indeterminate,
+popover radio:indeterminate:active,
 menuitem radio:indeterminate,
 menuitem radio:indeterminate:active,
 menuitem .radio:indeterminate,
@@ -195,6 +230,7 @@ menuitem .radio:indeterminate:active {
 	-gtk-icon-source: url("img/menu-radio-mixed.svg");
 }
 
+popover radio:indeterminate:disabled,
 menuitem radio:indeterminate:disabled,
 menuitem .radio:indeterminate:disabled {
 	-gtk-icon-source: url("img/menu-radio-mixed-insensitive.svg");
