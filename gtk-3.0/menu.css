@@ -62,9 +62,9 @@ menu menuitem:hover {
 			@menuitem_hover_glaze_bot );
 }
 
-menu arrow:hover {
-	color: shade(@theme_selected_bg, 1.6);
-	border-color: @theme_selected_fg;
+menu arrow.top,
+menu arrow.bottom {
+	border: 1px solid @menu_border_arrow;
 }
 
 menu arrow.top    { -gtk-icon-source: -gtk-icontheme("pan-up-symbolic"); }
@@ -96,6 +96,10 @@ menuitem arrow {
 	min-height: 16px;
 	min-width: 16px;
 	color: @menu_controls;
+}
+
+menuitem:hover > arrow {
+	color: @theme_selected_fg;
 }
 
 menuitem arrow:dir(ltr) { -gtk-icon-source: -gtk-icontheme("pan-end-symbolic"); }

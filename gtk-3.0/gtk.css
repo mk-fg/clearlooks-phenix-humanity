@@ -106,6 +106,7 @@
 @define-color internal_element_insensitive @insensitive_fg;
 @define-color menu_bg mix(@theme_base, @bg_base, 0.67); /* #EFE9E3 okay! */
 @define-color menu_border shade(@bg_shade5, 1.161);     /* #B4A291 okay! */
+@define-color menu_border_arrow #c4b3a5; /* @todo */
 @define-color menu_controls @theme_fg; /* arrows #101010 ? */
 @define-color menu_fg @theme_fg; /* #101010 okay! */
 @define-color menu_separator_dark shade(@menu_border, 1.243); /* #D6C9BE instead of #D5C9BE */
@@ -168,6 +169,7 @@
 @define-color scroll_hover_glaze_mid-b shade(@theme_bg, 0.86);
 @define-color scroll_hover_glaze_top shade(@theme_bg, 0.90);
 @define-color scroll_slider_border shade(@bg_shade6, 1.382); /* #9C8877 instead of #9C8B7D */
+@define-color scrolledwindow_border #AD9A89; /* @todo */
 @define-color sidebar_bg @theme_base;
 @define-color slider_base shade(@theme_selected_bg, 1.04);
 @define-color slider_border shade(@slider_base, 0.745);  /* #694C3F okay! */
@@ -208,7 +210,6 @@
 @define-color toolbar_grad_top @bg_base;     /* #E6DDD5 okay! */
 @define-color toolbar_separator_dark alpha(shade(@theme_bg, 0.73), 0.5); /* top:#CBBDB1 okay! bot:#C9BAAD okay! */
 @define-color toolbar_separator_lite alpha(shade(@theme_bg, 1.27), 0.5); /* top:#F1EDE8 okay! bot:#EFEAE5 okay! */
-@define-color treeview_cell_border alpha(#fefefe, 0.5);
 @define-color trough_gradient_a shade(@core_b, 0.81);
 @define-color trough_gradient_b shade(@core_b, 0.90);
 @define-color warning_fg @theme_fg;

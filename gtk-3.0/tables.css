@@ -1,0 +1,18 @@
+
+/* --- treeview --- */
+
+treeview, list {
+	color: @theme_text;
+	background-color: @theme_base;
+}
+
+treeview {
+	color: @theme_text;
+	background-color: @theme_base;
+	-GtkTreeView-vertical-separator: 0;
+	-GtkTreeView-expander-size: 13;
+	-GtkTreeView-grid-line-width: 0;
+	-GtkTreeView-grid-line-pattern: '';
+	-GtkTreeView-tree-line-width: 0;
+	-GtkTreeView-tree-line-pattern: '';
+}

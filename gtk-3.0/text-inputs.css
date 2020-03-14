@@ -43,8 +43,7 @@ combobox arrow {
 	min-height: 16px;
 	min-width: 16px;
 	color: @theme_fg;
-	background: url("img/dropdown-arrows.svg") no-repeat center;
-	/* -gtk-icon-source: -gtk-icontheme("pan-down-symbolic"); */
+	-gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
 
 combobox button.combo {

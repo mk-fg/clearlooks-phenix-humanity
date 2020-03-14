@@ -1,4 +1,8 @@
 
+scrolledwindow {
+	border: 1px solid @scrolledwindow_border;
+}
+
 /* --- separators --- */
 
 separator.vertical {
@@ -73,4 +77,10 @@ statusbar frame label {
 	margin: -4px 0 4px -2px;
 	color: @theme_fg;
 	border: 0;
+}
+
+/* --- printdialog --- */
+
+printdialog box.view {
+	background-color: @bg_base;
 }
