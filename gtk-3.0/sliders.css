@@ -14,6 +14,8 @@ scale.vertical {
 }
 
 scale trough {
+	min-width: 1px;
+	min-height: 1px;
 	border: 1px solid @slider_trough_border;
 	border-radius: 3px;
 	background:
@@ -28,9 +30,6 @@ scale trough {
 		@slider_trough_bg;
 }
 
-scale.horizontal trough { min-height: 1px; }
-scale.vertical trough { min-width: 1px; }
-
 scale trough highlight {
 	margin: -1px;
 	border: 1px @slider_border solid;
@@ -39,7 +38,7 @@ scale trough highlight {
 
 scale.horizontal trough highlight {
 	min-height: 3px;
-	background-image:
+	background:
 		radial-gradient(
 			ellipse 90% 50%,
 			@slider_glaze_glow_center,
@@ -58,7 +57,7 @@ scale.horizontal trough highlight {
 
 scale.vertical trough highlight {
 	min-width: 3px;
-	background-image:
+	background:
 		radial-gradient(
 			ellipse 50% 90%,
 			@slider_glaze_glow_center,
@@ -135,7 +134,7 @@ scale.vertical slider:hover {
 
 /* --- progressbar --- */
 
-progressbar.horizontal { margin: 0 -2px 0 0; /* @todo c'est faux, mais ça permet d'avoir la même largeur entre awf2 et awf3*/ }
+progressbar.horizontal { margin: 0 -2px 0 0; /* @todo c'est faux, mais ça permet d'avoir la même largeur entre awf2 et awf3 */ }
 progressbar.vertical { margin: 5px 0; }
 
 progressbar trough {
@@ -158,17 +157,20 @@ progressbar progress {
 	border-radius: 3px;
 }
 
-progressbar.horizontal trough { min-height: 18px; }
-progressbar.vertical trough { min-width: 20px; }
+progressbar.horizontal trough {
+	min-height: 18px;
+}
 
-progressbar.horizontal progress /*,
+progressbar.vertical trough {
+	min-width: 20px;
+}
+
 row progressbar progress,
-row:hover progressbar progress,
-row:selected progressbar progress,
-row:selected:focus progressbar progress */ {
+treeview.view.progressbar, /* example: transmission lines */
+progressbar.horizontal progress {
 	margin: -1px 0 -1px -1px;
 	min-height: 18px;
-	background-image:
+	background:
 		radial-gradient(
 			ellipse 90% 50%,
 			@slider_glaze_glow_center,
@@ -192,7 +194,7 @@ progressbar.horizontal progress.right {
 progressbar.vertical progress {
 	margin: -1px -1px 0 -1px;
 	min-width: 20px;
-	background-image:
+	background:
 		radial-gradient(
 			ellipse 50% 90%,
 			@slider_glaze_glow_center,
@@ -208,6 +210,7 @@ progressbar.vertical progress {
 			@slider_pattern 12px,
 			@slider_pattern 24px);
 }
+
 progressbar.vertical progress.bottom {
 	margin: 0 -1px -1px -1px;
 }

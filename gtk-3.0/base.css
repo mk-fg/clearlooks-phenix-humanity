@@ -26,12 +26,12 @@ view text,
 iconview text,
 textview text {
 	color: @theme_text;
-	background-color: @theme_base;
+	background: @theme_base;
 }
 
 .background {
 	color: @theme_fg;
-	background-color: @theme_bg;
+	background: @theme_bg;
 }
 
 .link,
@@ -43,7 +43,7 @@ textview text {
 *:selected,
 *:selected:focus {
 	color: @theme_selected_fg;
-	background-color: @theme_selected_bg;
+	background: @theme_selected_bg;
 }
 
 *:disabled {
@@ -60,7 +60,7 @@ tooltip.background,
 	/* 2px bigger @todo */
 	color: @theme_tooltip_fg;
 	border: 1px solid @theme_tooltip_border;
-	background-color: @theme_tooltip_bg;
+	background: @theme_tooltip_bg;
 }
 
 /* --- spinner animation --- */

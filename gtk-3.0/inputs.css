@@ -5,10 +5,6 @@ entry {
 	margin: 1px;
 	padding: 3px;
 	color: @entry_text;
-	box-shadow:
-		-1px -1px @entry_shadow_out_dark,
-		1px 1px   @entry_shadow_out_lite,
-		inset 1px 1px @entry_shadow_in_dark;
 	border: 1px solid @entry_border;
 	border-radius: 3px;
 	background: @theme_base;

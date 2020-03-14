@@ -1,8 +1,4 @@
 
-scrolledwindow {
-	border: 1px solid @scrolledwindow_border;
-}
-
 /* --- separators --- */
 
 separator.vertical {
@@ -176,4 +172,3 @@ statusbar frame label {
 	color: @theme_fg;
 	border: 0;
 }
-
