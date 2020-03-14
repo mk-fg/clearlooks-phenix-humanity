@@ -135,50 +135,5 @@ checkbutton:hover:focus label, radiobutton:hover:focus label {
 
 switch {
 	color: @switch_fg;
-	border: 1px solid alpha(@switch_slider_border, 0.5);
 	border-radius: 3px;
 }
-
-/* switch:checked {
-	color: @switch_trough_active;
-}
-
-switch:checked,
-switch:backdrop:checked {
-	background-image:
-		-gtk-gradient( linear,
-			left top, left bottom,
-			from (@switch_trough_active_gradient_a),
-			to (@switch_trough_active_gradient_b));
-}
-
-switch slider {
-	padding: 0;
-	border: 1px @switch_slider_border solid;
-	border-radius: 2px;
-	background-image:
-		linear-gradient( to bottom,
-			alpha(@switch_slider_gradient_a, 0.5),
-			alpha(@switch_slider_gradient_b, 0.5) 50%,
-			alpha(@switch_slider_gradient_c, 0.5) 50%,
-			alpha(@switch_slider_gradient_d, 0.5) ),
-		-gtk-scaled(
-			url("img/slider-horz-grip.png"),
-			url("img/slider-horz-grip@2.png") );
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-color: @switch_slider_bg;
-}
-
-switch:disabled slider {
-	background-image:
-		linear-gradient( to bottom,
-			alpha(@switch_slider_insensitive_gradient_a, 0.8),
-			alpha(@switch_slider_insensitive_gradient_b, 0.8) 50%,
-			alpha(@switch_slider_insensitive_gradient_c, 0.8) 50%,
-			alpha(@switch_slider_insensitive_gradient_d, 0.8)),
-		-gtk-scaled(
-			url("img/slider-horz-grip.png"),
-			url("img/slider-horz-grip@2.png") );
-	border-color: @switch_slider_insensitive_border;
-} */
