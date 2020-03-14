@@ -43,8 +43,6 @@ menu menuitem {
 	padding: 2px 4px;
 	border: 1px transparent solid;
 	background-color: @menu_bg;
-	/* toggle-spacing: 4; @todo
-	width-chars: 70; */
 }
 
 menu menuitem:hover {
@@ -62,32 +60,34 @@ menu menuitem:hover {
 			@menuitem_hover_glaze_bot );
 }
 
-menu arrow.top,
-menu arrow.bottom {
+menu arrow.top {
 	border: 1px solid @menu_border_arrow;
+	-gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
 }
 
-menu arrow.top    { -gtk-icon-source: -gtk-icontheme("pan-up-symbolic"); }
-menu arrow.bottom { -gtk-icon-source: -gtk-icontheme("pan-down-symbolic"); margin: 5px 0 -6px; }
+menu arrow.bottom {
+	margin: 5px 0 -6px;
+	border: 1px solid @menu_border_arrow;
+	-gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
 
 /* --- menuitem elements --- */
 
 menuitem image {
-	margin: 0 -1px 0 2px; /* -1 @todo */
+	margin: 0 0 0 2px;
+}
+
+menuitem label {
+	margin: 0 0 0 -1px;
 }
 
 menuitem accelerator {
-	/* margin-left:11px; @todo */
 	color: alpha(@menu_fg, 0.601); /* #696764 instead of #696664 */
 }
 
-menuitem:hover > label > accelerator {
-	color: @theme_selected_fg;
-}
-
-box.horizontal menu > separator,
+box.horizontal menu > separator, /* when menu tearoffed */
 menuitem separator {
-	margin: 4px 5px 6px;
+	margin: 4px 6px 6px;
 	border-top: 1px @menu_separator_dark solid;
 	border-bottom: 1px @menu_separator_lite solid;
 }
@@ -96,14 +96,17 @@ menuitem arrow {
 	min-height: 16px;
 	min-width: 16px;
 	color: @menu_controls;
+	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
 }
 
+menuitem arrow:dir(rtl) {
+	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
+}
+
+menuitem:hover > label > accelerator,
 menuitem:hover > arrow {
 	color: @theme_selected_fg;
 }
-
-menuitem arrow:dir(ltr) { -gtk-icon-source: -gtk-icontheme("pan-end-symbolic"); }
-menuitem arrow:dir(rtl) { -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl"); }
 
 menuitem:disabled,
 menuitem:disabled * {
@@ -116,7 +119,6 @@ menuitem:disabled image {
 }
 
 /* --- menuitem checkbox and radio elements --- */
-/* .check .radio for ? */
 
 menuitem check,
 menuitem radio,
@@ -124,8 +126,6 @@ menuitem .check,
 menuitem .radio {
 	min-height: 16px;
 	min-width: 16px;
-	padding-left: 2px;
-	padding-right: 2px;
 }
 
 /* unchecked */

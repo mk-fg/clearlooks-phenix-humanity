@@ -87,10 +87,10 @@ scrollbar button {
 	background: transparent;
 }
 
-scrollbar button.up:disabled,
-scrollbar button.down:disabled {
+scrollbar button:disabled {
 	color: @scroll_disabled_fg;
 }
 
-scrollbar.vertical button.up { -gtk-icon-transform: rotate(90deg); }
-scrollbar.vertical button.down  { -gtk-icon-transform: rotate(90deg); }
+scrollbar.vertical button {
+	-gtk-icon-transform: rotate(90deg);
+}
