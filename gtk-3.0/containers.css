@@ -8,6 +8,7 @@ scrolledwindow {
 separator.vertical {
 	border-left: 1px @content_separator_dark solid;
 	border-right: 1px @content_separator_lite solid;
+	background: red;
 }
 
 separator.horizontal {
@@ -15,43 +16,141 @@ separator.horizontal {
 	border-bottom: 1px @content_separator_lite solid;
 }
 
-/* separator.vertical {
-	min-width: 2px;
-	background:
-		linear-gradient(90deg,
-			@content_separator_dark 0,
-			@content_separator_dark 1px,
-			@content_separator_lite 1px,
-			@content_separator_lite 2px);
-	background-size: 2px 100%;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-separator.horizontal {
-	min-height: 2px;
-	background:
-		linear-gradient(180deg,
-			@content_separator_dark 0,
-			@content_separator_dark 1px,
-			@content_separator_lite 1px,
-			@content_separator_lite 2px);
-	background-size: 100% 2px;
-	background-repeat: no-repeat;
-	background-position: center;
-} */
-
 /* -- frame -- */
 
-frame { padding-left: 4px; }
-frame > label { padding: 0 1px; }
+frame {
+	padding-left: 4px;
+}
+
+frame > label {
+	padding: 0 1px;
+}
 
 frame > border {
-	margin-left: -3px;
-	box-shadow:
-		inset 1px 1px @frame_shadow_dark,
-		inset -1px -1px @frame_shadow_hl;
 	border: 1px solid @frame_border;
 	border-radius: 2px;
+}
+
+/* --- notebook and tabs --- */
+
+notebook {
+	background: @nb_bg;
+}
+
+notebook stack {
+	border: 1px solid @nb_stack_border;
+	border-radius: 2px;
+}
+
+notebook header {
+	background: @theme_bg;
+}
+
+notebook header tab {
+	padding: 3px 4px;
+	border: 1px @nb_tab_border solid;
+}
+
+notebook header tab:checked {
+	border: 1px @nb_tab_checked_border solid;
+}
+
+notebook header.top {
+	padding-right: 1px;
+}
+
+notebook header.top tab {
+	margin: 1px -1px -1px 0;
+	border-bottom: 1px @nb_stack_border solid;
+	border-radius: 3px 3px 0px 0px;
+	background: linear-gradient(to bottom, @nb_tab_glaze_top,
+		@nb_tab_glaze_mid-a 49%,
+		@nb_tab_glaze_mid-b 49%,
+		@nb_tab_glaze_bot);
+}
+
+notebook header.top tab:checked {
+	margin: 0 -1px -1px 0;
+	border-bottom: 0;
+	background: linear-gradient(to bottom, @nb_tab_checked_glaze_top,
+		@nb_tab_checked_glaze_mid-a 49%,
+		@nb_tab_checked_glaze_mid-b 49%,
+		@nb_tab_checked_glaze_bot);
+}
+
+notebook header.bottom {
+	padding-right: 1px;
+}
+
+notebook header.bottom tab {
+	margin: -1px -1px 1px 0;
+	border-top: 1px solid @nb_stack_border;
+	border-radius: 0 0 3px 3px;
+	background: linear-gradient(to top, @nb_tab_glaze_top,
+		@nb_tab_glaze_mid-a 49%,
+		@nb_tab_glaze_mid-b 49%,
+		@nb_tab_glaze_bot);
+}
+
+notebook header.bottom tab:checked {
+	margin: -1px -1px 0 0;
+	border-top: 0;
+	background: linear-gradient(to top, @nb_tab_checked_glaze_top,
+		@nb_tab_checked_glaze_mid-a 49%,
+		@nb_tab_checked_glaze_mid-b 49%,
+		@nb_tab_checked_glaze_bot);
+}
+
+notebook header.left {
+	padding-bottom: 1px;
+}
+
+notebook header.left tab {
+	margin: 0 -1px -1px 1px;
+	border-right: 1px @nb_stack_border solid;
+	border-radius: 3px 0 0 3px;
+	background: linear-gradient(to right, @nb_tab_glaze_top,
+		@nb_tab_glaze_mid-a 49%,
+		@nb_tab_glaze_mid-b 49%,
+		@nb_tab_glaze_bot);
+}
+
+notebook header.left tab:checked {
+	margin: 0 -1px -1px 0;
+	border-right: 0;
+	background: linear-gradient(to right, @nb_tab_checked_glaze_top,
+		@nb_tab_checked_glaze_mid-a 49%,
+		@nb_tab_checked_glaze_mid-b 49%,
+		@nb_tab_checked_glaze_bot);
+}
+
+notebook header.right {
+	padding-bottom: 1px;
+}
+
+notebook header.right tab {
+	margin: 0 1px -1px -1px;
+	border-left: 1px @nb_stack_border solid;
+	border-radius: 0 3px 3px 0;
+	background: linear-gradient(to left, @nb_tab_glaze_top,
+		@nb_tab_glaze_mid-a 49%,
+		@nb_tab_glaze_mid-b 49%,
+		@nb_tab_glaze_bot);
+}
+
+notebook header.right tab:checked {
+	margin: 0 0 -1px -1px;
+	border-left: 0;
+	background: linear-gradient(to left, @nb_tab_checked_glaze_top,
+		@nb_tab_checked_glaze_mid-a 49%,
+		@nb_tab_checked_glaze_mid-b 49%,
+		@nb_tab_checked_glaze_bot);
+}
+
+/* --- print dialog --- */
+
+printdialog box.view {
+	background: @bg_base;
 }
 
 /* --- status bar --- */
@@ -62,7 +161,6 @@ statusbar {
 }
 
 statusbar frame border {
-	box-shadow: none;
 	border: 0;
 	border-top: 1px solid @toolbar_border_top;
 	border-radius: 0;
@@ -79,8 +177,3 @@ statusbar frame label {
 	border: 0;
 }
 
-/* --- printdialog --- */
-
-printdialog box.view {
-	background-color: @bg_base;
-}
