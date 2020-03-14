@@ -1,6 +1,5 @@
 
 /* --- scrollbar --- */
-/* structure: scrollbar -> contents -> [ button, trough -> [ slider ], button ] */
 
 scrollbar {
 	background: @scroll_bg;
