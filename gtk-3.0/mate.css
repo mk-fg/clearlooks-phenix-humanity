@@ -59,3 +59,7 @@ PanelToplevel.background {
 #clock-applet-button:not(:hover) {
 	background: transparent;
 }
+
+#MatePanelPopupWindow frame > box > box > box > widget { /* the map border color */
+	color: @frame_border;
+}

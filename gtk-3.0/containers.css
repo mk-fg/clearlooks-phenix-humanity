@@ -147,12 +147,26 @@ notebook header.right tab:checked {
 
 filechooser,
 printdialog box.view {
-	padding: 12px 14px;
+	padding: 12px;
 }
 
 filechooser box.view,
 printdialog box.view {
 	background: @bg_base;
+}
+
+/* --- calendar --- */
+calendar {
+	border: 1px solid @frame_border;
+}
+
+calendar.header {
+	background: @theme_bg;
+}
+
+calendar.highlight {
+	color: white;
+	background: @theme_selected_bg;
 }
 
 /* --- status bar --- */
