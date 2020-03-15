@@ -41,7 +41,7 @@ textview text {
 }
 
 *:selected,
-*:selected:focus {
+selection {
 	color: @theme_selected_fg;
 	background: @theme_selected_bg;
 }

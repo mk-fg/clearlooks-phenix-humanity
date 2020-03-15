@@ -172,23 +172,20 @@ calendar.highlight {
 /* --- status bar --- */
 
 statusbar {
-	margin: -7px -10px -12px -10px;
-	border-top: 1px solid @toolbar_border_bot;
-}
-
-statusbar frame border {
-	border: 0;
-	border-top: 1px solid @toolbar_border_top;
-	border-radius: 0;
+	margin: 0 -12px -4px;
+	border-top: 1px solid @toolbar_border_dark;
 }
 
 statusbar frame {
+	margin: 0;
+	padding: 0;
 	color: @theme_fg;
 	border: 0;
+	border-top: 1px solid @toolbar_border_lite;
 }
 
-statusbar frame label {
-	margin: -4px 0 4px -2px;
-	color: @theme_fg;
+statusbar border {
+	margin: -4px 0;
+	padding: 0;
 	border: 0;
 }

@@ -45,8 +45,8 @@ headerbar.titlebar,
 toolbar.primary-toolbar {
 	border-width: 1px 0 1px 0;
 	border-style: solid;
-	border-top-color: @toolbar_border_top;
-	border-bottom-color: @toolbar_border_bot;
+	border-top-color: @toolbar_border_lite;
+	border-bottom-color: @toolbar_border_dark;
 	background: transparent linear-gradient(to bottom, @toolbar_grad_top, @toolbar_grad_bot);
 }
 
