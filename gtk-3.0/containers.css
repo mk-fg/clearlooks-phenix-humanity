@@ -171,21 +171,65 @@ calendar.highlight {
 
 /* --- status bar --- */
 
+window.eom-window box + statusbar { /* eom 1.24 */
+	margin: 0 -10px;
+}
+
+paned + statusbar { /* caja 1.24 */
+	margin: -1px -10px 0;
+}
+
+paned + box > statusbar { /* geany 1.36 */
+	margin: -7px -10px -6px;
+}
+
+box + statusbar {
+	margin: -7px -10px -6px;
+}
+
 statusbar {
-	margin: 0 -12px -4px;
+	margin: 0 -10px;
+	padding: 0 2px;
+	border: 0;
 	border-top: 1px solid @toolbar_border_dark;
 }
 
 statusbar frame {
 	margin: 0;
 	padding: 0;
-	color: @theme_fg;
+	border: 0;
+	border-top: 1px solid @toolbar_border_lite;
+	background: @theme_bg;
+}
+
+statusbar frame border {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+statusbar frame border + box {
+	margin: -4px;
+	padding: 0;
+	border: 0;
+}
+
+statusbar frame label {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+statusbar > box { /* eom 1.24 */
+	margin: 0 -3px 0 -4px;
+	padding: 0;
 	border: 0;
 	border-top: 1px solid @toolbar_border_lite;
 }
 
-statusbar border {
-	margin: -4px 0;
+statusbar > label { /* eom 1.24 */
+	margin: 0;
 	padding: 0;
 	border: 0;
+	border-top: 1px solid @toolbar_border_lite;
 }
