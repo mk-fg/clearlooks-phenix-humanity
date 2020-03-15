@@ -7,7 +7,7 @@ button {
 	margin: 1px;
 	padding: 4px;
 
-	color: @theme_text;
+	color: @theme_fg;
 	border-style: solid;
 	border-color: @border;
 	border-radius: 3px;

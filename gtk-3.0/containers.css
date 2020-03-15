@@ -165,7 +165,7 @@ calendar.header {
 }
 
 calendar.highlight {
-	color: white;
+	color: @menubar_menuitem_hover;
 	background: @theme_selected_bg;
 }
 

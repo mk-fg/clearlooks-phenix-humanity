@@ -9,9 +9,9 @@ menubar {
 }
 
 menubar menuitem {
-	padding: 2px 7px;
+	padding: 2px 7px 2px 8px;
 	text-shadow: none; /* libreoffice 6.4.1 */
-	color: @menu_fg;   /* libreoffice 6.4.1 */
+	color: @theme_fg;   /* libreoffice 6.4.1 */
 	border: 1px transparent solid;
 }
 
@@ -31,7 +31,7 @@ menubar menuitem:hover {
 			@menuitem_hover_glaze_bot );
 }
 
-/* --- menu popup window --- */
+/* --- menu --- */
 popover.background {
 	border: 1px solid @menu_border;
 	background: @menu_bg;
@@ -48,16 +48,16 @@ menu {
 	background: @menu_bg;
 }
 
-menu menuitem,
-popover modelbutton {
+popover modelbutton,
+menu menuitem {
 	padding: 2px 4px;
 	border: 1px transparent solid;
 	background: @menu_bg;
 }
 
-menu menuitem:hover,
-popover modelbutton:hover {
-	color: @theme_selected_fg;
+popover modelbutton:hover,
+menu menuitem:hover {
+	color: @menubar_menuitem_hover;
 	border: 1px @menuitem_hover_border solid;
 	border-radius: 2px;
 	background:
@@ -93,7 +93,7 @@ menuitem label {
 }
 
 menuitem accelerator {
-	color: alpha(@menu_fg, 0.601); /* #696764 instead of #696664 */
+	color: alpha(@theme_fg, 0.601); /* #696764 instead of #696664 */
 }
 
 popover separator {
@@ -111,7 +111,6 @@ menuitem separator {
 menuitem arrow {
 	min-height: 16px;
 	min-width: 16px;
-	color: @menu_controls;
 	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
 }
 
@@ -126,7 +125,7 @@ menuitem:hover > arrow {
 
 menuitem:disabled,
 menuitem:disabled * {
-	color: mix(@menu_fg, @menu_bg, 0.6);
+	color: mix(@theme_fg, @menu_bg, 0.6);
 	background: transparent;
 }
 

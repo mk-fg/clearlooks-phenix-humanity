@@ -35,9 +35,10 @@ textview text {
 }
 
 .link,
-.link label {
-	color: @link;
+.link > label,
+label > link {
 	text-decoration: underline;
+	color: @link;
 }
 
 *:selected,
@@ -57,9 +58,8 @@ tooltip,
 tooltip.background,
 .tooltip,
 .tooltip.background {
-	/* 2px bigger @todo */
-	color: @theme_tooltip_fg;
 	border: 1px solid @theme_tooltip_border;
+	color: @theme_tooltip_fg;
 	background: @theme_tooltip_bg;
 }
 

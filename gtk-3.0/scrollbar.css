@@ -82,13 +82,8 @@ scrollbar button {
 	padding: 2px;
 	min-width: 6px;
 	min-height: 6px;
-	color: @theme_fg;
 	border-color: transparent;
 	background: transparent;
-}
-
-scrollbar button:disabled {
-	color: @scroll_disabled_fg;
 }
 
 scrollbar.vertical button {

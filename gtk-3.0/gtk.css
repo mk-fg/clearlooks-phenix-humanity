@@ -1,18 +1,16 @@
-/***********************************************************************
- * This section can be modified to create color variants of the theme. *
- ***********************************************************************/
-
+/* This section can be modified to create color variants of the theme. */
 /* Defines all colors used in other stylesheets before including them. */
 /* Any color shaded or defined elsewhere is a bug, occasional alpha() is OK. */
 
-@define-color theme_base #fff;
-@define-color theme_bg #e6ddd5;
-@define-color theme_fg #101010;
-@define-color theme_selected_bg #8f5f4a;
-@define-color theme_selected_fg #fff;
-@define-color theme_tooltip_bg #f6f6bc;
-@define-color theme_tooltip_fg #000;
-@define-color theme_text #1a1a1a;
+
+/* base_color */ @define-color theme_base #FFF;
+/* bg_color   */ @define-color theme_bg #E6DDD5;
+/* fg_color   */ @define-color theme_fg #101010;
+/* text_color */ @define-color theme_text #1A1A1A;
+/* selected_bg_color */ @define-color theme_selected_bg #8F5F4A;
+/* selected_fg_color */ @define-color theme_selected_fg #FFF;
+/* tooltip_bg_color  */ @define-color theme_tooltip_bg #F5F5B5;
+/* tooltip_fg_color */  @define-color theme_tooltip_fg #000;
 @define-color link blue;
 @define-color visited_link shade(@link, 0.2);
 @define-color error #cc0000;
@@ -46,7 +44,6 @@
 @define-color button_active_glaze_shadow alpha(shade(@theme_bg, 0.85), 0.3);
 @define-color button_active_glaze_shadow_edge alpha(shade(@theme_bg, 0.82), 0.8);
 @define-color button_active_glaze_top alpha(shade(@theme_bg, 0.89), 0.8);
-@define-color button_active_text @theme_fg;
 @define-color button_border #AB9E92; /* @todo */
 @define-color button_disabled_border alpha(shade(@theme_selected_bg, 0.9), 0.2);
 @define-color button_disabled_glaze_bot alpha(@button_glaze_bot, 0.2);
@@ -86,7 +83,6 @@
 @define-color entry_shadow_in_dark alpha(shade(@entry_border, 1.7), 0.53);   /* #ECE5DF instead of #ECEAE7 */
 @define-color entry_shadow_out_dark alpha(shade(@entry_border, 1.52), 0.25); /* #DED4CA okay! */
 @define-color entry_shadow_out_lite alpha(shade(@entry_border, 2.1), 0.4);   /* #F0EBE6 instead of #F0EBE7 */
-@define-color entry_text @theme_text;
 @define-color error_bg mix(#ababab, shade(@error, 0.77), 0.78);
 @define-color error_fg @theme_base;
 @define-color expander_row_selected_border mix(#acacac, shade(@core_a, 0.75), 0.54);
@@ -96,19 +92,13 @@
 @define-color frame_shadow_lite shade(@theme_bg, 1.04); /* #EDE6E0 okay! */
 @define-color gtkassistant_sidebar_border @border;
 @define-color info_bg @theme_tooltip_bg;
-@define-color info_fg @theme_fg;
 @define-color insensitive_bg @theme_bg;
 @define-color insensitive_border shade(@core_b, 0.79);
 @define-color insensitive_fg shade(@theme_bg, 0.62);
 @define-color insensitive_text_shadow alpha(@theme_base, 0.5);
-@define-color internal_element @theme_text;
-@define-color internal_element_hover @theme_text;
-@define-color internal_element_insensitive @insensitive_fg;
 @define-color menu_bg mix(@theme_base, @bg_base, 0.67); /* #EFE9E3 okay! */
 @define-color menu_border shade(@bg_shade5, 1.161);     /* #B4A291 okay! */
 @define-color menu_border_arrow #c4b3a5; /* @todo */
-@define-color menu_controls @theme_fg; /* arrows #101010 ? */
-@define-color menu_fg @theme_fg; /* #101010 okay! */
 @define-color menu_separator_dark shade(@menu_border, 1.243); /* #D6C9BE instead of #D5C9BE */
 @define-color menu_separator_lite shade(@menu_border, 1.502); /* #F7F4F1 okay! */
 @define-color menubar_border_bot @bg_shade4; /* #C9B9AB okay! */
@@ -212,7 +202,6 @@
 @define-color toolbar_separator_lite alpha(shade(@theme_bg, 1.27), 0.5); /* top:#F1EDE8 okay! bot:#EFEAE5 okay! */
 @define-color trough_gradient_a shade(@core_b, 0.81);
 @define-color trough_gradient_b shade(@core_b, 0.90);
-@define-color warning_fg @theme_fg;
 
 /***********
  * imports *
