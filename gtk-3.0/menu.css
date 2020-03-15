@@ -32,15 +32,17 @@ menubar menuitem:hover {
 }
 
 /* --- menu popup window --- */
-
-popover > box {
-	margin: -13px;
-	border: 2px solid @menu_bg;
+popover {
+	border: 1px solid @menu_border;
 	background: @menu_bg;
 }
 
-menu,
-popover {
+popover > stack > box,
+popover > box {
+	margin: -7px;
+}
+
+menu {
 	padding: 3px;
 	border: 1px solid @menu_border;
 	background: @menu_bg;
@@ -94,15 +96,16 @@ menuitem accelerator {
 	color: alpha(@menu_fg, 0.601); /* #696764 instead of #696664 */
 }
 
+popover separator {
+	margin: 0 -6px;
+}
+
 box.horizontal menu > separator, /* when menu tearoffed */
+popover stack separator,
 menuitem separator {
 	margin: 4px 6px 6px;
 	border-top: 1px @menu_separator_dark solid;
 	border-bottom: 1px @menu_separator_lite solid;
-}
-
-popover separator {
-	margin: -2px -6px 0;
 }
 
 menuitem arrow {
