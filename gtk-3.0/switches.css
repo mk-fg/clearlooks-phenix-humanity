@@ -30,7 +30,6 @@ checkbutton:focus label, radiobutton:focus label {
 checkbutton:hover:focus label, radiobutton:hover:focus label {
 	border: 1px solid @checkbutton_focus_hover_border;
 	background: @checkbutton_focus_hover_bg;
-
 }
 
 /* --- switch (yes/no) --- */

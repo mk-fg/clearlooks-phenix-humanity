@@ -29,21 +29,22 @@ frame > border {
 
 /* --- notebook and tabs --- */
 
-notebook {
+notebook.frame {
+	margin: 2px 0 1px;
 	background: @nb_bg;
 }
 
-notebook stack {
+notebook.frame stack {
 	border: 1px solid @nb_stack_border;
 	border-radius: 2px;
 }
 
 notebook header {
+	padding: 1px;
 	background: @theme_bg;
 }
 
 notebook header tab {
-	padding: 3px 4px;
 	border: 1px @nb_tab_border solid;
 }
 
@@ -51,12 +52,13 @@ notebook header tab:checked {
 	border: 1px @nb_tab_checked_border solid;
 }
 
-notebook header.top {
-	padding-right: 1px;
+notebook header tab label {
+	border: 1px solid transparent;
 }
 
 notebook header.top tab {
-	margin: 1px -1px -1px 0;
+	margin: 0 -1px -2px -1px;
+	padding: 2px 3px;
 	border-bottom: 1px @nb_stack_border solid;
 	border-radius: 3px 3px 0px 0px;
 	background: linear-gradient(to bottom, @nb_tab_glaze_top,
@@ -66,7 +68,7 @@ notebook header.top tab {
 }
 
 notebook header.top tab:checked {
-	margin: 0 -1px -1px 0;
+	margin: -1px -1px -2px -1px;
 	border-bottom: 0;
 	background: linear-gradient(to bottom, @nb_tab_checked_glaze_top,
 		@nb_tab_checked_glaze_mid-a 49%,
@@ -74,12 +76,9 @@ notebook header.top tab:checked {
 		@nb_tab_checked_glaze_bot);
 }
 
-notebook header.bottom {
-	padding-right: 1px;
-}
-
 notebook header.bottom tab {
-	margin: -1px -1px 1px 0;
+	margin: -2px -1px 0 -1px;
+	padding: 2px 3px;
 	border-top: 1px solid @nb_stack_border;
 	border-radius: 0 0 3px 3px;
 	background: linear-gradient(to top, @nb_tab_glaze_top,
@@ -89,7 +88,7 @@ notebook header.bottom tab {
 }
 
 notebook header.bottom tab:checked {
-	margin: -1px -1px 0 0;
+	margin: -2px -1px -1px -1px;
 	border-top: 0;
 	background: linear-gradient(to top, @nb_tab_checked_glaze_top,
 		@nb_tab_checked_glaze_mid-a 49%,
@@ -97,12 +96,9 @@ notebook header.bottom tab:checked {
 		@nb_tab_checked_glaze_bot);
 }
 
-notebook header.left {
-	padding-bottom: 1px;
-}
-
 notebook header.left tab {
-	margin: 0 -1px -1px 1px;
+	margin: -1px -2px -1px 1px;
+	padding: 3px 2px;
 	border-right: 1px @nb_stack_border solid;
 	border-radius: 3px 0 0 3px;
 	background: linear-gradient(to right, @nb_tab_glaze_top,
@@ -112,7 +108,7 @@ notebook header.left tab {
 }
 
 notebook header.left tab:checked {
-	margin: 0 -1px -1px 0;
+	margin: -1px -2px -1px 0;
 	border-right: 0;
 	background: linear-gradient(to right, @nb_tab_checked_glaze_top,
 		@nb_tab_checked_glaze_mid-a 49%,
@@ -120,12 +116,9 @@ notebook header.left tab:checked {
 		@nb_tab_checked_glaze_bot);
 }
 
-notebook header.right {
-	padding-bottom: 1px;
-}
-
 notebook header.right tab {
-	margin: 0 1px -1px -1px;
+	margin: -1px 0 -1px -2px;
+	padding: 3px 2px;
 	border-left: 1px @nb_stack_border solid;
 	border-radius: 0 3px 3px 0;
 	background: linear-gradient(to left, @nb_tab_glaze_top,
@@ -135,7 +128,7 @@ notebook header.right tab {
 }
 
 notebook header.right tab:checked {
-	margin: 0 0 -1px -1px;
+	margin: -1px -1px -1px -2px;
 	border-left: 0;
 	background: linear-gradient(to left, @nb_tab_checked_glaze_top,
 		@nb_tab_checked_glaze_mid-a 49%,
@@ -143,7 +136,17 @@ notebook header.right tab:checked {
 		@nb_tab_checked_glaze_bot);
 }
 
-/* --- print/open dialog --- */
+notebook:focus header tab:checked label {
+	border: 1px solid @checkbutton_focus_border;
+	background: @checkbutton_focus_bg;
+}
+
+notebook:focus header tab:checked:hover label {
+	border: 1px solid @checkbutton_focus_hover_border;
+	background: @checkbutton_focus_hover_bg;
+}
+
+/* --- open/print dialog --- */
 
 filechooser,
 printdialog box.view {
@@ -184,7 +187,7 @@ paned + box > statusbar { /* geany 1.36 */
 }
 
 box + statusbar {
-	margin: -7px -10px -6px;
+	margin: -7px -10px -4px; /* -6px? */
 }
 
 statusbar {

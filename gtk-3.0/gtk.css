@@ -14,7 +14,6 @@
 @define-color link blue;
 @define-color visited_link shade(@link, 0.2);
 @define-color error #cc0000;
-@define-color warning_bg #faad3d;
 
 /* XXX: non-murrine intermediate colors - find/remove later */
 @define-color core_a @theme_selected_bg; /* blue widgets in Clearlooks-Phenix */
