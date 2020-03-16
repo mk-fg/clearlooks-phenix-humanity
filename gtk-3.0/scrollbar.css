@@ -9,14 +9,14 @@ scrollbar {
 
 scrollbar contents {
 	padding: 1px;
-	border: 1px @scroll_border solid;
+	border: 1px solid @scroll_border;
 	border-radius: 2px;
 }
 
 /* --- scrollbar slider --- */
 
 scrollbar slider {
-	border: 1px @scroll_slider_border solid;
+	border: 1px solid @scroll_slider_border;
 	border-radius: 3px;
 }
 

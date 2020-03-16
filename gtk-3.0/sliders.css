@@ -32,7 +32,7 @@ scale trough {
 
 scale trough highlight {
 	margin: -1px;
-	border: 1px @slider_border solid;
+	border: 1px solid @slider_border;
 	border-radius: 3px;
 }
 
@@ -78,7 +78,7 @@ scale.horizontal slider {
 	margin: -6px 0;
 	min-width: 18px;
 	min-height: 11px;
-	border: 1px @slider_trough_border solid;
+	border: 1px solid @slider_trough_border;
 	border-radius: 3px;
 	background:
 		radial-gradient( circle,
@@ -95,7 +95,7 @@ scale.vertical slider {
 	margin: 0 -6px;
 	min-width: 11px;
 	min-height: 18px;
-	border: 1px @slider_trough_border solid;
+	border: 1px solid @slider_trough_border;
 	border-radius: 3px;
 	background:
 		radial-gradient( circle,

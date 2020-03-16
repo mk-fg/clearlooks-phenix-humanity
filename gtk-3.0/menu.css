@@ -4,20 +4,20 @@
 menubar {
 	margin: 1px 0 0;
 	padding: 0 1px;
-	border-bottom: 1px @menubar_border_bot solid;
+	border-bottom: 1px solid @menubar_border_bot;
 	background: linear-gradient(to bottom, @menubar_grad_top, @menubar_grad_bot);
 }
 
 menubar menuitem {
 	padding: 2px 7px 2px 8px;
 	text-shadow: none; /* libreoffice 6.4.1 */
-	color: @theme_fg;   /* libreoffice 6.4.1 */
-	border: 1px transparent solid;
+	color: @theme_fg;  /* libreoffice 6.4.1 */
+	border: 1px solid transparent;
 }
 
 menubar menuitem:hover {
 	color: @menubar_menuitem_hover;
-	border: 1px @menuitem_hover_border solid;
+	border: 1px solid @menuitem_hover_border;
 	border-bottom: 0;
 	border-radius: 2px 2px 0 0;
 	background:
@@ -51,14 +51,14 @@ menu {
 popover modelbutton,
 menu menuitem {
 	padding: 2px 4px;
-	border: 1px transparent solid;
+	border: 1px solid transparent;
 	background: @menu_bg;
 }
 
 popover modelbutton:hover,
 menu menuitem:hover {
 	color: @menubar_menuitem_hover;
-	border: 1px @menuitem_hover_border solid;
+	border: 1px solid @menuitem_hover_border;
 	border-radius: 2px;
 	background:
 		radial-gradient( ellipse 110% 50%,
@@ -69,17 +69,6 @@ menu menuitem:hover {
 			@menuitem_hover_glaze_mid-a 50%,
 			@menuitem_hover_glaze_mid-b 50%,
 			@menuitem_hover_glaze_bot );
-}
-
-menu arrow.top {
-	border: 1px solid @menu_border_arrow;
-	-gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
-}
-
-menu arrow.bottom {
-	margin: 5px 0 -6px;
-	border: 1px solid @menu_border_arrow;
-	-gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
 
 /* --- menuitem elements --- */
@@ -104,18 +93,28 @@ box.horizontal menu > separator, /* when menu tearoffed */
 popover stack separator,
 menuitem separator {
 	margin: 4px 6px 6px;
-	border-top: 1px @menu_separator_dark solid;
-	border-bottom: 1px @menu_separator_lite solid;
+	border-top: 1px solid @menu_separator_dark;
+	border-bottom: 1px solid @menu_separator_lite;
 }
 
 menuitem arrow {
 	min-height: 16px;
 	min-width: 16px;
-	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+	-gtk-icon-source: -gtk-recolor(url("img/go-right-symbolic.svg"));
+}
+
+menuitem arrow.top {
+	border: 1px solid @menu_border_arrow;
+	-gtk-icon-source: -gtk-recolor(url("img/go-up-symbolic.svg"));
+}
+
+menuitem arrow.bottom {
+	border: 1px solid @menu_border_arrow;
+	-gtk-icon-source: -gtk-recolor(url("img/go-down-symbolic.svg"));
 }
 
 menuitem arrow:dir(rtl) {
-	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
+	-gtk-icon-source: -gtk-recolor(url("img/go-left-symbolic.svg"));
 }
 
 menuitem:hover > label > accelerator,
@@ -165,7 +164,7 @@ menuitem check:checked,
 menuitem check:checked:active,
 menuitem .check:checked,
 menuitem .check:checked:active {
-	-gtk-icon-source: url("img/menu-checkbox-checked.svg");
+	-gtk-icon-source: -gtk-recolor(url("img/menu-checkbox-checked.svg"));
 }
 
 popover check:checked:disabled,
@@ -174,7 +173,7 @@ menuitem check:checked:disabled,
 menuitem check:active:disabled,
 menuitem .check:checked:disabled,
 menuitem .check:active:disabled {
-	-gtk-icon-source: url("img/menu-checkbox-checked-insensitive.svg");
+	-gtk-icon-source: -gtk-recolor(url("img/menu-checkbox-checked-insensitive.svg"));
 }
 
 /* mixed */
@@ -184,13 +183,13 @@ menuitem check:indeterminate,
 menuitem check:indeterminate:active,
 menuitem .check:indeterminate,
 menuitem .check:indeterminate:active {
-	-gtk-icon-source: url("img/menu-checkbox-mixed.svg");
+	-gtk-icon-source: -gtk-recolor(url("img/menu-checkbox-mixed.svg"));
 }
 
 popover check:indeterminate:disabled,
 menuitem check:indeterminate:disabled,
 menuitem .check:indeterminate:disabled {
-	-gtk-icon-source: url("img/menu-checkbox-mixed-insensitive.svg");
+	-gtk-icon-source: -gtk-recolor(url("img/menu-checkbox-mixed-insensitive.svg"));
 }
 
 /* unchecked */
@@ -210,7 +209,7 @@ menuitem radio:checked,
 menuitem radio:checked:active,
 menuitem .radio:checked,
 menuitem .radio:checked:active {
-	-gtk-icon-source: url("img/menu-radio-checked.svg");
+	-gtk-icon-source: -gtk-recolor(url("img/menu-radio-checked.svg"));
 }
 
 popover radio:checked:disabled,
@@ -219,7 +218,7 @@ menuitem radio:checked:disabled,
 menuitem radio:active:disabled,
 menuitem .radio:checked:disabled,
 menuitem .radio:active:disabled {
-	-gtk-icon-source: url("img/menu-radio-checked-insensitive.svg");
+	-gtk-icon-source: -gtk-recolor(url("img/menu-radio-checked-insensitive.svg"));
 }
 
 /* mixed */
@@ -229,11 +228,11 @@ menuitem radio:indeterminate,
 menuitem radio:indeterminate:active,
 menuitem .radio:indeterminate,
 menuitem .radio:indeterminate:active {
-	-gtk-icon-source: url("img/menu-radio-mixed.svg");
+	-gtk-icon-source: -gtk-recolor(url("img/menu-radio-mixed.svg"));
 }
 
 popover radio:indeterminate:disabled,
 menuitem radio:indeterminate:disabled,
 menuitem .radio:indeterminate:disabled {
-	-gtk-icon-source: url("img/menu-radio-mixed-insensitive.svg");
+	-gtk-icon-source: -gtk-recolor(url("img/menu-radio-mixed-insensitive.svg"));
 }

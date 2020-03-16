@@ -2,14 +2,13 @@
 /* --- separators --- */
 
 separator.vertical {
-	border-left: 1px @content_separator_dark solid;
-	border-right: 1px @content_separator_lite solid;
-	background: red;
+	border-left: 1px solid @content_separator_dark;
+	border-right: 1px solid @content_separator_lite;
 }
 
 separator.horizontal {
-	border-top: 1px @content_separator_dark solid;
-	border-bottom: 1px @content_separator_lite solid;
+	border-top: 1px solid @content_separator_dark;
+	border-bottom: 1px solid @content_separator_lite;
 }
 
 /* -- frame -- */
@@ -45,22 +44,23 @@ notebook header {
 }
 
 notebook header tab {
-	border: 1px @nb_tab_border solid;
+	padding: 2px;
+	border: 1px solid @nb_tab_border;
 }
 
 notebook header tab:checked {
-	border: 1px @nb_tab_checked_border solid;
+	border-color: @nb_tab_checked_border;
 }
 
 notebook header tab label {
+	padding: 0 1px;
 	border: 1px solid transparent;
 }
 
 notebook header.top tab {
 	margin: 0 -1px -2px -1px;
-	padding: 2px 3px;
-	border-bottom: 1px @nb_stack_border solid;
-	border-radius: 3px 3px 0px 0px;
+	border-bottom-color: @nb_stack_border;
+	border-radius: 3px 3px 0 0;
 	background: linear-gradient(to bottom, @nb_tab_glaze_top,
 		@nb_tab_glaze_mid-a 49%,
 		@nb_tab_glaze_mid-b 49%,
@@ -78,8 +78,7 @@ notebook header.top tab:checked {
 
 notebook header.bottom tab {
 	margin: -2px -1px 0 -1px;
-	padding: 2px 3px;
-	border-top: 1px solid @nb_stack_border;
+	border-top-color: @nb_stack_border;
 	border-radius: 0 0 3px 3px;
 	background: linear-gradient(to top, @nb_tab_glaze_top,
 		@nb_tab_glaze_mid-a 49%,
@@ -97,9 +96,8 @@ notebook header.bottom tab:checked {
 }
 
 notebook header.left tab {
-	margin: -1px -2px -1px 1px;
-	padding: 3px 2px;
-	border-right: 1px @nb_stack_border solid;
+	margin: -1px -2px -1px 0;
+	border-right-color: @nb_stack_border;
 	border-radius: 3px 0 0 3px;
 	background: linear-gradient(to right, @nb_tab_glaze_top,
 		@nb_tab_glaze_mid-a 49%,
@@ -108,7 +106,7 @@ notebook header.left tab {
 }
 
 notebook header.left tab:checked {
-	margin: -1px -2px -1px 0;
+	margin: -1px -2px -1px -1px;
 	border-right: 0;
 	background: linear-gradient(to right, @nb_tab_checked_glaze_top,
 		@nb_tab_checked_glaze_mid-a 49%,
@@ -118,8 +116,7 @@ notebook header.left tab:checked {
 
 notebook header.right tab {
 	margin: -1px 0 -1px -2px;
-	padding: 3px 2px;
-	border-left: 1px @nb_stack_border solid;
+	border-left-color: @nb_stack_border;
 	border-radius: 0 3px 3px 0;
 	background: linear-gradient(to left, @nb_tab_glaze_top,
 		@nb_tab_glaze_mid-a 49%,
@@ -137,12 +134,12 @@ notebook header.right tab:checked {
 }
 
 notebook:focus header tab:checked label {
-	border: 1px solid @checkbutton_focus_border;
+	border-color: @checkbutton_focus_border;
 	background: @checkbutton_focus_bg;
 }
 
 notebook:focus header tab:checked:hover label {
-	border: 1px solid @checkbutton_focus_hover_border;
+	border-color: @checkbutton_focus_hover_border;
 	background: @checkbutton_focus_hover_bg;
 }
 

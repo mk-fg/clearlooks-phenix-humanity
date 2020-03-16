@@ -2,7 +2,6 @@
 /* Defines all colors used in other stylesheets before including them. */
 /* Any color shaded or defined elsewhere is a bug, occasional alpha() is OK. */
 
-
 /* base_color */ @define-color theme_base #FFF;
 /* bg_color   */ @define-color theme_bg #E6DDD5;
 /* fg_color   */ @define-color theme_fg #101010;
@@ -33,7 +32,12 @@
  * color derivation *
  ********************/
 
-@define-color border #AFA195; /* @todo */
+@define-color button_border #AFA195; /* @todo */
+@define-color button_border_disabled #CDBFB2; /* shade de button_border */
+@define-color entry_border  #8B7969; /* #8B7969 okay! shade(@bg_shade5, 0.87) */
+@define-color entry_border_disabled #BCAB9B; /* shade de entry_border */
+@define-color entry_border_focus shade(@theme_selected_bg, 1.499); /* #CF9177 okay! */
+
 @define-color button_active_glaze_bot alpha(shade(@theme_bg, 0.77), 0.8);
 @define-color button_active_glaze_glow shade(@theme_bg, 1.07);
 @define-color button_active_glaze_glow_center alpha(@button_active_glaze_glow, 0.5);
@@ -76,9 +80,6 @@
 @define-color content_separator_dark #CCBFB3; /* @todo */
 @define-color content_separator_lite #F2EEEA; /* @todo */
 @define-color entry_background_disabled @bg_base; /* #E6DDD5 okay! */
-@define-color entry_border shade(@bg_shade5, 0.87);                /* #8B7969 okay! */
-@define-color entry_border_disabled shade(@bg_shade4, 0.924);      /* #BCAB9B okay! */
-@define-color entry_border_focus shade(@theme_selected_bg, 1.499); /* #CF9177 okay! */
 @define-color entry_shadow_in_dark alpha(shade(@entry_border, 1.7), 0.53);   /* #ECE5DF instead of #ECEAE7 */
 @define-color entry_shadow_out_dark alpha(shade(@entry_border, 1.52), 0.25); /* #DED4CA okay! */
 @define-color entry_shadow_out_lite alpha(shade(@entry_border, 2.1), 0.4);   /* #F0EBE6 instead of #F0EBE7 */
@@ -89,7 +90,7 @@
 @define-color frame_border shade(@bg_shade4, 0.924);    /* #BCAB9B okay! */
 @define-color frame_shadow_dark shade(@theme_bg, 0.96); /* #DFD4CA okay! */
 @define-color frame_shadow_lite shade(@theme_bg, 1.04); /* #EDE6E0 okay! */
-@define-color gtkassistant_sidebar_border @border;
+@define-color gtkassistant_sidebar_border @button_border;
 @define-color info_bg @theme_tooltip_bg;
 @define-color insensitive_bg @theme_bg;
 @define-color insensitive_border shade(@core_b, 0.79);
@@ -175,7 +176,7 @@
 @define-color slider_trough_border shade(@bg_shade4, 0.876); /* #B4A292 okay! */
 @define-color slider_trough_shadow alpha(shade(@theme_bg, 0.85), 0.3);
 @define-color slider_trough_shadow_edge alpha(shade(@theme_bg, 0.82), 0.8);
-@define-color spinbutton_border @border;
+@define-color spinbutton_border @button_border;
 @define-color switch_fg shade(@theme_bg, 0.398);
 @define-color switch_slider_bg @switch_slider_gradient_a;
 @define-color switch_slider_border alpha(@bg_shade5, 0.6);

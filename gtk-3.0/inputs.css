@@ -26,26 +26,19 @@ combobox entry {
 	padding: 4px 3px;
 }
 
-combobox cellview {
-	margin: -1px;
+combobox button {
+	padding: 4px;
 }
 
-combobox arrow {
+combobox button arrow {
 	min-height: 16px;
 	min-width: 16px;
-	color: @theme_fg;
-	-gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+	-gtk-icon-source: -gtk-recolor(url("img/go-down-symbolic.svg"));
+	-gtk-icon-transform: scale(0.6);
 }
 
-combobox button.combo {
-	padding: 4px;
-	border: 1px solid @button_border;
-}
-
-combobox cellview:disabled,
-combobox arrow:disabled {
-	color: alpha(@insensitive_fg, 0.8);
-	background-color: transparent;
+combobox button cellview {
+	margin: -1px;
 }
 
 /* --- spinbutton (number entry with +/-) --- */

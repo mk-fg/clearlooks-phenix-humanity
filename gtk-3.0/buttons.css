@@ -9,7 +9,7 @@ button {
 
 	color: @theme_fg;
 	border-style: solid;
-	border-color: @border;
+	border-color: @button_border;
 	border-radius: 3px;
 	border-width: 1px;
 
@@ -26,12 +26,17 @@ button {
 			@button_glaze_bot );
 }
 
-button.flat {
+button:disabled {
+	border-color: @button_border_disabled;
+}
+
+button.flat,
+button.flat:disabled {
 	border-color: transparent;
 	background: transparent;
 }
 
-button:disabled {
+button.flat:disabled {
 	opacity: 0.3;
 }
 
@@ -56,6 +61,6 @@ toolbar:disabled {
 
 toolbar separator {
 	margin: 7px 5px 8px;
-	border-left: 1px @toolbar_separator_dark solid;
-	border-right: 1px @toolbar_separator_lite solid;
+	border-left: 1px solid @toolbar_separator_dark;
+	border-right: 1px solid @toolbar_separator_lite;
 }
