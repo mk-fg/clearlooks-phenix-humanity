@@ -16,3 +16,12 @@ treeview {
 	-GtkTreeView-tree-line-width: 0;
 	-GtkTreeView-tree-line-pattern: '';
 }
+
+/* --- column headers --- */
+
+treeview header button {
+	margin: 0;
+	padding: 4px 3px;
+	border: 1px solid transparent;
+	border-radius: 0;
+}

@@ -78,7 +78,8 @@ scrollbar.vertical slider:hover {
 
 /* --- scrollbar buttons --- */
 
-scrollbar button {
+scrollbar button,
+scrollbar button:disabled {
 	padding: 2px;
 	min-width: 6px;
 	min-height: 6px;

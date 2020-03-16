@@ -16,7 +16,7 @@ menubar menuitem {
 }
 
 menubar menuitem:hover {
-	color: @menubar_menuitem_hover;
+	color: @menuitem_hover;
 	border: 1px solid @menuitem_hover_border;
 	border-bottom: 0;
 	border-radius: 2px 2px 0 0;
@@ -31,7 +31,7 @@ menubar menuitem:hover {
 			@menuitem_hover_glaze_bot );
 }
 
-/* --- menu --- */
+/* --- menu window --- */
 popover.background {
 	border: 1px solid @menu_border;
 	background: @menu_bg;
@@ -57,7 +57,7 @@ menu menuitem {
 
 popover modelbutton:hover,
 menu menuitem:hover {
-	color: @menubar_menuitem_hover;
+	color: @menuitem_hover;
 	border: 1px solid @menuitem_hover_border;
 	border-radius: 2px;
 	background:
@@ -81,12 +81,12 @@ menuitem label {
 	margin: 0 0 0 -1px;
 }
 
-menuitem accelerator {
-	color: alpha(@theme_fg, 0.601); /* #696764 instead of #696664 */
-}
-
 popover separator {
 	margin: 0 -6px;
+}
+
+menuitem accelerator {
+	color: alpha(@theme_fg, 0.601); /* #696764 instead of #696664 */
 }
 
 box.horizontal menu > separator, /* when menu tearoffed */
@@ -124,7 +124,6 @@ menuitem:hover > arrow {
 
 menuitem:disabled,
 menuitem:disabled * {
-	color: mix(@theme_fg, @menu_bg, 0.6);
 	background: transparent;
 }
 
