@@ -7,7 +7,7 @@ entry {
 	color: @theme_text;
 	border: 1px solid @entry_border;
 	border-radius: 3px;
-	background: @theme_base;
+	background: @entry_bg;
 }
 
 entry:disabled {

@@ -47,6 +47,7 @@ notebook header tab {
 notebook header tab label {
 	padding: 0 1px;
 	border: 1px solid transparent;
+	border-radius: 1px;
 }
 
 notebook header.top tab {
@@ -132,13 +133,8 @@ notebook header.right tab:checked {
 }
 
 notebook:focus header tab:checked label {
-	border-color: @checkbutton_focus_border;
-	background: @checkbutton_focus_bg;
-}
-
-notebook:focus header tab:checked:hover label {
-	border-color: @checkbutton_focus_hover_border;
-	background: @checkbutton_focus_hover_bg;
+	border-color: @nb_tab_focus_border;
+	background: @nb_tab_focus_bg;
 }
 
 /* --- open/print dialog --- */

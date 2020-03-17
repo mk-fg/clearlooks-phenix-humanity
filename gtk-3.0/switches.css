@@ -19,7 +19,7 @@ checkbutton label, radiobutton label {
 }
 
 checkbutton:hover, radiobutton:hover {
-	background: @checkbutton_hover;
+	background: @checkbutton_hover_bg;
 }
 
 checkbutton:focus label, radiobutton:focus label {
