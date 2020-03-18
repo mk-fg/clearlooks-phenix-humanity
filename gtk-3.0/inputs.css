@@ -43,7 +43,7 @@ combobox button cellview {
 /* --- spinbutton (number entry with +/-) --- */
 
 spinbutton {
-	margin: 1px 1px 0;
+	margin: 1px;
 }
 
 spinbutton entry {
@@ -55,21 +55,25 @@ spinbutton button {
 	padding: 0;
 }
 
+/* --- colorswatch --- */
+
+button.color {
+	padding: 5px;
+}
+
+button.color colorswatch {
+	border: 1px solid @frame_border;
+}
+
 /* --- checkbutton and radiobutton (box with check/radio and label) --- */
 
 checkbutton, radiobutton {
-	margin-right: 2px;
-	padding: 2px 0 1px 1px;
+	margin: 0 0 1px 1px;
 }
 
 checkbutton label, radiobutton label {
-	margin-top: -1px;
-	margin-left: -3px; /* +1px than gtk2 */
-	margin-right: -1px;
-	margin-bottom: -1px;
-	padding-top: 1px;
-	padding-left: 2px;
-	padding-bottom: 1px;
+	margin: 0 0 0 -2px;
+	padding: 1px;
 	border: 1px solid transparent;
 	border-radius: 3px;
 }
@@ -99,8 +103,7 @@ switch {
 /* unchecked */
 check,
 check row:selected {
-	margin-top: 1px;
-	margin-right: 5px;
+	margin: 1px 5px 0 0;
 	-gtk-icon-source: -gtk-recolor(url("img/checkbox-unchecked.svg"));
 }
 
@@ -148,8 +151,7 @@ check row:selected:indeterminate:disabled {
 /* unchecked */
 radio,
 radio row:selected {
-	margin-top: 1px;
-	margin-right: 5px;
+	margin: 1px 5px 0 0;
 	-gtk-icon-source: -gtk-recolor(url("img/radio-unchecked.svg"));
 }
 

@@ -99,13 +99,20 @@ scrolledwindow.frame {
 	border: 1px solid @nb_border;
 }
 
+notebook scrollbar {
+	background: @nb_bg;
+}
+
+scrolledwindow.frame scrollbar {
+	background: @theme_bg;
+}
+
 notebook scrollbar.vertical,
 scrolledwindow.frame scrollbar.vertical {
 	margin: -1px -1px -22px -3px;
 	padding: 0 0 21px 3px;
 	border: 0;
 	border-left: 1px solid @nb_border;
-	background: @nb_bg;
 }
 
 notebook scrollbar.horizontal,
@@ -114,7 +121,6 @@ scrolledwindow.frame scrollbar.horizontal {
 	padding: 3px 21px 0 0;
 	border: 0;
 	border-top: 1px solid @nb_border;
-	background: @nb_bg;
 }
 
 notebook scrollbar.horizontal:not(:last-child) {
@@ -122,6 +128,7 @@ notebook scrollbar.horizontal:not(:last-child) {
 	padding: 3px 0 0 0;
 }
 
-treeview + scrollbar + scrollbar {
-	margin-top: -26px;
+scrolledwindow.frame treeview + scrollbar.horizontal + scrollbar.vertical {
+	margin: -29px -1px -1px -3px;
+	padding: 1px 0 0 3px;
 }

@@ -44,7 +44,7 @@ frame > border {
 /* --- notebook --- */
 
 notebook {
-	margin: 2px 0 1px;
+	margin: 1px 0;
 	background: @nb_bg;
 }
 

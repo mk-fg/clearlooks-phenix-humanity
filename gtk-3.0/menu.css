@@ -60,7 +60,7 @@ popover.background {
 
 popover.background > stack > box,
 popover.background > box {
-	margin: -7px;
+	margin: -8px;
 }
 
 menu {
@@ -90,6 +90,20 @@ menu menuitem:hover {
 			@menuitem_hover_glaze_mid-a 50%,
 			@menuitem_hover_glaze_mid-b 50%,
 			@menuitem_hover_glaze_bot );
+}
+
+/* --- popover emoji window --- */
+
+popover.emoji-picker > box {
+	margin: 2px;
+}
+
+popover.emoji-picker entry {
+	margin: 0;
+}
+
+popover.emoji-picker scrolledwindow {
+	margin: 2px 0;
 }
 
 /* --- menuitem elements --- */
