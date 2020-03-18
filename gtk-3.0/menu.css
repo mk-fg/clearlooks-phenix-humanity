@@ -1,4 +1,25 @@
 
+/* --- toolbars --- */
+
+toolbar {
+	padding: 1px 2px;
+}
+
+toolbar.primary-toolbar,
+headerbar.titlebar {
+	border-width: 1px 0 1px 0;
+	border-style: solid;
+	border-top-color: @toolbar_border_top;
+	border-bottom-color: @toolbar_border_bot;
+	background: linear-gradient(to bottom, @toolbar_grad_top, @toolbar_grad_bot);
+}
+
+toolbar separator {
+	margin: 7px 5px 8px;
+	border-left: 1px solid @toolbar_separator_dark;
+	border-right: 1px solid @toolbar_separator_lite;
+}
+
 /* --- menubar --- */
 
 menubar {
@@ -31,14 +52,14 @@ menubar menuitem:hover {
 			@menuitem_hover_glaze_bot );
 }
 
-/* --- menu window --- */
+/* --- popover and menu window --- */
 popover.background {
 	border: 1px solid @menu_border;
 	background: @menu_bg;
 }
 
-popover > stack > box,
-popover > box {
+popover.background > stack > box,
+popover.background > box {
 	margin: -7px;
 }
 
@@ -48,14 +69,14 @@ menu {
 	background: @menu_bg;
 }
 
-popover modelbutton,
+popover.background modelbutton,
 menu menuitem {
 	padding: 2px 4px;
 	border: 1px solid transparent;
 	background: @menu_bg;
 }
 
-popover modelbutton:hover,
+popover.background modelbutton:hover,
 menu menuitem:hover {
 	color: @menuitem_hover;
 	border: 1px solid @menuitem_hover_border;
@@ -81,7 +102,7 @@ menuitem label {
 	margin: 0 0 0 -1px;
 }
 
-popover separator {
+popover.background separator {
 	margin: 0 -6px;
 }
 
@@ -90,7 +111,7 @@ menuitem accelerator {
 }
 
 box.horizontal menu > separator, /* when menu tearoffed */
-popover stack separator,
+popover.background stack separator,
 menuitem separator {
 	margin: 4px 6px 6px;
 	border-top: 1px solid @menu_separator_dark;
@@ -100,21 +121,11 @@ menuitem separator {
 menuitem arrow {
 	min-height: 16px;
 	min-width: 16px;
-	-gtk-icon-source: -gtk-recolor(url("img/go-right-symbolic.svg"));
 }
 
-menuitem arrow.top {
-	border: 1px solid @menu_border_arrow;
-	-gtk-icon-source: -gtk-recolor(url("img/go-up-symbolic.svg"));
-}
-
+menuitem arrow.top,
 menuitem arrow.bottom {
 	border: 1px solid @menu_border_arrow;
-	-gtk-icon-source: -gtk-recolor(url("img/go-down-symbolic.svg"));
-}
-
-menuitem arrow:dir(rtl) {
-	-gtk-icon-source: -gtk-recolor(url("img/go-left-symbolic.svg"));
 }
 
 menuitem:hover > label > accelerator,

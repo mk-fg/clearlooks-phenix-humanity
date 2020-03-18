@@ -23,7 +23,6 @@
 /* #CCBFB3 */ @define-color content_separator_dark alpha(shade(@theme_bg, 0.73), 0.5);
 /* #F2EEEA */ @define-color content_separator_lite alpha(shade(@theme_bg, 1.27), 0.5);
 /* #BCAB9B */ @define-color frame_border shade(@theme_bg, 0.775);
-
 /* #EEE8E2 */ @define-color nb_bg shade(@theme_bg, 1.047);
 /* #B4A191 */ @define-color nb_border shade(@theme_bg, 0.733);
 /* #C4B3A5 */ @define-color nb_tab_border shade(@theme_bg, 0.814);
@@ -44,11 +43,9 @@
 /* #B4A291 */ @define-color menu_border shade(@theme_bg, 0.734);
 /* #D5C9BE */ @define-color menu_separator_dark alpha(shade(@theme_bg, 0.77), 0.5);  /* #D5C9BF okay */
 /* #F7F4F1 */ @define-color menu_separator_lite alpha(shade(@theme_bg, 1.27), 0.5);
-
 /* #E6DDD5 */ @define-color menubar_grad_top @theme_bg;
 /* #DED2C8 */ @define-color menubar_grad_bot shade(@theme_bg, 0.952);
 /* #C9B9AB */ @define-color menubar_border_bot shade(@theme_bg, 0.839);
-
 /* #F0EBE5 */ @define-color toolbar_border_top shade(@theme_bg, 1.0585);
 /* #E6DDD4 */ @define-color toolbar_grad_top @theme_bg;                              /* #E6DDD5 okay */
 /* #DDD2C8 */ @define-color toolbar_grad_bot shade(@theme_bg, 0.95);
@@ -63,10 +60,8 @@
 /* #BCAB9B */ @define-color entry_border_disabled shade(@entry_border, 1.41);
 /* #CF9177 */ @define-color entry_border_focus shade(@theme_selected_bg, 1.499);
 /* #E6DDD5 */ @define-color entry_bg_disabled @theme_bg;
-
 /* #AFA195 */ @define-color button_border mix(@theme_base, shade(@theme_bg, 0.568), 0.72);
 /* #CDBFB2 */ @define-color button_border_disabled shade(@theme_bg, 0.864);          /* #CDBFB1 okay */
-
 /* #EAE2DB */ @define-color checkbutton_hover_bg alpha(shade(@theme_bg, 1.5), 0.15);
 /* #E2CFC4 */ @define-color checkbutton_focus_bg alpha(shade(@theme_selected_bg, 1.27), 0.175);         /* #E1CFC4 okay */
 /* #D4A38C */ @define-color checkbutton_focus_border alpha(shade(@theme_selected_bg, 1.49), 0.7);       /* #D4A38D okay */
@@ -83,15 +78,14 @@
 @define-color button_focus_fill alpha(shade(@theme_selected_bg, 1.6), 0.15);
 @define-color button_focus_fill_active alpha(shade(@theme_selected_bg, 1.5), 0.2);
 @define-color menu_border_arrow #c4b3a5;
-/* #DFD4CA */ @define-color frame_shadow_dark shade(@theme_bg, 0.96);
-/* #EDE6E0 */ @define-color frame_shadow_lite shade(@theme_bg, 1.04);
+@define-color frame_shadow_dark shade(@theme_bg, 0.96);
+@define-color frame_shadow_lite shade(@theme_bg, 1.04);
 @define-color menuitem_hover @theme_selected_fg;
 @define-color menuitem_hover_border shade(@core_a, 0.767); /* #684B3F instead of #684B3E */
 @define-color menuitem_hover_glaze @theme_selected_bg;
 @define-color color_swatch_border shade(@theme_bg, 0.83);
 @define-color color_swatch_hover_border @menuitem_hover_border;
 @define-color info_bg @theme_tooltip_bg;
-@define-color scrolledwindow_border #AD9A89; /* @todo */
 @define-color slider_base shade(@theme_selected_bg, 1.04);
 @define-color slider_border shade(@slider_base, 0.745);  /* #694C3F okay! */
 @define-color slider_fill @slider_base;
@@ -170,7 +164,6 @@
 @import url("base.css");
 @import url("containers.css");
 @import url("inputs.css");
-@import url("switches.css");
 @import url("sliders.css");
 @import url("scrollbar.css");
 @import url("menu.css");

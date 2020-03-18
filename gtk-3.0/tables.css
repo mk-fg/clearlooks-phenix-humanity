@@ -25,3 +25,13 @@ treeview header button {
 	border: 1px solid transparent;
 	border-radius: 0;
 }
+
+/* --- --- */
+
+viewport.frame row {
+	padding: 3px 2px;
+}
+
+viewport.frame image {
+	padding-right: 4px;
+}

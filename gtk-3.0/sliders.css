@@ -1,16 +1,16 @@
 
 /* --- scale slider --- */
 
-scale.horizontal {
-	margin: 1px 12px 0;
-	padding: 5px 2px;
-	min-height: 10px;
-}
-
 scale.vertical {
 	margin: 12px 0;
 	padding: 8px 5px;
 	min-width: 10px;
+}
+
+scale.horizontal {
+	margin: 1px 12px 0;
+	padding: 5px 2px;
+	min-height: 10px;
 }
 
 scale trough {
@@ -36,25 +36,6 @@ scale trough highlight {
 	border-radius: 3px;
 }
 
-scale.horizontal trough highlight {
-	min-height: 3px;
-	background:
-		radial-gradient(
-			ellipse 90% 50%,
-			@slider_glaze_glow_center,
-			@slider_glaze_glow_edge ),
-		linear-gradient( to bottom,
-			@slider_glaze_top,
-			@slider_glaze_mid-a 49%,
-			@slider_glaze_mid-b 49%,
-			@slider_glaze_bot ),
-		repeating-linear-gradient(135deg,
-			alpha(@slider_pattern, 0.0),
-			alpha(@slider_pattern, 0.0) 12px,
-			@slider_pattern 12px,
-			@slider_pattern 24px);
-}
-
 scale.vertical trough highlight {
 	min-width: 3px;
 	background:
@@ -74,21 +55,23 @@ scale.vertical trough highlight {
 			@slider_pattern 24px);
 }
 
-scale.horizontal slider {
-	margin: -6px 0;
-	min-width: 18px;
-	min-height: 11px;
-	border: 1px solid @slider_trough_border;
-	border-radius: 3px;
+scale.horizontal trough highlight {
+	min-height: 3px;
 	background:
-		radial-gradient( circle,
-			@scale_glaze_glow_center,
-			@scale_glaze_glow_edge ),
+		radial-gradient(
+			ellipse 90% 50%,
+			@slider_glaze_glow_center,
+			@slider_glaze_glow_edge ),
 		linear-gradient( to bottom,
-			@scale_glaze_top,
-			@scale_glaze_mid-a 49%,
-			@scale_glaze_mid-b 49%,
-			@scale_glaze_bot );
+			@slider_glaze_top,
+			@slider_glaze_mid-a 49%,
+			@slider_glaze_mid-b 49%,
+			@slider_glaze_bot ),
+		repeating-linear-gradient(135deg,
+			alpha(@slider_pattern, 0.0),
+			alpha(@slider_pattern, 0.0) 12px,
+			@slider_pattern 12px,
+			@slider_pattern 24px);
 }
 
 scale.vertical slider {
@@ -108,16 +91,21 @@ scale.vertical slider {
 			@scale_glaze_bot );
 }
 
-scale.horizontal slider:hover {
+scale.horizontal slider {
+	margin: -6px 0;
+	min-width: 18px;
+	min-height: 11px;
+	border: 1px solid @slider_trough_border;
+	border-radius: 3px;
 	background:
 		radial-gradient( circle,
 			@scale_glaze_glow_center,
 			@scale_glaze_glow_edge ),
 		linear-gradient( to bottom,
-			@scale_hover_glaze_top,
-			@scale_hover_glaze_mid-a 49%,
-			@scale_hover_glaze_mid-b 49%,
-			@scale_hover_glaze_bot );
+			@scale_glaze_top,
+			@scale_glaze_mid-a 49%,
+			@scale_glaze_mid-b 49%,
+			@scale_glaze_bot );
 }
 
 scale.vertical slider:hover {
@@ -132,10 +120,27 @@ scale.vertical slider:hover {
 			@scale_hover_glaze_bot );
 }
 
+scale.horizontal slider:hover {
+	background:
+		radial-gradient( circle,
+			@scale_glaze_glow_center,
+			@scale_glaze_glow_edge ),
+		linear-gradient( to bottom,
+			@scale_hover_glaze_top,
+			@scale_hover_glaze_mid-a 49%,
+			@scale_hover_glaze_mid-b 49%,
+			@scale_hover_glaze_bot );
+}
+
 /* --- progressbar --- */
 
-progressbar.horizontal { margin: 0 -2px 0 0; /* @todo c'est faux, mais ça permet d'avoir la même largeur entre awf2 et awf3 */ }
-progressbar.vertical { margin: 5px 0; }
+progressbar.vertical {
+	margin: 5px 0;
+}
+
+progressbar.horizontal {
+	margin: 0 -2px 0 0; /* @todo c'est faux, mais ça permet d'avoir la même largeur entre awf2 et awf3 */
+}
 
 progressbar trough {
 	border: 1px solid @slider_trough_border;
@@ -157,38 +162,12 @@ progressbar progress {
 	border-radius: 3px;
 }
 
-progressbar.horizontal trough {
-	min-height: 18px;
-}
-
 progressbar.vertical trough {
 	min-width: 20px;
 }
 
-row progressbar progress,
-treeview.view.progressbar, /* example: transmission lines */
-progressbar.horizontal progress {
-	margin: -1px 0 -1px -1px;
+progressbar.horizontal trough {
 	min-height: 18px;
-	background:
-		radial-gradient(
-			ellipse 90% 50%,
-			@slider_glaze_glow_center,
-			@slider_glaze_glow_edge ),
-		linear-gradient( to bottom,
-			@slider_glaze_top,
-			@slider_glaze_mid-a 49%,
-			@slider_glaze_mid-b 49%,
-			@slider_glaze_bot ),
-		repeating-linear-gradient(135deg,
-			alpha(@slider_pattern, 0.0),
-			alpha(@slider_pattern, 0.0) 12px,
-			@slider_pattern 12px,
-			@slider_pattern 24px);
-}
-
-progressbar.horizontal progress.right {
-	margin: -1px -1px -1px 0;
 }
 
 progressbar.vertical progress {
@@ -213,4 +192,30 @@ progressbar.vertical progress {
 
 progressbar.vertical progress.bottom {
 	margin: 0 -1px -1px -1px;
+}
+
+row progressbar progress,
+treeview.view.progressbar,
+progressbar.horizontal progress {
+	margin: -1px 0 -1px -1px;
+	min-height: 18px;
+	background:
+		radial-gradient(
+			ellipse 90% 50%,
+			@slider_glaze_glow_center,
+			@slider_glaze_glow_edge ),
+		linear-gradient( to bottom,
+			@slider_glaze_top,
+			@slider_glaze_mid-a 49%,
+			@slider_glaze_mid-b 49%,
+			@slider_glaze_bot ),
+		repeating-linear-gradient(135deg,
+			alpha(@slider_pattern, 0.0),
+			alpha(@slider_pattern, 0.0) 12px,
+			@slider_pattern 12px,
+			@slider_pattern 24px);
+}
+
+progressbar.horizontal progress.right {
+	margin: -1px -1px -1px 0;
 }

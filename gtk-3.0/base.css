@@ -17,6 +17,8 @@
 
 	-GtkWindow-resize-grip-width: 11;
 	-GtkWindow-resize-grip-height: 11;
+
+	-GtkNotebook-scrollable: true;
 }
 
 view,

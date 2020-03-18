@@ -1,5 +1,24 @@
 
-/* --- separators --- */
+/* --- arrow --- */
+
+arrow.top {
+	-gtk-icon-source: -gtk-recolor(url("img/go-top-symbolic.svg"));
+}
+
+arrow.right {
+	-gtk-icon-source: -gtk-recolor(url("img/go-right-symbolic.svg"));
+}
+
+combobox button arrow,
+arrow.bottom {
+	-gtk-icon-source: -gtk-recolor(url("img/go-down-symbolic.svg"));
+}
+
+arrow.left {
+	-gtk-icon-source: -gtk-recolor(url("img/go-left-symbolic.svg"));
+}
+
+/* --- separator --- */
 
 separator.vertical {
 	border-left: 1px solid @content_separator_dark;
@@ -22,14 +41,14 @@ frame > border {
 	border-radius: 2px;
 }
 
-/* --- notebook and tabs --- */
+/* --- notebook --- */
 
-notebook.frame {
+notebook {
 	margin: 2px 0 1px;
 	background: @nb_bg;
 }
 
-notebook.frame stack {
+notebook stack {
 	border: 1px solid @nb_border;
 	border-radius: 2px;
 }
@@ -137,6 +156,14 @@ notebook:focus header tab:checked label {
 	background: @nb_tab_focus_bg;
 }
 
+notebook header tabs arrow.down:first-child {
+	-gtk-icon-transform: rotate(180deg);
+}
+
+notebook header tabs arrow.up:last-child {
+	-gtk-icon-transform: rotate(180deg);
+}
+
 /* --- open/print dialog --- */
 
 filechooser,
@@ -177,8 +204,8 @@ paned + box > statusbar { /* geany 1.36 */
 	margin: -7px -10px -6px;
 }
 
-box + statusbar {
-	margin: -7px -10px -4px; /* -6px? */
+box + statusbar { /* -6px? */
+	margin: -7px -10px -4px;
 }
 
 statusbar {
