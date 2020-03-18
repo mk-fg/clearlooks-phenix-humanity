@@ -2,7 +2,7 @@
 /* --- arrow --- */
 
 arrow.top {
-	-gtk-icon-source: -gtk-recolor(url("img/go-top-symbolic.svg"));
+	-gtk-icon-source: -gtk-recolor(url("img/go-up-symbolic.svg"));
 }
 
 arrow.right {

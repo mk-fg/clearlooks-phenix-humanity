@@ -70,9 +70,24 @@
 
 /* --- color derivation for scrollbar (scrollbar.css) --- */
 
-/* #EAE3DC */ @define-color scroll_bg shade(@theme_bg, 1.023);
+/* #EAE3DC */ @define-color scroll_bg shade(@theme_bg, 1.025);
 /* #C5B5A6 */ @define-color scroll_border shade(@theme_bg, 0.82);
-/* #9E8E80 */ @define-color scroll_slider_border shade(@theme_bg, 0.6315);           /* #9E8B79 @todo */
+/* #9E8E80 */ @define-color scroll_slider_border shade(@theme_bg, 0.631);           /* #9E8B79 @todo */
+@define-color scroll_glaze_glow shade(@theme_bg, 1.1);
+@define-color scroll_glaze_glow_center alpha(@scroll_glaze_glow, 0.15);
+@define-color scroll_glaze_glow_edge alpha(@scroll_glaze_glow, 0);
+/* #C7B7A9 */ @define-color scroll_glaze_top shade(@theme_bg, 0.828);
+/* #CBBCAE */ @define-color scroll_glaze_mid-a shade(@theme_bg, 0.87);
+/* #BDAD9D */ @define-color scroll_glaze_mid-b shade(@theme_bg, 0.783);              /* #BDAC9D okay */
+/* #B9A798 */ @define-color scroll_glaze_bot shade(@theme_bg, 0.759);
+/* #CDBFB2 */ @define-color scroll_hover_glaze_top shade(@theme_bg, 0.863);
+/* #D0C3B7 */ @define-color scroll_hover_glaze_mid-a shade(@theme_bg, 0.887);        /* #D1C3B7 okay */
+/* #C3B3A5 */ @define-color scroll_hover_glaze_mid-b shade(@theme_bg, 0.816);
+/* #BFAE9F */ @define-color scroll_hover_glaze_bot shade(@theme_bg, 0.79);
+
+
+
+
 
 
 @define-color button_focus_fill alpha(shade(@theme_selected_bg, 1.6), 0.15);
@@ -142,17 +157,6 @@
 @define-color scale_hover_glaze_mid-a shade(@theme_bg, 1.05);
 @define-color scale_hover_glaze_mid-b shade(@theme_bg, 0.97);
 @define-color scale_hover_glaze_top shade(@theme_bg, 1.07);
-@define-color scroll_glaze_bot shade(@theme_bg, 0.76);
-@define-color scroll_glaze_glow shade(@theme_bg, 1.1);
-@define-color scroll_glaze_glow_center alpha(@scroll_glaze_glow, 0.15);
-@define-color scroll_glaze_glow_edge alpha(@scroll_glaze_glow, 0);
-@define-color scroll_glaze_mid-a shade(@theme_bg, 0.87);
-@define-color scroll_glaze_mid-b shade(@theme_bg, 0.81);
-@define-color scroll_glaze_top shade(@theme_bg, 0.86);
-@define-color scroll_hover_glaze_bot shade(@theme_bg, 0.80);
-@define-color scroll_hover_glaze_mid-a shade(@theme_bg, 0.92);
-@define-color scroll_hover_glaze_mid-b shade(@theme_bg, 0.86);
-@define-color scroll_hover_glaze_top shade(@theme_bg, 0.90);
 @define-color slider_glaze_bot alpha(shade(@slider_base, 0.80), 0.8);
 @define-color slider_glaze_glow shade(@theme_bg, 1.1);
 @define-color slider_glaze_glow_center alpha(@button_glaze_glow, 0.2);
