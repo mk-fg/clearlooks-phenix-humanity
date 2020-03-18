@@ -94,11 +94,13 @@ scrollbar.vertical button {
 
 /* --- scrollbar position for border --- */
 
-notebook scrolledwindow {
+notebook scrolledwindow,
+scrolledwindow.frame {
 	border: 1px solid @nb_border;
 }
 
-notebook scrollbar.vertical {
+notebook scrollbar.vertical,
+scrolledwindow.frame scrollbar.vertical {
 	margin: -1px -1px -22px -3px;
 	padding: 0 0 21px 3px;
 	border: 0;
@@ -106,7 +108,8 @@ notebook scrollbar.vertical {
 	background: @nb_bg;
 }
 
-notebook scrollbar.horizontal {
+notebook scrollbar.horizontal,
+scrolledwindow.frame scrollbar.horizontal {
 	margin: -3px -22px -1px -1px;
 	padding: 3px 21px 0 0;
 	border: 0;
@@ -117,4 +120,8 @@ notebook scrollbar.horizontal {
 notebook scrollbar.horizontal:not(:last-child) {
 	margin: -3px -1px -1px -1px;
 	padding: 3px 0 0 0;
+}
+
+treeview + scrollbar + scrollbar {
+	margin-top: -26px;
 }
