@@ -44,7 +44,7 @@ frame > border {
 /* --- notebook --- */
 
 notebook {
-	margin: 1px 0;
+	margin: 1px 0 0;
 	background: @nb_bg;
 }
 
@@ -156,12 +156,88 @@ notebook:focus header tab:checked label {
 	background: @nb_tab_focus_bg;
 }
 
-notebook header tabs arrow.down:first-child {
-	-gtk-icon-transform: rotate(180deg);
+/* --- notebook top arrows --- */
+
+notebook header.top tabs arrow.up:first-child,
+notebook header.top tabs arrow.down:first-child {
+	margin: 1px 2px 0 0;
+	padding: 2px 2px 2px 0;
+	-gtk-icon-transform: scale(0.8);
 }
 
-notebook header tabs arrow.up:last-child {
-	-gtk-icon-transform: rotate(180deg);
+notebook header.top tabs arrow.down:last-child,
+notebook header.top tabs arrow.up:last-child {
+	margin: 1px 0 0 2px;
+	padding: 2px 0 2px 2px;
+	-gtk-icon-transform: scale(0.8);
+}
+
+/* --- notebook bottom arrows --- */
+
+notebook header.bottom tabs arrow.up:first-child,
+notebook header.bottom tabs arrow.down:first-child {
+	margin: 0 2px 1px 0;
+	padding: 2px 2px 2px 0;
+	-gtk-icon-transform: scale(0.8);
+}
+
+notebook header.bottom tabs arrow.down:last-child,
+notebook header.bottom tabs arrow.up:last-child {
+	margin: 0 0 1px 2px;
+	padding: 2px 0 2px 2px;
+	-gtk-icon-transform: scale(0.8);
+}
+
+/* --- notebook left arrows --- */
+
+notebook header.left tabs arrow.up:first-child {
+	margin: 0 0 2px 1px;
+	padding: 0 2px 2px;
+	-gtk-icon-transform: scale(0.8);
+}
+
+notebook header.left tabs arrow.down:first-child {
+	margin: 0 0 2px 1px;
+	padding: 0 2px 2px;
+	-gtk-icon-transform: rotate(180deg) scale(0.8);
+}
+
+notebook header.left tabs arrow.up:last-child {
+	margin: 2px 0 0 1px;
+	padding: 2px 2px 0;
+	-gtk-icon-transform: rotate(180deg) scale(0.8);
+}
+
+notebook header.left tabs arrow.down:last-child {
+	margin: 2px 0 0 1px;
+	padding: 2px 2px 0;
+	-gtk-icon-transform: scale(0.8);
+}
+
+/* --- notebook right arrows --- */
+
+notebook header.right tabs arrow.up:first-child {
+	margin: 0 1px 2px 0;
+	padding: 0 2px 2px;
+	-gtk-icon-transform: scale(0.8);
+}
+
+notebook header.right tabs arrow.down:first-child {
+	margin: 0 1px 2px 0;
+	padding: 0 2px 2px;
+	-gtk-icon-transform: rotate(180deg) scale(0.8);
+}
+
+notebook header.right tabs arrow.up:last-child {
+	margin: 2px 1px 0 0;
+	padding: 2px 2px 0;
+	-gtk-icon-transform: rotate(180deg) scale(0.8);
+}
+
+notebook header.right tabs arrow.down:last-child {
+	margin: 2px 1px 0 0;
+	padding: 2px 2px 0;
+	-gtk-icon-transform: scale(0.8);
 }
 
 /* --- open/print dialog --- */
