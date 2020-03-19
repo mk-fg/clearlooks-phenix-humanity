@@ -299,10 +299,6 @@ button:disabled:focus {
 
 button.flat:active,
 button.flat:active:hover,
-button.flat.toggle,
-button.flat.toggle:active:hover,
-toolbar.primary-toolbar button.toggle,
-toolbar.primary-toolbar button.toggle:active:hover,
 toolbar.primary-toolbar button:active,
 toolbar.primary-toolbar button:active:hover,
 button:checked {
@@ -357,8 +353,6 @@ button:active:hover {
 			@button_active_glaze_bot );
 }
 
-button.flat.toggle:hover,
-toolbar.primary-toolbar button.toggle:hover,
 button:checked:hover {
 	background:
 		radial-gradient(
@@ -438,12 +432,8 @@ toolbar.primary-toolbar button:focus:hover {
 
 button.flat:focus:active,
 button.flat:focus:active:hover,
-button.flat.toggle:focus,
-button.flat.toggle:focus:active:hover,
 toolbar.primary-toolbar button:focus:active,
-toolbar.primary-toolbar button:focus:active:hover,
-toolbar.primary-toolbar button.toggle:focus,
-toolbar.primary-toolbar button.toggle:focus:active:hover {
+toolbar.primary-toolbar button:focus:active:hover {
 	background:
 		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
 			linear-gradient(to bottom, @button_focus_fill, @button_focus_fill),
@@ -466,30 +456,4 @@ toolbar.primary-toolbar button.toggle:focus:active:hover {
 			@button_active_glaze_mid-a 49%,
 			@button_active_glaze_mid-b 49%,
 			@button_active_glaze_bot );
-}
-
-button.flat.toggle:focus:hover,
-toolbar.primary-toolbar button.toggle:focus:hover {
-	background:
-		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
-			linear-gradient(to bottom, @button_focus_fill, @button_focus_fill),
-		radial-gradient(
-			circle farthest-side,
-			@button_hover_glaze_glow_center,
-			@button_hover_glaze_glow_edge ),
-		linear-gradient(to right,
-			alpha(@button_active_glaze_shadow_edge, 0.3),
-			alpha(@button_active_glaze_shadow, 0.3) 3px,
-			alpha(@button_active_glaze_shadow, 0) 5px,
-			@null 5px, @null ),
-		linear-gradient(to bottom,
-			alpha(@button_active_glaze_shadow_edge, 0.3),
-			alpha(@button_active_glaze_shadow, 0.3) 3px,
-			alpha(@button_active_glaze_shadow, 0) 5px,
-			@null 5px, @null ),
-		linear-gradient(to bottom,
-			@button_hover_glaze_top,
-			@button_hover_glaze_mid-a 49%,
-			@button_hover_glaze_mid-b 49%,
-			@button_hover_glaze_bot );
 }
