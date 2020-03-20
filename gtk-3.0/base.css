@@ -13,7 +13,7 @@
 	-GtkHTML-link-color: @link;
 	-WnckTasklist-fade-overlay-rect: 0;
 
-	/* -gtk-icon-style: regular; disable symbolic icons */
+	-gtk-icon-style: regular;
 }
 
 view,
