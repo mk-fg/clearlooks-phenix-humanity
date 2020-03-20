@@ -25,6 +25,7 @@ This theme works with GTK 2.24+ (*gtk2-engines-murrine* is required) and GTK 3.2
 
 * For classic menu bar and menu items of [Firefox 74](https://www.mozilla.org/firefox) and [Thunderbird 68](https://www.mozilla.org/thunderbird), see [bug 1622545](https://bugzilla.mozilla.org/show_bug.cgi?id=1622545).
 * The [status bar grip](https://developer.gnome.org/gtk2/stable/GtkStatusbar.html) was removed with GTK 3 ([note1](https://developer.gnome.org/gtk3/stable/ch26s02.html#id-1.6.3.4.17), [note2](https://developer.gnome.org/gtk3/stable/GtkWindow.html#gtk-window-set-has-resize-grip)).
+* The tabs mouse scroll was removed with GTK 3 (note), see [feature 2455 for Geany](https://github.com/geany/geany/issues/2455), see [feature 896 for Caja](https://github.com/mate-desktop/caja/issues/896)...
 
 ## Dev
 
