@@ -13,12 +13,7 @@
 	-GtkHTML-link-color: @link;
 	-WnckTasklist-fade-overlay-rect: 0;
 
-	-gtk-icon-style: regular; /* disable symbolic icons */
-
-	-GtkWindow-resize-grip-width: 11;
-	-GtkWindow-resize-grip-height: 11;
-
-	-GtkNotebook-scrollable: true;
+	/* -gtk-icon-style: regular; disable symbolic icons */
 }
 
 view,
