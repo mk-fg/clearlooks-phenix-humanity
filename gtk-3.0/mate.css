@@ -27,6 +27,10 @@ PanelToplevel.background {
 	border-radius: 0;
 }
 
+.mate-panel-menu-bar menubar > menuitem separator {
+	margin: 4px 6px;
+}
+
 /* --- system-monitor-applet --- */
 
 .multiload-applet box.horizontal {
