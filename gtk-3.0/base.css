@@ -50,14 +50,19 @@ selection {
 	text-shadow: 0.5px 1px @insensitive_text_shadow;
 }
 
+paper {
+	border: 1px solid black;
+	background: white;
+}
+
 /* --- tooltip --- */
 
 tooltip,
 tooltip.background,
 .tooltip,
 .tooltip.background {
-	border: 1px solid @theme_tooltip_border;
 	color: @theme_tooltip_fg;
+	border: 1px solid @theme_tooltip_border;
 	background: @theme_tooltip_bg;
 }
 
