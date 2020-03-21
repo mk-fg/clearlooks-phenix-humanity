@@ -94,7 +94,6 @@ scrollbar.vertical button {
 
 /* --- scrollbar position --- */
 
-scrolledwindow viewport,
 scrolledwindow.frame {
 	border: 1px solid transparent;
 }
@@ -110,12 +109,12 @@ scrolledwindow scrollbar.horizontal {
 }
 
 notebook scrolledwindow.frame {
-	border: 1px solid transparent;
+	border: 1px solid @menu_border;
 }
 
 notebook scrollbar.vertical {
-	margin: -1px -1px -1px -3px;
-	padding: 0 0 0 3px;
+	margin: -1px -1px -30px -3px;
+	padding: 0 0 29px 3px;
 	border-left: 1px solid @menu_border;
 	background: @nb_bg;
 }
@@ -125,4 +124,20 @@ notebook scrollbar.horizontal {
 	padding: 3px 0 0 0;
 	border-top: 1px solid @menu_border;
 	background: @nb_bg;
+}
+
+scrolledwindow viewport {
+	border: 1px solid @menu_border;
+}
+
+scrolledwindow viewport ~ scrollbar.vertical {
+	margin: 0 0 -30px -3px;
+	padding: 0 0 30px 3px;
+	border-left: 0;
+}
+
+scrolledwindow viewport ~ scrollbar.horizontal {
+	margin: -3px 0 0 0;
+	padding: 3px 0 0 0;
+	border-top: 0;
 }
