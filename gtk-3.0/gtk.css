@@ -23,7 +23,7 @@
 /* #BCAB9B */ @define-color frame_border shade(@theme_bg, 0.775);
 /* #EEE8E2 */ @define-color nb_bg shade(@theme_bg, 1.047);
 /* #B4A191 */ @define-color nb_border shade(@theme_bg, 0.733);
-/* #C4B3A5 */ @define-color nb_tab_border shade(@theme_bg, 0.814);
+/* #C4B3A5 */ @define-color nb_tab_border shade(@theme_bg, 0.814);                   /* !yes */
 /* #E2D8CF */ @define-color nb_tab_glaze_top shade(@theme_bg, 0.979);
 /* #E2D8D0 */ @define-color nb_tab_glaze_mid-a shade(@theme_bg, 0.98);
 /* #DACEC3 */ @define-color nb_tab_glaze_mid-b shade(@theme_bg, 0.933);
@@ -39,6 +39,9 @@
 
 /* #EFE9E3 */ @define-color menu_bg mix(@theme_base, @theme_bg, 0.67);
 /* #B4A291 */ @define-color menu_border shade(@theme_bg, 0.734);
+/* #EFE9E3 */ @define-color menu_bg_arrow @menu_bg;
+/* #E6DDD5 */ @define-color menu_bg_disabled_arrow @theme_bg;
+/* #C4B3A5 */ @define-color menu_border_arrow shade(@theme_bg, 0.813);               /* !yes */
 /* #D5C9BE */ @define-color menu_separator_dark alpha(shade(@theme_bg, 0.77), 0.5);  /* #D5C9BF okay */
 /* #F7F4F1 */ @define-color menu_separator_lite alpha(shade(@theme_bg, 1.27), 0.5);
 /* #E6DDD5 */ @define-color menubar_grad_top @theme_bg;
@@ -90,7 +93,6 @@
 
 @define-color button_focus_fill alpha(shade(@theme_selected_bg, 1.6), 0.15);
 @define-color button_focus_fill_active alpha(shade(@theme_selected_bg, 1.5), 0.2);
-@define-color menu_border_arrow #c4b3a5;
 @define-color frame_shadow_dark shade(@theme_bg, 0.96);
 @define-color frame_shadow_lite shade(@theme_bg, 1.04);
 @define-color menuitem_hover @theme_selected_fg;

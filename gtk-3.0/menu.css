@@ -132,16 +132,6 @@ menuitem separator {
 	border-bottom: 1px solid @menu_separator_lite;
 }
 
-menuitem arrow {
-	min-height: 16px;
-	min-width: 16px;
-}
-
-menuitem arrow.top,
-menuitem arrow.bottom {
-	border: 1px solid @menu_border_arrow;
-}
-
 menuitem:hover > label > accelerator,
 menuitem:hover > arrow {
 	color: @theme_selected_fg;
@@ -154,6 +144,30 @@ menuitem:disabled * {
 
 menuitem:disabled image {
 	opacity: 0.3;
+}
+
+/* --- menuitem arrow elements --- */
+
+menuitem arrow {
+	min-width: 16px;
+	min-height: 16px;
+}
+
+menuitem arrow.top,
+menuitem arrow.bottom {
+	min-width: 14px;
+	min-height: 14px;
+	border: 1px solid @menu_border_arrow;
+	background: @menu_bg_arrow;
+}
+
+menuitem arrow.bottom {
+	margin: 6px 0 -6px;
+}
+
+menuitem arrow.top:disabled,
+menuitem arrow.bottom:disabled {
+	background: @menu_bg_disabled_arrow;
 }
 
 /* --- menuitem checkbox and radio elements --- */
