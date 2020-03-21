@@ -92,59 +92,37 @@ scrollbar.vertical button {
 	-gtk-icon-transform: rotate(90deg);
 }
 
-/* --- scrollbar position for border --- */
+/* --- scrollbar position --- */
 
-notebook scrolledwindow.frame,
+scrolledwindow viewport,
 scrolledwindow.frame {
-	border: 1px solid @nb_border;
-}
-
-notebook scrollbar {
-	background: @nb_bg;
-}
-
-scrolledwindow.frame scrollbar {
-	background: @theme_bg;
-}
-
-notebook scrolledwindow.frame scrollbar {
-	background: @nb_bg;
+	border: 1px solid transparent;
 }
 
 scrolledwindow scrollbar.vertical {
-	margin: 0 0 -30px -3px;
-	padding: 0 0 29px 3px;
-	border: 0;
-}
-
-notebook scrollbar.vertical,
-scrolledwindow.frame scrollbar.vertical {
-	margin: -1px -1px -30px -3px;
-	padding: 0 0 29px 3px;
-	border: 0;
-	border-left: 1px solid @nb_border;
-}
-
-scrolledwindow treeview + scrollbar.horizontal + scrollbar.vertical {
-	margin: -29px -1px -30px -3px;
-	padding: 1px 0 29px 3px;
+	margin: -1px -1px -1px -3px;
+	padding: 0 0 0 3px;
 }
 
 scrolledwindow scrollbar.horizontal {
-	margin: -3px -30px 0 0;
-	padding: 3px 29px 0 0;
-	border: 0;
-}
-
-notebook scrollbar.horizontal,
-scrolledwindow.frame scrollbar.horizontal {
-	margin: -3px -30px -1px -1px;
-	padding: 3px 29px 0 0;
-	border: 0;
-	border-top: 1px solid @nb_border;
-}
-
-scrolledwindow.frame treeview + scrollbar.horizontal {
 	margin: -3px -1px -1px -1px;
 	padding: 3px 0 0 0;
+}
+
+notebook scrolledwindow.frame {
+	border: 1px solid transparent;
+}
+
+notebook scrollbar.vertical {
+	margin: -1px -1px -1px -3px;
+	padding: 0 0 0 3px;
+	border-left: 1px solid @menu_border;
+	background: @nb_bg;
+}
+
+notebook scrollbar.horizontal {
+	margin: -3px -1px -1px -1px;
+	padding: 3px 0 0 0;
+	border-top: 1px solid @menu_border;
+	background: @nb_bg;
 }
