@@ -30,6 +30,14 @@ separator.horizontal {
 	border-bottom: 1px solid @content_separator_lite;
 }
 
+paned.vertical separator {
+
+}
+
+paned.horizontal separator {
+
+}
+
 /* -- frame -- */
 
 frame > label {
@@ -44,7 +52,7 @@ frame > border {
 /* --- notebook --- */
 
 notebook {
-	margin: 1px 0 0;
+	margin: 1px 0;
 	background: @nb_bg;
 }
 
@@ -115,8 +123,8 @@ notebook header.left tab {
 	border-right-color: @nb_border;
 	border-radius: 3px 0 0 3px;
 	background: linear-gradient(to right, @nb_tab_glaze_top,
-		@nb_tab_glaze_mid-a 51%,
-		@nb_tab_glaze_mid-b 51%,
+		@nb_tab_glaze_mid-a 50%,
+		@nb_tab_glaze_mid-b 50%,
 		@nb_tab_glaze_bot);
 }
 
@@ -125,8 +133,8 @@ notebook header.left tab:checked {
 	border-color: @nb_border;
 	border-right: 0;
 	background: linear-gradient(to right, @nb_tab_checked_glaze_top,
-		@nb_tab_checked_glaze_mid-a 51%,
-		@nb_tab_checked_glaze_mid-b 51%,
+		@nb_tab_checked_glaze_mid-a 50%,
+		@nb_tab_checked_glaze_mid-b 50%,
 		@nb_tab_checked_glaze_bot);
 }
 
@@ -136,8 +144,8 @@ notebook header.right tab {
 	border-left-color: @nb_border;
 	border-radius: 0 3px 3px 0;
 	background: linear-gradient(to left, @nb_tab_glaze_top,
-		@nb_tab_glaze_mid-a 51%,
-		@nb_tab_glaze_mid-b 51%,
+		@nb_tab_glaze_mid-a 50%,
+		@nb_tab_glaze_mid-b 50%,
 		@nb_tab_glaze_bot);
 }
 
@@ -146,8 +154,8 @@ notebook header.right tab:checked {
 	border-color: @nb_border;
 	border-left: 0;
 	background: linear-gradient(to left, @nb_tab_checked_glaze_top,
-		@nb_tab_checked_glaze_mid-a 51%,
-		@nb_tab_checked_glaze_mid-b 51%,
+		@nb_tab_checked_glaze_mid-a 50%,
+		@nb_tab_checked_glaze_mid-b 50%,
 		@nb_tab_checked_glaze_bot);
 }
 
@@ -252,6 +260,14 @@ printdialog box.view {
 	background: @theme_bg;
 }
 
+printdialog buttonbox {
+	margin: 10px 0 -11px;
+}
+
+printdialog scrolledwindow viewport {
+	border: 0;
+}
+
 /* --- calendar --- */
 calendar {
 	border: 1px solid @frame_border;
@@ -286,14 +302,13 @@ box + statusbar { /* -6px? */
 
 statusbar {
 	margin: 0 -10px;
-	padding: 0 2px;
 	border: 0;
 	border-top: 1px solid @toolbar_border_bot;
 }
 
 statusbar frame {
 	margin: 0;
-	padding: 0;
+	padding: 0 2px;
 	border: 0;
 	border-top: 1px solid @toolbar_border_top;
 	background: @theme_bg;

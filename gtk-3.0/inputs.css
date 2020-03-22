@@ -20,6 +20,14 @@ entry:focus {
 	border-color: @entry_border_focus;
 }
 
+entry image.left {
+	margin-right: 5px;
+}
+
+entry image.right {
+	margin-left: 5px;
+}
+
 /* --- combobox (text entry with drop down) --- */
 
 combobox entry {
