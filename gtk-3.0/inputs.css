@@ -103,7 +103,15 @@ checkbutton:hover:focus label, radiobutton:hover:focus label {
 /* --- switch (gtk3 yes/no|on/off) --- */
 
 switch {
+	margin: 1px;
+	padding: 1px;
+	color: @theme_text;
+	border: 1px solid @entry_border;
 	border-radius: 3px;
+}
+
+switch slider {
+	background: rgba(0,0,0,0.5);
 }
 
 /* --- checkbox --- */
