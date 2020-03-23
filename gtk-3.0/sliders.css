@@ -194,7 +194,6 @@ progressbar.vertical progress.bottom {
 	margin: 0 -1px -1px -1px;
 }
 
-row progressbar progress,
 treeview.view.progressbar,
 progressbar.horizontal progress {
 	margin: -1px 0 -1px -1px;
