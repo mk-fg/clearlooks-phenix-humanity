@@ -21,6 +21,7 @@ arrow.left {
 /* --- separator --- */
 
 separator.vertical {
+	margin-bottom: 1px;
 	border-left: 1px solid @content_separator_dark;
 	border-right: 1px solid @content_separator_lite;
 }
@@ -268,6 +269,16 @@ printdialog buttonbox {
 
 printdialog scrolledwindow viewport {
 	border: 0;
+}
+
+/* --- open/save dialog --- */
+
+viewport.frame row {
+	padding: 3px 2px;
+}
+
+viewport.frame image {
+	padding-right: 4px;
 }
 
 /* --- calendar --- */

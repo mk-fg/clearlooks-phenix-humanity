@@ -70,11 +70,14 @@ spinbutton {
 
 spinbutton entry {
 	margin: 0;
+	padding-right: 5px;
+	border-radius: 3px 0 0 3px;
 }
 
 spinbutton button {
-	margin: 0;
-	padding: 0;
+	margin: 0 0 0 -1px;
+	padding: 3px 4px;
+	border-radius: 0;
 }
 
 /* --- colorswatch --- */
