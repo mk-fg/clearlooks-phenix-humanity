@@ -9,12 +9,14 @@ treeview, list {
 treeview {
 	color: @theme_text;
 	background-color: @theme_base;
-	-GtkTreeView-vertical-separator: 0;
-	-GtkTreeView-expander-size: 13;
-	-GtkTreeView-grid-line-width: 0;
-	-GtkTreeView-grid-line-pattern: '';
-	-GtkTreeView-tree-line-width: 0;
-	-GtkTreeView-tree-line-pattern: '';
+}
+
+treeview row:nth-child(even) {
+	background: orange;
+}
+
+treeview row:nth-child(odd) {
+	background: red;
 }
 
 /* --- column headers --- */
@@ -24,14 +26,4 @@ treeview header button {
 	padding: 4px 3px;
 	border: 1px solid transparent;
 	border-radius: 0;
-}
-
-/* --- --- */
-
-viewport.frame row {
-	padding: 3px 2px;
-}
-
-viewport.frame image {
-	padding-right: 4px;
 }
