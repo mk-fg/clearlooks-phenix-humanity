@@ -135,7 +135,7 @@ scale.horizontal slider:hover {
 /* --- progressbar --- */
 
 progressbar.vertical {
-	margin: 5px 0;
+	margin: 0 0 -2px 0; /* @todo c'est faux, mais ça permet d'avoir la même largeur entre awf2 et awf3 */
 }
 
 progressbar.horizontal {
