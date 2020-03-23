@@ -86,6 +86,7 @@ scrollbar button:hover {
 	min-height: 6px;
 	border-color: transparent;
 	background: transparent;
+	box-shadow: none;
 }
 
 scrollbar.vertical button {
