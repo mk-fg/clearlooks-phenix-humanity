@@ -8,12 +8,22 @@ entry {
 	border: 1px solid @entry_border;
 	border-radius: 3px;
 	background: @entry_bg;
+	box-shadow:
+		-1px -1px alpha(@entry_border, 0.09),
+		 1px  1px alpha(@entry_bg, 0.42),
+		inset 1px 1px alpha(@entry_border, 0.16);
+	/* #DED4CA (#DED4CB okay) / #F0EBE7 / #ECEAE7 */
 }
 
 entry:disabled {
 	text-shadow: none;
 	border-color: @entry_border_disabled;
 	background: @entry_bg_disabled;
+	box-shadow:
+		-1px -1px alpha(@entry_border, 0.09),
+		 1px  1px alpha(@entry_bg, 0.42),
+		inset 1px 1px alpha(@entry_border_disabled,0.07);
+	/* #DED4CA (#DED4CB okay) / #F0EBE7 / #E3DAD1 */
 }
 
 entry:focus {
@@ -35,7 +45,7 @@ combobox entry {
 }
 
 combobox button {
-	padding: 4px;
+	padding: 4px 4px 4px 5px;
 }
 
 combobox button arrow {
@@ -106,11 +116,12 @@ switch {
 	margin: 1px;
 	padding: 1px;
 	color: @theme_text;
-	border: 1px solid @entry_border;
+	border: 1px solid @button_border;
 	border-radius: 3px;
 }
 
 switch slider {
+	padding-bottom: 1px;
 	background: rgba(0,0,0,0.5);
 }
 
@@ -219,15 +230,26 @@ button {
 	color: @theme_fg;
 	border: 1px solid @button_border;
 	border-radius: 3px;
+	box-shadow:
+		-1px -1px alpha(@button_border, 0.13),
+		 1px  1px alpha(@button_border, 0.13),
+		inset 1px 1px alpha(@button_border, 0.14);
+	/* #DED5CC / #DED5CC / #E8E0DA (#E8E2DE) */
 }
 
 button:disabled {
 	border-color: @button_border_disabled;
+	box-shadow:
+		-1px -1px alpha(@button_border_disabled, 0.31),
+		 1px  1px alpha(@button_border_disabled, 0.31),
+		inset 1px 1px alpha(@button_border_disabled, 0.08);
+	/* #DED4CA / #DED4CA / #E5DCD3 (#E5DCD4 okay) */
 }
 
 button.flat {
 	border-color: transparent;
 	background: transparent;
+	box-shadow: none;
 }
 
 button.flat:disabled {
