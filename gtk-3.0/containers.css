@@ -54,6 +54,9 @@ frame > border {
 
 /* --- notebook --- */
 
+
+
+
 notebook {
 	margin: 1px 0;
 	background: @nb_bg;
@@ -62,6 +65,10 @@ notebook {
 notebook stack {
 	border: 1px solid @nb_border;
 	border-radius: 2px;
+	box-shadow:
+		inset -1px -1px alpha(@nb_border, 0.125 ),
+		inset 1px  1px alpha(@entry_bg, 0.42);
+	/* #F5F2EE / #E7DFD7 (#E7DFD8 okay)  */
 }
 
 notebook header {
