@@ -50,12 +50,13 @@ frame > label {
 frame > border {
 	border: 1px solid @frame_border;
 	border-radius: 2px;
+	box-shadow:
+		inset -1px -1px alpha(@entry_bg, 0.27),
+		inset 1px 1px alpha(@frame_border, 0.17);
+	/* #EDE6E0 / #DFD4CA (#DFD4CB okay) */
 }
 
 /* --- notebook --- */
-
-
-
 
 notebook {
 	margin: 1px 0;
@@ -66,9 +67,9 @@ notebook stack {
 	border: 1px solid @nb_border;
 	border-radius: 2px;
 	box-shadow:
-		inset -1px -1px alpha(@nb_border, 0.125 ),
-		inset 1px  1px alpha(@entry_bg, 0.42);
-	/* #F5F2EE / #E7DFD7 (#E7DFD8 okay)  */
+		inset -1px -1px alpha(@nb_border, 0.125),
+		inset 1px 1px alpha(@entry_bg, 0.42);
+	/* #E7DFD7 (#E7DFD8 okay) / #F5F2EE */
 }
 
 notebook header {
@@ -107,6 +108,10 @@ notebook header.top tab:checked {
 		@nb_tab_checked_glaze_bot);
 }
 
+notebook header.top tab:checked label {
+	box-shadow: -2px 3px @nb_bg, 2px 3px @nb_bg;
+}
+
 notebook header.bottom tab {
 	margin: -2px -1px 0 -1px;
 	border-top-color: @nb_border;
@@ -125,6 +130,10 @@ notebook header.bottom tab:checked {
 		@nb_tab_checked_glaze_mid-a 51%,
 		@nb_tab_checked_glaze_mid-b 51%,
 		@nb_tab_checked_glaze_bot);
+}
+
+notebook header.bottom tab:checked label {
+	box-shadow: -2px -3px @nb_bg, 2px -3px @nb_bg;
 }
 
 notebook header.left tab {
@@ -148,6 +157,10 @@ notebook header.left tab:checked {
 		@nb_tab_checked_glaze_bot);
 }
 
+notebook header.left tab:checked label {
+	box-shadow: 2px -3px @nb_bg, 2px 3px @nb_bg;
+}
+
 notebook header.right tab {
 	margin: -1px 0 -1px -2px;
 	padding: 3px 1px;
@@ -167,6 +180,10 @@ notebook header.right tab:checked {
 		@nb_tab_checked_glaze_mid-a 50%,
 		@nb_tab_checked_glaze_mid-b 50%,
 		@nb_tab_checked_glaze_bot);
+}
+
+notebook header.right tab:checked label {
+	box-shadow: -2px -3px @nb_bg, -2px 3px @nb_bg;
 }
 
 notebook:focus header tab:checked label {
@@ -289,6 +306,7 @@ viewport.frame image {
 }
 
 /* --- calendar --- */
+
 calendar {
 	border: 1px solid @frame_border;
 }
@@ -338,6 +356,8 @@ statusbar frame border {
 	margin: 0;
 	padding: 0;
 	border: 0;
+	border-radius: 0;
+	box-shadow: none;
 }
 
 statusbar frame border + box {

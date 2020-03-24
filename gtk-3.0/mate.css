@@ -67,3 +67,9 @@ PanelToplevel.background {
 #MatePanelPopupWindow frame > box > box > box > widget { /* the map border color */
 	color: @frame_border;
 }
+
+/* --- virtual desktop selector --- */
+
+.wnck-applet {
+
+}

@@ -32,7 +32,7 @@ menubar {
 menubar menuitem {
 	padding: 2px 7px 2px 8px;
 	text-shadow: none; /* libreoffice 6.4.1 */
-	color: @theme_fg;  /* libreoffice 6.4.1 */
+	color: @theme_fg; /* libreoffice 6.4.1 */
 	border: 1px solid transparent;
 }
 
@@ -44,12 +44,12 @@ menubar menuitem:hover {
 	background:
 		radial-gradient( ellipse 110% 50%,
 			@menuitem_hover_glaze_glow_center,
-			@menuitem_hover_glaze_glow_edge ),
+			@menuitem_hover_glaze_glow_edge),
 		linear-gradient( to bottom,
 			@menuitem_hover_glaze_top,
 			@menuitem_hover_glaze_mid-a 50%,
 			@menuitem_hover_glaze_mid-b 50%,
-			@menuitem_hover_glaze_bot );
+			@menuitem_hover_glaze_bot);
 }
 
 /* --- popover and menu window --- */
@@ -84,12 +84,12 @@ menu menuitem:hover {
 	background:
 		radial-gradient( ellipse 110% 50%,
 			@menuitem_hover_glaze_glow_center,
-			@menuitem_hover_glaze_glow_edge ),
+			@menuitem_hover_glaze_glow_edge),
 		linear-gradient( to bottom,
 			@menuitem_hover_glaze_top,
 			@menuitem_hover_glaze_mid-a 50%,
 			@menuitem_hover_glaze_mid-b 50%,
-			@menuitem_hover_glaze_bot );
+			@menuitem_hover_glaze_bot);
 }
 
 /* --- popover emoji window --- */

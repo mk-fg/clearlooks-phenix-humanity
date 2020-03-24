@@ -15,7 +15,7 @@
 @define-color visited_link shade(@link, 0.2);
 @define-color error #CC0000;
 @define-color insensitive_text_shadow alpha(@theme_base, 0.5);
-@define-color insensitive_fg shade(@theme_bg, 0.62);
+/* #A28F7E */ @define-color insensitive_fg shade(@theme_bg, 0.65);
 
 /* --- color derivation for frame/notebook/tabs (containers.css) --- */
 
@@ -24,12 +24,12 @@
 /* #BCAB9B */ @define-color frame_border shade(@theme_bg, 0.775);
 /* #EEE8E2 */ @define-color nb_bg shade(@theme_bg, 1.047);
 /* #B4A191 */ @define-color nb_border shade(@theme_bg, 0.733);
-/* #C4B3A5 */ @define-color nb_tab_border shade(@theme_bg, 0.814);                   /* !yes */
+/* #C4B3A5 */ @define-color nb_tab_border shade(@theme_bg, 0.814); /* !yes */
 /* #E2D8CF */ @define-color nb_tab_glaze_top shade(@theme_bg, 0.979);
 /* #E2D8D0 */ @define-color nb_tab_glaze_mid-a shade(@theme_bg, 0.98);
 /* #DACEC3 */ @define-color nb_tab_glaze_mid-b shade(@theme_bg, 0.933);
 /* #D7CBBF */ @define-color nb_tab_glaze_bot shade(@theme_bg, 0.918);
-/* #EFEAE4 */ @define-color nb_tab_checked_glaze_top shade(@theme_bg, 1.055);        /* #EFE9E4 okay */
+/* #EFEAE4 */ @define-color nb_tab_checked_glaze_top shade(@theme_bg, 1.055); /* #EFE9E4 okay */
 /* #F2EDE8 */ @define-color nb_tab_checked_glaze_mid-a shade(@theme_bg, 1.072);
 /* #EAE2DB */ @define-color nb_tab_checked_glaze_mid-b shade(@theme_bg, 1.022);
 /* #EEE8E2 */ @define-color nb_tab_checked_glaze_bot shade(@theme_bg, 1.047);
@@ -42,14 +42,14 @@
 /* #B4A291 */ @define-color menu_border shade(@theme_bg, 0.734);
 /* #EFE9E3 */ @define-color menu_bg_arrow @menu_bg;
 /* #E6DDD5 */ @define-color menu_bg_disabled_arrow @theme_bg;
-/* #C4B3A5 */ @define-color menu_border_arrow shade(@theme_bg, 0.813);               /* !yes */
-/* #D5C9BE */ @define-color menu_separator_dark alpha(shade(@theme_bg, 0.77), 0.5);  /* #D5C9BF okay */
+/* #C4B3A5 */ @define-color menu_border_arrow shade(@theme_bg, 0.813); /* !yes */
+/* #D5C9BE */ @define-color menu_separator_dark alpha(shade(@theme_bg, 0.77), 0.5); /* #D5C9BF okay */
 /* #F7F4F1 */ @define-color menu_separator_lite alpha(shade(@theme_bg, 1.27), 0.5);
 /* #E6DDD5 */ @define-color menubar_grad_top @theme_bg;
 /* #DED2C8 */ @define-color menubar_grad_bot shade(@theme_bg, 0.952);
 /* #C9B9AB */ @define-color menubar_border_bot shade(@theme_bg, 0.839);
 /* #F0EBE5 */ @define-color toolbar_border_top shade(@theme_bg, 1.0585);
-/* #E6DDD4 */ @define-color toolbar_grad_top @theme_bg;                              /* #E6DDD5 okay */
+/* #E6DDD4 */ @define-color toolbar_grad_top @theme_bg; /* #E6DDD5 okay */
 /* #DDD2C8 */ @define-color toolbar_grad_bot shade(@theme_bg, 0.95);
 /* #C9B9AB */ @define-color toolbar_border_bot shade(@theme_bg, 0.839);
 /* top:#CBBDB1 bot:#C9BBAE */ @define-color toolbar_separator_dark alpha(shade(@theme_bg, 0.73), 0.5);
@@ -63,8 +63,8 @@
 /* #CF9177 */ @define-color entry_border_focus shade(@theme_selected_bg, 1.499);
 /* #E6DDD5 */ @define-color entry_bg_disabled @theme_bg;
 /* #EAE2DB */ @define-color checkbutton_hover_bg alpha(shade(@theme_bg, 1.5), 0.15);
-/* #E2CFC4 */ @define-color checkbutton_focus_bg alpha(shade(@theme_selected_bg, 1.27), 0.175);         /* #E1CFC4 okay */
-/* #D4A38C */ @define-color checkbutton_focus_border alpha(shade(@theme_selected_bg, 1.49), 0.7);       /* #D4A38D okay */
+/* #E2CFC4 */ @define-color checkbutton_focus_bg alpha(shade(@theme_selected_bg, 1.27), 0.175); /* #E1CFC4 okay */
+/* #D4A38C */ @define-color checkbutton_focus_border alpha(shade(@theme_selected_bg, 1.49), 0.7); /* #D4A38D okay */
 /* #E5D4C9 */ @define-color checkbutton_focus_hover_bg alpha(shade(@theme_selected_bg, 1.48), 0.175);
 /* #D5A48E */ @define-color checkbutton_focus_hover_border alpha(shade(@theme_selected_bg, 1.485), 0.7);
 
@@ -106,16 +106,16 @@
 
 /* #EAE3DC */ @define-color scroll_bg shade(@theme_bg, 1.025);
 /* #C5B5A6 */ @define-color scroll_border shade(@theme_bg, 0.82);
-/* #9E8E80 */ @define-color scroll_slider_border shade(@theme_bg, 0.631);           /* #9E8B79 @todo */
+/* #9E8E80 */ @define-color scroll_slider_border shade(@theme_bg, 0.631); /* #9E8B79 @todo */
 @define-color scroll_glaze_glow shade(@theme_bg, 1.1);
 @define-color scroll_glaze_glow_center alpha(@scroll_glaze_glow, 0.15);
 @define-color scroll_glaze_glow_edge alpha(@scroll_glaze_glow, 0);
 /* #C7B7A9 */ @define-color scroll_glaze_top shade(@theme_bg, 0.828);
 /* #CBBCAE */ @define-color scroll_glaze_mid-a shade(@theme_bg, 0.87);
-/* #BDAD9D */ @define-color scroll_glaze_mid-b shade(@theme_bg, 0.783);              /* #BDAC9D okay */
+/* #BDAD9D */ @define-color scroll_glaze_mid-b shade(@theme_bg, 0.783); /* #BDAC9D okay */
 /* #B9A798 */ @define-color scroll_glaze_bot shade(@theme_bg, 0.759);
 /* #CDBFB2 */ @define-color scroll_hover_glaze_top shade(@theme_bg, 0.863);
-/* #D0C3B7 */ @define-color scroll_hover_glaze_mid-a shade(@theme_bg, 0.887);        /* #D1C3B7 okay */
+/* #D0C3B7 */ @define-color scroll_hover_glaze_mid-a shade(@theme_bg, 0.887); /* #D1C3B7 okay */
 /* #C3B3A5 */ @define-color scroll_hover_glaze_mid-b shade(@theme_bg, 0.816);
 /* #BFAE9F */ @define-color scroll_hover_glaze_bot shade(@theme_bg, 0.79);
 
@@ -127,10 +127,10 @@
 @define-color menuitem_hover_border shade(@theme_selected_bg, 0.767); /* #684B3F instead of #684B3E */
 @define-color menuitem_hover_glaze @theme_selected_bg;
 @define-color slider_base shade(@theme_selected_bg, 1.04);
-@define-color slider_border shade(@slider_base, 0.745);  /* #694C3F okay! */
+@define-color slider_border shade(@slider_base, 0.745); /* #694C3F okay! */
 @define-color slider_fill @slider_base;
 @define-color slider_pattern alpha(shade(@slider_base, 1.5), 0.8);
-@define-color slider_trough_bg shade(@theme_bg, 0.881);      /* #D1C2B6 okay! */
+@define-color slider_trough_bg shade(@theme_bg, 0.881); /* #D1C2B6 okay! */
 @define-color slider_trough_border shade(shade(@theme_bg, 0.839), 0.876); /* #B4A292 okay! */
 @define-color slider_trough_shadow alpha(shade(@theme_bg, 0.85), 0.3);
 @define-color slider_trough_shadow_edge alpha(shade(@theme_bg, 0.82), 0.8);

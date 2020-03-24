@@ -27,12 +27,12 @@ scrollbar.vertical slider {
 		radial-gradient(
 			ellipse 50% 50%,
 			@scroll_glaze_glow_center,
-			@scroll_glaze_glow_edge ),
+			@scroll_glaze_glow_edge),
 		linear-gradient( to right,
 			@scroll_glaze_top,
 			@scroll_glaze_mid-a 49%,
 			@scroll_glaze_mid-b 49%,
-			@scroll_glaze_bot );
+			@scroll_glaze_bot);
 }
 
 scrollbar.vertical slider:hover {
@@ -40,12 +40,12 @@ scrollbar.vertical slider:hover {
 		radial-gradient(
 			ellipse 50% 50%,
 			@scroll_glaze_glow_center,
-			@scroll_glaze_glow_edge ),
+			@scroll_glaze_glow_edge),
 		linear-gradient( to right,
 			@scroll_hover_glaze_top,
 			@scroll_hover_glaze_mid-a 49%,
 			@scroll_hover_glaze_mid-b 49%,
-			@scroll_hover_glaze_bot );
+			@scroll_hover_glaze_bot);
 }
 
 scrollbar.horizontal slider {
@@ -55,12 +55,12 @@ scrollbar.horizontal slider {
 		radial-gradient(
 			ellipse 50% 50%,
 			@scroll_glaze_glow_center,
-			@scroll_glaze_glow_edge ),
+			@scroll_glaze_glow_edge),
 		linear-gradient( to bottom,
 			@scroll_glaze_top,
 			@scroll_glaze_mid-a 49%,
 			@scroll_glaze_mid-b 49%,
-			@scroll_glaze_bot );
+			@scroll_glaze_bot);
 }
 
 scrollbar.horizontal slider:hover {
@@ -68,12 +68,12 @@ scrollbar.horizontal slider:hover {
 		radial-gradient(
 			ellipse 50% 50%,
 			@scroll_glaze_glow_center,
-			@scroll_glaze_glow_edge ),
+			@scroll_glaze_glow_edge),
 		linear-gradient( to bottom,
 			@scroll_hover_glaze_top,
 			@scroll_hover_glaze_mid-a 49%,
 			@scroll_hover_glaze_mid-b 49%,
-			@scroll_hover_glaze_bot );
+			@scroll_hover_glaze_bot);
 }
 
 /* --- scrollbar buttons --- */
