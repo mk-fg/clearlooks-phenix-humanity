@@ -57,27 +57,41 @@ frame > border {
 }
 
 frame.border-outset > border {
-	border: 1px solid red;
 	box-shadow:
-		inset -1px -1px red,
-		inset 1px 1px red;
-	/* #EDE6E0 / #DFD4CA (#DFD4CB okay) */
+		inset -1px -1px alpha(@frame_border, 0.17),
+		inset 1px 1px alpha(@entry_bg, 0.27);
+	/* #DFD4CA (#DFD4CB okay) / #EDE6E0 */
+}
+
+frame.border-groove {
+	padding: 0 1px 1px 0;
 }
 
 frame.border-groove > border {
-	border: 1px solid red;
+	border-color: shade(@frame_border, 1.082); /* #C8B9AB */
 	box-shadow:
-		inset -1px -1px red,
-		inset 1px 1px red;
-	/* #EDE6E0 / #DFD4CA (#DFD4CB okay) */
+		inset 1px 1px alpha(@entry_bg, 0.27),
+		1px 1px alpha(@entry_bg, 0.27);
+	/* #EDE6E0 */
+}
+
+frame.border-ridge {
+	padding: 1px 0 0 1px;
+}
+
+frame.border-ridge > label {
+	margin-top: -1px;
+	padding-left: 4px;
 }
 
 frame.border-ridge > border {
-	border: 1px solid red;
+	margin-top: 1px;
+	padding-top: 1px;
+	border-color: shade(@frame_border, 1.082); /* #C8B9AB */
 	box-shadow:
-		inset -1px -1px red,
-		inset 1px 1px red;
-	/* #EDE6E0 / #DFD4CA (#DFD4CB okay) */
+		inset -1px -1px alpha(@entry_bg, 0.27),
+		-1px -1px alpha(@entry_bg, 0.27);
+	/* #EDE6E0 */
 }
 
 /* --- notebook --- */

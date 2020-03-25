@@ -109,11 +109,11 @@ popover.emoji-picker scrolledwindow {
 /* --- menuitem elements --- */
 
 menuitem image {
-	margin: 0 0 0 2px;
+	margin-left: 2px;
 }
 
 menuitem label {
-	margin: 0 0 0 -1px;
+	margin-left: -1px;
 }
 
 popover.background separator {

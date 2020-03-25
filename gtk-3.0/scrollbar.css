@@ -101,7 +101,7 @@ scrolledwindow.frame {
 
 scrolledwindow scrollbar.vertical {
 	margin: -1px -1px -1px -3px;
-	padding: 0 0 0 3px;
+	padding-left: 3px;
 }
 
 scrolledwindow scrollbar.horizontal {
