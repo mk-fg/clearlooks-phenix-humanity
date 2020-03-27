@@ -12,7 +12,7 @@ This theme works with GTK 2.24+ (*gtk2-engines-murrine* is required) and GTK 3.2
 * [human-theme](https://packages.ubuntu.com/search?keywords=human-theme) ubuntu package
 * [gtk2-engines-murrine](https://packages.ubuntu.com/search?keywords=gtk2-engines-murrine) ubuntu package
 * [gtk2-engines-murrine](https://packages.debian.org/search?keywords=gtk2-engines-murrine) debian package
-* [a widget factory](https://github.com/luigifab/awf)
+* [a widget factory 2](https://github.com/luigifab/awf)
 
 ## Installation
 
@@ -29,6 +29,23 @@ This theme works with GTK 2.24+ (*gtk2-engines-murrine* is required) and GTK 3.2
 * The tabs mouse scroll was removed with GTK 3 ([feature 2455 for Geany](https://github.com/geany/geany/issues/2455), [feature 896 for Caja](https://github.com/mate-desktop/caja/issues/896)...).
 
 ## Dev
+
+Run [a widget factory 2](https://github.com/luigifab/awf) with screenshot on theme reload:
+```
+awf-gtk2 -s ~/2.png
+awf-gtk3 -s ~/3.png
+```
+
+Run [entr](https://github.com/clibs/entr) to send sighup signal to auto reload theme:
+```
+ls ~/.themes/yourdir/gtk-3.0/*.css | entr killall -s SIGHUP awf-gtk2
+ls ~/.themes/yourdir/gtk-3.0/*.css | entr killall -s SIGHUP awf-gtk3
+```
+
+Run [entr](https://github.com/clibs/entr) to generate the diff image:
+```
+todo
+```
 
 Todo.
 
