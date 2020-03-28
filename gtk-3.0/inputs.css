@@ -6,7 +6,7 @@ entry {
 	padding: 3px;
 	color: @theme_text;
 	border: 1px solid @entry_border;
-	border-radius: 3px;
+	border-radius: 2.4px;
 	background: @entry_bg;
 	box-shadow:
 		-1px -1px alpha(@entry_border, 0.09),
@@ -245,6 +245,10 @@ button.flat:disabled {
 	border-color: transparent;
 	background: transparent;
 	opacity: 0.3;
+}
+
+button.toggle:not(:disabled) {
+	padding: 5px 3px 3px 5px;
 }
 
 /* --- buttons background --- */

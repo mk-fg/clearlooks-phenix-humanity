@@ -108,6 +108,11 @@ popover.emoji-picker scrolledwindow {
 
 /* --- menuitem elements --- */
 
+menuitem.tearoff { /* awf2 */
+	padding: 3px 0;
+	color: @menu_tearoff_border;
+}
+
 menuitem image {
 	margin-left: 2px;
 }
