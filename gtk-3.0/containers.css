@@ -103,11 +103,7 @@ notebook {
 
 notebook stack {
 	border: 1px solid @nb_border;
-	border-radius: 2px;
-	/* box-shadow:
-		inset -1px -1px alpha(@nb_border, 0.125),
-		inset 1px 1px alpha(@entry_bg, 0.42);
-	#E7DFD7 (#E7DFD8 okay) / #F5F2EE */
+	border-radius: 2.4px;
 }
 
 notebook header {
@@ -144,6 +140,13 @@ notebook header.top tab:checked {
 		@nb_tab_checked_glaze_mid-a 51%,
 		@nb_tab_checked_glaze_mid-b 51%,
 		@nb_tab_checked_glaze_bot);
+}
+
+notebook header.top ~ stack {
+	box-shadow:
+		inset -1px -1px alpha(@nb_border, 0.125),
+		inset 1px 0 alpha(@entry_bg, 0.42);
+	/* #E7DFD7 (#E7DFD8 okay) / #F5F2EE */
 }
 
 notebook header.bottom tab {
@@ -185,6 +188,13 @@ notebook header.left tab:checked {
 		@nb_tab_checked_glaze_mid-a 50%,
 		@nb_tab_checked_glaze_mid-b 50%,
 		@nb_tab_checked_glaze_bot);
+}
+
+notebook header.left ~ stack {
+	box-shadow:
+		inset -1px -1px alpha(@nb_border, 0.125),
+		inset 0 1px alpha(@entry_bg, 0.42);
+	/* #E7DFD7 (#E7DFD8 okay) / #F5F2EE */
 }
 
 notebook header.right tab {

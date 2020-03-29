@@ -72,9 +72,9 @@
 /* #AB9E92 */ @define-color button_border #AB9E92;
 /* #CDBFB2 */ @define-color button_border_disabled #CDBFB2;
 
-@define-color button_glaze_top alpha(shade(@theme_bg, 1.055), 0.47);
-@define-color button_glaze_glow_center alpha(shade(@theme_bg, 1.1), 0.83);
-@define-color button_glaze_glow_edge alpha(@theme_bg, 0);
+@define-color button_glaze_top alpha(shade(@theme_bg, 1.05), 0.65);
+@define-color button_glaze_glow_center alpha(shade(@theme_bg, 1.10), 0.79);
+@define-color button_glaze_glow_edge alpha(@theme_bg, 0.1);
 @define-color button_glaze_mid-a alpha(shade(@theme_bg, 1.03), 0.8);
 @define-color button_glaze_mid-b alpha(shade(@theme_bg, 0.93), 0.9);
 @define-color button_glaze_bot alpha(shade(@theme_bg, 0.94), 0.9);
@@ -84,7 +84,16 @@
 @define-color button_disabled_glaze_glow_edge alpha(shade(@theme_bg, 1.1), 0);
 @define-color button_disabled_glaze_mid-a alpha(shade(@theme_bg, 1.03), 0.2);
 @define-color button_disabled_glaze_mid-b alpha(shade(@theme_bg, 0.93), 0.2);
-@define-color button_disabled_glaze_bot alpha(@button_glaze_bot, 0.53);
+@define-color button_disabled_glaze_bot alpha(shade(@theme_bg, 0.94), 0.4);
+
+@define-color button_active_glaze_top alpha(shade(@theme_bg, 0.89), 0.9);
+@define-color button_active_glaze_glow_center alpha(shade(@theme_bg, 1.07), 0.43);
+@define-color button_active_glaze_glow_edge alpha(shade(@theme_bg, 1.07), 0);
+@define-color button_active_glaze_mid-a alpha(shade(@theme_bg, 0.82), 0.8);
+@define-color button_active_glaze_mid-b alpha(shade(@theme_bg, 0.76), 0.8);
+@define-color button_active_glaze_shadow alpha(shade(@theme_bg, 0.85), 0.3);
+@define-color button_active_glaze_shadow_edge alpha(shade(@theme_bg, 0.82), 0.8);
+@define-color button_active_glaze_bot alpha(shade(@theme_bg, 0.8), 0.9);
 
 @define-color button_hover_glaze_top alpha(shade(@theme_bg, 1.09), 0.8);
 @define-color button_hover_glaze_glow_center alpha(shade(@theme_bg, 1.1), 0.8);
@@ -92,16 +101,6 @@
 @define-color button_hover_glaze_mid-a alpha(shade(@theme_bg, 1.05), 0.8);
 @define-color button_hover_glaze_mid-b alpha(shade(@theme_bg, 0.96), 0.8);
 @define-color button_hover_glaze_bot alpha(shade(@theme_bg, 0.93), 0.8);
-
-@define-color button_active_glaze_top alpha(shade(@theme_bg, 0.89), 0.9);
-@define-color button_active_glaze_glow shade(@theme_bg, 1.07);
-@define-color button_active_glaze_glow_center alpha(@button_active_glaze_glow, 0.5);
-@define-color button_active_glaze_glow_edge alpha(@button_active_glaze_glow, 0);
-@define-color button_active_glaze_mid-a alpha(shade(@theme_bg, 0.82), 0.8);
-@define-color button_active_glaze_mid-b alpha(shade(@theme_bg, 0.76), 0.8);
-@define-color button_active_glaze_shadow alpha(shade(@theme_bg, 0.85), 0.3);
-@define-color button_active_glaze_shadow_edge alpha(shade(@theme_bg, 0.82), 0.8);
-@define-color button_active_glaze_bot alpha(shade(@theme_bg, 0.77), 0.9);
 
 @define-color button_focus_fill alpha(shade(@theme_selected_bg, 1.6), 0.15);
 @define-color button_focus_fill_active alpha(shade(@theme_selected_bg, 1.5), 0.2);
