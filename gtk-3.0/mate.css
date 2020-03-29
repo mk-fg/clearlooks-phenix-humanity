@@ -3,7 +3,11 @@
 
 .mate-panel-menu-bar,
 .mate-panel-menu-bar menubar,
+.mate-panel-menu-bar button,
 #PanelPlug,
+#PanelPlug button,
+#PanelApplet,
+#PanelApplet button,
 PanelApplet,
 PanelApplet button,
 PanelToplevel.background {
@@ -72,4 +76,22 @@ PanelToplevel.background {
 
 .wnck-applet {
 
+}
+
+/* --- window list --- */
+#tasklist-button:not(:checked), #tasklist-button:checked {
+	border-width: 3px 3px 2px;
+	border-style: solid;
+	border-color: transparent;
+	/* top: 1px transparent + 1px alpha + 1px #988B7F  active */
+	/* bottom: 1px #988B7F  + 1px alpha                active */
+	/* #AB9E92 */
+}
+
+/* --- grip for notification area and window list --- */
+MatePanelAppletFrameDBus > MatePanelAppletFrameDBus {
+	min-width: 6px;
+	background-image: url("img/pane-separator-grip-horz.svg");
+	background-repeat: no-repeat;
+	background-position: left;
 }
