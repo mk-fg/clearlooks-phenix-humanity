@@ -311,7 +311,7 @@ notebook header.right tabs arrow.down:last-child {
 
 filechooser,
 printdialog box.view {
-	padding: 12px;
+	padding: 11px 12px;
 }
 
 filechooser box.view,
