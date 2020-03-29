@@ -31,12 +31,12 @@ separator.horizontal {
 	border-bottom: 1px solid @content_separator_lite;
 }
 
-paned.vertical separator {
+paned.vertical > separator {
 	min-width: 6px;
 	background: url("img/pane-separator-grip-vert.svg") no-repeat center;
 }
 
-paned.horizontal separator {
+paned.horizontal > separator {
 	min-height: 6px;
 	background: url("img/pane-separator-grip-horz.svg") no-repeat center;
 }
