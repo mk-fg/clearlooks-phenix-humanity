@@ -54,27 +54,29 @@ menubar menuitem:hover {
 }
 
 /* --- popover and menu window --- */
-popover.background {
-	border: 1px solid @menu_border;
-	background: @menu_bg;
-}
-
 popover.background > stack > box,
 popover.background > box {
 	margin: -8px;
 }
 
+popover.background,
 menu {
-	padding: 3px;
 	border: 1px solid @menu_border;
 	background: @menu_bg;
+}
+
+menu {
+	padding: 3px 1px;
 }
 
 popover.background modelbutton,
 menu menuitem {
 	padding: 2px 4px;
 	border: 1px solid transparent;
-	background: @menu_bg;
+}
+
+menu menuitem {
+	margin: 0 2px;
 }
 
 popover.background modelbutton:hover,
