@@ -254,7 +254,8 @@ button.toggle:not(:disabled) {
 /* --- buttons background --- */
 
 button,
-spinbutton button:focus {
+spinbutton button:focus,
+#tasklist-button box {
 	background:
 		transparent
 		radial-gradient(
@@ -269,7 +270,8 @@ spinbutton button:focus {
 }
 
 button:hover,
-spinbutton button:focus:hover {
+spinbutton button:focus:hover,
+#tasklist-button box:hover {
 	border: 1px solid @button_border;
 	background:
 		radial-gradient(

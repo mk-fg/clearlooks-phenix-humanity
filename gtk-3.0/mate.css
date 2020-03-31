@@ -15,24 +15,19 @@ PanelToplevel.background {
 	background: @theme_bg;
 }
 
-.mate-panel-menu-bar,
 .mate-panel-menu-bar menubar {
-	margin: 0;
+	margin: 0 8px 0 0;
 	padding: 0;
-}
-
-.mate-panel-menu-bar menubar {
-	margin-right: 8px;
 }
 
 .mate-panel-menu-bar menubar > menuitem {
 	margin: 0;
-	padding: 2px 5px 4px 9px;
+	padding: 3px 5px 3px 9px;
 	border-radius: 0;
 }
 
 .mate-panel-menu-bar menubar > menuitem separator {
-	margin: 4px 6px;
+	margin: 4px 6px 3px;
 }
 
 /* --- system-monitor-applet --- */
@@ -79,13 +74,23 @@ PanelToplevel.background {
 }
 
 /* --- window list --- */
-.mate-panel-menu-bar #tasklist-button:not(:checked), .mate-panel-menu-bar #tasklist-button:checked {
-	border-width: 3px 3px 2px;
-	border-style: solid;
-	border-color: transparent;
-	/* top: 1px transparent + 1px alpha + 1px #988B7F  active */
-	/* bottom: 1px #988B7F  + 1px alpha                active */
-	/* #AB9E92 */
+.mate-panel-menu-bar #tasklist-button {
+	border: 0;
+	background: none;
+}
+
+.mate-panel-menu-bar #tasklist-button box {
+	margin: 2px 1px 0;
+	padding: 0 2px;
+	border: 1px solid #AB9E92;
+	border-radius: 3px;
+}
+
+.mate-panel-menu-bar #tasklist-button:checked box {
+	margin: 2px 1px 0;
+	padding: 0 2px;
+	border: 1px solid #988B7F;
+	border-radius: 3px;
 }
 
 /* --- grip for notification area and window list --- */
