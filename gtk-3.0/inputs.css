@@ -330,11 +330,12 @@ button:disabled:focus {
 			@button_disabled_glaze_bot);
 }
 
+button:checked,
 button.flat:active,
 button.flat:active:hover,
 toolbar.primary-toolbar button:active,
 toolbar.primary-toolbar button:active:hover,
-button:checked {
+#tasklist-button:checked box {
 	border: 1px solid @button_border;
 	background:
 		radial-gradient(

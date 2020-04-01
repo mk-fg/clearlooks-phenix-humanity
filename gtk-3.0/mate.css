@@ -80,17 +80,15 @@ PanelToplevel.background {
 }
 
 .mate-panel-menu-bar #tasklist-button box {
-	margin: 2px 1px 0;
+	margin: 1px;
 	padding: 0 2px;
 	border: 1px solid #AB9E92;
 	border-radius: 3px;
 }
 
 .mate-panel-menu-bar #tasklist-button:checked box {
-	margin: 2px 1px 0;
 	padding: 0 2px;
 	border: 1px solid #988B7F;
-	border-radius: 3px;
 }
 
 /* --- grip for notification area and window list --- */
