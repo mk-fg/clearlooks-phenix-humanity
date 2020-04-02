@@ -60,7 +60,7 @@ eom ~/diff.png
 
 You can also run entr to auto generate the diff image:
 ```
-ls ~/3.png | ~/.themes/yourdir/dev.sh
+ls ~/3.png | entr bash ~/.themes/yourdir/dev.sh
 ```
 
 ...
