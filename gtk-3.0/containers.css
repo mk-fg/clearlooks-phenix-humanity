@@ -358,6 +358,10 @@ window.eom-window box + statusbar { /* eom 1.24 */
 	margin: 0 -10px;
 }
 
+window.eom-window box + statusbar frame { /* eom 1.24 */
+	padding: 0 2px 2px;
+}
+
 paned + statusbar { /* caja 1.24 */
 	margin: -1px -10px 0;
 }
