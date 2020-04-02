@@ -21,6 +21,13 @@ This theme works with GTK 2.24+ (*gtk2-engines-murrine* is required) and GTK 3.2
 * Install [gtk3-nocsd](https://github.com/PCMan/gtk3-nocsd) to restore the window title bar: `sudo apt install gtk3-nocsd`
 * Restart your session/xserver
 
+## Configuration
+
+* button have icons: where?
+* menu have icons: where?
+* menu can change accels: where?
+* show only icons: where?
+
 ## Known issues
 
 * For classic menu bar and menu items of [Firefox 74](https://www.mozilla.org/firefox) and [Thunderbird 68](https://www.mozilla.org/thunderbird), see [bug 1622545](https://bugzilla.mozilla.org/show_bug.cgi?id=1622545).
@@ -29,6 +36,8 @@ This theme works with GTK 2.24+ (*gtk2-engines-murrine* is required) and GTK 3.2
 * The tabs mouse scroll was removed with GTK 3 ([feature 2455 for Geany](https://github.com/geany/geany/issues/2455), [feature 896 for Caja](https://github.com/mate-desktop/caja/issues/896)...).
 
 ## Dev
+
+...
 
 Run [a widget factory 2](https://github.com/luigifab/awf) with screenshot on theme reload:
 ```
@@ -42,12 +51,19 @@ ls ~/.themes/yourdir/gtk-3.0/*.css | entr killall -s SIGHUP awf-gtk2
 ls ~/.themes/yourdir/gtk-3.0/*.css | entr killall -s SIGHUP awf-gtk3
 ```
 
-Run [entr](https://github.com/clibs/entr) to generate the diff image:
+Run [imagemagick](https://imagemagick.org) to generate the diff image:
 ```
-todo
+compare -fuzz 1% -compose src -highlight-color blue -lowlight-color none ~/2.png ~/3.png ~/diff.png
+composite ~/diff.png ~/2.png ~/diff.png
+eom ~/diff.png
 ```
 
-Todo.
+You can also run entr to auto generate the diff image:
+```
+ls ~/3.png | ~/.themes/yourdir/dev.sh
+```
+
+...
 
 ## Copyright and Credits
 
