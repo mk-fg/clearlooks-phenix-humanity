@@ -25,11 +25,11 @@
 /* #EEE8E2 */ @define-color nb_bg shade(@theme_bg, 1.047);
 /* #B4A191 */ @define-color nb_border shade(@theme_bg, 0.733);
 /* #C4B3A5 */ @define-color nb_tab_border shade(@theme_bg, 0.814); /* !yes */
-/* #E2D8CF */ @define-color nb_tab_glaze_top shade(@theme_bg, 0.979);
+/* #E2D8CF */ @define-color nb_tab_glaze_top shade(@theme_bg, 0.985);
 /* #E2D8D0 */ @define-color nb_tab_glaze_mid-a shade(@theme_bg, 0.98);
 /* #DACEC3 */ @define-color nb_tab_glaze_mid-b shade(@theme_bg, 0.933);
-/* #D7CBBF */ @define-color nb_tab_glaze_bot shade(@theme_bg, 0.918);
-/* #EFEAE4 */ @define-color nb_tab_checked_glaze_top shade(@theme_bg, 1.055); /* #EFE9E4 okay */
+/* #D7CBBF */ @define-color nb_tab_glaze_bot shade(@theme_bg, 0.91);
+/* #EFEAE4 */ @define-color nb_tab_checked_glaze_top shade(@theme_bg, 1.08);
 /* #F2EDE8 */ @define-color nb_tab_checked_glaze_mid-a shade(@theme_bg, 1.072);
 /* #EAE2DB */ @define-color nb_tab_checked_glaze_mid-b shade(@theme_bg, 1.022);
 /* #EEE8E2 */ @define-color nb_tab_checked_glaze_bot shade(@theme_bg, 1.047);

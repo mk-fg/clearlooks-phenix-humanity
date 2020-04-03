@@ -53,14 +53,12 @@ frame > border {
 	box-shadow:
 		inset -1px -1px alpha(@entry_bg, 0.27),
 		inset 1px 1px alpha(@frame_border, 0.17);
-	/* #EDE6E0 / #DFD4CA (#DFD4CB okay) */
 }
 
 frame.border-outset > border {
 	box-shadow:
 		inset -1px -1px alpha(@frame_border, 0.17),
 		inset 1px 1px alpha(@entry_bg, 0.27);
-	/* #DFD4CA (#DFD4CB okay) / #EDE6E0 */
 }
 
 frame.border-groove {
@@ -72,7 +70,6 @@ frame.border-groove > border {
 	box-shadow:
 		inset 1px 1px alpha(@entry_bg, 0.27),
 		1px 1px alpha(@entry_bg, 0.27);
-	/* #EDE6E0 */
 }
 
 frame.border-ridge {
@@ -91,7 +88,6 @@ frame.border-ridge > border {
 	box-shadow:
 		inset -1px -1px alpha(@entry_bg, 0.27),
 		-1px -1px alpha(@entry_bg, 0.27);
-	/* #EDE6E0 */
 }
 
 /* --- notebook --- */
@@ -125,7 +121,7 @@ notebook header tab label {
 notebook header.top tab {
 	margin: 0 -1px -2px -1px;
 	border-bottom-color: @nb_border;
-	border-radius: 3px 3px 0 0;
+	border-radius: 2.4px 2.4px 0 0;
 	background: linear-gradient(to bottom, @nb_tab_glaze_top,
 		@nb_tab_glaze_mid-a 51%,
 		@nb_tab_glaze_mid-b 51%,
@@ -140,19 +136,22 @@ notebook header.top tab:checked {
 		@nb_tab_checked_glaze_mid-a 51%,
 		@nb_tab_checked_glaze_mid-b 51%,
 		@nb_tab_checked_glaze_bot);
+	box-shadow:
+		inset -1px 0 alpha(@nb_border, 0.07),
+		inset 1px 1px alpha(@nb_border, 0.07);
 }
 
 notebook header.top ~ stack {
+	border-radius: 0 2.4px 2.4px 2.4px;
 	box-shadow:
 		inset -1px -1px alpha(@nb_border, 0.125),
 		inset 1px 0 alpha(@entry_bg, 0.42);
-	/* #E7DFD7 (#E7DFD8 okay) / #F5F2EE */
 }
 
 notebook header.bottom tab {
 	margin: -2px -1px 0 -1px;
 	border-top-color: @nb_border;
-	border-radius: 0 0 3px 3px;
+	border-radius: 0 0 2.4px 2.4px;
 	background: linear-gradient(to top, @nb_tab_glaze_top,
 		@nb_tab_glaze_mid-a 51%,
 		@nb_tab_glaze_mid-b 51%,
@@ -167,13 +166,16 @@ notebook header.bottom tab:checked {
 		@nb_tab_checked_glaze_mid-a 51%,
 		@nb_tab_checked_glaze_mid-b 51%,
 		@nb_tab_checked_glaze_bot);
+	box-shadow:
+		inset -1px -1px alpha(@nb_border, 0.07),
+		inset 1px 0 alpha(@nb_border, 0.07);
 }
 
 notebook header.left tab {
 	margin: -1px -2px -1px 0;
 	padding: 3px 1px;
 	border-right-color: @nb_border;
-	border-radius: 3px 0 0 3px;
+	border-radius: 2.4px 0 0 2.4px;
 	background: linear-gradient(to right, @nb_tab_glaze_top,
 		@nb_tab_glaze_mid-a 50%,
 		@nb_tab_glaze_mid-b 50%,
@@ -188,20 +190,23 @@ notebook header.left tab:checked {
 		@nb_tab_checked_glaze_mid-a 50%,
 		@nb_tab_checked_glaze_mid-b 50%,
 		@nb_tab_checked_glaze_bot);
+	box-shadow:
+		inset 0 -1px alpha(@nb_border, 0.07),
+		inset 1px 1px alpha(@nb_border, 0.07);
 }
 
 notebook header.left ~ stack {
+	border-radius: 0 2.4px 2.4px 2.4px;
 	box-shadow:
 		inset -1px -1px alpha(@nb_border, 0.125),
 		inset 0 1px alpha(@entry_bg, 0.42);
-	/* #E7DFD7 (#E7DFD8 okay) / #F5F2EE */
 }
 
 notebook header.right tab {
 	margin: -1px 0 -1px -2px;
 	padding: 3px 1px;
 	border-left-color: @nb_border;
-	border-radius: 0 3px 3px 0;
+	border-radius: 0 2.4px 2.4px 0;
 	background: linear-gradient(to left, @nb_tab_glaze_top,
 		@nb_tab_glaze_mid-a 50%,
 		@nb_tab_glaze_mid-b 50%,
@@ -216,6 +221,9 @@ notebook header.right tab:checked {
 		@nb_tab_checked_glaze_mid-a 50%,
 		@nb_tab_checked_glaze_mid-b 50%,
 		@nb_tab_checked_glaze_bot);
+	box-shadow:
+		inset -1px -1px alpha(@nb_border, 0.07),
+		inset 0 1px alpha(@nb_border, 0.07);
 }
 
 notebook:focus header tab:checked label {
