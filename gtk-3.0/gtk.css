@@ -124,6 +124,8 @@
 
 /* --- todo --- */
 
+/* #AD9A89 */  @define-color dialog_border shade(@theme_bg, 0.7);
+
 @define-color frame_shadow_dark shade(@theme_bg, 0.96);
 @define-color frame_shadow_lite shade(@theme_bg, 1.04);
 @define-color menuitem_hover @theme_selected_fg;

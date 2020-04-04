@@ -346,7 +346,7 @@ printdialog .dialog-action-area {
 
 filechooser placessidebar,
 filechooser scrolledwindow {
-	border: 1px solid #AD9A89; /* @todo */
+	border: 1px solid @dialog_border;
 }
 
 printdialog scrolledwindow viewport {
@@ -360,7 +360,7 @@ viewport.frame row {
 }
 
 viewport.frame row image,
-button.toggle box image {
+.path-bar button.toggle box image {
 	padding-right: 4px;
 }
 
