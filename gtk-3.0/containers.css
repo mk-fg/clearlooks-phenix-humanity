@@ -316,9 +316,12 @@ notebook header.right tabs arrow.down:last-child {
 	-gtk-icon-transform: scale(0.8);
 }
 
-/* --- open/print dialog --- */
+/* --- open/save/print dialog --- */
 
-filechooser,
+filechooser {
+	padding: 12px 12px 3px;
+}
+
 printdialog box.view {
 	padding: 11px 12px;
 }
@@ -328,8 +331,22 @@ printdialog box.view {
 	background: @theme_bg;
 }
 
-printdialog buttonbox {
-	margin: 10px 0 -11px;
+filechooser ~ .dialog-action-box {
+	margin-top: 4px;
+	padding: 0 6px 5px;
+}
+
+printdialog .dialog-action-box {
+	margin-top: 10px;
+}
+
+printdialog .dialog-action-area {
+	margin: -5px;
+}
+
+filechooser placessidebar,
+filechooser scrolledwindow {
+	border: 1px solid #AD9A89; /* @todo */
 }
 
 printdialog scrolledwindow viewport {
@@ -342,7 +359,8 @@ viewport.frame row {
 	padding: 3px 2px;
 }
 
-viewport.frame image {
+viewport.frame row image,
+button.toggle box image {
 	padding-right: 4px;
 }
 

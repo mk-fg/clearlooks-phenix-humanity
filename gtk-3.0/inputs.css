@@ -253,7 +253,7 @@ button,
 spinbutton button:focus,
 #tasklist-button box {
 	background:
-		transparent
+		@theme_bg
 		radial-gradient(
 			ellipse 90% 50%,
 			@button_glaze_glow_center,

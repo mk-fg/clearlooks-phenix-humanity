@@ -142,3 +142,14 @@ scrolledwindow viewport ~ scrollbar.horizontal {
 	padding: 3px 0 0 0;
 	border-top: 0;
 }
+
+dialog treeview ~ scrollbar.horizontal ~ scrollbar.vertical {
+	margin: -30px -1px -30px -3px;
+	padding: 29px 0 29px 3px;
+	border-left: 1px solid @menu_border;
+	background: @theme_bg;
+}
+
+dialog scrollbar.horizontal {
+	background: @theme_bg;
+}
