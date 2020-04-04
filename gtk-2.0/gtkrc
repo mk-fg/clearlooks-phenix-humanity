@@ -72,7 +72,7 @@ style "murrine-default"
 	text[SELECTED]    = @selected_fg_color
 	text[INSENSITIVE] = shade (0.65, @bg_color)
 
-	engine "murrine" 
+	engine "murrine"
 	{
 		animation           = TRUE  # FALSE = disabled, TRUE = enabled
 		colorize_scrollbar  = TRUE  # FALSE = disabled, TRUE = enabled
@@ -80,7 +80,7 @@ style "murrine-default"
 		focus_color         = shade (1.5, @selected_bg_color)
 		glazestyle          = 0     # 0 = flat, 1 = curved, 2 = concave, 3 = top-curved, 4 = beryl
 		glow_shade          = 1.15  # sets glow amount for buttons or widgets
-		glowstyle           = 4     # 0 = top, 1 = bottom, 2 = top and bottom, 3 = center (vertical), 4 = center (horizontal) 
+		glowstyle           = 4     # 0 = top, 1 = bottom, 2 = top and bottom, 3 = center (vertical), 4 = center (horizontal)
 		gradient_shades     = {1.02,1.01,0.96,0.95} # default: {1.1,1.0,1.0,1.1}
 		highlight_shade     = 1.0   # set highlight amount for buttons or widgets
 		lightborder_shade   = 0.95  # sets lightborder amount for buttons or widgets
@@ -91,7 +91,7 @@ style "murrine-default"
 		menubarstyle        = 2     # 0 = flat, 1 = glassy, 2 = gradient, 3 = striped
 		menuitemstyle       = 1     # 0 = flat, 1 = glassy, 2 = striped
 		menustyle           = 0     # 0 = no vertical menu stripe, 1 = display vertical menu stripe
-		progressbarstyle    = 1     # 0 = no stripes, 1 = diagonal stripes, 2 = vertical stripes 
+		progressbarstyle    = 1     # 0 = no stripes, 1 = diagonal stripes, 2 = vertical stripes
 		reliefstyle	    = 2     # 0 = flat, 1 = inset, 2 = shadow
 		rgba		    = FALSE # FALSE = disabled, TRUE = enabled
 		roundness           = 2     # 0 = squared, 1 = old default, more will increase roundness
@@ -126,7 +126,7 @@ style "murrine-notebook"
 	bg[NORMAL] = shade (1.05, @bg_color)
 	bg[ACTIVE] = shade (0.96, @bg_color)
 
-	engine "murrine" 
+	engine "murrine"
 	{
 		gradient_shades = {1.1,1.06,0.92,0.85} # { 1.1, 1.02, 0.97, 0.93 }
 	}
@@ -152,7 +152,7 @@ style "murrine-menu-item" = "murrine-wider"
 	bg[PRELIGHT] = shade (1.02, @selected_bg_color)
 	bg[SELECTED] = shade (1.02, @selected_bg_color)
 
-	engine "murrine" 
+	engine "murrine"
 	{
 		highlight_shade  = 1.03
 	}
@@ -187,7 +187,7 @@ style "murrine-progressbar"
 
 	fg[PRELIGHT] = @selected_fg_color
 
-	engine "murrine" 
+	engine "murrine"
 	{
 		highlight_shade = 1.05
 	}
@@ -209,7 +209,7 @@ style "murrine-scale"
 {
 	GtkRange        ::slider-width = 13
 
-	engine "murrine" 
+	engine "murrine"
 	{
 		highlight_shade = 1.05
 	}
@@ -225,7 +225,7 @@ style "murrine-vscale"
 
 style "murrine-scrollbar"
 {
-	engine "murrine" 
+	engine "murrine"
 	{
 		highlight_shade = 1.05
 	}
@@ -268,7 +268,7 @@ style "murrine-panel"
 class "GtkWidget"    					style "murrine-default"
 
 # Increase the x/ythickness in some widgets
-class "GtkToolbar"   					style "murrine-default" 
+class "GtkToolbar"   					style "murrine-default"
 class "GtkRange"     					style "murrine-wide"
 class "GtkFrame"     					style "murrine-wide"
 class "GtkSeparator" 					style "murrine-wide"
