@@ -110,6 +110,7 @@ notebook header {
 notebook header tab {
 	padding: 2px;
 	border: 1px solid @nb_tab_border;
+	transition:background 0.3s;
 }
 
 notebook header tab label {
