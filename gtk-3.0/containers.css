@@ -1,4 +1,34 @@
 
+/* --- infobar --- */
+
+infobar revealer > box {
+	margin: -1px 0;
+}
+
+infobar.info {
+	color: @infobar_fg;
+	border: 1px solid @infobar_border;
+	background: linear-gradient(to bottom, @infobar_bg_top, @infobar_bg_bot);
+}
+
+infobar.warning {
+	color: @warningbar_fg;
+	border: 1px solid @warningbar_border;
+	background: linear-gradient(to bottom, @warningbar_bg_top, @warningbar_bg_bot);
+}
+
+infobar.question {
+	color: @questionbar_fg;
+	border: 1px solid @questionbar_border;
+	background: linear-gradient(to bottom, @questionbar_bg_top, @questionbar_bg_bot);
+}
+
+infobar.error {
+	color: @errorbar_fg;
+	border: 1px solid @errorbar_border;
+	background: linear-gradient(to bottom, @errorbar_bg_top, @errorbar_bg_bot);
+}
+
 /* --- arrow --- */
 
 arrow.top {
@@ -124,8 +154,8 @@ notebook header.top tab {
 	border-bottom-color: @nb_border;
 	border-radius: 2.4px 2.4px 0 0;
 	background: linear-gradient(to bottom, @nb_tab_glaze_top,
-		@nb_tab_glaze_mid-a 51%,
-		@nb_tab_glaze_mid-b 51%,
+		@nb_tab_glaze_mida 51%,
+		@nb_tab_glaze_midb 51%,
 		@nb_tab_glaze_bot);
 }
 
@@ -134,8 +164,8 @@ notebook header.top tab:checked {
 	border-color: @nb_border;
 	border-bottom: 0;
 	background: linear-gradient(to bottom, @nb_tab_checked_glaze_top,
-		@nb_tab_checked_glaze_mid-a 51%,
-		@nb_tab_checked_glaze_mid-b 51%,
+		@nb_tab_checked_glaze_mida 51%,
+		@nb_tab_checked_glaze_midb 51%,
 		@nb_tab_checked_glaze_bot);
 	box-shadow:
 		inset -1px 0 alpha(@nb_border, 0.07),
@@ -154,8 +184,8 @@ notebook header.bottom tab {
 	border-top-color: @nb_border;
 	border-radius: 0 0 2.4px 2.4px;
 	background: linear-gradient(to top, @nb_tab_glaze_top,
-		@nb_tab_glaze_mid-a 51%,
-		@nb_tab_glaze_mid-b 51%,
+		@nb_tab_glaze_mida 51%,
+		@nb_tab_glaze_midb 51%,
 		@nb_tab_glaze_bot);
 }
 
@@ -164,8 +194,8 @@ notebook header.bottom tab:checked {
 	border-color: @nb_border;
 	border-top: 0;
 	background: linear-gradient(to top, @nb_tab_checked_glaze_top,
-		@nb_tab_checked_glaze_mid-a 51%,
-		@nb_tab_checked_glaze_mid-b 51%,
+		@nb_tab_checked_glaze_mida 51%,
+		@nb_tab_checked_glaze_midb 51%,
 		@nb_tab_checked_glaze_bot);
 	box-shadow:
 		inset -1px -1px alpha(@nb_border, 0.07),
@@ -178,8 +208,8 @@ notebook header.left tab {
 	border-right-color: @nb_border;
 	border-radius: 2.4px 0 0 2.4px;
 	background: linear-gradient(to right, @nb_tab_glaze_top,
-		@nb_tab_glaze_mid-a 50%,
-		@nb_tab_glaze_mid-b 50%,
+		@nb_tab_glaze_mida 50%,
+		@nb_tab_glaze_midb 50%,
 		@nb_tab_glaze_bot);
 }
 
@@ -188,8 +218,8 @@ notebook header.left tab:checked {
 	border-color: @nb_border;
 	border-right: 0;
 	background: linear-gradient(to right, @nb_tab_checked_glaze_top,
-		@nb_tab_checked_glaze_mid-a 50%,
-		@nb_tab_checked_glaze_mid-b 50%,
+		@nb_tab_checked_glaze_mida 50%,
+		@nb_tab_checked_glaze_midb 50%,
 		@nb_tab_checked_glaze_bot);
 	box-shadow:
 		inset 0 -1px alpha(@nb_border, 0.07),
@@ -209,8 +239,8 @@ notebook header.right tab {
 	border-left-color: @nb_border;
 	border-radius: 0 2.4px 2.4px 0;
 	background: linear-gradient(to left, @nb_tab_glaze_top,
-		@nb_tab_glaze_mid-a 50%,
-		@nb_tab_glaze_mid-b 50%,
+		@nb_tab_glaze_mida 50%,
+		@nb_tab_glaze_midb 50%,
 		@nb_tab_glaze_bot);
 }
 
@@ -219,8 +249,8 @@ notebook header.right tab:checked {
 	border-color: @nb_border;
 	border-left: 0;
 	background: linear-gradient(to left, @nb_tab_checked_glaze_top,
-		@nb_tab_checked_glaze_mid-a 50%,
-		@nb_tab_checked_glaze_mid-b 50%,
+		@nb_tab_checked_glaze_mida 50%,
+		@nb_tab_checked_glaze_midb 50%,
 		@nb_tab_checked_glaze_bot);
 	box-shadow:
 		inset -1px -1px alpha(@nb_border, 0.07),

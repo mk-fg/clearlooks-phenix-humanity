@@ -260,8 +260,8 @@ spinbutton button:focus,
 			@button_glaze_glow_edge),
 		linear-gradient(to bottom,
 			@button_glaze_top,
-			@button_glaze_mid-a 49%,
-			@button_glaze_mid-b 49%,
+			@button_glaze_mida 49%,
+			@button_glaze_midb 49%,
 			@button_glaze_bot);
 }
 
@@ -276,8 +276,8 @@ spinbutton button:focus:hover,
 			@button_hover_glaze_glow_edge),
 		linear-gradient(to bottom,
 			@button_hover_glaze_top,
-			@button_hover_glaze_mid-a 49%,
-			@button_hover_glaze_mid-b 49%,
+			@button_hover_glaze_mida 49%,
+			@button_hover_glaze_midb 49%,
 			@button_hover_glaze_bot);
 }
 
@@ -292,8 +292,8 @@ button:focus {
 			@button_glaze_glow_edge),
 		linear-gradient(to bottom,
 			@button_glaze_top,
-			@button_glaze_mid-a 49%,
-			@button_glaze_mid-b 49%,
+			@button_glaze_mida 49%,
+			@button_glaze_midb 49%,
 			@button_glaze_bot);
 }
 
@@ -307,8 +307,8 @@ button:focus:hover {
 			@button_hover_glaze_glow_edge),
 		linear-gradient(to bottom,
 			@button_hover_glaze_top,
-			@button_hover_glaze_mid-a 49%,
-			@button_hover_glaze_mid-b 49%,
+			@button_hover_glaze_mida 49%,
+			@button_hover_glaze_midb 49%,
 			@button_hover_glaze_bot);
 }
 
@@ -321,8 +321,8 @@ button:disabled:focus {
 			@button_disabled_glaze_glow_edge),
 		linear-gradient(to bottom,
 			@button_disabled_glaze_top,
-			@button_disabled_glaze_mid-a 49%,
-			@button_disabled_glaze_mid-b 49%,
+			@button_disabled_glaze_mida 49%,
+			@button_disabled_glaze_midb 49%,
 			@button_disabled_glaze_bot);
 }
 
@@ -350,8 +350,8 @@ toolbar.primary-toolbar button:active:hover,
 			@null 4px, @null),
 		linear-gradient(to bottom,
 			@button_active_glaze_top,
-			@button_active_glaze_mid-a 49%,
-			@button_active_glaze_mid-b 49%,
+			@button_active_glaze_mida 49%,
+			@button_active_glaze_midb 49%,
 			@button_active_glaze_bot);
 }
 
@@ -378,8 +378,8 @@ button:active:hover {
 			@null 4px, @null),
 		linear-gradient(to bottom,
 			@button_active_glaze_top,
-			@button_active_glaze_mid-a 49%,
-			@button_active_glaze_mid-b 49%,
+			@button_active_glaze_mida 49%,
+			@button_active_glaze_midb 49%,
 			@button_active_glaze_bot);
 }
 
@@ -401,8 +401,8 @@ button:checked:hover {
 			@null 5px, @null),
 		linear-gradient(to bottom,
 			@button_hover_glaze_top,
-			@button_hover_glaze_mid-a 49%,
-			@button_hover_glaze_mid-b 49%,
+			@button_hover_glaze_mida 49%,
+			@button_hover_glaze_midb 49%,
 			@button_hover_glaze_bot);
 }
 
@@ -426,8 +426,8 @@ button:checked:focus:hover {
 			@null 5px, @null),
 		linear-gradient(to bottom,
 			@button_hover_glaze_top,
-			@button_hover_glaze_mid-a 49%,
-			@button_hover_glaze_mid-b 49%,
+			@button_hover_glaze_mida 49%,
+			@button_hover_glaze_midb 49%,
 			@button_hover_glaze_bot);
 }
 
@@ -439,8 +439,8 @@ toolbar button:hover {
 			@button_hover_glaze_glow_edge),
 		linear-gradient(to bottom,
 			@button_hover_glaze_top,
-			@button_hover_glaze_mid-a 49%,
-			@button_hover_glaze_mid-b 49%,
+			@button_hover_glaze_mida 49%,
+			@button_hover_glaze_midb 49%,
 			@button_hover_glaze_bot);
 }
 
@@ -455,8 +455,8 @@ toolbar.primary-toolbar button:focus:hover {
 			@button_hover_glaze_glow_edge),
 		linear-gradient(to bottom,
 			@button_hover_glaze_top,
-			@button_hover_glaze_mid-a 49%,
-			@button_hover_glaze_mid-b 49%,
+			@button_hover_glaze_mida 49%,
+			@button_hover_glaze_midb 49%,
 			@button_hover_glaze_bot);
 }
 
@@ -483,7 +483,7 @@ toolbar.primary-toolbar button:focus:active:hover {
 			@null 4px, @null),
 		linear-gradient(to bottom,
 			@button_active_glaze_top,
-			@button_active_glaze_mid-a 49%,
-			@button_active_glaze_mid-b 49%,
+			@button_active_glaze_mida 49%,
+			@button_active_glaze_midb 49%,
 			@button_active_glaze_bot);
 }

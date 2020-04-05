@@ -46,10 +46,10 @@ menubar menuitem:hover {
 		radial-gradient( ellipse 110% 50%,
 			@menuitem_hover_glaze_glow_center,
 			@menuitem_hover_glaze_glow_edge),
-		linear-gradient( to bottom,
+		linear-gradient(to bottom,
 			@menuitem_hover_glaze_top,
-			@menuitem_hover_glaze_mid-a 50%,
-			@menuitem_hover_glaze_mid-b 50%,
+			@menuitem_hover_glaze_mida 50%,
+			@menuitem_hover_glaze_midb 50%,
 			@menuitem_hover_glaze_bot);
 }
 
@@ -88,10 +88,10 @@ menu menuitem:hover {
 		radial-gradient( ellipse 110% 50%,
 			@menuitem_hover_glaze_glow_center,
 			@menuitem_hover_glaze_glow_edge),
-		linear-gradient( to bottom,
+		linear-gradient(to bottom,
 			@menuitem_hover_glaze_top,
-			@menuitem_hover_glaze_mid-a 50%,
-			@menuitem_hover_glaze_mid-b 50%,
+			@menuitem_hover_glaze_mida 50%,
+			@menuitem_hover_glaze_midb 50%,
 			@menuitem_hover_glaze_bot);
 }
 
