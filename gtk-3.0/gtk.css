@@ -16,8 +16,9 @@
 @define-color error #CC0000;
 @define-color insensitive_text_shadow alpha(@theme_base, 0.5);
 /* #A28F7E */ @define-color insensitive_fg shade(@theme_bg, 0.65);
+/* #AD9A89 */ @define-color dialog_border shade(@theme_bg, 0.7);
 
-/* --- color for infobar (containers.css) --- */
+/* --- color derivation for infobar (containers.css) --- */
 
 @define-color infobar_fg @theme_fg;
 @define-color infobar_bg_top #FCFCB9;
@@ -31,7 +32,7 @@
 @define-color questionbar_bg_top #88ACD4;
 @define-color questionbar_bg_bot #81A6CF;
 /* #4F7094 */ @define-color questionbar_border shade(@questionbar_bg_bot, 0.675);
-@define-color errorbar_fg #FFF;
+@define-color errorbar_fg invert(@theme_fg);
 @define-color errorbar_bg_top #ED3636;
 @define-color errorbar_bg_bot #E92F2F;
 /* #922B2B */ @define-color errorbar_border shade(@errorbar_bg_bot, 0.675);
@@ -142,8 +143,6 @@
 /* #BFAE9F */ @define-color scroll_hover_glaze_bot shade(@theme_bg, 0.79);
 
 /* --- todo --- */
-
-/* #AD9A89 */  @define-color dialog_border shade(@theme_bg, 0.7);
 
 @define-color frame_shadow_dark shade(@theme_bg, 0.96);
 @define-color frame_shadow_lite shade(@theme_bg, 1.04);

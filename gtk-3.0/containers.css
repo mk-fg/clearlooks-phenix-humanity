@@ -5,6 +5,10 @@ infobar revealer > box {
 	margin: -1px 0;
 }
 
+infobar revealer buttonbox {
+	margin: -1px -2px;
+}
+
 infobar.info {
 	color: @infobar_fg;
 	border: 1px solid @infobar_border;
@@ -397,16 +401,24 @@ viewport.frame row image,
 /* --- calendar --- */
 
 calendar {
+	padding: 1px;
 	border: 1px solid @frame_border;
 }
 
 calendar.header {
 	background: @theme_bg;
+	box-shadow:
+		inset -1px -1px alpha(@nb_border, 0.125),
+		inset 1px 1px alpha(@entry_bg, 0.27);
 }
 
 calendar.highlight {
 	color: @menuitem_hover;
 	background: @theme_selected_bg;
+}
+
+calendar:indeterminate {
+    color: alpha(@theme_fg, 0.2);
 }
 
 /* --- status bar --- */
