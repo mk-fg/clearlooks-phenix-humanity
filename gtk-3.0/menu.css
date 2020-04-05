@@ -129,7 +129,7 @@ popover.background separator {
 }
 
 menuitem accelerator {
-	color: alpha(@theme_fg, 0.601); /* #696764 instead of #696664 */
+	color: alpha(@theme_fg, 0.601); /* #696764 instead of #696664 @todo */
 }
 
 box.horizontal menu > separator, /* when menu tearoffed */

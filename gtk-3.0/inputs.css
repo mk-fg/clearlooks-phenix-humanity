@@ -10,8 +10,8 @@ entry {
 	background: @entry_bg;
 	box-shadow:
 		-1px -1px alpha(@entry_border, 0.09),
-		 1px  1px alpha(@entry_bg, 0.42), /* @todo */
-		inset 1px 1px alpha(@entry_border, 0.16);
+		 1px  1px alpha(lighter(@theme_bg), 0.418),
+		inset 1px 1px alpha(@entry_border, 0.162); /* @todo */
 }
 
 entry:disabled {
@@ -20,7 +20,7 @@ entry:disabled {
 	background: @entry_bg_disabled;
 	box-shadow:
 		-1px -1px alpha(@entry_border, 0.09),
-		 1px  1px alpha(@entry_bg, 0.42), /* @todo */
+		 1px  1px alpha(lighter(@theme_bg), 0.418),
 		inset 1px 1px alpha(@entry_border_disabled, 0.07);
 }
 
@@ -220,15 +220,16 @@ button, switch {
 	box-shadow:
 		-1px -1px alpha(@button_border, 0.13),
 		 1px  1px alpha(@button_border, 0.13),
-		inset 1px 1px alpha(@button_border, 0.14);
+		inset 1px 1px alpha(@button_border, 0.148); /* E8E0DA @todo */
 }
 
 button:disabled, switch:disabled {
 	border-color: @button_border_disabled;
 	box-shadow:
 		-1px -1px alpha(@button_border_disabled, 0.31),
-		 1px  1px alpha(@entry_bg, 0.42), /* @todo */
-		inset 1px 1px alpha(@button_border_disabled, 0.08);
+		 1px  1px alpha(lighter(@theme_bg), 0.418),
+		inset 1px 1px alpha(@button_border_disabled, 0.08),
+		inset -1px -1px alpha(@button_border_disabled, 0.08);
 }
 
 button.flat {
