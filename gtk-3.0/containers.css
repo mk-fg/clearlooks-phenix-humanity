@@ -15,16 +15,16 @@ infobar.info {
 	background: linear-gradient(to bottom, @infobar_bg_top, @infobar_bg_bot);
 }
 
-infobar.warning {
-	color: @warningbar_fg;
-	border: 1px solid @warningbar_border;
-	background: linear-gradient(to bottom, @warningbar_bg_top, @warningbar_bg_bot);
-}
-
 infobar.question {
 	color: @questionbar_fg;
 	border: 1px solid @questionbar_border;
 	background: linear-gradient(to bottom, @questionbar_bg_top, @questionbar_bg_bot);
+}
+
+infobar.warning {
+	color: @warningbar_fg;
+	border: 1px solid @warningbar_border;
+	background: linear-gradient(to bottom, @warningbar_bg_top, @warningbar_bg_bot);
 }
 
 infobar.error {

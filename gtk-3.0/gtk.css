@@ -2,7 +2,7 @@
 /* Defines all colors used in other stylesheets before including them. */
 
 @define-color theme_base #FFF;
-@define-color theme_bg #E6DDD5;
+@define-color theme_bg #E6DDD5; /*#E6DDD5*/
 @define-color theme_fg #101010;
 @define-color theme_text #1A1A1A;
 @define-color theme_selected_bg #8F5F4A;
@@ -24,15 +24,15 @@
 @define-color infobar_bg_top #FCFCB9;
 @define-color infobar_bg_bot #FBFBAC;
 /* #D4D448 */ @define-color infobar_border shade(@infobar_bg_bot, 0.675); /* #D4D44A okay */
-@define-color warningbar_fg @theme_fg;
-@define-color warningbar_bg_top #F9AD3B;
-@define-color warningbar_bg_bot #F5A734;
-/* #A17027 */ @define-color warningbar_border shade(@warningbar_bg_bot, 0.674);
 @define-color questionbar_fg @theme_fg;
 @define-color questionbar_bg_top #88ACD4;
 @define-color questionbar_bg_bot #81A6CF;
 /* #4F7094 */ @define-color questionbar_border shade(@questionbar_bg_bot, 0.675);
-@define-color errorbar_fg invert(@theme_fg);
+@define-color warningbar_fg @theme_fg;
+@define-color warningbar_bg_top #F9AD3B;
+@define-color warningbar_bg_bot #F5A734;
+/* #A17027 */ @define-color warningbar_border shade(@warningbar_bg_bot, 0.674);
+@define-color errorbar_fg #FFF;
 @define-color errorbar_bg_top #ED3636;
 @define-color errorbar_bg_bot #E92F2F;
 /* #922B2B */ @define-color errorbar_border shade(@errorbar_bg_bot, 0.675);
@@ -60,7 +60,7 @@
 
 /* #EFE9E3 */ @define-color menu_bg mix(@theme_base, @theme_bg, 0.67);
 /* #B4A291 */ @define-color menu_border shade(@theme_bg, 0.734);
-/* #D4C8BD */ @define-color menu_tearoff_border shade(@theme_bg, 0.9); /* #D4C7BB todo */
+/* #D4C8BD */ @define-color menu_tearoff_border shade(@theme_bg, 0.9); /* #D4C7BB @todo */
 /* #EFE9E3 */ @define-color menu_bg_arrow @menu_bg;
 /* #E6DDD5 */ @define-color menu_bg_disabled_arrow @theme_bg;
 /* #C4B3A5 */ @define-color menu_border_arrow shade(@theme_bg, 0.813); /* !yes */
@@ -88,9 +88,8 @@
 /* #D4A38C */ @define-color checkbutton_focus_border alpha(shade(@theme_selected_bg, 1.49), 0.7); /* #D4A38D okay */
 /* #E5D4C9 */ @define-color checkbutton_focus_hover_bg alpha(shade(@theme_selected_bg, 1.48), 0.175);
 /* #D5A48E */ @define-color checkbutton_focus_hover_border alpha(shade(@theme_selected_bg, 1.485), 0.7);
-/* #AFA195 */ @define-color button_border_fake mix(@theme_base, shade(@theme_bg, 0.568), 0.72);
-/* #AB9E92 */ @define-color button_border #AB9E92;
-/* #CDBFB2 */ @define-color button_border_disabled #CDBFB2;
+/* #AB9E92 */ @define-color button_border shade(@theme_bg, 0.693); /* #AB9888 @todo */
+/* #CDBFB2 */ @define-color button_border_disabled shade(@theme_bg, 0.864); /* #CDBFB1 */
 
 @define-color button_glaze_top alpha(shade(@theme_bg, 1.11), 0.17);
 @define-color button_glaze_glow_center alpha(shade(@theme_bg, 1.105), 0.75);
