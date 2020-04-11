@@ -1,6 +1,6 @@
-# Theme
+# The old Ubuntu Human theme
 
-Work in progress. Screenshots available soon. Debian package available soon.
+Work in progress.
 
 ## About
 
@@ -27,6 +27,10 @@ This theme works with GTK 2.24+ (*gtk2-engines-murrine* is required) and GTK 3.2
 * menu have icons: where?
 * menu can change accels: where?
 * show only icons in toolbars: where?
+
+## Screenshots
+
+See issue #2.
 
 ## Known issues
 
