@@ -14,6 +14,18 @@ entry {
 		inset 1px 1px alpha(@entry_border, 0.162); /* @todo */
 }
 
+entry image.left {
+	margin-right: 4px;
+}
+
+entry image.right {
+	margin-left: 4px;
+}
+
+entry:focus {
+	border-color: @entry_border_focus;
+}
+
 entry:disabled {
 	text-shadow: none;
 	border-color: @entry_border_disabled;
@@ -24,16 +36,8 @@ entry:disabled {
 		inset 1px 1px alpha(@entry_border_disabled, 0.07);
 }
 
-entry:focus {
-	border-color: @entry_border_focus;
-}
-
-entry image.left {
-	margin-right: 5px;
-}
-
-entry image.right {
-	margin-left: 5px;
+entry:disabled image {
+	-gtk-icon-effect: dim;
 }
 
 /* --- combobox (text entry with drop down or drop down) --- */
