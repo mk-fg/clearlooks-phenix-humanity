@@ -1,14 +1,14 @@
 [Desktop Entry]
 Type=X-GNOME-Metatheme
-Name=Clearlooks-Phénix-Humanity
-Name[fr]=Clearlooks-Phénix-Humanity
-Comment=Clearlooks-Phénix with Ubuntu Human colors
+Name=old-human-theme
+Comment=The old Ubuntu Human theme for... GTK 3.24.
+Comment[fr]=Le vieux thème Ubuntu Human pour... GTK 3.24.
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
-GtkTheme=clearlooks-phenix-humanity
-MetacityTheme=clearlooks-phenix-humanity
-IconTheme=Humanity
+GtkTheme=old-human-theme
+MetacityTheme=old-human-theme
+IconTheme=gnome
 CursorTheme=DMZ-White
 CursorSize=16
 ButtonLayout=:minimize,maximize,close
