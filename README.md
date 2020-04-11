@@ -16,7 +16,7 @@ This theme works with GTK 2.24+ (*gtk2-engines-murrine* is required) and GTK 3.2
 
 ## Installation
 
-* Download or clone the repository in `~/.themes/human-theme-gtk/`
+* Download or clone the repository in `~/.themes/old-human-theme/`
 * Configure the font rendering, add in `/etc/environment`: `FREETYPE_PROPERTIES="truetype:interpreter-version=35"`
 * Install [gtk3-nocsd](https://github.com/PCMan/gtk3-nocsd) to restore the window title bar: `sudo apt install gtk3-nocsd`
 * Restart your session/xserver
@@ -26,7 +26,7 @@ This theme works with GTK 2.24+ (*gtk2-engines-murrine* is required) and GTK 3.2
 * button have icons: where?
 * menu have icons: where?
 * menu can change accels: where?
-* show only icons: where?
+* show only icons in toolbars: where?
 
 ## Known issues
 
@@ -34,6 +34,7 @@ This theme works with GTK 2.24+ (*gtk2-engines-murrine* is required) and GTK 3.2
 * The [status bar grip](https://developer.gnome.org/gtk2/stable/GtkStatusbar.html) was removed with GTK 3 ([note1](https://developer.gnome.org/gtk3/stable/ch26s02.html#id-1.6.3.4.17), [note2](https://developer.gnome.org/gtk3/stable/GtkWindow.html#gtk-window-set-has-resize-grip)).
 * The treeview zebra/even-odd row styling was removed with GTK 3.19 ([note](https://gitlab.gnome.org/GNOME/gtk/issues/581#note_746153)).
 * The tabs mouse scroll was removed with GTK 3 ([feature 2455 for Geany](https://github.com/geany/geany/issues/2455), [feature 896 for Caja](https://github.com/mate-desktop/caja/issues/896)...).
+* Can not change previous and next arrows of pathbar.
 
 ## Dev
 
@@ -47,8 +48,8 @@ awf-gtk3 -s ~/3.png
 
 Run [entr](https://github.com/clibs/entr) to send sighup signal to auto reload theme:
 ```
-ls ~/.themes/yourdir/gtk-3.0/*.css | entr killall -s SIGHUP awf-gtk2
-ls ~/.themes/yourdir/gtk-3.0/*.css | entr killall -s SIGHUP awf-gtk3
+ls ~/.themes/old-human-theme/gtk-3.0/*.css | entr killall -s SIGHUP awf-gtk2
+ls ~/.themes/old-human-theme/gtk-3.0/*.css | entr killall -s SIGHUP awf-gtk3
 ```
 
 Run [imagemagick](https://imagemagick.org) to generate the diff image:
@@ -60,7 +61,7 @@ eom ~/diff.png
 
 You can also run entr to auto generate the diff image:
 ```
-ls ~/3.png | entr bash ~/.themes/yourdir/dev.sh
+ls ~/3.png | entr bash ~/.themes/old-human-theme/dev.sh
 ```
 
 ...
