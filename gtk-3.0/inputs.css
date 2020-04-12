@@ -232,7 +232,7 @@ button:disabled, switch:disabled {
 	box-shadow:
 		-1px -1px alpha(@button_border_disabled, 0.31),
 		 1px  1px alpha(lighter(@theme_bg), 0.418),
-		inset 1px 1px alpha(@button_border_disabled, 0.08),
+		inset  1px  1px alpha(@button_border_disabled, 0.08),
 		inset -1px -1px alpha(@button_border_disabled, 0.08);
 }
 

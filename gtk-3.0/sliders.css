@@ -1,49 +1,35 @@
 
 /* --- progressbar --- */
 
-progressbar.vertical {
-
-}
-
-progressbar.horizontal {
-
-}
-
 progressbar trough {
-	border: 1px solid @slider_trough_border;
-	border-radius: 3px;
-	background:
-		linear-gradient(to right,
-			alpha(@slider_trough_shadow_edge, 0.3),
-			alpha(@slider_trough_shadow, 0.3) 3px,
-			alpha(@slider_trough_shadow, 0) 5px),
-		linear-gradient(to bottom,
-			alpha(@slider_trough_shadow_edge, 0.3),
-			alpha(@slider_trough_shadow, 0.3) 3px,
-			alpha(@slider_trough_shadow, 0) 5px)
-		@slider_trough_bg;
+	/* border: 1px solid @slider_trough_border; */
+	border-radius: 2.75px;
+	background: @slider_trough_bg;
+	box-shadow:
+		inset -1px -1px @slider_trough_border,
+		inset  3px 3px alpha(shade(@theme_bg, 0.82), 0.26),
+		inset  2px 2px alpha(shade(@theme_bg, 0.82), 0.26),
+		inset  1px 1px @slider_trough_border;
 }
 
-progressbar progress {
-	border: 1px solid @slider_border;
-	border-radius: 3px;
-}
-
-progressbar text {
-
+progressbar trough progress {
+	/* border: 1px solid @slider_border; */
+	border-radius: 2.75px;
+	box-shadow:
+		inset -1px -1px @slider_border,
+		inset  1px  1px @slider_border;
 }
 
 progressbar.vertical trough {
-	min-width: 20px;
+	min-width: 22px;
 }
 
 progressbar.horizontal trough {
-	min-height: 18px;
+	min-height: 20px;
 }
 
-progressbar.vertical progress {
-	margin: -1px;
-	min-width: 20px;
+progressbar.vertical trough progress {
+	min-width: 22px;
 	background:
 		radial-gradient(
 			ellipse 50% 90%,
@@ -55,16 +41,15 @@ progressbar.vertical progress {
 			@slider_glaze_midb 49%,
 			@slider_glaze_bot),
 		repeating-linear-gradient(135deg,
-			alpha(@slider_pattern, 0.0),
-			alpha(@slider_pattern, 0.0) 12px,
-			@slider_pattern 12px,
-			@slider_pattern 24px);
+			alpha(@slider_pattern, 0),
+			alpha(@slider_pattern, 0) 15px,
+			@slider_pattern 15px,
+			@slider_pattern 30px);
 }
 
 treeview.view.progressbar,
-progressbar.horizontal progress {
-	margin: -1px;
-	min-height: 18px;
+progressbar.horizontal trough progress {
+	min-height: 20px;
 	background:
 		radial-gradient(
 			ellipse 90% 50%,
@@ -76,45 +61,71 @@ progressbar.horizontal progress {
 			@slider_glaze_midb 49%,
 			@slider_glaze_bot),
 		repeating-linear-gradient(135deg,
-			alpha(@slider_pattern, 0.0),
-			alpha(@slider_pattern, 0.0) 12px,
-			@slider_pattern 12px,
-			@slider_pattern 24px);
+			alpha(@slider_pattern, 0),
+			alpha(@slider_pattern, 0) 15px,
+			@slider_pattern 15px,
+			@slider_pattern 30px);
+}
+
+progressbar.vertical trough.empty progress,
+progressbar.horizontal trough.empty progress {
+	border: 0;
+	background: none;
+}
+
+/* --- progressbar text --- */
+
+progressbar.vertical text {
+	margin-left: -39px;
+	padding-left: 3px;
+}
+
+progressbar.vertical text + trough,
+progressbar.vertical text + trough progress {
+	min-width: 39px;
+}
+
+progressbar.horizontal text {
+	margin-bottom: -24px;
+	padding-top: 3px;
+}
+
+progressbar.horizontal text + trough,
+progressbar.horizontal text + trough progress {
+	min-height: 24px;
 }
 
 /* --- scale slider --- */
 
 scale.vertical {
-	margin: 11px 0 11px 1px;
+	margin: 11px 0 10px 1px;
 	padding: 8px 5px;
 	min-width: 10px;
 }
 
 scale.horizontal {
-	margin: 1px 11px 0;
+	margin: 1px 10px 0 11px;
 	padding: 5px 2px;
 	min-height: 10px;
 }
 
 scale trough {
-	border: 1px solid @slider_trough_border;
-	border-radius: 3px;
-	background:
-		linear-gradient(to right,
-			alpha(@slider_trough_shadow_edge, 0.3),
-			alpha(@slider_trough_shadow, 0.3) 3px,
-			alpha(@slider_trough_shadow, 0) 5px),
-		linear-gradient(to bottom,
-			alpha(@slider_trough_shadow_edge, 0.3),
-			alpha(@slider_trough_shadow, 0.3) 3px,
-			alpha(@slider_trough_shadow, 0) 5px)
-		@slider_trough_bg;
+	/* border: 1px solid @slider_trough_border; */
+	border-radius: 2.75px;
+	background: @scale_trough_bg;
+	box-shadow:
+		-1px -1px alpha(@slider_trough_bg, 0.35),
+		 1px  1px alpha(lighter(@theme_bg), 0.418),
+		inset -1px -1px @slider_trough_border,
+		inset  1px 1px @slider_trough_border;
 }
 
 scale trough highlight {
-	margin: -1px;
-	border: 1px solid @slider_border;
-	border-radius: 3px;
+	/* border: 1px solid @slider_border; */
+	border-radius: 2.75px;
+	box-shadow:
+		inset -1px -1px @slider_border,
+		inset  1px  1px @slider_border;
 }
 
 scale.vertical trough {
@@ -126,7 +137,7 @@ scale.horizontal trough {
 }
 
 scale.vertical trough highlight {
-	min-width: 3px;
+	min-width: 5px;
 	background:
 		radial-gradient(
 			ellipse 50% 90%,
@@ -145,7 +156,7 @@ scale.vertical trough highlight {
 }
 
 scale.horizontal trough highlight {
-	min-height: 3px;
+	min-height: 5px;
 	background:
 		radial-gradient(
 			ellipse 90% 50%,
@@ -168,7 +179,7 @@ scale.vertical slider {
 	min-width: 11px;
 	min-height: 18px;
 	border: 1px solid @slider_trough_border;
-	border-radius: 3px;
+	border-radius: 2.75px;
 	background:
 		radial-gradient( circle,
 			@scale_glaze_glow_center,
@@ -185,7 +196,7 @@ scale.horizontal slider {
 	min-width: 18px;
 	min-height: 11px;
 	border: 1px solid @slider_trough_border;
-	border-radius: 3px;
+	border-radius: 2.75px;
 	background:
 		radial-gradient( circle,
 			@scale_glaze_glow_center,
@@ -221,15 +232,53 @@ scale.horizontal slider:hover {
 			@scale_hover_glaze_bot);
 }
 
-scale.vertical indicator {
-	margin-right: 8px;
+scale.horizontal value {
+	margin-bottom: 4px;
+}
+
+/* --- scale slider marks --- */
+
+scale.vertical.marks-before {
+	margin-right: 3px;
+}
+
+scale.horizontal.marks-before {
+	margin-bottom: 3px;
+}
+
+scale.vertical.marks-before indicator {
+	margin-right: 7px;
+}
+
+scale.horizontal.marks-before indicator {
+	margin-bottom: 7px;
+}
+
+scale.vertical.marks-after {
+	margin-left: 3px;
+}
+
+scale.horizontal.marks-after {
+	margin-top: 3px;
+}
+
+scale.vertical.marks-after indicator {
+	margin-left: 7px;
+}
+
+scale.horizontal.marks-after indicator {
+	margin-top: 7px;
+}
+
+scale.vertical.marks-before indicator,
+scale.vertical.marks-after indicator {
 	min-width: 6px;
 	border-top: 1px solid @content_separator_dark;
 	border-bottom: 1px solid @content_separator_lite;
 }
 
-scale.horizontal indicator {
-	margin-bottom: 8px;
+scale.horizontal.marks-before indicator,
+scale.horizontal.marks-after indicator {
 	min-height: 6px;
 	border-left: 1px solid @content_separator_dark;
 	border-right: 1px solid @content_separator_lite;
@@ -239,7 +288,7 @@ scale.horizontal indicator {
 
 levelbar trough {
 	border: 1px solid @slider_trough_border;
-	border-radius: 3px;
+	border-radius: 2.75px;
 	background:
 		linear-gradient(to right,
 			alpha(@slider_trough_shadow_edge, 0.3),
@@ -253,17 +302,19 @@ levelbar trough {
 }
 
 levelbar.horizontal trough {
+	margin: 0 -1px;
 	min-height: 9px;
 }
 
 levelbar.vertical trough {
+	margin: -1px 0;
 	min-width: 9px;
 }
 
 levelbar block.filled {
-	margin: -1px 0 -1px -1px;
+	margin: -1px;
 	border: 1px solid @slider_border;
-	border-radius: 3px;
+	border-radius: 2.75px;
 	background:
 		radial-gradient(
 			ellipse 90% 50%,
@@ -282,9 +333,9 @@ levelbar block.filled {
 }
 
 levelbar.horizontal.discrete block {
-	margin: 0 1px;
+	margin: -1px 1px;
 }
 
 levelbar.vertical.discrete block {
-	margin: 1px 0;
+	margin: 1px -1px;
 }

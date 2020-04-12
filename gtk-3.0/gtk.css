@@ -15,30 +15,28 @@
 @define-color visited_link shade(@link, 0.2);
 @define-color error #CC0000;
 @define-color insensitive_text_shadow alpha(@theme_base, 0.5);
+
 /* #A28F7E */ @define-color insensitive_fg shade(@theme_bg, 0.65);
 /* #AD9A89 */ @define-color dialog_border shade(@theme_bg, 0.7);
 
-/* --- color derivation for infobar (containers.css) --- */
+/* --- color derivation for containers.css --- */
 
-@define-color infobar_fg @theme_fg;
-@define-color infobar_bg_top #FCFCB9;
-@define-color infobar_bg_bot #FBFBAC;
+/* #101010 */ @define-color infobar_fg @theme_fg;
+              @define-color infobar_bg_top #FCFCB9;
+              @define-color infobar_bg_bot #FBFBAC;
 /* #D4D448 */ @define-color infobar_border shade(@infobar_bg_bot, 0.675); /* #D4D44A okay */
-@define-color questionbar_fg @theme_fg;
-@define-color questionbar_bg_top #88ACD4;
-@define-color questionbar_bg_bot #81A6CF;
+/* #101010 */ @define-color questionbar_fg @theme_fg;
+              @define-color questionbar_bg_top #88ACD4;
+              @define-color questionbar_bg_bot #81A6CF;
 /* #4F7094 */ @define-color questionbar_border shade(@questionbar_bg_bot, 0.675);
-@define-color warningbar_fg @theme_fg;
-@define-color warningbar_bg_top #F9AD3B;
-@define-color warningbar_bg_bot #F5A734;
+/* #101010 */ @define-color warningbar_fg @theme_fg;
+              @define-color warningbar_bg_top #F9AD3B;
+              @define-color warningbar_bg_bot #F5A734;
 /* #A17027 */ @define-color warningbar_border shade(@warningbar_bg_bot, 0.674);
-@define-color errorbar_fg #FFF;
-@define-color errorbar_bg_top #ED3636;
-@define-color errorbar_bg_bot #E92F2F;
+/* #FFFFFF */ @define-color errorbar_fg #FFF;
+              @define-color errorbar_bg_top #ED3636;
+              @define-color errorbar_bg_bot #E92F2F;
 /* #922B2B */ @define-color errorbar_border shade(@errorbar_bg_bot, 0.675);
-
-/* --- color derivation for frame/notebook/tabs (containers.css) --- */
-
 /* #CCBFB3 */ @define-color content_separator_dark alpha(shade(@theme_bg, 0.73), 0.5);
 /* #F2EEEA */ @define-color content_separator_lite alpha(shade(@theme_bg, 1.27), 0.5);
 /* #BCAB9B */ @define-color frame_border shade(@theme_bg, 0.775);
@@ -53,10 +51,10 @@
 /* #F2EDE8 */ @define-color nb_tab_checked_glaze_mida shade(@theme_bg, 1.072);
 /* #EAE2DB */ @define-color nb_tab_checked_glaze_midb shade(@theme_bg, 1.022);
 /* #EEE8E2 */ @define-color nb_tab_checked_glaze_bot shade(@theme_bg, 1.047);
-@define-color nb_tab_focus_bg alpha(shade(@theme_selected_bg, 1.27), 0.175);
-@define-color nb_tab_focus_border alpha(shade(@theme_selected_bg, 1.49), 0.7);
+/* @TODO   */ @define-color nb_tab_focus_bg alpha(shade(@theme_selected_bg, 1.27), 0.175);
+/* @TODO   */ @define-color nb_tab_focus_border alpha(shade(@theme_selected_bg, 1.49), 0.7);
 
-/* --- color derivation for menubar/toolbar (menu.css) --- */
+/* --- color derivation for menu.css --- */
 
 /* #EFE9E3 */ @define-color menu_bg mix(@theme_base, @theme_bg, 0.67);
 /* #B4A291 */ @define-color menu_border shade(@theme_bg, 0.734);
@@ -76,7 +74,7 @@
 /* top:#CBBDB1 bot:#C9BBAE */ @define-color toolbar_separator_dark alpha(shade(@theme_bg, 0.73), 0.5);
 /* top:#F1EDE8 bot:#EFEAE5 */ @define-color toolbar_separator_lite alpha(shade(@theme_bg, 1.27), 0.5);
 
-/* --- color derivation for entry (inputs.css) --- */
+/* --- color derivation for inputs.css --- */
 
 /* #FFFFFF */ @define-color entry_bg @theme_base;
 /* #8B7969 */ @define-color entry_border shade(@theme_bg, 0.55);
@@ -90,21 +88,18 @@
 /* #D5A48E */ @define-color checkbutton_focus_hover_border alpha(shade(@theme_selected_bg, 1.485), 0.7);
 /* #AB9E92 */ @define-color button_border shade(@theme_bg, 0.693); /* #AB9888 @todo */
 /* #CDBFB2 */ @define-color button_border_disabled shade(@theme_bg, 0.864); /* #CDBFB1 */
-
 @define-color button_glaze_top alpha(shade(@theme_bg, 1.11), 0.17);
 @define-color button_glaze_glow_center alpha(shade(@theme_bg, 1.105), 0.75);
 @define-color button_glaze_glow_edge alpha(shade(@theme_bg, 0.995), 0);
 @define-color button_glaze_mida alpha(shade(@theme_bg, 1.03), 0.8);
 @define-color button_glaze_midb alpha(shade(@theme_bg, 0.93), 0.9);
 @define-color button_glaze_bot alpha(shade(@theme_bg, 0.95), 0.9);
-
 @define-color button_disabled_glaze_top alpha(shade(@theme_bg, 1.05), 0.2);
 @define-color button_disabled_glaze_glow_center alpha(shade(@theme_bg, 1.10), 0.45);
 @define-color button_disabled_glaze_glow_edge alpha(@theme_bg, 0);
 @define-color button_disabled_glaze_mida alpha(shade(@theme_bg, 1.03), 0.2);
 @define-color button_disabled_glaze_midb alpha(shade(@theme_bg, 0.93), 0.2);
 @define-color button_disabled_glaze_bot alpha(shade(@theme_bg, 0.95), 0.39);
-
 @define-color button_active_glaze_top alpha(shade(@theme_bg, 0.89), 0.78);
 @define-color button_active_glaze_glow_center alpha(shade(@theme_bg, 1.10), 0.4);
 @define-color button_active_glaze_glow_edge alpha(shade(@theme_bg, 0.95), 0);
@@ -113,18 +108,25 @@
 @define-color button_active_glaze_shadow alpha(shade(@theme_bg, 0.85), 0.3);
 @define-color button_active_glaze_shadow_edge alpha(shade(@theme_bg, 0.81), 0.9);
 @define-color button_active_glaze_bot alpha(shade(@theme_bg, 0.8), 0.79);
-
 @define-color button_hover_glaze_top alpha(shade(@theme_bg, 1.09), 0.8);
 @define-color button_hover_glaze_glow_center alpha(shade(@theme_bg, 1.1), 0.8);
 @define-color button_hover_glaze_glow_edge alpha(shade(@theme_bg, 1.1), 0);
 @define-color button_hover_glaze_mida alpha(shade(@theme_bg, 1.05), 0.8);
 @define-color button_hover_glaze_midb alpha(shade(@theme_bg, 0.96), 0.8);
 @define-color button_hover_glaze_bot alpha(shade(@theme_bg, 0.93), 0.8);
-
 @define-color button_focus_fill alpha(shade(@theme_selected_bg, 1.6), 0.15);
 @define-color button_focus_fill_active alpha(shade(@theme_selected_bg, 1.5), 0.2);
 
-/* --- color derivation for scrollbar (scrollbar.css) --- */
+/* --- color derivation for sliders.css --- */
+
+@define-color slider_base shade(@theme_selected_bg, 1.04);
+/* #694C3F */ @define-color slider_border shade(@slider_base, 0.745);
+/* #D1C2B6 */ @define-color slider_trough_bg shade(@theme_bg, 0.881);
+/* #B4A292 */ @define-color slider_trough_border shade(shade(@theme_bg, 0.839), 0.876);
+              @define-color slider_pattern alpha(shade(@theme_selected_bg, 1.2), 0.8);
+/* #D0C2B5 */ @define-color scale_trough_bg shade(@theme_bg, 0.881);
+
+/* --- color derivation for scrollbars.css --- */
 
 /* #EAE3DC */ @define-color scroll_bg shade(@theme_bg, 1.025);
 /* #C5B5A6 */ @define-color scroll_border shade(@theme_bg, 0.82);
@@ -148,14 +150,6 @@
 @define-color menuitem_hover @theme_selected_fg;
 @define-color menuitem_hover_border shade(@theme_selected_bg, 0.767); /* #684B3F instead of #684B3E */
 @define-color menuitem_hover_glaze @theme_selected_bg;
-@define-color slider_base shade(@theme_selected_bg, 1.04);
-@define-color slider_border shade(@slider_base, 0.745); /* #694C3F okay! */
-@define-color slider_fill @slider_base;
-@define-color slider_pattern alpha(shade(@slider_base, 1.5), 0.8);
-@define-color slider_trough_bg shade(@theme_bg, 0.881); /* #D1C2B6 okay! */
-@define-color slider_trough_border shade(shade(@theme_bg, 0.839), 0.876); /* #B4A292 okay! */
-@define-color slider_trough_shadow alpha(shade(@theme_bg, 0.85), 0.3);
-@define-color slider_trough_shadow_edge alpha(shade(@theme_bg, 0.82), 0.8);
 @define-color menuitem_hover_glaze_bot shade(@menuitem_hover_glaze, 0.96210);
 @define-color menuitem_hover_glaze_glow shade(@theme_selected_bg, 1.2);
 @define-color menuitem_hover_glaze_glow_center alpha(@menuitem_hover_glaze_glow, 0.5);
@@ -180,7 +174,7 @@
 @define-color slider_glaze_glow_edge alpha(@button_glaze_glow, 0);
 @define-color slider_glaze_mida alpha(shade(@slider_base, 0.95), 0.8);
 @define-color slider_glaze_midb alpha(shade(@slider_base, 0.85), 0.8);
-@define-color slider_glaze_top alpha(@slider_fill, 0.8);
+@define-color slider_glaze_top alpha(@slider_base, 0.8);
 
 /* --- import --- */
 
@@ -188,7 +182,7 @@
 @import url("containers.css");
 @import url("inputs.css");
 @import url("sliders.css");
-@import url("scrollbar.css");
+@import url("scrollbars.css");
 @import url("menu.css");
 @import url("tables.css");
 @import url("mate.css");
