@@ -1,13 +1,13 @@
 [Desktop Entry]
 Type=X-GNOME-Metatheme
-Name=old-human-theme
+Name=old-ubuntu-human
 Comment=The old Ubuntu Human theme for... GTK 3.24.
 Comment[fr]=Le vieux thème Ubuntu Human pour... GTK 3.24.
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
-GtkTheme=old-human-theme
-MetacityTheme=old-human-theme
+GtkTheme=old-ubuntu-human
+MetacityTheme=Clearlooks
 IconTheme=gnome
 CursorTheme=DMZ-White
 CursorSize=16
