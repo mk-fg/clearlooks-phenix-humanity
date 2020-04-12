@@ -238,7 +238,6 @@ scale.horizontal indicator {
 /* --- lavelbar --- */
 
 levelbar trough {
-	min-height: 9px;
 	border: 1px solid @slider_trough_border;
 	border-radius: 3px;
 	background:
@@ -251,6 +250,14 @@ levelbar trough {
 			alpha(@slider_trough_shadow, 0.3) 3px,
 			alpha(@slider_trough_shadow, 0) 5px)
 		@slider_trough_bg;
+}
+
+levelbar.horizontal trough {
+	min-height: 9px;
+}
+
+levelbar.vertical trough {
+	min-width: 9px;
 }
 
 levelbar block.filled {
@@ -274,6 +281,10 @@ levelbar block.filled {
 			@slider_pattern 24px);
 }
 
-levelbar.discrete block {
+levelbar.horizontal.discrete block {
 	margin: 0 1px;
+}
+
+levelbar.vertical.discrete block {
+	margin: 1px 0;
 }
