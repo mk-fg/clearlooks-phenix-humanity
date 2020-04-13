@@ -9,6 +9,14 @@ infobar revealer buttonbox {
 	margin: -1px -2px;
 }
 
+infobar revealer buttonbox button {
+	padding: 2px 0 3px;
+}
+
+infobar revealer buttonbox button image {
+	-gtk-icon-transform: scale(0.8);
+}
+
 infobar.info {
 	color: @infobar_fg;
 	border: 1px solid @infobar_border;
