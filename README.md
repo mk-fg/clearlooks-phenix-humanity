@@ -6,7 +6,7 @@ Work in progress.
 
 This is an adaptation of [Clearlooks-Phénix](https://github.com/jpfleury/clearlooks-phenix) theme, a GTK 3 port of old GTK 2 / GNOME 2 [Clearlooks style](https://en.wikipedia.org/wiki/Clearlooks). This is also a continuation of [Human Quarny](https://www.mate-look.org/p/1013593/) theme.
 
-This theme works with GTK 2.24+ (*gtk2-engines-murrine* is required) and GTK 3.24+, it is tested and developped with *Mate 1.24.0* and *GTK 3.24.14* under *Debian Testing*.
+This theme works with GTK 2.24+ (*gtk2-engines-murrine* is required) and GTK 3.24+, it is tested and developped with *Mate 1.24.0* and *GTK 3.24.18* under *Debian Testing*.
 
 * [technical informations](https://github.com/mk-fg/clearlooks-phenix-humanity)
 * [human-theme](https://packages.ubuntu.com/search?keywords=human-theme) ubuntu package
@@ -18,6 +18,9 @@ This theme works with GTK 2.24+ (*gtk2-engines-murrine* is required) and GTK 3.2
 
 * Download or clone the repository in `~/.themes/old-human-theme/`
 * Configure the font rendering, add in `/etc/environment`: `FREETYPE_PROPERTIES="truetype:interpreter-version=35"`
+* Configure the QT styles, add in `/etc/environment`: `QT_QPA_PLATFORMTHEME=gtk2`
+* Install qt5-gtk2-platformtheme and qt5-gtk-platformtheme for QT apps: `sudo apt install qt5-gtk2-platformtheme qt5-gtk-platformtheme`
+* Install gtk2-engines-murrine for GTK2 apps: `sudo apt install gtk2-engines-murrine`
 * Install [gtk3-nocsd](https://github.com/PCMan/gtk3-nocsd) to restore the window title bar: `sudo apt install gtk3-nocsd`
 * Restart your session/xserver
 
