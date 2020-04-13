@@ -9,14 +9,14 @@ This is an adaptation of [Clearlooks-Phénix](https://github.com/jpfleury/clearl
 This theme works with GTK 2.24+ (*gtk2-engines-murrine* is required) and GTK 3.24+ and GTK 3.98+, it is tested and developped with *Mate 1.24.0* and *GTK 3.24.18* under *Debian Testing*.
 
 * [technical informations](https://github.com/mk-fg/clearlooks-phenix-humanity)
-* [human-theme](https://packages.ubuntu.com/search?keywords=human-theme) ubuntu package
+* [human](https://packages.ubuntu.com/search?keywords=human) ubuntu package
 * [gtk2-engines-murrine](https://packages.ubuntu.com/search?keywords=gtk2-engines-murrine) ubuntu package
 * [gtk2-engines-murrine](https://packages.debian.org/search?keywords=gtk2-engines-murrine) debian package
 * [a widget factory 2](https://github.com/luigifab/awf)
 
 ## Installation
 
-* Download or clone the repository in `~/.themes/old-human-theme/`
+* Download or clone the repository in `~/.themes/old-ubuntu-human/`
 * Configure the font rendering, add in `/etc/environment`: `FREETYPE_PROPERTIES="truetype:interpreter-version=35"`
 * Configure the QT styles, add in `/etc/environment`: `QT_QPA_PLATFORMTHEME=gtk2`
 * Install qt5-gtk-platformtheme for QT 5 apps: `sudo apt install qt5-gtk2-platformtheme qt5-gtk-platformtheme`
@@ -56,22 +56,22 @@ awf-gtk4 -s ~/4.png
 
 Run [entr](https://github.com/clibs/entr) to send sighup signal to auto reload theme:
 ```
-ls ~/.themes/old-human-theme/gtk-3.0/*.css | entr killall -s SIGHUP awf-gtk2
-ls ~/.themes/old-human-theme/gtk-3.0/*.css | entr killall -s SIGHUP awf-gtk3
-ls ~/.themes/old-human-theme/gtk-4.0/*.css | entr killall -s SIGHUP awf-gtk4
+ls ~/.themes/old-ubuntu-human/gtk-3.0/*.css | entr killall -s SIGHUP awf-gtk2
+ls ~/.themes/old-ubuntu-human/gtk-3.0/*.css | entr killall -s SIGHUP awf-gtk3
+ls ~/.themes/old-ubuntu-human/gtk-4.0/*.css | entr killall -s SIGHUP awf-gtk4
 ```
 
 Run [imagemagick](https://imagemagick.org) to generate the diff image:
 ```
-compare -fuzz 1% -compose src -highlight-color blue -lowlight-color none ~/2.png ~/3.png ~/diff.png
-composite ~/diff.png ~/2.png ~/diff.png
-eom ~/diff.png
+compare -fuzz 1% -compose src -highlight-color blue -lowlight-color none ~/2.png ~/3.png ~/diff3.png
+composite ~/diff3.png ~/2.png ~/diff3.png
+eom ~/diff3.png
 ```
 
 You can also run entr to auto generate the diff image:
 ```
-ls ~/3.png | entr bash ~/.themes/old-human-theme/dev3.sh
-ls ~/4.png | entr bash ~/.themes/old-human-theme/dev4.sh
+ls ~/3.png | entr bash ~/.themes/old-ubuntu-human/dev3.sh
+ls ~/4.png | entr bash ~/.themes/old-ubuntu-human/dev4.sh
 ```
 
 ...
