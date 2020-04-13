@@ -7,7 +7,7 @@ Encoding=UTF-8
 
 [X-GNOME-Metatheme]
 GtkTheme=old-ubuntu-human
-MetacityTheme=Clearlooks
+MetacityTheme=old-ubuntu-human
 IconTheme=gnome
 CursorTheme=DMZ-White
 CursorSize=16
