@@ -236,13 +236,15 @@ button:disabled, switch:disabled {
 		inset -1px -1px alpha(@button_border_disabled, 0.08);
 }
 
-button.flat {
+button.flat,
+box.primary-toolbar-gtk4 button {
 	border-color: transparent;
 	background: transparent;
 	box-shadow: none;
 }
 
-button.flat:disabled {
+button.flat:disabled,
+box.primary-toolbar-gtk4 button:disabled {
 	border-color: transparent;
 	background: transparent;
 	opacity: 0.3;
