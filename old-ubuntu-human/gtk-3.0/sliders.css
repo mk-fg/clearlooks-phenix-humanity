@@ -302,12 +302,10 @@ levelbar trough {
 }
 
 levelbar.horizontal trough {
-	margin: 0 -1px;
 	min-height: 9px;
 }
 
 levelbar.vertical trough {
-	margin: -1px 0;
 	min-width: 9px;
 }
 
