@@ -16,7 +16,7 @@ This theme works with GTK 2.24+ (*gtk2-engines-murrine* is required) and GTK 3.2
 
 ## Installation
 
-* Download or clone the repository in `~/.themes/old-ubuntu-human/`
+* Download or clone the repository in `~/.themes/`
 * Configure the font rendering, add in `/etc/environment`: `FREETYPE_PROPERTIES="truetype:interpreter-version=35"`
 * Configure the QT styles, add in `/etc/environment`: `QT_QPA_PLATFORMTHEME=gtk2`
 * Install qt5-gtk-platformtheme for QT 5 apps: `sudo apt install qt5-gtk2-platformtheme qt5-gtk-platformtheme`

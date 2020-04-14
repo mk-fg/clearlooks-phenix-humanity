@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=old-ubuntu-human-orange
+Comment=The old Ubuntu Human theme for... GTK 3.24. Orange variation.
+Comment[fr]=Le vieux thème Ubuntu Human pour... GTK 3.24. Variante orange.
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=old-ubuntu-human-orange
+MetacityTheme=old-ubuntu-human-orange
+IconTheme=gnome
+CursorTheme=DMZ-White
+CursorSize=16
+ButtonLayout=:minimize,maximize,close
