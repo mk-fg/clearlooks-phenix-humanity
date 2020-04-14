@@ -334,6 +334,12 @@ button:disabled:focus {
 button:checked,
 button.flat:active,
 button.flat:active:hover,
+toolbar button:active, /* engrampa 1.24 second toolbar */
+toolbar button:active:hover, /* engrampa 1.24 second toolbar */
+box.primary-toolbar toolbar button:active, /* eom 1.24 */
+box.primary-toolbar toolbar button:active:hover, /* eom 1.24 */
+box.primary-toolbar-gtk4 button:active,
+box.primary-toolbar-gtk4 button:active:hover,
 toolbar.primary-toolbar button:active,
 toolbar.primary-toolbar button:active:hover,
 #tasklist-button:checked box {
@@ -450,6 +456,9 @@ toolbar button:hover {
 }
 
 button.flat:focus:hover,
+toolbar button:focus:hover, /* engrampa 1.24 second toolbar */
+box.primary-toolbar toolbar button:focus:hover, /* eom 1.24 */
+box.primary-toolbar-gtk4 button:focus:hover,
 toolbar.primary-toolbar button:focus:hover {
 	background:
 		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
@@ -467,6 +476,12 @@ toolbar.primary-toolbar button:focus:hover {
 
 button.flat:focus:active,
 button.flat:focus:active:hover,
+toolbar button:focus:active, /* engrampa 1.24 second toolbar */
+toolbar button:focus:active:hover, /* engrampa 1.24 second toolbar */
+box.primary-toolbar toolbar button:focus:active, /* eom 1.24 */
+box.primary-toolbar toolbar button:focus:active:hover, /* eom 1.24 */
+box.primary-toolbar-gtk4 button:focus:active,
+box.primary-toolbar-gtk4 button:focus:active:hover,
 toolbar.primary-toolbar button:focus:active,
 toolbar.primary-toolbar button:focus:active:hover {
 	background:
