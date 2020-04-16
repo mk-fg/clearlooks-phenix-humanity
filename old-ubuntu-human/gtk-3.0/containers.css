@@ -2,18 +2,23 @@
 /* --- infobar --- */
 
 infobar revealer > box {
-	margin: -1px 0;
+	margin: -1px;
 }
 
 infobar revealer buttonbox {
-	margin: -1px -2px;
+	margin: -1px;
 }
 
 infobar revealer buttonbox button {
 	padding: 2px 0 3px;
 }
 
+infobar revealer buttonbox button > label {
+	margin: 2px 0 1px;
+}
+
 infobar revealer buttonbox button image {
+	margin: 0 1px;
 	-gtk-icon-transform: scale(0.8);
 }
 
