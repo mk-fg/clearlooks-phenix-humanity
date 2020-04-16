@@ -70,8 +70,8 @@ eom ~/diff3.png
 
 You can also run entr to auto generate the diff image:
 ```
-ls ~/3.png | entr bash ~/.themes/old-ubuntu-human/dev3.sh
-ls ~/4.png | entr bash ~/.themes/old-ubuntu-human/dev4.sh
+ls ~/3.png | entr bash ~/.themes/dev3.sh
+ls ~/4.png | entr bash ~/.themes/dev4.sh
 ```
 
 ...
