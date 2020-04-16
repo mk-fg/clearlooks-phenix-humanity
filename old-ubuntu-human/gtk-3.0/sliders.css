@@ -47,6 +47,10 @@ progressbar.vertical trough progress {
 			@slider_pattern 30px);
 }
 
+progressbar.vertical.osd trough progress {
+
+}
+
 treeview.view.progressbar,
 progressbar.horizontal trough progress {
 	min-height: 20px;
@@ -67,9 +71,13 @@ progressbar.horizontal trough progress {
 			@slider_pattern 30px);
 }
 
+progressbar.horizontal.osd trough progress {
+
+}
+
 progressbar.vertical trough.empty progress,
 progressbar.horizontal trough.empty progress {
-	border: 0;
+	/* border: 0; */
 	background: none;
 }
 
@@ -175,7 +183,7 @@ scale.horizontal trough highlight {
 }
 
 scale.vertical slider {
-	margin: 0 -6px;
+	margin: -1px -6px 0 -6px;
 	min-width: 11px;
 	min-height: 18px;
 	border: 1px solid @slider_trough_border;
@@ -192,7 +200,7 @@ scale.vertical slider {
 }
 
 scale.horizontal slider {
-	margin: -6px 0;
+	margin: -6px 0 -6px -1px;
 	min-width: 18px;
 	min-height: 11px;
 	border: 1px solid @slider_trough_border;
@@ -287,7 +295,7 @@ scale.horizontal.marks-after indicator {
 /* --- lavelbar --- */
 
 levelbar trough {
-	border: 1px solid @slider_trough_border;
+	/* border: 1px solid @slider_trough_border; */
 	border-radius: 2.75px;
 	background:
 		linear-gradient(to right,
@@ -299,19 +307,21 @@ levelbar trough {
 			alpha(@slider_trough_shadow, 0.3) 3px,
 			alpha(@slider_trough_shadow, 0) 5px)
 		@slider_trough_bg;
+	box-shadow:
+		inset -1px -1px @slider_trough_border,
+		inset  1px 1px @slider_trough_border;
 }
 
 levelbar.horizontal trough {
-	min-height: 9px;
+	min-height: 10px;
 }
 
 levelbar.vertical trough {
-	min-width: 9px;
+	min-width: 10px;
 }
 
 levelbar block.filled {
-	margin: -1px;
-	border: 1px solid @slider_border;
+	/* border: 1px solid @slider_border; */
 	border-radius: 2.75px;
 	background:
 		radial-gradient(
@@ -328,12 +338,31 @@ levelbar block.filled {
 			alpha(@slider_pattern, 0.0) 12px,
 			@slider_pattern 12px,
 			@slider_pattern 24px);
+	box-shadow:
+		inset -1px -1px @slider_border,
+		inset  1px  1px @slider_border;
 }
 
 levelbar.horizontal.discrete block {
-	margin: -1px 1px;
+	margin: 0 1px;
+}
+
+levelbar.horizontal.discrete block:first-child {
+	margin: 0 1px 0 0;
+}
+
+levelbar.horizontal.discrete block:last-child {
+	margin: 0 -2px 0 1px;
 }
 
 levelbar.vertical.discrete block {
-	margin: 1px -1px;
+	margin: 1px 0;
+}
+
+levelbar.vertical.discrete block:first-child {
+	margin: 0 0 1px 0;
+}
+
+levelbar.vertical.discrete block:last-child {
+	margin: 1px 0 0 0;
 }
