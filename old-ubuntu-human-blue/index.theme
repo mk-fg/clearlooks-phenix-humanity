@@ -1,8 +1,9 @@
 [Desktop Entry]
 Type=X-GNOME-Metatheme
-Name=old-ubuntu-human-blue
-Comment=The old Ubuntu Human theme for... GTK 3.24. Blue variation.
-Comment[fr]=Le vieux thème Ubuntu Human pour... GTK 3.24. Variante bleue.
+Name=Human Blue
+Name[fr]=Human Bleu
+Comment=The old Ubuntu Human theme for GTK 2.24 / 3.24 / 4.0. Blue variation.
+Comment[fr]=L'ancien thème Ubuntu Human pour GTK 2.24 / 3.24 / 4.0. Variante bleue.
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]

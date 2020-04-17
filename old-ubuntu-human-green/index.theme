@@ -1,8 +1,9 @@
 [Desktop Entry]
 Type=X-GNOME-Metatheme
-Name=old-ubuntu-human-green
-Comment=The old Ubuntu Human theme for... GTK 3.24. Green variation.
-Comment[fr]=Le vieux thème Ubuntu Human pour... GTK 3.24. Variante verte.
+Name=Human Green
+Name[fr]=Human Vert
+Comment=The old Ubuntu Human theme for GTK 2.24 / 3.24 / 4.0. Green variation.
+Comment[fr]=L'ancien thème Ubuntu Human pour GTK 2.24 / 3.24 / 4.0. Variante verte.
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
