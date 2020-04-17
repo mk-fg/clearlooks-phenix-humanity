@@ -148,38 +148,38 @@ checkbutton:hover:focus label, radiobutton:hover:focus label {
 /* unchecked */
 check {
 	margin: 1px 5px 0 0;
-	-gtk-icon-source: -gtk-recolor(url("img/checkbox-unchecked.svg"));
+	-gtk-icon-source: url("img/checkbox-unchecked.svg");
 }
 
 check:disabled {
-	-gtk-icon-source: -gtk-recolor(url("img/checkbox-unchecked-insensitive.svg"));
+	-gtk-icon-source: url("img/checkbox-unchecked-insensitive.svg");
 }
 
 /* checked */
 check:checked {
-	-gtk-icon-source: -gtk-recolor(url("img/checkbox-checked.svg"));
+	-gtk-icon-source: url("img/checkbox-checked.svg");
 }
 
 check:checked:active {
-	-gtk-icon-source: -gtk-recolor(url("img/checkbox-checked-active.svg"));
+	-gtk-icon-source: url("img/checkbox-checked-active.svg");
 }
 
 check:checked:disabled,
 check:active:disabled {
-	-gtk-icon-source: -gtk-recolor(url("img/checkbox-checked-insensitive.svg"));
+	-gtk-icon-source: url("img/checkbox-checked-insensitive.svg");
 }
 
 /* mixed */
 check:indeterminate {
-	-gtk-icon-source: -gtk-recolor(url("img/checkbox-mixed.svg"));
+	-gtk-icon-source: url("img/checkbox-mixed.svg");
 }
 
 check:indeterminate:active {
-	-gtk-icon-source: -gtk-recolor(url("img/checkbox-mixed-active.svg"));
+	-gtk-icon-source: url("img/checkbox-mixed-active.svg");
 }
 
 check:indeterminate:disabled {
-	-gtk-icon-source: -gtk-recolor(url("img/checkbox-mixed-insensitive.svg"));
+	-gtk-icon-source: url("img/checkbox-mixed-insensitive.svg");
 }
 
 /* --- radio --- */
@@ -187,38 +187,38 @@ check:indeterminate:disabled {
 /* unchecked */
 radio {
 	margin: 1px 5px 0 0;
-	-gtk-icon-source: -gtk-recolor(url("img/radio-unchecked.svg"));
+	-gtk-icon-source: url("img/radio-unchecked.svg");
 }
 
 radio:disabled {
-	-gtk-icon-source: -gtk-recolor(url("img/radio-unchecked-insensitive.svg"));
+	-gtk-icon-source: url("img/radio-unchecked-insensitive.svg");
 }
 
 /* checked */
 radio:checked {
-	-gtk-icon-source: -gtk-recolor(url("img/radio-checked.svg"));
+	-gtk-icon-source: url("img/radio-checked.svg");
 }
 
 radio:checked:active {
-	-gtk-icon-source: -gtk-recolor(url("img/radio-checked-active.svg"));
+	-gtk-icon-source: url("img/radio-checked-active.svg");
 }
 
 radio:checked:disabled,
 radio:active:disabled {
-	-gtk-icon-source: -gtk-recolor(url("img/radio-checked-insensitive.svg"));
+	-gtk-icon-source: url("img/radio-checked-insensitive.svg");
 }
 
 /* mixed */
 radio:indeterminate {
-	-gtk-icon-source: -gtk-recolor(url("img/radio-mixed.svg"));
+	-gtk-icon-source: url("img/radio-mixed.svg");
 }
 
 radio:indeterminate:active {
-	-gtk-icon-source: -gtk-recolor(url("img/radio-mixed-active.svg"));
+	-gtk-icon-source: url("img/radio-mixed-active.svg");
 }
 
 radio:indeterminate:disabled {
-	-gtk-icon-source: -gtk-recolor(url("img/radio-mixed-insensitive.svg"));
+	-gtk-icon-source: url("img/radio-mixed-insensitive.svg");
 }
 
 /* --- switch (gtk3 yes/no|on/off) --- */

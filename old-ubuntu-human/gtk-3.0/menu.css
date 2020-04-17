@@ -239,7 +239,7 @@ menuitem check:checked,
 menuitem check:checked:active,
 menuitem .check:checked,
 menuitem .check:checked:active {
-	-gtk-icon-source: -gtk-recolor(url("img/menu-checkbox-checked.svg"));
+	-gtk-icon-source: url("img/menu-checkbox-checked.svg");
 }
 
 popover check:checked:disabled,
@@ -248,7 +248,7 @@ menuitem check:checked:disabled,
 menuitem check:active:disabled,
 menuitem .check:checked:disabled,
 menuitem .check:active:disabled {
-	-gtk-icon-source: -gtk-recolor(url("img/menu-checkbox-checked-insensitive.svg"));
+	-gtk-icon-source: url("img/menu-checkbox-checked-insensitive.svg");
 }
 
 /* mixed */
@@ -258,13 +258,13 @@ menuitem check:indeterminate,
 menuitem check:indeterminate:active,
 menuitem .check:indeterminate,
 menuitem .check:indeterminate:active {
-	-gtk-icon-source: -gtk-recolor(url("img/menu-checkbox-mixed.svg"));
+	-gtk-icon-source: url("img/menu-checkbox-mixed.svg");
 }
 
 popover check:indeterminate:disabled,
 menuitem check:indeterminate:disabled,
 menuitem .check:indeterminate:disabled {
-	-gtk-icon-source: -gtk-recolor(url("img/menu-checkbox-mixed-insensitive.svg"));
+	-gtk-icon-source: url("img/menu-checkbox-mixed-insensitive.svg");
 }
 
 /* unchecked */
@@ -284,7 +284,7 @@ menuitem radio:checked,
 menuitem radio:checked:active,
 menuitem .radio:checked,
 menuitem .radio:checked:active {
-	-gtk-icon-source: -gtk-recolor(url("img/menu-radio-checked.svg"));
+	-gtk-icon-source: url("img/menu-radio-checked.svg");
 }
 
 popover radio:checked:disabled,
@@ -293,7 +293,7 @@ menuitem radio:checked:disabled,
 menuitem radio:active:disabled,
 menuitem .radio:checked:disabled,
 menuitem .radio:active:disabled {
-	-gtk-icon-source: -gtk-recolor(url("img/menu-radio-checked-insensitive.svg"));
+	-gtk-icon-source: url("img/menu-radio-checked-insensitive.svg");
 }
 
 /* mixed */
@@ -303,11 +303,11 @@ menuitem radio:indeterminate,
 menuitem radio:indeterminate:active,
 menuitem .radio:indeterminate,
 menuitem .radio:indeterminate:active {
-	-gtk-icon-source: -gtk-recolor(url("img/menu-radio-mixed.svg"));
+	-gtk-icon-source: url("img/menu-radio-mixed.svg");
 }
 
 popover radio:indeterminate:disabled,
 menuitem radio:indeterminate:disabled,
 menuitem .radio:indeterminate:disabled {
-	-gtk-icon-source: -gtk-recolor(url("img/menu-radio-mixed-insensitive.svg"));
+	-gtk-icon-source: url("img/menu-radio-mixed-insensitive.svg");
 }
