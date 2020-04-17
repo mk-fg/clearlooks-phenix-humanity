@@ -13,6 +13,7 @@
 @define-color error #C00;
 @define-color insensitive_text_shadow alpha(@theme_base, 0.5);
 @define-color insensitive_fg shade(@theme_bg, 0.65);
+@define-color checkradio shade(@theme_bg, 0.839);
 
 @import url("gtk-shade.css");
 @import url("base.css");

@@ -113,7 +113,7 @@ frame.border-groove {
 }
 
 frame.border-groove > border {
-	border-color: shade(@frame_border, 1.082); /* #C8B9AB @todo */
+	border-color: @frame_border_bis;
 	box-shadow:
 		inset 1px 1px alpha(@entry_bg, 0.27),
 		1px 1px alpha(@entry_bg, 0.27);
@@ -131,7 +131,7 @@ frame.border-ridge > label {
 frame.border-ridge > border {
 	margin-top: 1px;
 	padding-top: 1px;
-	border-color: shade(@frame_border, 1.082); /* #C8B9AB @todo */
+	border-color: @frame_border_bis;
 	box-shadow:
 		inset -1px -1px alpha(@entry_bg, 0.27),
 		-1px -1px alpha(@entry_bg, 0.27);
