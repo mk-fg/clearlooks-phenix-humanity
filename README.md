@@ -57,9 +57,9 @@ awf-gtk4 -s ~/4.png
 
 Run [entr](https://github.com/clibs/entr) to send sighup signal to auto reload theme:
 ```
-ls ~/.themes/old-ubuntu-human/gtk-3.0/*.css | entr killall -s SIGHUP awf-gtk2
-ls ~/.themes/old-ubuntu-human/gtk-3.0/*.css | entr killall -s SIGHUP awf-gtk3
-ls ~/.themes/old-ubuntu-human/gtk-4.0/*.css | entr killall -s SIGHUP awf-gtk4
+ls ~/.themes/old-ubuntu-human/gtk*/*.css | entr killall -s SIGHUP awf-gtk2
+ls ~/.themes/old-ubuntu-human/gtk*/*.css | entr killall -s SIGHUP awf-gtk3
+ls ~/.themes/old-ubuntu-human/gtk*/*.css | entr killall -s SIGHUP awf-gtk4
 ```
 
 Run [imagemagick](https://imagemagick.org) to generate the diff image:
@@ -69,7 +69,7 @@ composite ~/diff3.png ~/2.png ~/diff3.png
 eom ~/diff3.png
 ```
 
-You can also run entr to auto generate the diff image:
+You can also run [entr](https://github.com/clibs/entr) to auto generate the diff image:
 ```
 ls ~/3.png | entr bash ~/.themes/dev3.sh
 ls ~/4.png | entr bash ~/.themes/dev4.sh
