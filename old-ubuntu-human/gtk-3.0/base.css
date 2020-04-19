@@ -90,8 +90,7 @@ tooltip.background,
 	background: @theme_tooltip_bg;
 }
 
-/* --- spinner animation --- *
- * awf-gtk3: ../../../../src/cairo-surface.c :1734 : cairo_surface_mark_dirty_rectangle:  l'assertion « ! _cairo_surface_has_mime_data (surface) » a échoué.
+/* --- spinner animation --- */
 
 @keyframes spinner {
 	to { -gtk-icon-transform: rotate(1turn); }
@@ -99,12 +98,9 @@ tooltip.background,
 
 spinner {
 	color: @theme_fg;
-	opacity: 0;
 }
 
 spinner:checked {
-	animation: spinner 1s infinite steps(10);
+	animation: spinner 1s infinite steps(12);
 	opacity: 1;
 }
-
-spinner:checked:disabled { opacity: 0.5; } */
