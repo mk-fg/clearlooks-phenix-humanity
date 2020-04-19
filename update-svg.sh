@@ -9,7 +9,7 @@ for f in */gtk-3.0/gtk.css; do
 	colors=$(grep 'define-color theme_' $f | grep -v \()
 	for color in $colors; do
 
-		# the color string (define-color keyworkd #XXX)
+		# the color string (define-color keyword #XXX)
 		color=${color/;/}              # | tr -d ";"
 		color=${color/@define-color /} # | cut -c15-
 
