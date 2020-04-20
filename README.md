@@ -9,7 +9,7 @@ This is an adaptation of [Clearlooks-Phénix](https://github.com/jpfleury/clearl
 This theme works with GTK 2.24+ (*gtk2-engines-murrine* is required) and GTK 3.24+ (it seems that it works also with 3.20+) and GTK 3.98+, it is tested and developped with *Mate 1.24.0* and *GTK 3.24.18* under *Debian Testing*.
 
 * [technical informations](https://github.com/mk-fg/clearlooks-phenix-humanity)
-* [human](https://packages.ubuntu.com/search?keywords=human) ubuntu package
+* [human-theme](https://packages.ubuntu.com/search?keywords=human-theme) ubuntu package
 * [gtk2-engines-murrine](https://packages.ubuntu.com/search?keywords=gtk2-engines-murrine) ubuntu package
 * [gtk2-engines-murrine](https://packages.debian.org/search?keywords=gtk2-engines-murrine) debian package
 * [a widget factory 2](https://github.com/luigifab/awf)
