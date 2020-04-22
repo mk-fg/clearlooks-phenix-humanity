@@ -59,6 +59,7 @@ menubar {
 	background: linear-gradient(to bottom, @menubar_grad_top, @menubar_grad_bot);
 }
 
+menubar item, /* gtk4 */
 menubar menuitem {
 	padding: 2px 7px 2px 8px;
 	text-shadow: none; /* libreoffice 6.4.1 */
@@ -66,6 +67,7 @@ menubar menuitem {
 	border: 1px solid transparent;
 }
 
+menubar item:hover, /* gtk4 */
 menubar menuitem:hover {
 	color: @menuitem_hover;
 	border: 1px solid @menuitem_hover_border;
@@ -83,6 +85,7 @@ menubar menuitem:hover {
 }
 
 /* --- popover and menu window --- */
+
 popover.background > stack > box,
 popover.background > box {
 	margin: -8px;
