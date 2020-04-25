@@ -166,8 +166,10 @@ menuitem accelerator {
 
 box.horizontal menu > separator, /* when menu tearoffed */
 popover.background stack separator,
+#MozillaGtkWidget menu separator, /* firefox/thunderbird */
 menuitem separator {
-	margin: 4px 6px 6px;
+	/* margin: 4px 6px 6px; */
+	margin: 4px 6px 3px;
 	border-top: 1px solid @menu_separator_dark;
 	border-bottom: 1px solid @menu_separator_lite;
 }

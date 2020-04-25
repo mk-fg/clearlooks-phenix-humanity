@@ -50,9 +50,9 @@ PanelToplevel.background {
 	border-radius: 0;
 }
 
-.mate-panel-menu-bar menubar > menuitem separator {
+/* .mate-panel-menu-bar menubar > menuitem separator {
 	margin: 4px 6px 3px;
-}
+} */
 
 /* --- system-monitor-applet --- */
 
