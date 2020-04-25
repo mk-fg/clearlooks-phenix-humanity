@@ -2,8 +2,8 @@
 Type=X-GNOME-Metatheme
 Name=Human Green
 Name[fr]=Human Vert
-Comment=The old Ubuntu Human theme for GTK 2.24+ / 3.20+ / 4.0+. Green variation.
-Comment[fr]=L'ancien thème Ubuntu Human pour GTK 2.24+ / 3.20+ / 4.0+. Variante verte.
+Comment=The old Ubuntu Human theme for GTK 2.24 / 3.20 / 4.0. Green variation.
+Comment[fr]=L'ancien thème Ubuntu Human pour GTK 2.24 / 3.20 / 4.0. Variante verte.
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
