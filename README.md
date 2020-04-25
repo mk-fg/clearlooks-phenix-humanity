@@ -6,7 +6,7 @@ Work in progress.
 
 This is an adaptation of [Clearlooks-Phénix](https://github.com/jpfleury/clearlooks-phenix) theme, a GTK 3 port of old GTK 2 / GNOME 2 [Clearlooks style](https://en.wikipedia.org/wiki/Clearlooks). This is also a continuation of [Human Quarny](https://www.mate-look.org/p/1013593/) theme.
 
-This theme works with GTK 2.24+ (*gtk2-engines-murrine* is required) and GTK 3.24+ (it seems that it works also with 3.20+) and GTK 3.98+, it is tested and developped with *Mate 1.24.0* and *GTK 3.24.18* under *Debian Testing*.
+This theme works with GTK 2.24+ (*gtk2-engines-murrine* is required) and GTK 3.20+ (including 3.22 and 3.24) and GTK 3.98+, it is tested and developped with *Mate 1.24.0* and *GTK 3.24.18* under *Debian Testing*.
 
 * [technical informations](https://github.com/mk-fg/clearlooks-phenix-humanity)
 * [human-theme](https://packages.ubuntu.com/search?keywords=human-theme) ubuntu package
