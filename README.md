@@ -25,6 +25,13 @@ This theme works with GTK 2.24+ (*gtk2-engines-murrine* is required) and GTK 3.2
 * Install [gtk3-nocsd](https://github.com/PCMan/gtk3-nocsd) to restore the window title bar: `sudo apt install gtk3-nocsd`
 * Restart your session/xserver
 
+* Configure Firefox/Thunderbird font rendering:
+```bash
+cd /etc/fonts/conf.d/
+sudo rm 10-hinting-slight.conf #/usr/share/fontconfig/conf.avail/10-hinting-slight.conf
+sudo ln -s /usr/share/fontconfig/conf.avail/10-hinting-full.conf
+```
+
 ## Configuration
 
 * button have icons: where?
