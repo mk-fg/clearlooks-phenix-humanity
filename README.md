@@ -32,13 +32,6 @@ sudo rm 10-hinting-slight.conf #/usr/share/fontconfig/conf.avail/10-hinting-slig
 sudo ln -s /usr/share/fontconfig/conf.avail/10-hinting-full.conf
 ```
 
-## Configuration
-
-* button have icons: where?
-* menu have icons: where?
-* menu can change accels: where?
-* show only icons in toolbars: where?
-
 ## Screenshots
 
 See issue #2.
