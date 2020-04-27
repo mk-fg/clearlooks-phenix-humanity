@@ -86,8 +86,8 @@ gtk2 theme
 
 gtk3/gtk4 theme
 * Created by Fabrice Creuzot (luigifab)
-* Forked from Clearlooks-Phénix by Mike Kazantsev (mk-fg)
-* Forked from Clearlooks-Phénix by Jean-Philippe Fleury (jpfleury) and Andrew Shadura
+* Forked from [Clearlooks-Phénix](https://github.com/mk-fg/clearlooks-phenix) by Mike Kazantsev (mk-fg)
+* Forked from [Clearlooks-Phénix](https://github.com/jpfleury/clearlooks-phenix) by Jean-Philippe Fleury (jpfleury) and Andrew Shadura
 
-metacity theme
+metacity theme (clearlooks)
 * Created by Daniel Borgmann and Andrea Cimitan
