@@ -86,4 +86,15 @@ ls ~/4.png | entr bash ~/.themes/dev4.sh
 
 ## Copyright and Credits
 
-Todo.
+This theme is provided under the terms of the GNU GPLv3 license.
+
+gtk2 theme
+* Created by Kenneth Wimer and Conn O'Griofa
+
+gtk3/gtk4 theme
+* Created by Fabrice Creuzot (luigifab)
+* Forked from Clearlooks-Phénix by Mike Kazantsev (mk-fg)
+* Forked from Clearlooks-Phénix by Jean-Philippe Fleury (jpfleury) and Andrew Shadura
+
+metacity theme
+* Created by Daniel Borgmann and Andrea Cimitan
