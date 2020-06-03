@@ -174,6 +174,7 @@ menuitem separator {
 	border-bottom: 1px solid @menu_separator_lite;
 }
 
+menuitem:hover > box > label > accelerator, /* mate-calc 1.24 */
 menuitem:hover > label > accelerator,
 menuitem:hover > arrow {
 	color: @theme_selected_fg;
