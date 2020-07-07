@@ -1,8 +1,7 @@
 # Ubuntu Human-Murrine Colorscheme
 #
-# Authors:
-# Kenneth Wimer <kwwii@ubuntu.com>
-# Conn O'Griofa <connogriofa@gmail.com>
+# Kenneth Wimer <kwwii~ubuntu~com>
+# Conn O'Griofa <connogriofa~gmail~com>
 #
 # Feel free to modify and share!
 # https://packages.ubuntu.com/eoan/human-theme
@@ -43,8 +42,8 @@ style "murrine-default"
 	# Glow the tasklist by changing the color, instead of overlaying it with a rectangle
 	#WnckTasklist   ::fade-overlay-rect    = 0
 
-	#GtkWidget      ::link-color           = @fg_color
-	#GtkWidget      ::visited-link-color   = shade (0.2, @fg_color)
+	#GtkWidget      ::link-color           = @fg_color
+	#GtkWidget      ::visited-link-color   = shade (0.2, @fg_color)
 
 	xthickness = 1
 	ythickness = 1

@@ -2,8 +2,6 @@
 Type=X-GNOME-Metatheme
 Name=Human Blue
 Name[fr]=Human Bleu
-Comment=The old Ubuntu Human theme for GTK 2.24 / 3.20 / 4.0. Blue variation.
-Comment[fr]=L'ancien thème Human d'Ubuntu pour GTK 2.24 / 3.20 / 4.0. Variante bleue.
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
