@@ -1,0 +1,320 @@
+/**
+ * Copyright 2020 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * https://github.com/luigifab/human-theme
+ * https://www.luigifab.fr/gtk/human-theme
+ *
+ * Forked from
+ *  Copyright 2020 | Mike Kazantsev (mk-fg) <mk~fraggod~gmail~com>
+ *  https://github.com/mk-fg/clearlooks-phenix-humanity
+ *
+ * Forked from
+ *  Copyright 2011-2014 | Jean-Philippe Fleury
+ *  Copyright 2013-2014 | Andrew Shadura
+ *  https://github.com/jpfleury/clearlooks-phenix
+ *
+ * This program is free software, you can redistribute it or modify
+ * it under the terms of the GNU General Public License (GPL) as published
+ * by the free software foundation, either version 3 of the license, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but without any warranty, without even the implied warranty of
+ * merchantability or fitness for a particular purpose. See the
+ * GNU General Public License (GPL) for more details.
+ */
+
+/* --- toolbars --- */
+
+toolbar, /* engrampa 1.24 second toolbar */
+box.primary-toolbar toolbar, /* eom 1.24 */
+box.primary-toolbar-gtk4,
+toolbar.primary-toolbar,
+headerbar.titlebar {
+	padding: 1px 2px;
+	border-width: 1px 0 1px 0;
+	border-style: solid;
+	border-top-color: @toolbar_border_top;
+	border-bottom-color: @toolbar_border_bot;
+	background: linear-gradient(to bottom, @toolbar_grad_top, @toolbar_grad_bot);
+}
+
+box.primary-toolbar-gtk4 separator,
+toolbar separator {
+	margin: 7px 5px 8px;
+	border-left: 1px solid @toolbar_separator_dark;
+	border-right: 1px solid @toolbar_separator_lite;
+}
+
+box.primary-toolbar-gtk4 button.popup,
+toolbar button.popup {
+	margin: 0 1px 0 0;
+}
+
+/* --- menubar --- */
+
+menubar {
+	margin: 1px 0 0;
+	padding: 0 1px;
+	border-bottom: 1px solid @menubar_border_bot;
+	background: linear-gradient(to bottom, @menubar_grad_top, @menubar_grad_bot);
+}
+
+menubar item, /* gtk4 */
+menubar menuitem {
+	padding: 2px 7px 2px 8px;
+	text-shadow: none; /* libreoffice 6.4.1 */
+	color: @theme_fg; /* libreoffice 6.4.1 */
+	border: 1px solid transparent;
+}
+
+menubar item:hover, /* gtk4 */
+menubar menuitem:hover {
+	color: @menuitem_hover;
+	border: 1px solid @menuitem_hover_border;
+	border-bottom: 0;
+	border-radius: 2px 2px 0 0;
+	background:
+		radial-gradient( ellipse 110% 50%,
+			@menuitem_hover_glaze_glow_center,
+			@menuitem_hover_glaze_glow_edge),
+		linear-gradient(to bottom,
+			@menuitem_hover_glaze_top,
+			@menuitem_hover_glaze_mida 50%,
+			@menuitem_hover_glaze_midb 50%,
+			@menuitem_hover_glaze_bot);
+}
+
+/* --- popover and menu window --- */
+
+popover.background > stack > box,
+popover.background > box {
+	margin: -8px;
+}
+
+popover.background,
+menu {
+	border: 1px solid @menu_border;
+	background: @menu_bg;
+}
+
+menu {
+	padding: 3px 1px;
+}
+
+popover.background modelbutton,
+menu menuitem {
+	padding: 2px 4px;
+	border: 1px solid transparent;
+}
+
+menu menuitem {
+	margin: 0 2px;
+}
+
+popover.background modelbutton:hover,
+menu menuitem:hover {
+	color: @menuitem_hover;
+	border: 1px solid @menuitem_hover_border;
+	border-radius: 2px;
+	background:
+		radial-gradient( ellipse 110% 50%,
+			@menuitem_hover_glaze_glow_center,
+			@menuitem_hover_glaze_glow_edge),
+		linear-gradient(to bottom,
+			@menuitem_hover_glaze_top,
+			@menuitem_hover_glaze_mida 50%,
+			@menuitem_hover_glaze_midb 50%,
+			@menuitem_hover_glaze_bot);
+}
+
+/* --- popover emoji window --- */
+
+popover.emoji-picker > box {
+	margin: 2px;
+}
+
+popover.emoji-picker entry {
+	margin: 0;
+}
+
+popover.emoji-picker scrolledwindow {
+	margin: 2px 0;
+}
+
+/* --- menuitem elements --- */
+
+menuitem.tearoff { /* awf2 */
+	padding: 3px 0;
+	color: @menu_tearoff_border;
+}
+
+menuitem image {
+	margin-left: 4px;
+	margin-right: -2px;
+}
+
+menuitem label {
+	margin-left: -1px;
+}
+
+popover.background separator {
+	margin: 0 -6px;
+}
+
+menuitem accelerator {
+	color: alpha(@theme_fg, 0.601); /* #696764 instead of #696664 @todo */
+}
+
+box.horizontal menu > separator, /* when menu tearoffed */
+popover.background stack separator,
+#MozillaGtkWidget menu separator, /* firefox/thunderbird */
+menuitem separator {
+	/* margin: 4px 6px 6px; */
+	margin: 4px 6px 3px;
+	border-top: 1px solid @menu_separator_dark;
+	border-bottom: 1px solid @menu_separator_lite;
+}
+
+menuitem:hover > box > label > accelerator, /* mate-calc 1.24 */
+menuitem:hover > label > accelerator,
+menuitem:hover > arrow {
+	color: @theme_selected_fg;
+}
+
+menuitem:disabled,
+menuitem:disabled * {
+	background: transparent;
+}
+
+menuitem:disabled image {
+	opacity: 0.3;
+}
+
+/* --- menuitem arrow elements --- */
+
+menuitem arrow {
+	min-width: 16px;
+	min-height: 16px;
+}
+
+menuitem arrow.top,
+menuitem arrow.bottom {
+	min-width: 14px;
+	min-height: 14px;
+	border: 1px solid @menu_border_arrow;
+	background: @menu_bg_arrow;
+}
+
+menuitem arrow.bottom {
+	margin: 6px 0 -6px;
+}
+
+menuitem arrow.top:disabled,
+menuitem arrow.bottom:disabled {
+	background: @menu_bg_disabled_arrow;
+}
+
+/* --- menuitem checkbox and radio elements --- */
+
+popover check,
+popover radio {
+	margin: 1px 0 0;
+}
+
+menuitem check,
+menuitem radio,
+menuitem .check,
+menuitem .radio {
+	min-height: 16px;
+	min-width: 16px;
+}
+
+/* unchecked */
+popover check,
+popover check:disabled,
+menuitem check,
+menuitem check:disabled,
+menuitem .check,
+menuitem .check:disabled {
+	-gtk-icon-source: none;
+}
+
+/* checked */
+popover check:checked,
+popover check:checked:active,
+menuitem check:checked,
+menuitem check:checked:active,
+menuitem .check:checked,
+menuitem .check:checked:active {
+	-gtk-icon-source: url("img/menu-checkbox-checked.svg");
+}
+
+popover check:checked:disabled,
+popover check:active:disabled,
+menuitem check:checked:disabled,
+menuitem check:active:disabled,
+menuitem .check:checked:disabled,
+menuitem .check:active:disabled {
+	-gtk-icon-source: url("img/menu-checkbox-checked-insensitive.svg");
+}
+
+/* mixed */
+popover check:indeterminate,
+popover check:indeterminate:active,
+menuitem check:indeterminate,
+menuitem check:indeterminate:active,
+menuitem .check:indeterminate,
+menuitem .check:indeterminate:active {
+	-gtk-icon-source: url("img/menu-checkbox-mixed.svg");
+}
+
+popover check:indeterminate:disabled,
+menuitem check:indeterminate:disabled,
+menuitem .check:indeterminate:disabled {
+	-gtk-icon-source: url("img/menu-checkbox-mixed-insensitive.svg");
+}
+
+/* unchecked */
+popover radio,
+popover radio:disabled,
+menuitem radio,
+menuitem radio:disabled,
+menuitem .radio,
+menuitem .radio:disabled {
+	-gtk-icon-source: none;
+}
+
+/* checked */
+popover radio:checked,
+popover radio:checked:active,
+menuitem radio:checked,
+menuitem radio:checked:active,
+menuitem .radio:checked,
+menuitem .radio:checked:active {
+	-gtk-icon-source: url("img/menu-radio-checked.svg");
+}
+
+popover radio:checked:disabled,
+popover radio:active:disabled,
+menuitem radio:checked:disabled,
+menuitem radio:active:disabled,
+menuitem .radio:checked:disabled,
+menuitem .radio:active:disabled {
+	-gtk-icon-source: url("img/menu-radio-checked-insensitive.svg");
+}
+
+/* mixed */
+popover radio:indeterminate,
+popover radio:indeterminate:active,
+menuitem radio:indeterminate,
+menuitem radio:indeterminate:active,
+menuitem .radio:indeterminate,
+menuitem .radio:indeterminate:active {
+	-gtk-icon-source: url("img/menu-radio-mixed.svg");
+}
+
+popover radio:indeterminate:disabled,
+menuitem radio:indeterminate:disabled,
+menuitem .radio:indeterminate:disabled {
+	-gtk-icon-source: url("img/menu-radio-mixed-insensitive.svg");
+}

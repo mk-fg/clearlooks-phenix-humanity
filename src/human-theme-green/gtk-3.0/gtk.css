@@ -1,0 +1,53 @@
+/**
+ * Copyright 2020 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * https://github.com/luigifab/human-theme
+ * https://www.luigifab.fr/gtk/human-theme
+ *
+ * Forked from
+ *  Copyright 2020 | Mike Kazantsev (mk-fg) <mk~fraggod~gmail~com>
+ *  https://github.com/mk-fg/clearlooks-phenix-humanity
+ *
+ * Forked from
+ *  Copyright 2011-2014 | Jean-Philippe Fleury
+ *  Copyright 2013-2014 | Andrew Shadura
+ *  https://github.com/jpfleury/clearlooks-phenix
+ *
+ * This program is free software, you can redistribute it or modify
+ * it under the terms of the GNU General Public License (GPL) as published
+ * by the free software foundation, either version 3 of the license, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but without any warranty, without even the implied warranty of
+ * merchantability or fitness for a particular purpose. See the
+ * GNU General Public License (GPL) for more details.
+ */
+
+@define-color theme_base #FFF;
+@define-color theme_bg #EDECEB;
+@define-color theme_fg #000;
+@define-color theme_text #1A1A1A;
+@define-color theme_selected_bg #B9C0A9;
+@define-color theme_selected_fg #42453E;
+@define-color theme_tooltip_bg #EAF5B5;
+@define-color theme_tooltip_fg #000;
+@define-color theme_tooltip_border shade(@theme_tooltip_bg, 0.63);
+
+@define-color link #00E;
+@define-color visited_link #551A8B;
+@define-color error #C00;
+@define-color insensitive_text_shadow alpha(@theme_base, 0.5);
+@define-color insensitive_fg shade(@theme_bg, 0.65);
+@define-color checkradio shade(@theme_bg, 0.839);
+
+@import url("gtk-shade.css");
+@import url("base.css");
+@import url("containers.css");
+@import url("inputs.css");
+@import url("sliders.css");
+@import url("scrollbars.css");
+@import url("menu.css");
+@import url("tables.css");
+@import url("mate.css");
+@import url("xfce.css");
+@import url("user.css");

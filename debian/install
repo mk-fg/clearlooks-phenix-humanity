@@ -1,0 +1,2 @@
+debian/human-theme-gtk.sh etc/profile.d
+src/*/                    usr/share/themes
