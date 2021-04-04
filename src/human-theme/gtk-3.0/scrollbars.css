@@ -1,5 +1,5 @@
 /**
- * Copyright 2020 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * Copyright 2020-2021 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
  * https://github.com/luigifab/human-theme
  * https://www.luigifab.fr/gtk/human-theme
  *
@@ -25,19 +25,12 @@
 
 /* --- scrollbar --- */
 
-scrollbar {
-	-GtkScrollbar-has-backward-stepper: true;
-	-GtkScrollbar-has-forward-stepper: true;
-}
-
 scrollbar contents {
 	padding: 1px;
 	border: 1px solid @scroll_border;
 	border-radius: 2px;
 	background: @scroll_bg;
 }
-
-/* --- scrollbar slider --- */
 
 scrollbar slider {
 	border: 1px solid @scroll_slider_border;
@@ -120,7 +113,7 @@ scrollbar.vertical button {
 /* --- scrollbar position --- */
 
 scrolledwindow.frame {
-	border: 1px solid transparent;
+	border: 1px solid @dialog_border;
 }
 
 scrolledwindow scrollbar.vertical {
@@ -129,7 +122,7 @@ scrolledwindow scrollbar.vertical {
 }
 
 scrolledwindow scrollbar.horizontal {
-	margin: -3px -1px -1px -1px;
+	margin: -3px -1px -1px;
 	padding: 3px 0 0 0;
 }
 
@@ -145,14 +138,20 @@ notebook scrollbar.vertical {
 }
 
 notebook scrollbar.horizontal {
-	margin: -3px -1px -1px -1px;
+	margin: -3px -1px -1px;
 	padding: 3px 0 0 0;
 	border-top: 1px solid @menu_border;
 	background: @nb_bg;
 }
 
-expander scrolledwindow.frame {
-	border: 1px solid @menu_border;
+notebook widget scrollbar.vertical, /* geany 1.36 */
+notebook scrolledwindow.frame.view scrollbar.vertical /* caja 1.24 */ {
+	margin-left: 0;
+}
+
+notebook widget scrollbar.horizontal, /* geany 1.36 */
+notebook scrolledwindow.frame.view scrollbar.horizontal /* caja 1.24 */ {
+	margin-top: 0;
 }
 
 expander scrollbar.vertical {
@@ -163,7 +162,7 @@ expander scrollbar.vertical {
 }
 
 expander scrollbar.horizontal {
-	margin: -3px -1px -1px -1px;
+	margin: -3px -1px -1px;
 	padding: 3px 0 0 0;
 	border-top: 1px solid @menu_border;
 	background: @theme_bg;
@@ -185,13 +184,19 @@ scrolledwindow viewport ~ scrollbar.horizontal {
 	border-top: 0;
 }
 
-dialog treeview ~ scrollbar.horizontal ~ scrollbar.vertical {
+treeview ~ scrollbar.horizontal {
+	border-top: 1px solid @menu_border;
+	background: @theme_bg;
+}
+
+treeview ~ scrollbar.horizontal ~ scrollbar.vertical {
 	margin: -30px -1px -30px -3px;
 	padding: 29px 0 29px 3px;
 	border-left: 1px solid @menu_border;
 	background: @theme_bg;
 }
 
-dialog scrollbar.horizontal {
-	background: @theme_bg;
+notebook treeview ~ scrollbar.horizontal,
+notebook treeview ~ scrollbar.horizontal ~ scrollbar.vertical {
+	background: @nb_bg;
 }

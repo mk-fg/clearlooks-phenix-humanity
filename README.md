@@ -1,20 +1,84 @@
-# The Human theme
+# Human theme
 
-This theme works with GTK 2.24+ *(with murrine)* and GTK 3.20+ (including 3.22 and 3.24).
+This theme works with: **GTK 2.24+** *(with murrine)*, **GTK 3.20+** *(including 3.22 and 3.24)*, and **GTK 4.0+** *(experimental)*.
 
-Debian and Fedora packages submitted: [deb](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=974209), [rpm](https://bugzilla.redhat.com/show_bug.cgi?id=1893327). Ubuntu: [PPA](https://launchpad.net/~luigifab/+archive/ubuntu/packages).
+## Screenshots
 
-## Installation for Debian and Ubuntu
+Default (GTK 2/3/4)\
+[![Preview with GTK 2 - Main window](images/thumbs/gtk2.png?raw=true)](images/gtk2.png?raw=true)
+[![Preview with GTK 2 - Menu](images/thumbs/gtk2-menu.png?raw=true)](images/gtk2-menu.png?raw=true)\
+[![Preview with GTK 3 - Main window](images/thumbs/gtk3.png?raw=true)](images/gtk3.png?raw=true)
+[![Preview with GTK 3 - Menu](images/thumbs/gtk3-menu.png?raw=true)](images/gtk3-menu.png?raw=true)\
+[![Preview with GTK 4 - Main window](images/thumbs/gtk4.png?raw=true)](images/gtk4.png?raw=true)
+[![Preview with GTK 4 - Menu](images/thumbs/gtk4-menu.png?raw=true)](images/gtk4-menu.png?raw=true)
 
-* Run: `sudo apt install human-theme-gtk` (coming soon, or via PPA)
+Orange variation (GTK 2/3/4)\
+[![Preview with GTK 2 - Orange variation - Main window](images/thumbs/gtk2-orange.png?raw=true)](images/gtk2-orange.png?raw=true)
+[![Preview with GTK 2 - Orange variation - Menu](images/thumbs/gtk2-orange-menu.png?raw=true)](images/gtk2-orange-menu.png?raw=true)\
+[![Preview with GTK 3 - Orange variation - Main window](images/thumbs/gtk3-orange.png?raw=true)](images/gtk3-orange.png?raw=true)
+[![Preview with GTK 3 - Orange variation - Menu](images/thumbs/gtk3-orange-menu.png?raw=true)](images/gtk3-orange-menu.png?raw=true)\
+[![Preview with GTK 4 - Orange variation - Main window](images/thumbs/gtk4-orange.png?raw=true)](images/gtk4-orange.png?raw=true)
+[![Preview with GTK 4 - Orange variation - Menu](images/thumbs/gtk4-orange-menu.png?raw=true)](images/gtk4-orange-menu.png?raw=true)
+
+Blue variation (GTK 2/3/4)\
+[![Preview with GTK 2 - Blue variation - Main window](images/thumbs/gtk2-blue.png?raw=true)](images/gtk2-blue.png?raw=true)
+[![Preview with GTK 2 - Blue variation - Menu](images/thumbs/gtk2-blue-menu.png?raw=true)](images/gtk2-blue-menu.png?raw=true)\
+[![Preview with GTK 3 - Blue variation - Main window](images/thumbs/gtk3-blue.png?raw=true)](images/gtk3-blue.png?raw=true)
+[![Preview with GTK 3 - Blue variation - Menu](images/thumbs/gtk3-blue-menu.png?raw=true)](images/gtk3-blue-menu.png?raw=true)\
+[![Preview with GTK 4 - Blue variation - Main window](images/thumbs/gtk4-blue.png?raw=true)](images/gtk4-blue.png?raw=true)
+[![Preview with GTK 4 - Blue variation - Menu](images/thumbs/gtk4-blue-menu.png?raw=true)](images/gtk4-blue-menu.png?raw=true)
+
+Green variation (GTK 2/3/4)\
+[![Preview with GTK 2 - Green variation - Main window](images/thumbs/gtk2-green.png?raw=true)](images/gtk2-green.png?raw=true)
+[![Preview with GTK 2 - Green variation - Menu](images/thumbs/gtk2-green-menu.png?raw=true)](images/gtk2-green-menu.png?raw=true)\
+[![Preview with GTK 3 - Green variation - Main window](images/thumbs/gtk3-green.png?raw=true)](images/gtk3-green.png?raw=true)
+[![Preview with GTK 3 - Green variation - Menu](images/thumbs/gtk3-green-menu.png?raw=true)](images/gtk3-green-menu.png?raw=true)\
+[![Preview with GTK 4 - Green variation - Main window](images/thumbs/gtk4-green.png?raw=true)](images/gtk4-green.png?raw=true)
+[![Preview with GTK 4 - Green variation - Menu](images/thumbs/gtk4-green-menu.png?raw=true)](images/gtk4-green-menu.png?raw=true)
+
+The program used for the screenshots is available [here](https://github.com/luigifab/awf-extended). Pango 1.42 for screenshots with GTK 2 and 3, Pango 1.48 for screenshots with GTK 4.
+
+## Installation
+
+#### Installation for Debian and Ubuntu
+
+* Run: `sudo apt install human-theme-gtk` (coming soon or via [PPA](https://launchpad.net/~luigifab/+archive/ubuntu/packages))
 * Restart your session
 
-## Installation for Fedora
+#### Installation for Fedora
 
-* Run: `sudo dnf install human-theme-gtk` (coming soon)
+* Run: `sudo dnf install human-theme-gtk`
 * Restart your session
 
-## Manual installation for Debian and Ubuntu
+#### PPA installation for Debian and Ubuntu
+
+Installation for Debian and Ubuntu with [PPA](https://launchpad.net/~luigifab/+archive/ubuntu/packages):
+```
+sudo add-apt-repository ppa:luigifab/packages
+sudo apt update
+sudo apt install human-theme-gtk
+ -- or --
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys FFE5BD439356DF7D
+echo "deb http://ppa.launchpad.net/luigifab/packages/ubuntu hirsute main" | sudo tee -a /etc/apt/sources.list
+sudo apt update
+sudo apt install human-theme-gtk
+ -- or --
+sudo wget -O /etc/apt/trusted.gpg.d/luigifab.gpg https://www.luigifab.fr/apt.gpg
+echo "deb http://ppa.launchpad.net/luigifab/packages/ubuntu hirsute main" | sudo tee -a /etc/apt/sources.list
+sudo apt update
+sudo apt install human-theme-gtk
+```
+
+```bash
+# sha256sum /etc/apt/trusted.gpg.d/luigifab.gpg
+578c89a677048e38007462d543686b53587efba9f93814601169253c45ff9213
+# apt-key list
+/etc/apt/trusted.gpg.d/luigifab.gpg
+pub   rsa4096 2020-10-31 [SC]
+      458B 0C46 D024 FD8C B8BC  99CD FFE5 BD43 9356 DF7D
+```
+
+#### Manual installation for Debian and Ubuntu
 
 * Download archive and extract *src* subdirectories in `~/.themes/`
 * Configure font rendering and GTK scrollbars and QT theme, add in `/etc/environment`:
@@ -25,11 +89,11 @@ QT_QPA_PLATFORMTHEME=gtk2
 ```
 * Install icons and cursors themes: `sudo apt install gnome-icon-theme dmz-cursor-theme`
 * Install [gtk2-engines-murrine](https://packages.debian.org/search?keywords=gtk2-engines-murrine) for GTK 2 apps: `sudo apt install gtk2-engines-murrine`
-* Install [qt5-gtk-platformtheme](https://packages.debian.org/search?keywords=qt5-gtk-platformtheme) for QT 5 apps: `sudo apt install qt5-gtk2-platformtheme qt5-gtk-platformtheme`
+* Install [qt5-gtk-platformtheme](https://packages.debian.org/search?keywords=qt5+gtk+platformtheme) for QT 5 apps: `sudo apt install qt5-gtk2-platformtheme qt5-gtk-platformtheme`
 * Install [gtk3-nocsd](https://packages.debian.org/search?keywords=gtk3-nocsd) to restore the window title bar: `sudo apt install gtk3-nocsd`
 * Restart your session
 
-## Manual installation for Fedora
+#### Manual installation for Fedora
 
 * Download archive and extract *src* subdirectories in `~/.themes/`
 * Configure font rendering and GTK scrollbars and QT theme, add in `/etc/environment`:
@@ -52,63 +116,31 @@ sudo rm 10-hinting-slight.conf # /usr/share/fontconfig/conf.avail/10-hinting-sli
 sudo ln -s /usr/share/fontconfig/conf.avail/10-hinting-full.conf
 ```
 
-## Screenshots
-
-Default (gtk2/gtk3)
-
-[![Theme preview - GTK 2 - Main window](images/thumbs/gtk2.png?raw=true)](images/gtk2.png?raw=true)
-[![Theme preview - GTK 2 - Menu](images/thumbs/gtk2-menu.png?raw=true)](images/gtk2-menu.png?raw=true)
-[![Theme preview - GTK 3 - Main window](images/thumbs/gtk3.png?raw=true)](images/gtk3.png?raw=true)
-[![Theme preview - GTK 3 - Menu](images/thumbs/gtk3-menu.png?raw=true)](images/gtk3-menu.png?raw=true)
-
-Orange variation (gtk2/gtk3)
-
-[![Theme preview - GTK 2 - Orange variation - Main window](images/thumbs/gtk2-orange.png?raw=true)](images/gtk2-orange.png?raw=true)
-[![Theme preview - GTK 2 - Orange variation - Menu](images/thumbs/gtk2-orange-menu.png?raw=true)](images/gtk2-orange-menu.png?raw=true)
-[![Theme preview - GTK 3 - Orange variation - Main window](images/thumbs/gtk3-orange.png?raw=true)](images/gtk3-orange.png?raw=true)
-[![Theme preview - GTK 3 - Orange variation - Menu](images/thumbs/gtk3-orange-menu.png?raw=true)](images/gtk3-orange-menu.png?raw=true)
-
-Blue variation (gtk2/gtk3)
-
-[![Theme preview - GTK 2 - Blue variation - Main window](images/thumbs/gtk2-blue.png?raw=true)](images/gtk2-blue.png?raw=true)
-[![Theme preview - GTK 2 - Blue variation - Menu](images/thumbs/gtk2-blue-menu.png?raw=true)](images/gtk2-blue-menu.png?raw=true)
-[![Theme preview - GTK 3 - Blue variation - Main window](images/thumbs/gtk3-blue.png?raw=true)](images/gtk3-blue.png?raw=true)
-[![Theme preview - GTK 3 - Blue variation - Menu](images/thumbs/gtk3-blue-menu.png?raw=true)](images/gtk3-blue-menu.png?raw=true)
-
-Green variation (gtk2/gtk3)
-
-[![Theme preview - GTK 2 - Green variation - Main window](images/thumbs/gtk2-green.png?raw=true)](images/gtk2-green.png?raw=true)
-[![Theme preview - GTK 2 - Green variation - Menu](images/thumbs/gtk2-green-menu.png?raw=true)](images/gtk2-green-menu.png?raw=true)
-[![Theme preview - GTK 3 - Green variation - Main window](images/thumbs/gtk3-green.png?raw=true)](images/gtk3-green.png?raw=true)
-[![Theme preview - GTK 3 - Green variation - Menu](images/thumbs/gtk3-green-menu.png?raw=true)](images/gtk3-green-menu.png?raw=true)
-
-Screenshots created with [A widget factory 2](https://github.com/luigifab/awf-extended).
-
 ## Known issues
 
-* For classic menu bar and menu items of [Firefox 74-82](https://www.mozilla.org/firefox) and [Thunderbird 68-82](https://www.mozilla.org/thunderbird), see [bug 1622545](https://bugzilla.mozilla.org/show_bug.cgi?id=1622545).
+* For classic menu bar and menu items of [Firefox 74-87+](https://www.mozilla.org/firefox) and [Thunderbird 68-87+](https://www.mozilla.org/thunderbird), see [bug 1622545](https://bugzilla.mozilla.org/show_bug.cgi?id=1622545).
 * The [status bar grip](https://developer.gnome.org/gtk2/stable/GtkStatusbar.html) was removed with GTK 3 ([note1](https://developer.gnome.org/gtk3/stable/ch26s02.html#id-1.6.3.4.17), [note2](https://developer.gnome.org/gtk3/stable/GtkWindow.html#gtk-window-set-has-resize-grip)).
-* The treeview zebra/even-odd row styling was removed with GTK 3.19 ([note](https://gitlab.gnome.org/GNOME/gtk/issues/581#note_746153)).
-* The tabs mouse scroll was removed with GTK 3.
+* The [treeview](https://developer.gnome.org/gtk3/stable/GtkTreeView.html) zebra/even-odd row styling was removed with GTK 3.19 ([note](https://gitlab.gnome.org/GNOME/gtk/issues/581#note_746153)).
+* The [notebook tabs](https://developer.gnome.org/gtk3/stable/GtkNotebook.html) mouse scroll was removed with GTK 3.4.
 * Can not change previous and next arrows of pathbar.
 
 ## Dev
 
-Run [A widget factory 2](https://github.com/luigifab/awf-extended) with screenshot on theme reload:
+Run [AWF](https://github.com/luigifab/awf-extended) with screenshot on theme reload:
 ```
 awf-gtk2 -n -s ~/2.png
 awf-gtk3 -n -s ~/3.png
 awf-gtk4 -n -s ~/4.png
 ```
 
-Run [Entr](https://github.com/clibs/entr) to send *sighup* signal to reload theme:
+Run [Entr](https://github.com/eradman/entr) to send *sighup* signal when files change to reload theme:
 ```
-ls ~/.themes/ubuntu-human/gtk*/gtkrc | entr killall -s SIGHUP awf-gtk2
-ls ~/.themes/ubuntu-human/gtk*/*.css | entr killall -s SIGHUP awf-gtk3
-ls ~/.themes/ubuntu-human/gtk*/*.css | entr killall -s SIGHUP awf-gtk4
+ls ~/.themes/human-theme*/gtk*/gtkrc | entr killall -s SIGHUP awf-gtk2
+ls ~/.themes/human-theme*/gtk*/*.css | entr killall -s SIGHUP awf-gtk3
+ls ~/.themes/human-theme*/gtk*/*.css | entr killall -s SIGHUP awf-gtk4
 ```
 
-Run [Imagemagick](https://imagemagick.org) to generate the diff image:
+Run [ImageMagick](https://imagemagick.org/) to create the diff image:
 ```
 killall -q eom
 rm -f ~/diff3.png
@@ -119,24 +151,29 @@ eom ~/diff3.png &
 
 Run *svg.sh* to update SVG images. See also [technical informations](https://github.com/mk-fg/clearlooks-phenix-humanity).
 
-## Copyright and Credits
+## Copyright
 
-- Current version: 1.1.0 (11/11/2020)
-- Compatibility: GTK 2.24 / 3.20 / 3.22 / 3.24
-- Links: [Mate Look](https://www.mate-look.org/p/1376363/), [PPA](https://launchpad.net/~luigifab/+archive/ubuntu/packages)
+- Current version: 1.2.0 (04/04/2021)
+- Compatibility: GTK 2.24 / 3.20 / 3.22 / 3.24 / 4.0
+- Links: [luigifab.fr](https://www.luigifab.fr/gtk/human-theme) - [github.com](https://github.com/luigifab/human-theme) - [mate-look.org](https://www.mate-look.org/p/1376363/)\
+[debian human-theme-gtk.deb](https://tracker.debian.org/pkg/human-theme-gtk)
+  *([ITP](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=973445),
+   [RFS](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=974209))*\
+[fedora human-theme-gtk.rpm](https://src.fedoraproject.org/rpms/human-theme-gtk)
+  *([RR](https://bugzilla.redhat.com/show_bug.cgi?id=1893327))*\
+[launchpad PPA](https://launchpad.net/~luigifab/+archive/ubuntu/packages)
 
-This theme is provided under the terms of the *GNU GPLv3+* license.
+This theme is provided under the terms of the **GNU GPLv3+** license.\
+If you like, take some of your time to improve some translations, go to https://bit.ly/2HyCCEc.
+
+## Credits
 
 GTK 2 theme *(CC-BY-SA-3.0+)*
-* Created by Kenneth Wimer and Conn O'Griofa (see [human-theme](https://packages.ubuntu.com/search?keywords=human-theme) ubuntu package)
+- Created by Kenneth Wimer and Conn O'Griofa (see [human-theme](https://packages.ubuntu.com/search?keywords=human-theme) Ubuntu package)
 
 GTK 3 theme *(GNU GPLv3+)*
-* Updated by Fabrice Creuzot (luigifab)
-* Forked from [Clearlooks-Phénix](https://github.com/mk-fg/clearlooks-phenix) by Mike Kazantsev (mk-fg)
-* Forked from [Clearlooks-Phénix](https://github.com/jpfleury/clearlooks-phenix) by Jean-Philippe Fleury (jpfleury) and Andrew Shadura
-
-GTK 4 theme *(GNU GPLv3+)*
-* Created by Fabrice Creuzot (luigifab) from the gtk3 theme
+- Forked from [Clearlooks-Phénix](https://github.com/mk-fg/clearlooks-phenix) by Mike Kazantsev (mk-fg)
+- Forked from [Clearlooks-Phénix](https://github.com/jpfleury/clearlooks-phenix) by Jean-Philippe Fleury (jpfleury) and Andrew Shadura
 
 Metacity theme *(clearlooks, GNU LGPLv2.1+)*
-* Created by Daniel Borgmann and Andrea Cimitan
+- Created by Daniel Borgmann and Andrea Cimitan

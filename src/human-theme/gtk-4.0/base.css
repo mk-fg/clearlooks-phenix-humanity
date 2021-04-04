@@ -1,1 +1,113 @@
-../gtk-3.0/base.css
+/**
+ * Copyright 2020-2021 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * https://github.com/luigifab/human-theme
+ * https://www.luigifab.fr/gtk/human-theme
+ *
+ * Forked from
+ *  Copyright 2020 | Mike Kazantsev (mk-fg) <mk~fraggod~gmail~com>
+ *  https://github.com/mk-fg/clearlooks-phenix-humanity
+ *
+ * Forked from
+ *  Copyright 2011-2014 | Jean-Philippe Fleury
+ *  Copyright 2013-2014 | Andrew Shadura
+ *  https://github.com/jpfleury/clearlooks-phenix
+ *
+ * This program is free software, you can redistribute it or modify
+ * it under the terms of the GNU General Public License (GPL) as published
+ * by the free software foundation, either version 3 of the license, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but without any warranty, without even the implied warranty of
+ * merchantability or fitness for a particular purpose. See the
+ * GNU General Public License (GPL) for more details.
+ */
+
+* {
+	background-clip: padding-box;
+	-gtk-icon-style: regular;
+}
+
+view,
+.view,
+view text,
+.view text,
+iconview text,
+textview text {
+	color: @theme_text;
+	background: @theme_base;
+}
+
+.background {
+	color: @theme_fg;
+	background: @theme_bg;
+}
+
+.link,
+.link > label,
+label > link {
+	text-decoration: underline;
+	color: @link;
+}
+
+*:selected,
+*:selected:focus,
+selection {
+	color: @theme_selected_fg;
+	background: @theme_selected_bg;
+}
+
+*:disabled {
+	color: @insensitive_fg;
+	text-shadow: 0.5px 1px @insensitive_text_shadow;
+}
+
+paper {
+	border: 1px solid black;
+	background: white;
+}
+
+window.solid-csd {
+
+}
+
+/* --- tooltip --- */
+
+tooltip,
+tooltip.background,
+.tooltip,
+.tooltip.background {
+	color: @theme_tooltip_fg;
+	border: 1px solid @theme_tooltip_border;
+	background: @theme_tooltip_bg;
+}
+
+/* --- spinner animation --- */
+
+@keyframes spinner {
+	to { -gtk-icon-transform: rotate(1turn); }
+}
+
+spinner {
+	color: @theme_fg;
+	-gtk-icon-source: -gtk-icontheme("process-working-symbolic"); /* not good */
+}
+
+spinner:checked {
+	animation: spinner 1s infinite steps(12);
+	opacity: 1;
+}
+
+/* --- dconf grid --- */
+
+grid label.property-name-label,
+grid label.key-name,
+grid label.key-summary {
+	color: @theme_text;
+}
+
+grid row:selected label.property-name-label,
+grid row:selected label.key-name,
+grid row:selected label.key-summary {
+	color: @theme_selected_fg;
+}

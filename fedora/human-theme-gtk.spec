@@ -1,5 +1,5 @@
 Name:        human-theme-gtk
-Version:     1.1.0
+Version:     1.2.0
 Release:     1%{?dist}
 Summary:     Human theme for GTK
 Summary(fr): Thème Human pour GTK
@@ -14,20 +14,25 @@ Recommends: gnome-icon-theme
 Recommends: dmz-cursor-themes
 
 %description %{expand:
-This theme works with GTK 2.24+ (with gtk-murrine-engine) and
-GTK 3.20+ (including 3.22 and 3.24).
+This theme works with: GTK 2.24+ (with gtk-murrine-engine),
+GTK 3.20+ (including 3.22 and 3.24), and GTK 4.0+ (experimental).
 
 After installation you must restart your session.}
 
 %description -l fr %{expand:
-Ce thème fonctionne avec GTK 2.24+ (avec gtk-murrine-engine) et
-GTK 3.20+ (y compris 3.22 et 3.24).
+Ce thème fonctionne avec : GTK 2.24+ (avec gtk-murrine-engine),
+GTK 3.20+ (y compris 3.22 et 3.24), et GTK 4.0+ (expérimental).
 
 Après l'installation vous devez redémarrer votre session.}
 
 
 %prep
 %setup -q -n human-theme-%{version}
+# fedora use pango 1.44+
+sed -i 's/<border name="title_border" left="2" right="2" top="4" bottom="3"/<border name="title_border" left="2" right="2" top="4" bottom="4"/g' src/human-theme/metacity-1/metacity-theme-1.xml
+sed -i 's/padding: 4px 3px; \/\* WARNING/padding: 4px 3px 2px; \/\* WARNING/g' src/human-theme/gtk-3.0/inputs.css
+sed -i 's/padding: 3px; \/\* WARNING/padding: 3px 3px 2px; \/\* WARNING/g' src/human-theme/gtk-3.0/inputs.css
+sed -i 's/margin: -7px -10px -4px; \/\* WARNING/margin: -7px -10px -5px; \/\* WARNING/g' src/human-theme/gtk-3.0/containers.css
 
 %build
 
@@ -52,5 +57,8 @@ cp -a src/human-theme-orange/ %{buildroot}%{_datadir}/themes/
 
 
 %changelog
+* Sun Apr 04 2021 Fabrice Creuzot <code@luigifab.fr> - 1.2.0-1
+- New upstream version
+
 * Wed Nov 11 2020 Fabrice Creuzot <code@luigifab.fr> - 1.1.0-1
 - Initial fedora package release (Closes: #1893327)

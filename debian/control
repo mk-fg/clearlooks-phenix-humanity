@@ -15,7 +15,7 @@ Depends: ${misc:Depends}
 Recommends: gtk3-nocsd, gnome-icon-theme, dmz-cursor-theme
 Suggests: gtk2-engines-murrine, qt5-gtk2-platformtheme, qt5-gtk-platformtheme
 Description: Human theme for GTK
- This theme works with GTK 2.24+ (with gtk2-engines-murrine) and
- GTK 3.20+ (including 3.22 and 3.24).
+ This theme works with: GTK 2.24+ (with gtk2-engines-murrine),
+ GTK 3.20+ (including 3.22 and 3.24), and GTK 4.0+ (experimental).
  .
  After installation you must restart your session.

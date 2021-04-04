@@ -1,5 +1,5 @@
 /**
- * Copyright 2020 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * Copyright 2020-2021 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
  * https://github.com/luigifab/human-theme
  * https://www.luigifab.fr/gtk/human-theme
  *
@@ -114,16 +114,22 @@ paned.horizontal > separator {
 
 /* -- frame -- */
 
-frame > label {
-	padding: 0 5px;
-}
-
 frame > border {
 	border: 1px solid @frame_border;
 	border-radius: 2.5px;
 	box-shadow:
 		inset -1px -1px alpha(@entry_bg, 0.27),
 		inset 1px 1px alpha(@frame_border, 0.17);
+}
+
+frame > border.flat {
+	border: 0;
+	border-radius: 0;
+	box-shadow: none;
+}
+
+frame > label {
+	padding: 0 5px;
 }
 
 frame.border-outset > border {
@@ -147,11 +153,6 @@ frame.border-ridge {
 	padding: 1px 0 0 1px;
 }
 
-frame.border-ridge > label {
-	margin-top: -1px;
-	padding-left: 4px;
-}
-
 frame.border-ridge > border {
 	margin-top: 1px;
 	padding-top: 1px;
@@ -159,6 +160,11 @@ frame.border-ridge > border {
 	box-shadow:
 		inset -1px -1px alpha(@entry_bg, 0.27),
 		-1px -1px alpha(@entry_bg, 0.27);
+}
+
+frame.border-ridge > label {
+	margin-top: -1px;
+	padding-left: 4px;
 }
 
 /* --- notebook --- */
@@ -173,15 +179,23 @@ notebook stack {
 	border-radius: 2.4px;
 }
 
+notebook stack notebook {
+	margin: -1px;
+}
+
 notebook header {
 	padding: 1px;
 	background: @theme_bg;
 }
 
+notebook header tabs {
+	min-height: 23px;
+}
+
 notebook header tab {
 	padding: 2px;
 	border: 1px solid @nb_tab_border;
-	transition:background 0.3s;
+	transition: background 0.3s;
 }
 
 notebook header tab label {
@@ -256,6 +270,7 @@ notebook header.left tab {
 
 notebook header.left tab:checked {
 	margin: -1px -2px -1px -1px;
+	padding: 3px 2px;
 	border-color: @nb_border;
 	border-right: 0;
 	background: linear-gradient(to right, @nb_tab_checked_glaze_top,
@@ -287,6 +302,7 @@ notebook header.right tab {
 
 notebook header.right tab:checked {
 	margin: -1px -1px -1px -2px;
+	padding: 3px 2px;
 	border-color: @nb_border;
 	border-left: 0;
 	background: linear-gradient(to left, @nb_tab_checked_glaze_top,
@@ -308,14 +324,14 @@ notebook:focus header tab:checked label {
 notebook header.top tabs arrow.up:first-child,
 notebook header.top tabs arrow.down:first-child {
 	margin: 1px 2px 0 0;
-	padding: 2px 2px 2px 0;
+	padding: 2px 2px 2px 1px;
 	-gtk-icon-transform: scale(0.8);
 }
 
 notebook header.top tabs arrow.down:last-child,
 notebook header.top tabs arrow.up:last-child {
 	margin: 1px 0 0 2px;
-	padding: 2px 0 2px 2px;
+	padding: 2px 1px 2px 2px;
 	-gtk-icon-transform: scale(0.8);
 }
 
@@ -324,14 +340,14 @@ notebook header.top tabs arrow.up:last-child {
 notebook header.bottom tabs arrow.up:first-child,
 notebook header.bottom tabs arrow.down:first-child {
 	margin: 0 2px 1px 0;
-	padding: 2px 2px 2px 0;
+	padding: 2px 2px 2px 1px;
 	-gtk-icon-transform: scale(0.8);
 }
 
 notebook header.bottom tabs arrow.down:last-child,
 notebook header.bottom tabs arrow.up:last-child {
 	margin: 0 0 1px 2px;
-	padding: 2px 0 2px 2px;
+	padding: 2px 1px 2px 2px;
 	-gtk-icon-transform: scale(0.8);
 }
 
@@ -339,25 +355,25 @@ notebook header.bottom tabs arrow.up:last-child {
 
 notebook header.left tabs arrow.up:first-child {
 	margin: 0 0 2px 1px;
-	padding: 0 2px 2px;
+	padding: 1px 2px 2px;
 	-gtk-icon-transform: scale(0.8);
 }
 
 notebook header.left tabs arrow.down:first-child {
 	margin: 0 0 2px 1px;
-	padding: 0 2px 2px;
+	padding: 1px 2px 2px;
 	-gtk-icon-transform: rotate(180deg) scale(0.8);
 }
 
 notebook header.left tabs arrow.up:last-child {
 	margin: 2px 0 0 1px;
-	padding: 2px 2px 0;
+	padding: 2px 2px 1px;
 	-gtk-icon-transform: rotate(180deg) scale(0.8);
 }
 
 notebook header.left tabs arrow.down:last-child {
 	margin: 2px 0 0 1px;
-	padding: 2px 2px 0;
+	padding: 2px 2px 1px;
 	-gtk-icon-transform: scale(0.8);
 }
 
@@ -365,25 +381,25 @@ notebook header.left tabs arrow.down:last-child {
 
 notebook header.right tabs arrow.up:first-child {
 	margin: 0 1px 2px 0;
-	padding: 0 2px 2px;
+	padding: 1px 2px 2px;
 	-gtk-icon-transform: scale(0.8);
 }
 
 notebook header.right tabs arrow.down:first-child {
 	margin: 0 1px 2px 0;
-	padding: 0 2px 2px;
+	padding: 1px 2px 2px;
 	-gtk-icon-transform: rotate(180deg) scale(0.8);
 }
 
 notebook header.right tabs arrow.up:last-child {
 	margin: 2px 1px 0 0;
-	padding: 2px 2px 0;
+	padding: 2px 2px 1px;
 	-gtk-icon-transform: rotate(180deg) scale(0.8);
 }
 
 notebook header.right tabs arrow.down:last-child {
 	margin: 2px 1px 0 0;
-	padding: 2px 2px 0;
+	padding: 2px 2px 1px;
 	-gtk-icon-transform: scale(0.8);
 }
 
@@ -465,7 +481,7 @@ window.eom-window box + statusbar { /* eom 1.24 */
 }
 
 window.eom-window box + statusbar frame { /* eom 1.24 */
-	padding: 0 2px 2px;
+	padding: 0 0 2px;
 }
 
 paned + statusbar { /* caja 1.24 */
@@ -473,11 +489,11 @@ paned + statusbar { /* caja 1.24 */
 }
 
 paned + box > statusbar { /* geany 1.36 */
-	margin: -7px -10px -6px;
+	margin: -8px -10px -4px;
 }
 
 box + statusbar {
-	margin: -7px -10px -4px;
+	margin: -7px -10px -4px; /* WARNING! -7px -10px -5px since Pango 1.44 else -7px -10px -4px */
 }
 
 statusbar {
@@ -486,15 +502,10 @@ statusbar {
 	border-top: 1px solid @toolbar_border_bot;
 }
 
-statusbar frame {
-	margin: 0;
-	padding: 0 2px;
-	border: 0;
-	border-top: 1px solid @toolbar_border_top;
-	background: @theme_bg;
-}
-
-statusbar frame border {
+statusbar frame,
+statusbar border,
+statusbar box,
+statusbar label {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -502,36 +513,28 @@ statusbar frame border {
 	box-shadow: none;
 }
 
-statusbar frame border + box {
-	margin: -4px;
-	padding: 0;
-	border: 0;
+statusbar frame {
+	border-top: 1px solid @toolbar_border_top;
+	background: @theme_bg;
 }
 
-statusbar frame label {
-	margin: 0;
-	padding: 0;
-	border: 0;
+statusbar frame > box {
+	margin: -4px -2px;
 }
 
 statusbar > box { /* eom 1.24 */
 	margin: 0 -3px 0 -4px;
-	padding: 0;
-	border: 0;
 	border-top: 1px solid @toolbar_border_top;
 }
 
 statusbar > label { /* eom 1.24 */
-	margin: 0;
-	padding: 0;
-	border: 0;
 	border-top: 1px solid @toolbar_border_top;
 }
 
 /* --- expander --- */
 
 expander title {
-	padding: 2px 5px 2px 0;
+	padding: 2px 0;
 }
 
 expander title:hover {
@@ -539,6 +542,9 @@ expander title:hover {
 }
 
 expander arrow {
+	padding: 0 4px 0 1px;
+	min-width: 17px;
+	min-height: 17px;
 	/* -gtk-icon-source: -gtk-recolor(url("img/go-right-symbolic.svg")); */
 	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
 }
@@ -551,10 +557,4 @@ expander arrow:dir(rtl) {
 expander arrow:checked {
 	/* -gtk-icon-source: -gtk-recolor(url("img/down.svg")); */
 	-gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
-}
-
-expander arrow {
-	min-width: 18px;
-	min-height: 16px;
-	padding: 0 4px 0 0;
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright 2020 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * Copyright 2020-2021 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
  * https://github.com/luigifab/human-theme
  * https://www.luigifab.fr/gtk/human-theme
  *
@@ -44,10 +44,32 @@ PanelToplevel.background {
 	padding: 0;
 }
 
+.mate-panel-menu-bar menubar > menuitem > image {
+	margin: 0 1px;
+}
+
 .mate-panel-menu-bar menubar > menuitem {
 	margin: 0;
 	padding: 3px 5px 3px 9px;
 	border-radius: 0;
+}
+
+.mate-panel-menu-bar menuitem > box > box > image {
+	margin: 0 0 0 1px;
+}
+
+.mate-panel-menu-bar menuitem > box > menuitem {
+	margin: 0 -5px 0 -7px;
+	padding: 0;
+	border: 0;
+}
+
+.mate-panel-menu-bar menuitem > box > menuitem check {
+	margin: 1px 0 0 18px;
+}
+
+.mate-panel-menu-bar menuitem > box > menuitem label {
+	margin-left: 11px;
 }
 
 /* .mate-panel-menu-bar menubar > menuitem separator {
@@ -87,6 +109,10 @@ PanelToplevel.background {
 	background: transparent;
 }
 
+#MatePanelPopupWindow frame border {
+	border-radius: 0;
+}
+
 #MatePanelPopupWindow frame > box > box > box > widget { /* the map border color */
 	color: @frame_border;
 }
@@ -123,4 +149,38 @@ PanelToplevel.background {
 	background-repeat: no-repeat;
 	background-position: 2px center;
 	background-size: 6px 10px;
+}
+
+/* --- caja --- */
+
+window.caja-navigation-window stack {
+	border: 0;
+}
+
+window.caja-navigation-window statusbar {
+	border-top: 0;
+}
+
+window.caja-navigation-window statusbar frame {
+	border-color: transparent;
+}
+
+/* --- terminal --- */
+
+window.mate-terminal box.vertical notebook {
+	margin: 0;
+}
+
+window.mate-terminal box.vertical notebook stack {
+	border: 0;
+	border-radius: 0;
+}
+
+window.mate-terminal box.vertical notebook header.top {
+    margin: 0 0 1px;
+}
+
+window.mate-terminal:not(.maximized) box.vertical notebook header.top ~ stack {
+	border: 1px solid @nb_border;
+	border-top: 0;
 }

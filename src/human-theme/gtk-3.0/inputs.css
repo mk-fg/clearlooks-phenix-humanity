@@ -1,5 +1,5 @@
 /**
- * Copyright 2020 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * Copyright 2020-2021 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
  * https://github.com/luigifab/human-theme
  * https://www.luigifab.fr/gtk/human-theme
  *
@@ -27,7 +27,7 @@
 
 entry {
 	margin: 1px;
-	padding: 3px;
+	padding: 3px; /* WARNING! 3px 3px 2px since Pango 1.44 else 3px */
 	color: @theme_text;
 	border: 1px solid @entry_border;
 	border-radius: 2.4px;
@@ -67,7 +67,7 @@ entry:disabled image {
 /* --- combobox (text entry with drop down or drop down) --- */
 
 combobox entry {
-	padding: 4px 3px;
+	padding: 4px 3px; /* WARNING! 4px 3px 2px since Pango 1.44 else 4px 3px */
 }
 
 combobox button {
@@ -94,16 +94,31 @@ spinbutton {
 	margin: 1px;
 }
 
-spinbutton entry {
+spinbutton button {
+	margin: 0 0 0 -1px;
+	padding: 3px 4px;
+	border-radius: 0;
+}
+
+spinbutton.horizontal entry {
 	margin: 0;
 	padding-right: 5px;
 	border-radius: 2.4px 0 0 2.3px;
 }
 
-spinbutton button {
-	margin: 0 0 0 -1px;
-	padding: 3px 4px;
+spinbutton.vertical entry {
+	margin: 0;
 	border-radius: 0;
+}
+
+spinbutton.vertical button.up {
+	margin: 0;
+	border-bottom: 0;
+}
+
+spinbutton.vertical button.down {
+	margin: 0;
+	border-top: 0;
 }
 
 /* --- colorswatch --- */
@@ -221,7 +236,7 @@ radio:indeterminate:disabled {
 	-gtk-icon-source: url("img/radio-mixed-insensitive.svg");
 }
 
-/* --- switch (gtk3 yes/no|on/off) --- */
+/* --- switch (yes/no|on/off) --- */
 
 switch {
 	margin: 1px;
@@ -366,8 +381,6 @@ toolbar button:active, /* engrampa 1.24 second toolbar */
 toolbar button:active:hover, /* engrampa 1.24 second toolbar */
 box.primary-toolbar toolbar button:active, /* eom 1.24 */
 box.primary-toolbar toolbar button:active:hover, /* eom 1.24 */
-box.primary-toolbar-gtk4 button:active,
-box.primary-toolbar-gtk4 button:active:hover,
 toolbar.primary-toolbar button:active,
 toolbar.primary-toolbar button:active:hover,
 #tasklist-button:checked box {
@@ -486,7 +499,6 @@ toolbar button:hover {
 button.flat:focus:hover,
 toolbar button:focus:hover, /* engrampa 1.24 second toolbar */
 box.primary-toolbar toolbar button:focus:hover, /* eom 1.24 */
-box.primary-toolbar-gtk4 button:focus:hover,
 toolbar.primary-toolbar button:focus:hover {
 	background:
 		no-repeat 3px 3px / calc(100% - 6px) calc(100% - 6px)
@@ -508,8 +520,6 @@ toolbar button:focus:active, /* engrampa 1.24 second toolbar */
 toolbar button:focus:active:hover, /* engrampa 1.24 second toolbar */
 box.primary-toolbar toolbar button:focus:active, /* eom 1.24 */
 box.primary-toolbar toolbar button:focus:active:hover, /* eom 1.24 */
-box.primary-toolbar-gtk4 button:focus:active,
-box.primary-toolbar-gtk4 button:focus:active:hover,
 toolbar.primary-toolbar button:focus:active,
 toolbar.primary-toolbar button:focus:active:hover {
 	background:

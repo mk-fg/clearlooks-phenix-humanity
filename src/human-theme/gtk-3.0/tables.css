@@ -1,5 +1,5 @@
 /**
- * Copyright 2020 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * Copyright 2020-2021 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
  * https://github.com/luigifab/human-theme
  * https://www.luigifab.fr/gtk/human-theme
  *
@@ -35,19 +35,16 @@ treeview {
 	background-color: @theme_base;
 }
 
-treeview row:nth-child(even) {
-	background: orange;
-}
-
-treeview row:nth-child(odd) {
-	background: red;
-}
-
 /* --- column headers --- */
 
 treeview header button {
 	margin: 0;
-	padding: 4px 3px;
-	border: 1px solid transparent;
+	padding: 4px 2px;
+	border: 0;
 	border-radius: 0;
+}
+
+treeview header button:hover,
+treeview header button:focus {
+	border: 0;
 }

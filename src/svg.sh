@@ -1,9 +1,8 @@
 #!/bin/bash
 
 cd "$(dirname "$0")"
-
 for f in */gtk-3.0/gtk.css; do
-	echo "$f"
+	echo $f
 
 	IFS=$'\n'
 	colors=$(grep 'define-color theme_' $f | grep -v \()

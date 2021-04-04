@@ -1,5 +1,5 @@
 /**
- * Copyright 2020 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * Copyright 2020-2021 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
  * https://github.com/luigifab/human-theme
  * https://www.luigifab.fr/gtk/human-theme
  *
@@ -24,19 +24,7 @@
  */
 
 * {
-	padding: 0;
-	outline: 0;
 	background-clip: padding-box;
-
-	-GtkToolButton-icon-spacing: 4;
-	-GtkTextView-error-underline-color: @error;
-	-GtkScrolledWindow-scrollbar-spacing: 3;
-	-GtkToolItemGroup-expander-size: 11;
-
-	-GtkIMHtml-hyperlink-color: @link;
-	-GtkHTML-link-color: @link;
-	-WnckTasklist-fade-overlay-rect: 0;
-
 	-gtk-icon-style: regular;
 }
 
@@ -79,6 +67,10 @@ paper {
 	background: white;
 }
 
+window.solid-csd {
+
+}
+
 /* --- tooltip --- */
 
 tooltip,
@@ -103,4 +95,18 @@ spinner {
 spinner:checked {
 	animation: spinner 1s infinite steps(12);
 	opacity: 1;
+}
+
+/* --- dconf grid --- */
+
+grid label.property-name-label,
+grid label.key-name,
+grid label.key-summary {
+	color: @theme_text;
+}
+
+grid row:selected label.property-name-label,
+grid row:selected label.key-name,
+grid row:selected label.key-summary {
+	color: @theme_selected_fg;
 }

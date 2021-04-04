@@ -1,1 +1,210 @@
-../gtk-3.0/menu.css
+/**
+ * Copyright 2020-2021 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * https://github.com/luigifab/human-theme
+ * https://www.luigifab.fr/gtk/human-theme
+ *
+ * Forked from
+ *  Copyright 2020 | Mike Kazantsev (mk-fg) <mk~fraggod~gmail~com>
+ *  https://github.com/mk-fg/clearlooks-phenix-humanity
+ *
+ * Forked from
+ *  Copyright 2011-2014 | Jean-Philippe Fleury
+ *  Copyright 2013-2014 | Andrew Shadura
+ *  https://github.com/jpfleury/clearlooks-phenix
+ *
+ * This program is free software, you can redistribute it or modify
+ * it under the terms of the GNU General Public License (GPL) as published
+ * by the free software foundation, either version 3 of the license, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but without any warranty, without even the implied warranty of
+ * merchantability or fitness for a particular purpose. See the
+ * GNU General Public License (GPL) for more details.
+ */
+
+/* --- toolbars --- */
+
+box.primary-toolbar image {
+	-gtk-icon-size: 24px;
+}
+
+box.primary-toolbar,
+headerbar.titlebar,
+headerbar /* gedit 1.24 */ {
+	padding: 1px 2px;
+	border-width: 1px 0 1px 0;
+	border-style: solid;
+	border-top-color: @toolbar_border_top;
+	border-bottom-color: @toolbar_border_bot;
+	background: linear-gradient(to bottom, @toolbar_grad_top, @toolbar_grad_bot);
+}
+
+box.primary-toolbar separator {
+	margin: 7px 5px 8px;
+	border-left: 1px solid @toolbar_separator_dark;
+	border-right: 1px solid @toolbar_separator_lite;
+}
+
+box.primary-toolbar button.popup {
+	margin: 0 1px 0 0;
+}
+
+/* --- menubar --- */
+
+menubar {
+	margin: 1px 0 0;
+	padding: 0 1px;
+	border-bottom: 1px solid @menubar_border_bot;
+	background: linear-gradient(to bottom, @menubar_grad_top, @menubar_grad_bot);
+}
+
+menubar item {
+	padding: 3px 7px 2px;
+	text-shadow: none; /* libreoffice 6.4.1 */
+	color: @theme_fg; /* libreoffice 6.4.1 */
+	border: 1px solid transparent;
+}
+
+menubar item:hover {
+	color: @menuitem_hover;
+	border: 1px solid @menuitem_hover_border;
+	border-bottom: 0;
+	border-radius: 2px 2px 0 0;
+	background:
+		radial-gradient( ellipse 110% 50%,
+			@menuitem_hover_glaze_glow_center,
+			@menuitem_hover_glaze_glow_edge),
+		linear-gradient(to bottom,
+			@menuitem_hover_glaze_top,
+			@menuitem_hover_glaze_mida 50%,
+			@menuitem_hover_glaze_midb 50%,
+			@menuitem_hover_glaze_bot);
+}
+
+/* --- popover and menu window --- */
+
+popover.background > stack > box,
+popover.background > box {
+	margin: -8px;
+}
+
+popover.background,
+menu {
+	border: 1px solid @menu_border;
+	background: @menu_bg;
+}
+
+menu {
+	padding: 3px 1px;
+}
+
+popover.background modelbutton {
+	padding: 2px 4px;
+	border: 1px solid transparent;
+}
+
+popover.background modelbutton:hover {
+	color: @menuitem_hover;
+	border: 1px solid @menuitem_hover_border;
+	border-radius: 2px;
+	background:
+		radial-gradient( ellipse 110% 50%,
+			@menuitem_hover_glaze_glow_center,
+			@menuitem_hover_glaze_glow_edge),
+		linear-gradient(to bottom,
+			@menuitem_hover_glaze_top,
+			@menuitem_hover_glaze_mida 50%,
+			@menuitem_hover_glaze_midb 50%,
+			@menuitem_hover_glaze_bot);
+}
+
+/* --- popover emoji window --- */
+
+popover.emoji-picker > box {
+	margin: 2px;
+}
+
+popover.emoji-picker entry {
+	margin: 0;
+}
+
+popover.emoji-picker scrolledwindow {
+	margin: 2px 0;
+}
+
+/* --- menuitem elements --- */
+
+popover.background separator {
+	margin: 0 -6px;
+}
+
+box.horizontal menu > separator, /* when menu tearoffed */
+popover.background stack separator,
+#MozillaGtkWidget menu separator /* firefox/thunderbird */ {
+	/* margin: 4px 6px 6px; */
+	margin: 4px 6px 3px;
+	border-top: 1px solid @menu_separator_dark;
+	border-bottom: 1px solid @menu_separator_lite;
+}
+
+/* --- menuitem checkbox and radio elements --- */
+
+popover check,
+popover radio {
+	margin: 1px 0 0;
+}
+
+/* unchecked */
+popover check,
+popover check:disabled {
+	-gtk-icon-source: none;
+}
+
+/* checked */
+popover check:checked,
+popover check:checked:active {
+	-gtk-icon-source: url("img/menu-checkbox-checked.svg");
+}
+
+popover check:checked:disabled,
+popover check:active:disabled {
+	-gtk-icon-source: url("img/menu-checkbox-checked-insensitive.svg");
+}
+
+/* mixed */
+popover check:indeterminate,
+popover check:indeterminate:active {
+	-gtk-icon-source: url("img/menu-checkbox-mixed.svg");
+}
+
+popover check:indeterminate:disabled {
+	-gtk-icon-source: url("img/menu-checkbox-mixed-insensitive.svg");
+}
+
+/* unchecked */
+popover radio,
+popover radio:disabled {
+	-gtk-icon-source: none;
+}
+
+/* checked */
+popover radio:checked,
+popover radio:checked:active {
+	-gtk-icon-source: url("img/menu-radio-checked.svg");
+}
+
+popover radio:checked:disabled,
+popover radio:active:disabled {
+	-gtk-icon-source: url("img/menu-radio-checked-insensitive.svg");
+}
+
+/* mixed */
+popover radio:indeterminate,
+popover radio:indeterminate:active {
+	-gtk-icon-source: url("img/menu-radio-mixed.svg");
+}
+
+popover radio:indeterminate:disabled {
+	-gtk-icon-source: url("img/menu-radio-mixed-insensitive.svg");
+}

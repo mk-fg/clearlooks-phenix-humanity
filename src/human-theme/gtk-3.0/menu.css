@@ -1,5 +1,5 @@
 /**
- * Copyright 2020 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
+ * Copyright 2020-2021 | Fabrice Creuzot (luigifab) <code~luigifab~fr>
  * https://github.com/luigifab/human-theme
  * https://www.luigifab.fr/gtk/human-theme
  *
@@ -27,9 +27,9 @@
 
 toolbar, /* engrampa 1.24 second toolbar */
 box.primary-toolbar toolbar, /* eom 1.24 */
-box.primary-toolbar-gtk4,
 toolbar.primary-toolbar,
-headerbar.titlebar {
+headerbar.titlebar,
+headerbar /* gedit 1.24 */ {
 	padding: 1px 2px;
 	border-width: 1px 0 1px 0;
 	border-style: solid;
@@ -38,14 +38,12 @@ headerbar.titlebar {
 	background: linear-gradient(to bottom, @toolbar_grad_top, @toolbar_grad_bot);
 }
 
-box.primary-toolbar-gtk4 separator,
 toolbar separator {
 	margin: 7px 5px 8px;
 	border-left: 1px solid @toolbar_separator_dark;
 	border-right: 1px solid @toolbar_separator_lite;
 }
 
-box.primary-toolbar-gtk4 button.popup,
 toolbar button.popup {
 	margin: 0 1px 0 0;
 }
@@ -59,7 +57,6 @@ menubar {
 	background: linear-gradient(to bottom, @menubar_grad_top, @menubar_grad_bot);
 }
 
-menubar item, /* gtk4 */
 menubar menuitem {
 	padding: 2px 7px 2px 8px;
 	text-shadow: none; /* libreoffice 6.4.1 */
@@ -67,7 +64,6 @@ menubar menuitem {
 	border: 1px solid transparent;
 }
 
-menubar item:hover, /* gtk4 */
 menubar menuitem:hover {
 	color: @menuitem_hover;
 	border: 1px solid @menuitem_hover_border;
@@ -149,8 +145,7 @@ menuitem.tearoff { /* awf2 */
 }
 
 menuitem image {
-	margin-left: 4px;
-	margin-right: -2px;
+	margin: 0 -2px 0 4px;
 }
 
 menuitem label {
