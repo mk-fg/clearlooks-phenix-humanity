@@ -37,17 +37,11 @@
 @define-color visited_link shade(@link, 0.2);
 @define-color error #C00;
 @define-color insensitive_text_shadow alpha(@theme_base, 0.5);
-/* #A28F7E */ @define-color insensitive_fg shade(@theme_bg, 0.65);
-/* #C9B9AB */ @define-color checkradio shade(@theme_bg, 0.839);
+@define-color insensitive_fg shade(@theme_bg, 0.65);
+@define-color checkradio shade(@theme_bg, 0.839);
 
 @import url("gtk-shade.css");
 @import url("base.css");
-@import url("containers.css");
-@import url("inputs.css");
-@import url("sliders.css");
-@import url("scrollbars.css");
-@import url("menu.css");
-@import url("tables.css");
 @import url("mate.css");
 @import url("xfce.css");
 @import url("user.css");

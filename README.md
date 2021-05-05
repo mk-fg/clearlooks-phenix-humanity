@@ -4,39 +4,37 @@ This theme works with: **GTK 2.24+** *(with murrine)*, **GTK 3.20+** *(including
 
 ## Screenshots
 
-Default (GTK 2/3/4)\
+GTK 2\
 [![Preview with GTK 2 - Main window](images/thumbs/gtk2.png?raw=true)](images/gtk2.png?raw=true)
-[![Preview with GTK 2 - Menu](images/thumbs/gtk2-menu.png?raw=true)](images/gtk2-menu.png?raw=true)\
-[![Preview with GTK 3 - Main window](images/thumbs/gtk3.png?raw=true)](images/gtk3.png?raw=true)
-[![Preview with GTK 3 - Menu](images/thumbs/gtk3-menu.png?raw=true)](images/gtk3-menu.png?raw=true)\
-[![Preview with GTK 4 - Main window](images/thumbs/gtk4.png?raw=true)](images/gtk4.png?raw=true)
-[![Preview with GTK 4 - Menu](images/thumbs/gtk4-menu.png?raw=true)](images/gtk4-menu.png?raw=true)
-
-Orange variation (GTK 2/3/4)\
 [![Preview with GTK 2 - Orange variation - Main window](images/thumbs/gtk2-orange.png?raw=true)](images/gtk2-orange.png?raw=true)
-[![Preview with GTK 2 - Orange variation - Menu](images/thumbs/gtk2-orange-menu.png?raw=true)](images/gtk2-orange-menu.png?raw=true)\
-[![Preview with GTK 3 - Orange variation - Main window](images/thumbs/gtk3-orange.png?raw=true)](images/gtk3-orange.png?raw=true)
-[![Preview with GTK 3 - Orange variation - Menu](images/thumbs/gtk3-orange-menu.png?raw=true)](images/gtk3-orange-menu.png?raw=true)\
-[![Preview with GTK 4 - Orange variation - Main window](images/thumbs/gtk4-orange.png?raw=true)](images/gtk4-orange.png?raw=true)
-[![Preview with GTK 4 - Orange variation - Menu](images/thumbs/gtk4-orange-menu.png?raw=true)](images/gtk4-orange-menu.png?raw=true)
-
-Blue variation (GTK 2/3/4)\
 [![Preview with GTK 2 - Blue variation - Main window](images/thumbs/gtk2-blue.png?raw=true)](images/gtk2-blue.png?raw=true)
-[![Preview with GTK 2 - Blue variation - Menu](images/thumbs/gtk2-blue-menu.png?raw=true)](images/gtk2-blue-menu.png?raw=true)\
-[![Preview with GTK 3 - Blue variation - Main window](images/thumbs/gtk3-blue.png?raw=true)](images/gtk3-blue.png?raw=true)
-[![Preview with GTK 3 - Blue variation - Menu](images/thumbs/gtk3-blue-menu.png?raw=true)](images/gtk3-blue-menu.png?raw=true)\
-[![Preview with GTK 4 - Blue variation - Main window](images/thumbs/gtk4-blue.png?raw=true)](images/gtk4-blue.png?raw=true)
-[![Preview with GTK 4 - Blue variation - Menu](images/thumbs/gtk4-blue-menu.png?raw=true)](images/gtk4-blue-menu.png?raw=true)
+[![Preview with GTK 2 - Green variation - Main window](images/thumbs/gtk2-green.png?raw=true)](images/gtk2-green.png?raw=true)\
+[![Preview with GTK 2 - Menu](images/thumbs/gtk2-menu.png?raw=true)](images/gtk2-menu.png?raw=true)
+[![Preview with GTK 2 - Orange variation - Menu](images/thumbs/gtk2-orange-menu.png?raw=true)](images/gtk2-orange-menu.png?raw=true)
+[![Preview with GTK 2 - Blue variation - Menu](images/thumbs/gtk2-blue-menu.png?raw=true)](images/gtk2-blue-menu.png?raw=true)
+[![Preview with GTK 2 - Green variation - Menu](images/thumbs/gtk2-green-menu.png?raw=true)](images/gtk2-green-menu.png?raw=true)
 
-Green variation (GTK 2/3/4)\
-[![Preview with GTK 2 - Green variation - Main window](images/thumbs/gtk2-green.png?raw=true)](images/gtk2-green.png?raw=true)
-[![Preview with GTK 2 - Green variation - Menu](images/thumbs/gtk2-green-menu.png?raw=true)](images/gtk2-green-menu.png?raw=true)\
-[![Preview with GTK 3 - Green variation - Main window](images/thumbs/gtk3-green.png?raw=true)](images/gtk3-green.png?raw=true)
-[![Preview with GTK 3 - Green variation - Menu](images/thumbs/gtk3-green-menu.png?raw=true)](images/gtk3-green-menu.png?raw=true)\
-[![Preview with GTK 4 - Green variation - Main window](images/thumbs/gtk4-green.png?raw=true)](images/gtk4-green.png?raw=true)
+GTK 3\
+[![Preview with GTK 3 - Main window](images/thumbs/gtk3.png?raw=true)](images/gtk3.png?raw=true)
+[![Preview with GTK 3 - Orange variation - Main window](images/thumbs/gtk3-orange.png?raw=true)](images/gtk3-orange.png?raw=true)
+[![Preview with GTK 3 - Blue variation - Main window](images/thumbs/gtk3-blue.png?raw=true)](images/gtk3-blue.png?raw=true)
+[![Preview with GTK 3 - Green variation - Main window](images/thumbs/gtk3-green.png?raw=true)](images/gtk3-green.png?raw=true)\
+[![Preview with GTK 3 - Menu](images/thumbs/gtk3-menu.png?raw=true)](images/gtk3-menu.png?raw=true)
+[![Preview with GTK 3 - Orange variation - Menu](images/thumbs/gtk3-orange-menu.png?raw=true)](images/gtk3-orange-menu.png?raw=true)
+[![Preview with GTK 3 - Blue variation - Menu](images/thumbs/gtk3-blue-menu.png?raw=true)](images/gtk3-blue-menu.png?raw=true)
+[![Preview with GTK 3 - Green variation - Menu](images/thumbs/gtk3-green-menu.png?raw=true)](images/gtk3-green-menu.png?raw=true)
+
+GTK 4\
+[![Preview with GTK 4 - Main window](images/thumbs/gtk4.png?raw=true)](images/gtk4.png?raw=true)
+[![Preview with GTK 4 - Orange variation - Main window](images/thumbs/gtk4-orange.png?raw=true)](images/gtk4-orange.png?raw=true)
+[![Preview with GTK 4 - Blue variation - Main window](images/thumbs/gtk4-blue.png?raw=true)](images/gtk4-blue.png?raw=true)
+[![Preview with GTK 4 - Green variation - Main window](images/thumbs/gtk4-green.png?raw=true)](images/gtk4-green.png?raw=true)\
+[![Preview with GTK 4 - Menu](images/thumbs/gtk4-menu.png?raw=true)](images/gtk4-menu.png?raw=true)
+[![Preview with GTK 4 - Orange variation - Menu](images/thumbs/gtk4-orange-menu.png?raw=true)](images/gtk4-orange-menu.png?raw=true)
+[![Preview with GTK 4 - Blue variation - Menu](images/thumbs/gtk4-blue-menu.png?raw=true)](images/gtk4-blue-menu.png?raw=true)
 [![Preview with GTK 4 - Green variation - Menu](images/thumbs/gtk4-green-menu.png?raw=true)](images/gtk4-green-menu.png?raw=true)
 
-The program used for the screenshots is available [here](https://github.com/luigifab/awf-extended). Pango 1.42 for screenshots with GTK 2 and 3, Pango 1.48 for screenshots with GTK 4.
+Program used for the screenshots is available [here](https://github.com/luigifab/awf-extended). Pango 1.42 for screenshots with GTK 2 and 3, Pango 1.48 for screenshots with GTK 4.
 
 ## Installation
 
@@ -50,25 +48,29 @@ The program used for the screenshots is available [here](https://github.com/luig
 * Run: `sudo dnf install human-theme-gtk`
 * Restart your session
 
-#### PPA installation for Debian and Ubuntu
+#### Installation for OpenSuse
 
-Installation for Debian and Ubuntu with [PPA](https://launchpad.net/~luigifab/+archive/ubuntu/packages):
-```
+* Run: `sudo zypper install human-theme-gtk`
+* Restart your session
+
+#### Alternative installation for Debian and Ubuntu
+
+* With [PPA](https://launchpad.net/~luigifab/+archive/ubuntu/packages), run:
+```bash
 sudo add-apt-repository ppa:luigifab/packages
 sudo apt update
 sudo apt install human-theme-gtk
- -- or --
+# or
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys FFE5BD439356DF7D
 echo "deb http://ppa.launchpad.net/luigifab/packages/ubuntu hirsute main" | sudo tee -a /etc/apt/sources.list
 sudo apt update
 sudo apt install human-theme-gtk
- -- or --
+# or
 sudo wget -O /etc/apt/trusted.gpg.d/luigifab.gpg https://www.luigifab.fr/apt.gpg
 echo "deb http://ppa.launchpad.net/luigifab/packages/ubuntu hirsute main" | sudo tee -a /etc/apt/sources.list
 sudo apt update
 sudo apt install human-theme-gtk
 ```
-
 ```bash
 # sha256sum /etc/apt/trusted.gpg.d/luigifab.gpg
 578c89a677048e38007462d543686b53587efba9f93814601169253c45ff9213
@@ -77,6 +79,7 @@ sudo apt install human-theme-gtk
 pub   rsa4096 2020-10-31 [SC]
       458B 0C46 D024 FD8C B8BC  99CD FFE5 BD43 9356 DF7D
 ```
+* Restart your session
 
 #### Manual installation for Debian and Ubuntu
 
@@ -88,9 +91,9 @@ GTK_OVERLAY_SCROLLING=0
 QT_QPA_PLATFORMTHEME=gtk2
 ```
 * Install icons and cursors themes: `sudo apt install gnome-icon-theme dmz-cursor-theme`
-* Install [gtk2-engines-murrine](https://packages.debian.org/search?keywords=gtk2-engines-murrine) for GTK 2 apps: `sudo apt install gtk2-engines-murrine`
-* Install [qt5-gtk-platformtheme](https://packages.debian.org/search?keywords=qt5+gtk+platformtheme) for QT 5 apps: `sudo apt install qt5-gtk2-platformtheme qt5-gtk-platformtheme`
-* Install [gtk3-nocsd](https://packages.debian.org/search?keywords=gtk3-nocsd) to restore the window title bar: `sudo apt install gtk3-nocsd`
+* Install package for GTK 2 apps: `sudo apt install gtk2-engines-murrine`
+* Install package for QT 5 apps: `sudo apt install qt5-gtk2-platformtheme qt5-gtk-platformtheme`
+* Install package to restore the window title bar for GTK 3 apps: `sudo apt install gtk3-nocsd`
 * Restart your session
 
 #### Manual installation for Fedora
@@ -103,7 +106,22 @@ GTK_OVERLAY_SCROLLING=0
 QT_QPA_PLATFORMTHEME=gtk2
 ```
 * Install icons and cursors themes: `sudo dnf install gnome-icon-theme dmz-cursor-themes`
-* Install gtk-murrine-engine for GTK 2 apps: `sudo dnf install gtk-murrine-engine`
+* Install package for GTK 2 apps: `sudo dnf install gtk-murrine-engine`
+* Restart your session
+
+#### Manual installation for OpenSuse
+
+* Download archive and extract *src* subdirectories in `~/.themes/`
+* Configure font rendering and GTK scrollbars and QT theme, add in `/etc/environment`:
+```
+FREETYPE_PROPERTIES="truetype:interpreter-version=35"
+GTK_OVERLAY_SCROLLING=0
+QT_QPA_PLATFORMTHEME=gtk2
+```
+* Install icons and cursors themes: `sudo zypper install gnome-icon-theme dmz-cursor-themes`
+* Install package for GTK 2 apps: `sudo zypper install gtk2-engine-murrine`
+* Install package for QT 5 apps: `sudo zypper install libqt5-qtstyleplugins-platformtheme-gtk2 libqt5-qtbase-platformtheme-gtk3`
+* Install package for QT 6 apps: `sudo zypper install qt6-platformtheme-gtk3`
 * Restart your session
 
 ## Firefox/Thunderbird/Chromium
@@ -118,7 +136,7 @@ sudo ln -s /usr/share/fontconfig/conf.avail/10-hinting-full.conf
 
 ## Known issues
 
-* For classic menu bar and menu items of [Firefox 74-87+](https://www.mozilla.org/firefox) and [Thunderbird 68-87+](https://www.mozilla.org/thunderbird), see [bug 1622545](https://bugzilla.mozilla.org/show_bug.cgi?id=1622545).
+* For classic menu bar and menu items of [Firefox 46+](https://www.mozilla.org/firefox) and [Thunderbird 46+](https://www.mozilla.org/thunderbird), see [bug 1622545](https://bugzilla.mozilla.org/show_bug.cgi?id=1622545).
 * The [status bar grip](https://developer.gnome.org/gtk2/stable/GtkStatusbar.html) was removed with GTK 3 ([note1](https://developer.gnome.org/gtk3/stable/ch26s02.html#id-1.6.3.4.17), [note2](https://developer.gnome.org/gtk3/stable/GtkWindow.html#gtk-window-set-has-resize-grip)).
 * The [treeview](https://developer.gnome.org/gtk3/stable/GtkTreeView.html) zebra/even-odd row styling was removed with GTK 3.19 ([note](https://gitlab.gnome.org/GNOME/gtk/issues/581#note_746153)).
 * The [notebook tabs](https://developer.gnome.org/gtk3/stable/GtkNotebook.html) mouse scroll was removed with GTK 3.4.
@@ -153,15 +171,15 @@ Run *svg.sh* to update SVG images. See also [technical informations](https://git
 
 ## Copyright
 
-- Current version: 1.2.0 (04/04/2021)
-- Compatibility: GTK 2.24 / 3.20 / 3.22 / 3.24 / 4.0
+- Current version: 1.3.0 (05/05/2021)
+- Compatibility: GTK 2.24 / 3.20 / 3.22 / 3.24 / 4.0 / 4.2
 - Links: [luigifab.fr](https://www.luigifab.fr/gtk/human-theme) - [github.com](https://github.com/luigifab/human-theme) - [mate-look.org](https://www.mate-look.org/p/1376363/)\
 [debian human-theme-gtk.deb](https://tracker.debian.org/pkg/human-theme-gtk)
   *([ITP](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=973445),
    [RFS](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=974209))*\
-[fedora human-theme-gtk.rpm](https://src.fedoraproject.org/rpms/human-theme-gtk)
-  *([RR](https://bugzilla.redhat.com/show_bug.cgi?id=1893327))*\
-[launchpad PPA](https://launchpad.net/~luigifab/+archive/ubuntu/packages)
+[fedora human-theme-gtk.rpm](https://src.fedoraproject.org/rpms/human-theme-gtk)\
+[opensuse human-theme-gtk.rpm](https://software.opensuse.org/package/human-theme-gtk)\
+[ubuntu PPA](https://launchpad.net/~luigifab/+archive/ubuntu/packages)
 
 This theme is provided under the terms of the **GNU GPLv3+** license.\
 If you like, take some of your time to improve some translations, go to https://bit.ly/2HyCCEc.

@@ -1,6 +1,6 @@
 #!/bin/bash
-# fedora: sudo dnf install rpmdevtools rpm-sign hunspell-fr
-# fedora: configure: error: C compiler cannot create executables? remove and reinstall glibc-devel gcc
+# opensuse: sudo zypper install rpmdevtools rpmlint rpm-build aspell-fr
+
 
 cd "$(dirname "$0")"
 version="1.3.0"
@@ -20,7 +20,7 @@ else
 	rm -rf /tmp/${temp}/*/builder/
 
 	mv /tmp/${temp} builder/
-	cp /usr/share/licenses/linux-firmware/GPL-3 builder/${temp}/LICENSE
+	cp /usr/share/licenses/kernel-firmware/GPL-3 builder/${temp}/LICENSE
 
 	cd builder/
 	tar czf ${temp}.tar.gz ${temp}

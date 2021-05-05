@@ -2,9 +2,8 @@
 # debian: sudo apt install dpkg-dev devscripts dh-make
 
 
-
 cd "$(dirname "$0")"
-version="1.2.0"
+version="1.3.0"
 
 
 rm -rf builder/
@@ -103,7 +102,7 @@ for serie in unstable hirsute groovy focal bionic xenial trusty precise; do
 	cd ..
 done
 
-ls -dltrh $PWD/builder/*.deb $PWD/builder/*.changes
+ls -dltrh builder/*.deb builder/*.changes
 echo "==========================="
 
 # cleanup
