@@ -1,3 +1,8 @@
+
+
+**DEPRECATED**: `luigifab/human-theme`_ is the canonical version of this project.
+
+
 .. contents::
   :backlinks: none
 
@@ -11,12 +16,15 @@ of old GTK2/GNOME2 `Clearlooks style`_.
 This project is an adaptation of that to look like old Ubuntu Human-Murrine
 GTK2 theme, which can be found here too (gtk-2.0 dir) or in e.g. `Human Quarny theme`_.
 
-Work in progress, not ready for general use yet.
+This was a part of conversion project, which continues in `luigifab/human-theme`_
+repository, please go there for a much more complete, working and up-to-date
+version of this theme.
 
 .. _Clearlooks-Phénix project: https://github.com/jpfleury/clearlooks-phenix
 .. _Jean-Philippe Fleury: http://www.jpfleury.net/en/contact.php
 .. _Clearlooks style: https://en.wikipedia.org/wiki/Clearlooks
 .. _Human Quarny theme: https://www.gnome-look.org/p/1013593/
+.. _luigifab/human-theme: https://github.com/luigifab/human-theme
 
 
 Templating (.tpl.css files)
