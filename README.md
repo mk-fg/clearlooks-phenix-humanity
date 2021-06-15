@@ -48,7 +48,7 @@ Program used for the screenshots is available [here](https://github.com/luigifab
 * Run: `sudo dnf install human-theme-gtk`
 * Restart your session
 
-#### Installation for OpenSuse
+#### Installation for openSUSE
 
 * Run: `sudo zypper install human-theme-gtk`
 * Restart your session
@@ -109,7 +109,7 @@ QT_QPA_PLATFORMTHEME=gtk2
 * Install package for GTK 2 apps: `sudo dnf install gtk-murrine-engine`
 * Restart your session
 
-#### Manual installation for OpenSuse
+#### Manual installation for openSUSE
 
 * Download archive and extract *src* subdirectories in `~/.themes/`
 * Configure font rendering and GTK scrollbars and QT theme, add in `/etc/environment`:

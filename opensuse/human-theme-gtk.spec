@@ -34,7 +34,7 @@ Après l'installation vous devez redémarrer votre session.}
 
 %prep
 %setup -q -n human-theme-%{version}
-# opensuse use pango 1.44+
+# openSUSE use pango 1.44+
 sed -i 's/<border name="title_border" left="2" right="2" top="4" bottom="3"/<border name="title_border" left="2" right="2" top="4" bottom="4"/g' src/human-theme/metacity-1/metacity-theme-1.xml
 sed -i 's/padding: 4px 3px; \/\* WARNING/padding: 4px 3px 2px; \/\* WARNING/g' src/human-theme/gtk-3.0/base.css
 sed -i 's/padding: 3px; \/\* WARNING/padding: 3px 3px 2px; \/\* WARNING/g' src/human-theme/gtk-3.0/base.css
@@ -67,4 +67,4 @@ cp -a src/human-theme-orange/ %{buildroot}%{_datadir}/themes/
 - New upstream version
 
 * Sun Apr 04 2021 Fabrice Creuzot <code@luigifab.fr> - 1.2.0-1
-- Initial opensuse package release
+- Initial openSUSE package release

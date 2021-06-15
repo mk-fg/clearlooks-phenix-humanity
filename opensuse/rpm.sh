@@ -1,5 +1,5 @@
 #!/bin/bash
-# opensuse: sudo zypper install rpmdevtools rpmlint rpm-build aspell-fr
+# openSUSE: sudo zypper install rpmdevtools rpmlint rpm-build aspell-fr
 
 
 cd "$(dirname "$0")"
